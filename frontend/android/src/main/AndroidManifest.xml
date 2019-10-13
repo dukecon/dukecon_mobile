@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.dukecon.android.ui">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".app.DukeconApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".features.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="redirect2token"
+                    android:scheme="appdukecon" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".features.eventdetail.EventDetailActivity" />
+        <activity android:name=".features.speakerdetail.SpeakerDetailActivity" />
+        <activity
+            android:name="org.dukecon.android.ui.features.login.browser.WebviewActivity"
+            android:label="@string/event_name"
+            android:parentActivityName=".features.main.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".features.main.MainActivity" />
+        </activity>
+
+        <service
+            android:name="org.dukecon.android.ui.features.login.browser.KeepAliveService"
+            android:exported="true" />
+    </application>
+</manifest>

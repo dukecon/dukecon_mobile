@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_drawer">Öffnen</string>
+    <string name="close_drawer">Schließen</string>
+    <string name="status_in_progress">Dieses Talk läuft</string>
+    <string name="status_over">Dieses Talk wurde beendet</string>
+    <string name="action_favorites">Favoriten</string>
+    <string name="action_schedule">Talks</string>
+    <string name="action_speakers">Sprecher</string>
+    <string name="action_info">Info</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="submit">Senden</string>
+    <string name="cd_logo">Logo</string>
+    <string name="info_topper">"Entwickelt in Kotlin by Michal Harakaľ und Falk Sippach als Projekt der Java user Group Darmstadt und mit Benutzung und Hilfe folgenden Bibiliotheken. Diese App basiert auf der Chicago-Roboto App. "</string>
+
+    <string name="feedback_title">Talk Bewertung</string>
+    <string name="feedback_comment">Dein Kommentar</string>
+
+    <string name="rating_good">Gut</string>
+    <string name="rating_ok">Okay</string>
+    <string name="rating_bad">Schlecht</string>
+
+    <string name="licences_title">Lizenzen</string>
+    <string name="login_title">Anmelden</string>
+    <string name="logout">Abmelden</string>
+    <string name="filters">Filtern</string>
+    <string name="login">Anmelden</string>
+</resources>

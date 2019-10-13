@@ -1,0 +1,59 @@
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'kotlinx-serialization'
+apply plugin: 'co.touchlab.kotlinxcodesync'
+apply plugin: 'io.spring.dependency-management'
+apply from: "$rootDir/versions.gradle"
+
+configurations {
+    compileClasspath
+}
+
+archivesBaseName = 'bedcon'
+
+kotlin {
+    sourceSets {
+        commonMain {
+            dependencies {
+                api project(':common:domain')
+
+                implementation "org.jetbrains.kotlin:kotlin-stdlib-common"
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common"
+                implementation "io.ktor:ktor-utils"
+            }
+        }
+        jvmMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+                implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core'
+                implementation "io.ktor:ktor-utils-jvm"
+            }
+        }
+
+        iosMain {
+            dependencies {
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native"
+
+                implementation "io.ktor:ktor-client-ios"
+                implementation "io.ktor:ktor-client-core-native"
+                implementation "io.ktor:ktor-client-json-native"
+                implementation "io.ktor:ktor-client-logging-native"
+                implementation "io.ktor:ktor-client-serialization-native"
+                implementation "io.ktor:ktor-utils-native"
+            }
+        }
+    }
+
+    targets {
+        fromPreset(presets.jvm, 'jvm')
+
+        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") \
+                                ? presets.iosArm64
+                : presets.iosX64
+
+        fromPreset(iOSTarget, 'ios') {
+            binaries {
+                framework('shared')
+            }
+        }
+    }
+}
