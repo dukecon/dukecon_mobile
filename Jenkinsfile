@@ -31,12 +31,6 @@ node {
             sh("docker build -t ${project} docker")
         }
      
-
-        stage('Run application test') {
-            def workspace = pwd()
-            sh("docker run --rm -v $workspace:/opt/workspace -u `id -u` -w /opt/workspace ${project} ./gradlew --stacktrace --info clean test")
-        } 
-
         stage('Build application') {
             def workspace = pwd()
             sh("docker run --rm -v $workspace:/opt/workspace -u `id -u` -w /opt/workspace ${project} ./gradlew --stacktrace --info clean assembleDebug")
