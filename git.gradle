@@ -53,14 +53,18 @@ def gitHash() {
 
 
 def fullVersionFromGitTag() {
-    def fullVersion = gitVersionNumber() + "-" + gitBranch()
-    println "Full version " + fullVersion
-    return fullVersion
+    try {
+        def fullVersion = gitVersionNumber() + "-" + gitBranch()
+        println "Full version " + fullVersion
+        return fullVersion
+    } catch(IllegalStateException){
+        println 'Setting dummy version...'
+        return "0.0.1"
+    }
 }
 
 def shortVersionFromGitTag() {
     def gitSha = gitHash()
-    println fullVersionFromGitTag()
     def shortExpr = ((fullVersionFromGitTag() =~ /(\D*)(\d+\.\d+\.\d+)(.*)/))
     def shortVersion = shortExpr[0][2] + "-(" + gitSha + ")"
     def tagOffsetMatcher = fullVersionFromGitTag() =~ /^.*-(\d+)-.*/
