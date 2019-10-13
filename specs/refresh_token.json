@@ -1,0 +1,105 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Documentation of the DukeCon Keycloak REST API.",
+    "version": "v1",
+    "title": "DukeCon Keycloak API",
+    "termsOfService": "https://dukecon.org/",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "RefreshOauth",
+      "description": "Keycloak endpoint"
+    }
+  ],
+  "paths": {
+    "/token": {
+      "post": {
+        "summary": "submit refresh code to obtain oauth token",
+        "description": "",
+        "operationId": "refresh",
+        "tags": [
+          "RefreshOauth"
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OAuthToken"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestRefreshToken"
+              }
+            }
+          },
+          "description": "Request token",
+          "required": true
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://dukecon.org/rest"
+    },
+    {
+      "url": "https://dukecon.org/rest"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "OAuthToken": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string"
+          },
+          "refresh_token": {
+            "type": "string"
+          },
+          "id_token": {
+            "type": "string"
+          },
+          "expires_in": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "RequestRefreshToken": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "description": "client id",
+            "type": "string"
+          },
+          "grant_type": {
+            "description": "grant type",
+            "type": "string"
+          },
+          "scope": {
+            "description": "scope",
+            "type": "string"
+          },
+          "refresh_token": {
+            "description": "refresh_token",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "links": {},
+    "callbacks": {}
+  },
+  "security": []
+}
