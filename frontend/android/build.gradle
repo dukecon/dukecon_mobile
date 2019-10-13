@@ -20,19 +20,6 @@ task loc(type: LocTask) {
     directory = "$rootDir/android/app"
 }
 
-
-// Create a variable called keystorePropertiesFile, and initialize it to your
-// keystore.properties file, in the rootProject folder.
-def keystorePropertiesFile = rootProject.file("keystore.properties")
-
-// Initialize a new Properties() object called keystoreProperties.
-def keystoreProperties = new Properties()
-
-// Load your keystore.properties file into the keystoreProperties object.
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
-
 android {
     defaultConfig {
         minSdkVersion 19
@@ -62,19 +49,12 @@ android {
     }
 
     signingConfigs {
-        release {
-            if (keystorePropertiesFile.exists()) {
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile file(keystoreProperties['storeFile'])
-                storePassword keystoreProperties['storePassword']
-            }
-        }
         debug {
-            if (keystorePropertiesFile.exists()) {
-                storeFile file(keystoreProperties['storeFile'])
-            }
-        }
+            storeFile file("$rootDir/frontend/android/debug.keystore")
+            storePassword "android"
+            keyAlias "android"
+            keyPassword "android"
+        }        
     }
 
     buildTypes {
@@ -86,7 +66,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFile 'proguard-release-app.pro'
-            signingConfig signingConfigs.release
         }
     }
 
