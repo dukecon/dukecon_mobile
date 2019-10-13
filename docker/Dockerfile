@@ -73,7 +73,6 @@ RUN    GRADLE_DIR=/home/user/.gradle/wrapper/dists/gradle-${GRADLE_VERSION}-all/
 
 COPY files/. /
 
-ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]
 
 WORKDIR /opt/workspace
