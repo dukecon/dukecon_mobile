@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/feedback_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:padding="@dimen/_1_BU"
+        android:text="@string/feedback_title"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/container_ratings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_1_BU">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+
+            <RadioGroup
+                android:id="@+id/rating"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_1_BU"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/good"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/traffic_light_rating_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/feedback_radion_button_green"
+                    android:button="@android:color/transparent"
+                    android:text="@string/rating_good"
+                    android:textColor="@drawable/feedback_tectcolor_green"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/ok"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/traffic_light_rating_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/feedback_radion_button_yellow"
+                    android:button="@android:color/transparent"
+                    android:text="@string/rating_ok"
+                    android:textColor="@drawable/feedback_tectcolor_yellow"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/bad"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/traffic_light_rating_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/feedback_radion_button_red"
+                    android:button="@android:color/transparent"
+                    android:text="@string/rating_bad"
+                    android:textColor="@drawable/feedback_tectcolor_red"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittextbackground"
+            android:gravity="top"
+            android:hint="@string/feedback_comment"
+            android:inputType="text|textMultiLine|textImeMultiLine|textNoSuggestions|textShortMessage"
+            android:lines="7"
+            android:padding="@dimen/_1_BU"
+            android:singleLine="false"
+
+            android:textAppearance="?android:textAppearanceMedium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_1_BU"
+        android:paddingLeft="@dimen/_1_BU"
+        android:paddingRight="@dimen/_1_BU">
+
+        <Button
+            android:id="@+id/cancel"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/submit"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit" />
+    </LinearLayout>
+</LinearLayout>

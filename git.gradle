@@ -1,0 +1,100 @@
+def gitVersionNumber() {
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine "git", "describe", "--first-parent"
+            standardOutput = stdout
+        }
+        return stdout.toString().trim()
+    } catch (ignored) {
+        return "unknown"
+    }
+}
+
+def gitBranch() {
+    try {
+        if (System.env.CI?.trim()) {
+            // we run within Gitlab-CI, so there are no branches as it uses detached HEADs
+
+            if (System.env.CI_COMMIT_TAG?.trim()) {
+                // we are building a tag and therefore there is no branch given
+                return "built from tag"
+            }
+
+            // when not building a tag, the ref name is the branch
+            return System.env.CI_COMMIT_REF_NAME
+        }
+
+        // we run outside of Gitlab-CI so there should be a current branch
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine "git", "rev-parse", "--abbrev-ref", "HEAD"
+            standardOutput = stdout
+        }
+        return stdout.toString().trim()
+    } catch (ignored) {
+        return "unknown"
+    }
+}
+
+def gitHash() {
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine "git", "rev-parse", "--short", "HEAD"
+            standardOutput = stdout
+        }
+        return stdout.toString().trim()
+    }
+    catch (ignored) {
+        return "0"
+    }
+}
+
+
+def fullVersionFromGitTag() {
+    def fullVersion = gitVersionNumber() + "-" + gitBranch()
+    println "Full version " + fullVersion
+    return fullVersion
+}
+
+def shortVersionFromGitTag() {
+    def gitSha = gitHash()
+    def shortExpr = ((fullVersionFromGitTag() =~ /(\D*)(\d+\.\d+\.\d+)(.*)/))
+    def shortVersion = shortExpr[0][2] + "-(" + gitSha + ")"
+    def tagOffsetMatcher = fullVersionFromGitTag() =~ /^.*-(\d+)-.*/
+    if (tagOffsetMatcher.find()) {
+        if (tagOffsetMatcher.groupCount() >= 1) {
+            shortVersion = shortExpr[0][2] + "." + tagOffsetMatcher.group(1) + "-(" + gitSha + ")"
+        }
+    }
+    return shortVersion
+}
+
+def numericVersionFromGitTag() {
+    def numVersionReg = ((fullVersionFromGitTag() =~ /(\D*)(\d+\.\d+\.\d+)(.*)/))[0][2]
+    def (major, minor, patch) = numVersionReg.split('\\.')
+    def tagOffset = 0
+    def tagOffsetMatcher = fullVersionFromGitTag() =~ /^.*-(\d+)-.*/
+    if (tagOffsetMatcher.find()) {
+        if (tagOffsetMatcher.groupCount() >= 1) {
+            tagOffset = tagOffsetMatcher.group(1) as Integer
+        }
+    }
+
+    if (minor.toInteger() >= 10) {
+        throw new StopActionException('Minor has to be lower 10')
+    }
+
+    return (major.toInteger() * 100000 + minor.toInteger() * 10000 + patch.toInteger() * 100 + tagOffset)
+}
+
+
+ext {
+    gitHash = this.&gitHash
+    gitBranch = this.&gitBranch
+    gitVersionNumber = this.&gitVersionNumber
+    shortVersionFromGitTag = this.&shortVersionFromGitTag
+    fullVersionFromGitTag = this.&fullVersionFromGitTag
+    numericVersionFromGitTag = this.&numericVersionFromGitTag
+}
