@@ -60,6 +60,7 @@ def fullVersionFromGitTag() {
 
 def shortVersionFromGitTag() {
     def gitSha = gitHash()
+    println fullVersionFromGitTag()
     def shortExpr = ((fullVersionFromGitTag() =~ /(\D*)(\d+\.\d+\.\d+)(.*)/))
     def shortVersion = shortExpr[0][2] + "-(" + gitSha + ")"
     def tagOffsetMatcher = fullVersionFromGitTag() =~ /^.*-(\d+)-.*/
