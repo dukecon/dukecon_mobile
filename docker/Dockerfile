@@ -71,6 +71,8 @@ RUN    GRADLE_DIR=/home/user/.gradle/wrapper/dists/gradle-${GRADLE_VERSION}-all/
     && unzip "${INSTALL_FILE}" -d "${GRADLE_DIR}" "gradle-${GRADLE_VERSION}/bin/*" "gradle-${GRADLE_VERSION}/lib/*" \
     && touch "${INSTALL_FILE}.ok"
 
+RUN chmod 777 /opt/android-sdk-linux_86
+
 COPY files/. /
 
 CMD ["bash"]
