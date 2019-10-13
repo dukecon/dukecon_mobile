@@ -70,6 +70,11 @@ android {
                 storePassword keystoreProperties['storePassword']
             }
         }
+        release {
+            if (keystorePropertiesFile.exists()) {
+                storeFile file(keystoreProperties['storeFile'])
+            }
+        }
     }
 
     buildTypes {
