@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "563040378723",
+    "firebase_url": "https://javaland-8a642.firebaseio.com",
+    "project_id": "javaland-8a642",
+    "storage_bucket": "javaland-8a642.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563040378723:android:c5d02b6749509fcb",
+        "android_client_info": {
+          "package_name": "org.dukecon.android.ui.javaland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563040378723-gtoie38pvln8l9flt3slb873r16q311d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWJ6PQFLxo7W8dHE5cVXOXPnQiqUV6qfE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
