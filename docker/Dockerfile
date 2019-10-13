@@ -51,6 +51,7 @@ RUN    mkdir -p /root/.android \
         "build-tools;28.0.3" \
         "platform-tools" \
         "platforms;android-28" \
+        "platforms;android-29" \
         "extras;android;m2repository" \
         "extras;google;google_play_services" \
         "extras;google;m2repository" \
