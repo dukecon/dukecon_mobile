@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="timeslot_width">72dp</dimen>
+    <dimen name="session_row_height">116dp</dimen>
+    <dimen name="recycler_spacing_vertical">3dp</dimen>
+    <dimen name="spacing_normal">8dp</dimen>
+
+
+    <!-- Z-axis elevation -->
+    <dimen name="app_bar_elevation">4dp</dimen>
+    <dimen name="_1_BU">16dp</dimen>
+    <dimen name="traffic_light_rating_margin">4dp</dimen>
+    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="a11y_min_touch_target">48dp</dimen>
+    <dimen name="spacing_micro">4dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="activity_vertical_margin">15dp</dimen>
+    <dimen name="activity_horizontal_margin">15dp</dimen>
+
+</resources>

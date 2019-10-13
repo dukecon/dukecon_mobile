@@ -1,0 +1,718 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Documentation of the DukeCon REST API.",
+    "version": "v1",
+    "title": "DukeCon API",
+    "termsOfService": "https://dukecon.org/",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "conferences",
+      "description": "Conferences endpoint"
+    },
+    {
+      "name": "oauth",
+      "description": "Conferences endpoint"
+    }
+  ],
+  "paths": {
+    "/conferences": {
+      "get": {
+        "summary": "returns list of conferences",
+        "description": "",
+        "operationId": "getAllConferences",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Conference"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/conferences/{id}": {
+      "get": {
+        "tags": [
+          "conferences"
+        ],
+        "summary": "returns conference",
+        "description": "",
+        "operationId": "getConference",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Conference"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/conferences/{id}/events": {
+      "get": {
+        "tags": [
+          "conferences"
+        ],
+        "summary": "returns list of conference events",
+        "description": "",
+        "operationId": "getEvents",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/conferences/{id}/metadata": {
+      "get": {
+        "tags": [
+          "conferences"
+        ],
+        "summary": "returns list of conference meta data",
+        "description": "",
+        "operationId": "getMeta",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetaData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/conferences/{id}/speakers": {
+      "get": {
+        "tags": [
+          "conferences"
+        ],
+        "summary": "returns list of conference speakers",
+        "description": "",
+        "operationId": "getSpeakers",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Speaker"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/preferences": {
+      "get": {
+        "tags": [
+          "conferences"
+        ],
+        "summary": "returns list of favorites",
+        "description": "",
+        "operationId": "getFavorites",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Favorite"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "conferences"
+        ],
+        "summary": "submit favorites",
+        "description": "",
+        "operationId": "sendFavorites",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "conferenceId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Favorite"
+                }
+              }
+            }
+          },
+          "description": "Feedback object that needs to be updated",
+          "required": true
+        }
+      }
+    },
+    "/feedback/event/{id}/{sessionId}": {
+      "put": {
+        "tags": [
+          "conferences"
+        ],
+        "summary": "submit feedback to talk",
+        "description": "",
+        "operationId": "updateFeedback",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "conferenceId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sessionId",
+            "in": "path",
+            "description": "session Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            }
+          },
+          "description": "Feedback object that needs to be updated",
+          "required": true
+        }
+      }
+    },
+    "/conferences/{id}/styles.css": {
+      "get": {
+        "summary": "Conference styles",
+        "description": "",
+        "operationId": "getConferenceStyles",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "text/css": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/conferences/{id}/keycloak.json": {
+      "get": {
+        "tags": [
+          "conferences"
+        ],
+        "summary": "returns keycloak setup",
+        "description": "",
+        "operationId": "getKeyCloak",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Keycloak"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://dukecon.org/rest"
+    },
+    {
+      "url": "https://dukecon.org/rest"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Audience": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "names": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      },
+      "Feedback": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Conference": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "homeUrl": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "metaData": {
+            "$ref": "#/components/schemas/MetaData"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            }
+          },
+          "speakers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Speaker"
+            }
+          }
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "abstractText": {
+            "type": "string"
+          },
+          "demo": {
+            "type": "boolean",
+            "default": false
+          },
+          "simultan": {
+            "type": "boolean",
+            "default": false
+          },
+          "veryPopular": {
+            "type": "boolean",
+            "default": false
+          },
+          "fullyBooked": {
+            "type": "boolean",
+            "default": false
+          },
+          "numberOfFavorites": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trackId": {
+            "type": "string"
+          },
+          "audienceId": {
+            "type": "string"
+          },
+          "typeId": {
+            "type": "string"
+          },
+          "locationId": {
+            "type": "string"
+          },
+          "speakerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languageId": {
+            "type": "string"
+          }
+        }
+      },
+      "EventType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "names": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      },
+      "Language": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "names": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "names": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "icon": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "MetaData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "audiences": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Audience"
+            }
+          },
+          "eventTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventType"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Language"
+            }
+          },
+          "defaultLanguage": {
+            "$ref": "#/components/schemas/Language"
+          },
+          "tracks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Track"
+            }
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Location"
+            }
+          },
+          "defaultIcon": {
+            "type": "string"
+          }
+        }
+      },
+      "Speaker": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "twitter": {
+            "type": "string"
+          },
+          "gplus": {
+            "type": "string"
+          },
+          "facebook": {
+            "type": "string"
+          },
+          "xing": {
+            "type": "string"
+          },
+          "linkedin": {
+            "type": "string"
+          },
+          "bio": {
+            "type": "string"
+          },
+          "photoId": {
+            "type": "string"
+          },
+          "eventIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Track": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "names": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      },
+      "Keycloak": {
+        "type": "object",
+        "properties": {
+          "realm": {
+            "type": "string"
+          },
+          "auth-server-url": {
+            "type": "string"
+          },
+          "ssl-required": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
+          },
+          "redirectUri": {
+            "type": "string"
+          },
+          "useAccountManagement": {
+            "type": "string"
+          }
+        }
+      },
+      "Favorite":  {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    },
+    "links": {},
+    "callbacks": {}
+  },
+  "security": []
+}

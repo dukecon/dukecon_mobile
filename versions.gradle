@@ -1,0 +1,99 @@
+ext {
+    minSdkVersion = 15
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    renderscriptTargetApi = 21
+
+    sourceCompatibilityVersion = JavaVersion.VERSION_1_8
+    targetCompatibilityVersion = JavaVersion.VERSION_1_8
+}
+
+dependencyManagement {
+    imports {
+        dependencies {
+            dependency 'com.google.dagger:dagger-compiler:2.22.1'
+            dependency 'com.google.dagger:dagger:2.22.1'
+            dependency 'io.reactivex.rxjava2:rxandroid:2.1.1'
+            dependency 'org.slf4j:slf4j-android:1.7.26'
+            dependency 'javax.annotation:jsr250-api:1.0'
+            dependency 'javax.inject:javax.inject:1'
+            dependency 'androidx.annotation:annotation:1.1.0'
+            dependency 'androidx.cardview:cardview:1.0.0'
+            dependency 'androidx.recyclerview:recyclerview:1.0.0'
+            dependency 'androidx.constraintlayout:constraintlayout:1.1.3'
+            dependency 'com.google.code.gson:gson:2.8.5'
+            dependency 'com.google.android.material:material:1.0.0'
+            dependency 'com.jakewharton.threetenabp:threetenabp:1.2.1'
+            dependency 'io.ktor:ktor-client-okhttp:1.2.4'
+            dependency 'io.ktor:ktor-client-json-jvm:1.2.4'
+            dependency 'com.google.dagger:dagger-compiler:2.22.1'
+            dependency 'com.google.dagger:dagger-android-processor:2.22.1'
+
+            dependency 'com.squareup.okhttp3:logging-interceptor:3.13.1'
+            dependency 'androidx.browser:browser:1.0.0'
+            dependency "io.coil-kt:coil:0.6.1"
+
+            dependency 'org.jetbrains.kotlin:kotlin-stdlib:1.3.50'
+            dependency "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.50"
+
+            dependency "io.ktor:ktor-client-core:1.2.4"
+            dependency "io.ktor:ktor-client-core-native:1.2.4"
+            dependency "io.ktor:ktor-client-json:1.2.4"
+            dependency "io.ktor:ktor-client-logging:1.2.4"
+            dependency "io.ktor:ktor-client-logging-jvm:1.2.4"
+            dependency "io.ktor:ktor-client-logging:1.2.4"
+            dependency "io.ktor:ktor-client-logging-native:1.2.3"
+            dependency 'io.ktor:ktor-client-serialization-jvm:1.2.4'
+            dependency 'io.ktor:ktor-client-serialization:1.2.4'
+            dependency 'io.ktor:ktor-client-serialization-native:1.2.4'
+            dependency 'io.ktor:ktor-client-android:1.2.4'
+            dependency "io.ktor:ktor-client-ios:1.2.4"
+            dependency "io.ktor:ktor-client-core-ios:1.2.3"
+            dependency "io.ktor:ktor-client-json-ios:1.2.3"
+            dependency "io.ktor:ktor-client-curl:1.2.3"
+            dependency "io.ktor:ktor-client-json-native:1.2.4"
+            dependency "io.ktor:ktor-utils:1.2.4"
+            dependency "io.ktor:ktor-utils-jvm:1.2.4"
+            dependency "io.ktor:ktor-utils-native:1.2.4"
+            dependency 'com.github.tony19:logback-android:1.3.0-3'
+
+
+            dependency 'commons-net:commons-net:3.6'
+            dependency 'com.google.dagger:dagger-android-support:2.22.1'
+            dependency 'com.google.dagger:dagger-android-processor:2.22.1'
+            dependency 'org.glassfish:javax.annotation:10.0-b28'
+            dependency 'com.jakewharton:butterknife:10.1.0'
+            dependency 'com.jakewharton:butterknife-compiler:10.1.0'
+            dependency 'org.greenrobot:eventbus:3.1.1'
+            dependency 'org.greenrobot:eventbus-annotation-processor:3.1.1'
+            dependency 'commons-net:commons-net:3.6'
+
+            // 1.3.0-RC2 the last stabl ewith 1.3.41
+            dependency "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.1"
+            dependency 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
+            dependency "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.1"
+            dependency 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.1'
+            // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-android
+            dependency group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-android', version: '1.3.1'
+
+            dependency "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.12.0"
+            dependency "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:0.12.0"
+            dependency "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:0.12.0"
+
+            dependency 'junit:junit:4.12'
+            dependency 'androidx.test:rules:1.2.0'
+            dependency 'androidx.test:runner:1.2.0'
+            dependency 'org.mockito:mockito-core:3.0.0'
+            dependency 'org.mockito:mockito-android:3.0.0'
+            dependency 'androidx.test.espresso:espresso-core:3.2.0'
+            dependency 'androidx.test.espresso:espresso-intents:3.2.0'
+            dependency 'androidx.test.espresso:espresso-contrib:3.2.0'
+            dependency 'androidx.test.ext:junit:1.1.1'
+            dependency 'org.hamcrest:hamcrest:2.1'
+            dependency 'org.json:json:20180813'
+            dependency 'io.swagger:swagger-annotations:1.5.21'
+            dependency 'commons-io:commons-io:2.6'
+            dependency 'androidx.test:rules:1.3.0-alpha02'
+        }
+    }
+}
