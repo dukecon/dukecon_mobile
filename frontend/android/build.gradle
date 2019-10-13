@@ -70,7 +70,7 @@ android {
                 storePassword keystoreProperties['storePassword']
             }
         }
-        release {
+        debug {
             if (keystorePropertiesFile.exists()) {
                 storeFile file(keystoreProperties['storeFile'])
             }
