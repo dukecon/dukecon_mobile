@@ -51,16 +51,14 @@ def gitHash() {
     }
 }
 
-
 def fullVersionFromGitTag() {
-    try {
-        def fullVersion = gitVersionNumber() + "-" + gitBranch()
-        println "Full version " + fullVersion
+    def fullVersion = gitVersionNumber() + "-" + gitBranch()
+    println "Full version " + fullVersion
+    if (fullVersion != "unknown-HEAD") {
         return fullVersion
-    } catch(IllegalStateException){
-        println 'Setting dummy version...'
-        return "0.0.1"
-    }
+    }    
+    println 'Setting dummy version...'
+    return "0.0.1"
 }
 
 def shortVersionFromGitTag() {
