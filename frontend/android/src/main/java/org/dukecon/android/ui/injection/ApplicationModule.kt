@@ -1,27 +1,8 @@
 package org.dukecon.android.ui.injection
 
-import android.app.Application
-import android.content.Context
-import dagger.Module
-import dagger.Provides
-import okhttp3.Cache
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import org.dukecon.android.configuration.RepositoryFactory
-import org.dukecon.android.ui.features.login.DummyDukeconAuthManager
-import org.dukecon.android.ui.features.login.SettingsTokenStorage
-import org.dukecon.data.source.ConferenceConfiguration
-import org.dukecon.domain.aspects.auth.AuthManager
-import org.dukecon.domain.aspects.twitter.TwitterLinks
-import org.dukecon.domain.features.oauth.TokensStorage
-import org.dukecon.domain.repository.ConferenceRepository
-import java.security.cert.X509Certificate
-import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
-
 /**
  * Module used to provide dependencies at an application-level.
- */
+
 @Module
 open class ApplicationModule {
 
@@ -117,4 +98,5 @@ open class ApplicationModule {
         return settings
     }
 }
+ */
 

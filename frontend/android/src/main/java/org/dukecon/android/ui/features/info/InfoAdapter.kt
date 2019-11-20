@@ -9,7 +9,7 @@ import org.dukecon.android.ui.R
 import org.dukecon.presentation.model.LibraryView
 import kotlinx.android.synthetic.main.view_info_library.view.*
 
-class InfoAdapter(val libraryListener: (library: LibraryView) -> Unit) : RecyclerView.Adapter<InfoAdapter.ViewHolder>() {
+class InfoAdapter(private val libraryListener: (library: LibraryView) -> Unit) : RecyclerView.Adapter<InfoAdapter.ViewHolder>() {
 
     private val libraries: MutableMap<String, MutableList<LibraryView>> = mutableMapOf()
     private var count = 1
@@ -88,12 +88,10 @@ class InfoAdapter(val libraryListener: (library: LibraryView) -> Unit) : Recycle
 
     class ViewHolder(itemView: View, val libraryListener: (library: LibraryView) -> Unit) : RecyclerView.ViewHolder(itemView) {
         var library: LibraryView? = null
-        val title: TextView?
-        val license: TextView?
+        val title: TextView? = itemView.title
+        private val license: TextView? = itemView.license
 
         init {
-            title = itemView.title
-            license = itemView.license
             itemView.setOnClickListener {
                 if (itemViewType == R.layout.view_info_library && library != null) {
                     libraryListener(library!!)

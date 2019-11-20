@@ -12,7 +12,7 @@ import org.dukecon.presentation.CoroutinePresenter
 import org.dukecon.presentation.mapper.EventMapper
 import org.dukecon.presentation.mapper.SpeakerMapper
 
-open class EventDetailPresenter constructor(
+class EventDetailPresenter constructor(
         private val conferenceRepository: ConferenceRepository,
         private val tokensStorage: TokensStorage,
         private val speakerMapper: SpeakerMapper,
@@ -33,7 +33,6 @@ open class EventDetailPresenter constructor(
         val token = tokensStorage.getToken()
         view.setHasSession(authManager.hasSession(token))
         conferenceRepository.onRefreshListeners += onRefreshListener
-
     }
 
     override fun onDetach() {

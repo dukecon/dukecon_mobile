@@ -83,7 +83,8 @@ data class Event(
         val veryPopular: Boolean,
         val fullyBooked: Boolean,
         val numberOfFavorites: Int,
-
+        val keywords: DefinitionsKeywordsNames = DefinitionsKeywordsNames(),
+        val documents: Documents = Documents(),
 
         val trackId: String = "",
 
@@ -100,7 +101,11 @@ data class Event(
         val speakerIds: List<String> = emptyList(),
 
         val languageId: String = ""
+
 )
+
+@Serializable
+data class Documents(val slides: String? = "", val manuscript: String? = "", val other: String? = "")
 
 @Serializable
 data class Speaker(
@@ -203,3 +208,17 @@ data class DefinitionsLocationNames(val de: String = "", val en: String = "") {
         }.toImmutableMap()
     }
 }
+
+@Serializable
+data class DefinitionsKeywordsNames(val de: List<String> = emptyList(), val en: List<String> = emptyList()) {
+    fun toMap(): Map<String, String> {
+        return HashMap<String, String>().also {
+            it["de"] = de.joinToString()
+            it["en"] = en.joinToString()
+        }.toImmutableMap()
+    }
+}
+
+
+
+
