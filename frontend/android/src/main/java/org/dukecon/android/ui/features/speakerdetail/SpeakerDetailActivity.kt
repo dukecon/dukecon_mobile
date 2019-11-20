@@ -8,7 +8,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_speaker_detail.*
 import org.dukecon.android.ui.R
-import org.dukecon.android.ui.ext.getAppComponent
 
 class SpeakerDetailActivity : AppCompatActivity() {
 
@@ -22,11 +21,8 @@ class SpeakerDetailActivity : AppCompatActivity() {
         }
     }
 
-    private lateinit var component: SpeakerDetailComponent
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        component = getAppComponent().speakerDetailComponent()
 
         if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
             postponeEnterTransition()
@@ -35,13 +31,8 @@ class SpeakerDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_speaker_detail)
 
         val speakerId = intent.getStringExtra("speaker_id")
-        speaker_detail_view.setSpeakerId(speakerId)
-    }
-
-    override fun getSystemService(name: String?): Any {
-        when (name) {
-            "component" -> return component
-            else -> return super.getSystemService(name)
+        speakerId?.let {
+            speaker_detail_view.setSpeakerId(speakerId)
         }
     }
 }
