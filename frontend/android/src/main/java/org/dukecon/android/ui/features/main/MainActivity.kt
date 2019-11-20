@@ -10,7 +10,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.dukecon.android.ui.R
-import org.dukecon.android.ui.ext.getAppComponent
 import org.dukecon.android.ui.features.event.FavoritesFragment
 import org.dukecon.android.ui.features.event.ScheduleFragment
 import org.dukecon.android.ui.features.event.SessionNavigator
@@ -21,14 +20,17 @@ import org.dukecon.android.ui.features.speakerdetail.SpeakerDetailActivity
 import org.dukecon.android.ui.features.speakerdetail.SpeakerNavigator
 import org.dukecon.android.ui.utils.consume
 import org.dukecon.android.ui.utils.inTransaction
-import org.dukecon.domain.aspects.auth.AuthManager
+import org.dukecon.core.IoCProvider
 import org.dukecon.domain.repository.ConferenceRepository
 import org.dukecon.presentation.model.EventView
-import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 class MainActivity : AppCompatActivity(), SessionNavigator,
         SpeakerNavigator, CoroutineScope {
+
+    private val conferenceRepository by lazy {
+        IoCProvider.get<ConferenceRepository>();
+    }
 
     private lateinit var mJob: Job
     override val coroutineContext: CoroutineContext
@@ -38,21 +40,12 @@ class MainActivity : AppCompatActivity(), SessionNavigator,
         private const val FRAGMENT_ID = R.id.content
     }
 
-    private lateinit var component: MainComponent
-
-    @Inject
-    lateinit var exchangeCodeForToken: AuthManager
-
-    @Inject
-    lateinit var conferenceRepository: ConferenceRepository
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mJob = Job()
+        IoCProvider.registerType(SessionNavigator::class, this)
 
-        component = getAppComponent().mainComponent(MainModule(this, this))
-        component.inject(this)
+        mJob = Job()
 
         setContentView(R.layout.activity_main)
 
@@ -93,6 +86,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator,
                             ?: throw IllegalStateException("Activity recreated, but no fragment found!")
         }
 
+        /* TODO move to usecase (Auth)
         val uri = intent.data
         if (uri != null) {
             val code = uri.getQueryParameter("code") ?: ""
@@ -103,6 +97,7 @@ class MainActivity : AppCompatActivity(), SessionNavigator,
                 }
             }
         }
+         */
     }
 
     private fun updateData() {
@@ -117,13 +112,6 @@ class MainActivity : AppCompatActivity(), SessionNavigator,
         supportFragmentManager.inTransaction {
             currentFragment = fragment
             replace(FRAGMENT_ID, fragment)
-        }
-    }
-
-    override fun getSystemService(name: String?): Any {
-        return when (name) {
-            "component" -> component
-            else -> super.getSystemService(name ?: "")
         }
     }
 
