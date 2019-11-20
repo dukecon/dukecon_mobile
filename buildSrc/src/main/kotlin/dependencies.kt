@@ -6,7 +6,7 @@ const val kotlinVersion = "1.3.61"
 object BuildPlugins {
 
     object Versions {
-        const val buildToolsVersion = "3.5.1"
+        const val buildToolsVersion = "3.5.2"
     }
 
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.buildToolsVersion}"
@@ -28,6 +28,7 @@ object AndroidSdk {
     const val min = 19
     const val compile = 29
     const val target = compile
+    const val buildTool = "29.0.2"
 }
 
 object Libraries {
@@ -80,6 +81,9 @@ object Libraries {
     const val ktorSerializationJvm = "io.ktor:ktor-client-serialization-jvm:${Versions.ktor}"
     const val ktorLoggingJvm = "io.ktor:ktor-client-logging-jvm:${Versions.ktor}"
     const val ktorOkhttpJvm = "io.ktor:ktor-client-okhttp:${Versions.ktor}"
+
+    const val okhttInterceptorpJvm = "com.squareup.okhttp3:logging-interceptor:4.2.1"
+
     const val ktorUtilsJvm = "io.ktor:ktor-utils-jvm:${Versions.ktor}"
 
     const val ktorClientAndroid = "io.ktor:ktor-client-android:${Versions.ktor}"

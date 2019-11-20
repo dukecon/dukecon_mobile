@@ -1,4 +1,4 @@
-import org.dukecon.remote.api.MacounApi
+import org.dukecon.macoun.api.MacounApi
 import kotlin.test.Test
 import kotlin.test.assertTrue
 

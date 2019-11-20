@@ -1,11 +1,9 @@
 package org.dukecon.android.ui.features.login
 
-import io.ktor.http.auth.HttpAuthHeader.Parameters.OAuthToken
 import org.dukecon.domain.features.oauth.TokensStorage
 import org.dukecon.domain.model.OAuthToken
-import javax.inject.Inject
 
-class SettingsTokenStorage @Inject constructor() : TokensStorage {
+class SettingsTokenStorage: TokensStorage {
     override fun clear() {
         //settings.clear("token")
     }

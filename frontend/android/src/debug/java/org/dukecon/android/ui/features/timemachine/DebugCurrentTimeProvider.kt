@@ -2,7 +2,6 @@ package org.dukecon.android.ui.features.timemachine
 
 import java.util.*
 
-
 class DebugCurrentTimeProvider : CustomizableCurrentTimeProvider() {
 
     override fun currentTimeMillis(): Long {

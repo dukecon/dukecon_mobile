@@ -1,6 +1,7 @@
 package org.dukecon.presentation.feature.feedback
 
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.dukecon.domain.model.Feedback
 import org.dukecon.domain.repository.ConferenceRepository
 import org.dukecon.presentation.CoroutinePresenter
@@ -30,12 +31,14 @@ open class FeedbackPresenter(private val conferenceRepository: ConferenceReposit
         val sessionId = this.sessionId
         if (sessionId != null) {
             launch {
+                // TODO MPP
                 /*
                 withContext(getIoContext()) {
                     conferenceRepository.submitFeedback(Feedback(sessionId, overall, comment))
                 }
-                 */
                 view?.dismiss()
+
+                 */
             }
         }
     }
