@@ -2,6 +2,7 @@ rootProject.name = "dukecon-mobile"
 
 enableFeaturePreview("GRADLE_METADATA")
 
+include (":common:core")
 include (":common:domain")
 include (":common:data")
 include (":common:presentation")
