@@ -14,10 +14,7 @@ import org.dukecon.data.source.EventRemoteDataStore
 import org.dukecon.domain.aspects.twitter.TwitterLinks
 import org.dukecon.domain.repository.ConferenceRepository
 import org.dukecon.remote.api.DukeconApi
-import org.dukecon.remote.mapper.EventEntityMapper
-import org.dukecon.remote.mapper.MetaDataEntityMapper
-import org.dukecon.remote.mapper.RoomEntityMapper
-import org.dukecon.remote.mapper.SpeakerEntityMapper
+import org.dukecon.remote.mapper.*
 import org.dukecon.remote.store.DukeconConferenceRemote
 
 object RepositoryFactory {
@@ -36,7 +33,7 @@ object RepositoryFactory {
         val conferenceRemote = DukeconConferenceRemote(
                 dukeconApi = api,
                 eventEntityMapper = EventEntityMapper(),
-                speakerEntityMapper = SpeakerEntityMapper(conferenceConfiguration, TwitterLinks()),
+                speakerEntityMapper = SpeakerEntityMapper(conferenceConfiguration, TwitterUrlMapper()),
                 metaDataEntityMapper = MetaDataEntityMapper(),
                 roomEntityMapper = RoomEntityMapper()
         )

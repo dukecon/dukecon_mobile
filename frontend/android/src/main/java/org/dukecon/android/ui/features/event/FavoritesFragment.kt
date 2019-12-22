@@ -19,9 +19,7 @@ class FavoritesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val event: EventDateView = view.findViewById(R.id.event_list_view)
-        if (event != null) {
-            event.showFavoritesOnly = true
-        }
+        val event: EventDateView? = view.findViewById(R.id.event_list_view)
+        event?.showFavoritesOnly = true
     }
 }

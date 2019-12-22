@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
 import org.dukecon.date.parseDate
 
+@Suppress("PLUGIN_WARNING")
 @Serializable
 data class EventModel(val id: String,
                       val title: String,

@@ -1,4 +1,4 @@
-package org.dukecon.remote.mapper
+package org.dukecon.remote.api
 
 class ImmutableList<T>(private val inner:List<T>) : List<T> by inner
 class ImmutableMap<K, V>(private val inner: Map<K, V>) : Map<K, V> by inner
