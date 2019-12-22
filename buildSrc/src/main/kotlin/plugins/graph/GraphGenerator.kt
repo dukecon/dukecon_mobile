@@ -66,6 +66,7 @@ internal class ProjectDependencyGraphGenerator(
                         project.isAndroidProject() -> node.add(Color.rgb("#3DDC84").fill())
                         project.isKotlinProject() -> node.add(Color.rgb("#ffb74d").fill())
                         project.isJavaProject() -> node.add(Color.rgb("#ff8a65").fill())
+                        project.isCommonsProject() -> node.add(Color.rgb("#ff00ee").fill())
                         else -> node.add(Color.rgb("#e0e0e0").fill())
                     }
 
@@ -83,7 +84,7 @@ internal class ProjectDependencyGraphGenerator(
 
     private fun addDependencies(dependencies: MutableList<ProjectDependencyContainer>, graph: MutableGraph) {
         dependencies
-                .filterNot { (from, to, _) -> !from.isCommonsProject() && to.isCommonsProject() }
+   //             .filterNot { (from, to, _) -> !from.isCommonsProject() && to.isCommonsProject() }
                 .distinctBy { (from, to, _) -> from to to }
                 .forEach { (from, to, isImplementation) ->
                     val fromNode = graph.nodes().find { it.name().toString() == from.path }

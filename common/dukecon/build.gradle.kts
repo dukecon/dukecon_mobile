@@ -49,7 +49,6 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":common:domain"))
                 implementation(project(":common:data"))
 
                 implementation(Libraries.kotlinStdLibCommon)
