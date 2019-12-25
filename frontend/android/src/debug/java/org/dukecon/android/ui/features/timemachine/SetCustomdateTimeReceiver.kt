@@ -5,10 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 
-import org.dukecon.android.ui.ext.getAppComponent
-import javax.inject.Inject
-
-
 /**
  * An [BroadcastReceiver] subclass for handling calls via adb, e.g changing current date and time
  *
@@ -16,14 +12,10 @@ import javax.inject.Inject
  */
 class SetCustomdateTimeReceiver : BroadcastReceiver() {
 
-    @Inject
     lateinit var currentTimeProvider: CustomizableCurrentTimeProvider
-
     override fun onReceive(context: Context?, intent: Intent?) {
 
         if (context != null) {
-            context.getAppComponent().inject(this)
-
             if (intent != null) {
                 val action = intent.action
                 if ("org.dukecon.android.ui.intent.TIME" == action) {

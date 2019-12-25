@@ -7,7 +7,7 @@ import org.dukecon.presentation.mapper.LibraryMapper
 import org.dukecon.presentation.model.LibraryView
 
 open class InfoPresenter constructor(
-        val repository: LibrariesRepository,
+        private val repository: LibrariesRepository,
         private val libraryMapper: LibraryMapper,
         private val webNavigator: WebNavigator) : CoroutinePresenter<InfoContract.View>(), InfoContract.Presenter {
 

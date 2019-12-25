@@ -119,8 +119,8 @@ class LocalAndRemoteDataRepository constructor(
 
     override suspend fun getEventDates(): List<GMTDate> {
         val dataStore = localDataStore
-        return dataStore.getEvents()
-                .distinctBy { it.startTime.dayOfMonth }
+        val events = dataStore.getEvents()
+        return events.distinctBy { it.startTime.dayOfMonth }
                 .map {
                     it.startTime
                 }.sortedBy { it.dayOfMonth }
@@ -150,7 +150,8 @@ class LocalAndRemoteDataRepository constructor(
 
     override suspend fun update() {
         try {
-            localDataStore.saveEvents(remoteDataStore.getEvents())
+            val events = remoteDataStore.getEvents()
+            localDataStore.saveEvents(events)
             localDataStore.saveMetaData(remoteDataStore.getMetaData())
             //val merged = mergeFavorites(localDataStore.getFavorites(), remoteDataStore.getFavorites())
             // localDataStore.saveFavorites(merged)

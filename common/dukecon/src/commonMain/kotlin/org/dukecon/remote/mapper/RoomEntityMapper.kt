@@ -2,6 +2,7 @@ package org.dukecon.remote.mapper
 
 import org.dukecon.data.model.RoomEntity
 import org.dukecon.remote.api.Location
+import org.dukecon.remote.mapper.EntityMapper
 
 /**
  * Map a [Location] to and from a [RoomEntity] instance when data is moving between

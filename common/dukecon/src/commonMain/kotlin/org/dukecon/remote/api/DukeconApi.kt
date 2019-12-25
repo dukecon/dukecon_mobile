@@ -18,7 +18,6 @@ import io.ktor.http.takeFrom
 import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 
-
 /**
  * use default http engine by defualt
  */
@@ -67,6 +66,7 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
             id: String // PATH
     ): Conference {
         return client.get<Conference>("$endpoint/conferences/$id") {
+
         }
     }
 

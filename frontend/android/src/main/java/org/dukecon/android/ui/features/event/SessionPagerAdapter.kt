@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import io.ktor.util.date.GMTDate
 
-
 internal class SessionPagerAdapter : PagerAdapter() {
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
         return view == `object`
@@ -40,7 +39,7 @@ internal class SessionPagerAdapter : PagerAdapter() {
         dates = arrayListOf()
     }
 
-    private var showFavoritesOnly: Boolean = false;
+    private var showFavoritesOnly: Boolean = false
 
     fun showEventDates(eventDate: List<GMTDate>, showFavoritesOnly: Boolean) {
         dates = eventDate

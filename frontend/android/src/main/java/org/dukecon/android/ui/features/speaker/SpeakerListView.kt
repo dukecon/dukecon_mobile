@@ -5,12 +5,10 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.dukecon.android.ui.ext.getComponent
-import org.dukecon.android.ui.features.main.MainComponent
 import org.dukecon.android.ui.features.speakerdetail.SpeakerNavigator
+import org.dukecon.core.IoCProvider
 import org.dukecon.presentation.feature.speakers.SpeakerListContract
 import org.dukecon.presentation.model.SpeakerView
-import javax.inject.Inject
 
 class SpeakerListView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
     RecyclerView(context, attrs, defStyle),
@@ -21,14 +19,13 @@ class SpeakerListView @JvmOverloads constructor(context: Context, attrs: Attribu
 
     private val adapter: SpeakerAdapter
 
-    @Inject
-    lateinit var presenter: SpeakerListContract.Presenter
-    @Inject
+    private val presenter: SpeakerListContract.Presenter by lazy {
+        IoCProvider.get<SpeakerListContract.Presenter>()
+    }
+
     lateinit var speakerNavigator: SpeakerNavigator
 
     init {
-        context.getComponent<MainComponent>().speakerListComponent().inject(this)
-
         layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         layoutManager = LinearLayoutManager(context, VERTICAL, false)
         addItemDecoration(DividerItemDecoration(context))

@@ -1,4 +1,4 @@
-package org.dukecon.android.configuration
+package org.dukecon.android.ui.configuration
 
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.okhttp.OkHttpConfig

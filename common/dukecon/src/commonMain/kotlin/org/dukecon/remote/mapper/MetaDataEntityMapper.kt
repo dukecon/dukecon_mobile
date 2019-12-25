@@ -6,14 +6,14 @@ import org.dukecon.remote.api.*
 class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
     override fun mapFromRemote(type: MetaData): MetaDataEntity {
         return MetaDataEntity(
-                type.id ?: "",
-                type.audiences.map { mapAudiences(it) },
-                type.eventTypes.map { mapEventTypes(it) },
-                type.languages.map { mapLanguages(it) },
-                mapLanguages(type.defaultLanguage),
-                type.tracks.map { mapTracks(it) },
-                type.locations.map { mapLocations(it) },
-                type.defaultIcon)
+                id = type.id,
+                audiences = type.audiences.map { mapAudiences(it) },
+                eventTypes = type.eventTypes.map { mapEventTypes(it) },
+                languages = type.languages.map { mapLanguages(it) },
+                defaultLanguage = mapLanguages(type.defaultLanguage),
+                tracks = type.tracks.map { mapTracks(it) },
+                locations = type.locations.map { mapLocations(it) },
+                defaultIcon = type.defaultIcon)
     }
 
     private fun mapLocations(it: Location): LocationsEntity {

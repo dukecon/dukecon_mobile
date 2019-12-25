@@ -14,7 +14,7 @@ internal class DividerItemDecoration(private val context: Context) : RecyclerVie
 
     init {
         val a = context.obtainStyledAttributes(intArrayOf(android.R.attr.listDivider))
-        divider = a.getDrawable(0)
+        divider = a.getDrawable(0)!!
         a.recycle()
     }
 

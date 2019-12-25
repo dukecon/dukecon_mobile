@@ -5,12 +5,12 @@ import org.dukecon.data.source.ConferenceConfiguration
 import org.dukecon.data.source.EventCacheDataStore
 import org.dukecon.data.source.EventRemoteDataStore
 import org.dukecon.domain.aspects.twitter.TwitterLinks
-import org.dukecon.remote.api.MacounApi
-import org.dukecon.remote.mapper.EventEntityMapper
-import org.dukecon.remote.mapper.MetaDataEntityMapper
-import org.dukecon.remote.mapper.RoomEntityMapper
-import org.dukecon.remote.mapper.SpeakerEntityMapper
-import org.dukecon.remote.store.MacounConferenceRemote
+import org.dukecon.macoun.api.MacounApi
+import org.dukecon.macoun.mapper.EventEntityMapper
+import org.dukecon.macoun.mapper.MetaDataEntityMapper
+import org.dukecon.macoun.mapper.RoomEntityMapper
+import org.dukecon.macoun.mapper.SpeakerEntityMapper
+import org.dukecon.macoun.store.MacounConferenceRemote
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
