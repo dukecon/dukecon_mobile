@@ -1,7 +1,6 @@
 package org.dukecon.remote.api
 
 import kotlinx.serialization.Serializable
-import org.dukecon.remote.mapper.toImmutableMap
 
 @Serializable
 data class Conference(

@@ -52,7 +52,7 @@ android {
         debug {
             storeFile file("$rootDir/frontend/android/debug.keystore")
             storePassword "android"
-            keyAlias "android"
+            keyAlias "androiddebugkey"
             keyPassword "android"
         }        
     }
@@ -129,8 +129,8 @@ kapt {
 
 dependencies {
     implementation project(':common:presentation')
-    implementation project(':common:domain')
     implementation project(':common:data')
+    implementation project(':common:domain')
 
     apacheconApi project(':common:dukecon')
     bedconApi project(':common:sessionize')
