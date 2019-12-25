@@ -3,7 +3,6 @@ package org.dukecon.macoun.mapper
 import io.ktor.util.date.GMTDate
 import io.ktor.util.date.Month
 import org.dukecon.data.model.EventEntity
-import org.dukecon.date.toIntOrFormatError
 import org.dukecon.macoun.api.Talk
 
 open class EventEntityMapper : EntityMapper<Talk, EventEntity> {

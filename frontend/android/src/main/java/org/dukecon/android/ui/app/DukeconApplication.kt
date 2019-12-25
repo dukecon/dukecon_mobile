@@ -19,6 +19,7 @@ class DukeconApplication : Application() {
         super.onCreate()
         appAndroidContext = this
         IoCRegister.registerEventDetail(this)
+        IoCRegister.registerSpeakerDetail(this)
         IoCRegister.registerTimeProvider()
         initLogger()
     }

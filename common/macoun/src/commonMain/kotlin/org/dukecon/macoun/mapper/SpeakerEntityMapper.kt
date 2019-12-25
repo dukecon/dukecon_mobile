@@ -2,7 +2,6 @@ package org.dukecon.macoun.mapper
 
 import org.dukecon.data.model.SpeakerEntity
 import org.dukecon.data.source.ConferenceConfiguration
-import org.dukecon.domain.aspects.twitter.TwitterLinks
 import org.dukecon.macoun.api.Speaker
 
 open class SpeakerEntityMapper constructor(private val conferenceConfiguration: ConferenceConfiguration,
