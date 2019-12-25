@@ -1,14 +1,17 @@
-package org.dukecon.macoun.store
+package org.dukecon.sessionize.store
 
 import io.ktor.util.date.GMTDate
 import org.dukecon.data.model.*
 import org.dukecon.data.repository.ConferenceRemote
-import org.dukecon.date.parseDate
-import org.dukecon.macoun.sessionize.api.SessionizeApi
-import org.dukecon.macoun.sessionize.jsondata.Room
-import org.dukecon.macoun.sessionize.jsondata.Session
-import org.dukecon.macoun.sessionize.jsondata.Speaker
+import org.dukecon.sessionize.api.SessionizeApi
+import org.dukecon.sessionize.jsondata.Room
+import org.dukecon.sessionize.jsondata.Session
+import org.dukecon.sessionize.jsondata.Speaker
+import org.dukecon.sessionize.mapper.parseDate
 
+/**
+ * Sessionize backed network calls remote service. Makes netowork calls and convert data to RemoteData Store DTO.
+ */
 class SessionizeConferenceRemotes(
         private val sessionizeApi: SessionizeApi
 ) : ConferenceRemote {

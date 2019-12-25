@@ -1,4 +1,4 @@
-package org.dukecon.macoun.sessionize.jsondata
+package org.dukecon.sessionize.jsondata
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

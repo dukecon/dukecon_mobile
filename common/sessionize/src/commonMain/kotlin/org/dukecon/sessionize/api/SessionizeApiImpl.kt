@@ -1,4 +1,4 @@
-package org.dukecon.macoun.sessionize.api
+package org.dukecon.sessionize.api
 
 import io.ktor.client.HttpClient
 import io.ktor.client.request.HttpRequestBuilder
@@ -6,17 +6,11 @@ import io.ktor.client.request.get
 import io.ktor.http.takeFrom
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
-import org.dukecon.macoun.sessionize.jsondata.Days
-import org.dukecon.macoun.sessionize.jsondata.Room
-import org.dukecon.macoun.sessionize.jsondata.Session
-import org.dukecon.macoun.sessionize.jsondata.Speaker
+import org.dukecon.sessionize.jsondata.Days
+import org.dukecon.sessionize.jsondata.Room
+import org.dukecon.sessionize.jsondata.Session
+import org.dukecon.sessionize.jsondata.Speaker
 import kotlin.native.concurrent.ThreadLocal
-
-/*
-    private val INSTANCE_ID = "zs3eoop8"
-    private val SPONSOR_INSTANCE_ID = "zs3eoop8"
-
- */
 
 @ThreadLocal
 class SessionizeApiImpl(override val conferenceInstanceId: String) : SessionizeApi {
@@ -24,7 +18,6 @@ class SessionizeApiImpl(override val conferenceInstanceId: String) : SessionizeA
             parseRoomsFromDays(client.get<String> {
                 sessionize("/api/v2/$conferenceInstanceId/view/gridtable")
             })
-
 
     private val client = HttpClient {
         install(ExpectSuccess)
@@ -74,5 +67,4 @@ class SessionizeApiImpl(override val conferenceInstanceId: String) : SessionizeA
         }
         return rooms.distinctBy { it.id }
     }
-
 }

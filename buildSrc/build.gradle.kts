@@ -36,7 +36,7 @@ publishing {
 
 dependencies {
     compileOnly(gradleApi())
-    implementation("com.android.tools.build:gradle:3.5.2")
+    implementation("com.android.tools.build:gradle:3.5.3")
     implementation("guru.nidi:graphviz-java:0.12.1")
 }
 
@@ -49,7 +49,7 @@ configurations.all {
             @Suppress("UnstableApiUsage")
             if (requested.group == "org.jetbrains.kotlin" &&
                     requested.module.name == "kotlin-compiler-embeddable"
-            ) useVersion(kotlinVersion)
+            ) useVersion("1.3.50")
         }
     }
 }

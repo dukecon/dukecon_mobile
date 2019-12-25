@@ -1,4 +1,4 @@
-package org.dukecon.macoun.sessionize.api
+package org.dukecon.sessionize.api
 
 import io.ktor.client.HttpClient
 import io.ktor.client.features.HttpClientFeature
