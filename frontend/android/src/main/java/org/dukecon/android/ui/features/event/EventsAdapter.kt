@@ -20,10 +20,8 @@ import org.dukecon.domain.features.time.CurrentTimeProvider
 import org.dukecon.presentation.model.EventView
 import org.dukecon.presentation.date.Duration
 
-import kotlin.math.abs
-
 internal class EventsAdapter(
-        val currentTimeProvider: CurrentTimeProvider,
+        private val currentTimeProvider: CurrentTimeProvider,
         private val onSessionSelectedListener: ((session: EventView) -> Unit)
 ) : RecyclerView.Adapter<EventsAdapter.ViewHolder>() {
 

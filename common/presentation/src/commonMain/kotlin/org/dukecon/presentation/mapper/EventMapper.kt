@@ -7,7 +7,7 @@ import org.dukecon.presentation.model.EventView
  * Map a [EventView] to and from a [Event] instance when data is moving between
  * this layer and the Domain layer
  */
-open class EventMapper constructor(val speakersMapper: SpeakerMapper) : Mapper<EventView, Event> {
+open class EventMapper constructor(private val speakersMapper: SpeakerMapper) : Mapper<EventView, Event> {
 
     /**
      * Map a [Event] instance to a [EventView] instance

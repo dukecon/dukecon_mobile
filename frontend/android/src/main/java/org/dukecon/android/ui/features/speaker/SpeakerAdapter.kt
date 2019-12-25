@@ -6,14 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.api.load
 import kotlinx.android.synthetic.main.item_speaker.view.*
 import org.dukecon.android.ui.R
 import org.dukecon.presentation.model.SpeakerView
-import coil.api.get
-import coil.api.load
 
-
-internal class SpeakerAdapter(val wrapsWidth: Boolean = true, val onSpeakerClickedListener: ((speaker: SpeakerView) -> Unit)) :
+internal class SpeakerAdapter(private val wrapsWidth: Boolean = true, private val onSpeakerClickedListener: ((speaker: SpeakerView) -> Unit)) :
         RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
 
     val speakers: MutableList<SpeakerView> = mutableListOf()

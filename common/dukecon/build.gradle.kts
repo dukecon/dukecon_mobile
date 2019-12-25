@@ -5,23 +5,8 @@ plugins {
     id(BuildPlugins.kotlinAndroidExtensions)
 }
 
-configurations.create("compileClasspath")
-
 android {
-    compileSdkVersion(AndroidSdk.compile)
-    defaultConfig {
-        minSdkVersion(AndroidSdk.min)
-        targetSdkVersion(AndroidSdk.target)
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
+    setDefaults()
 }
 
 dependencies {

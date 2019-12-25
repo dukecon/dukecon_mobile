@@ -17,7 +17,7 @@ internal class EventItemDecoration(private val context: Context) : RecyclerView.
         spacing = context.resources.getDimensionPixelSize(R.dimen.recycler_spacing_vertical)
 
         val a = context.obtainStyledAttributes(intArrayOf(android.R.attr.listDivider))
-        divider = a.getDrawable(0)
+        divider = a.getDrawable(0)!!
         a.recycle()
     }
 

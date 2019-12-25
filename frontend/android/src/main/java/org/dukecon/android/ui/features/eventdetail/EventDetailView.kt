@@ -9,21 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import io.ktor.util.date.GMTDate
 import kotlinx.android.synthetic.main.view_session_detail.view.*
 import org.dukecon.android.ui.R
-import org.dukecon.android.ui.ext.getComponent
-import org.dukecon.android.ui.features.eventdetail.di.EventDetailComponent
 import org.dukecon.android.ui.features.feedback.FeedbackDialog
 import org.dukecon.android.ui.features.speaker.SpeakerAdapter
 import org.dukecon.android.ui.features.speakerdetail.SpeakerNavigator
 import org.dukecon.android.ui.utils.DrawableUtils
+import org.dukecon.core.IoCProvider
 import org.dukecon.date.toMillis
-import org.dukecon.domain.features.time.CurrentTimeProvider
 import org.dukecon.presentation.feature.eventdetail.EventDetailContract
 import org.dukecon.presentation.model.EventView
 import org.dukecon.presentation.model.SpeakerView
-import javax.inject.Inject
 
 class EventDetailView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         CoordinatorLayout(context, attrs, defStyle), EventDetailContract.View {
@@ -31,14 +27,13 @@ class EventDetailView(context: Context, attrs: AttributeSet? = null, defStyle: I
 
     }
 
-    @Inject
-    lateinit var presenter: EventDetailContract.Presenter
+    private val presenter: EventDetailContract.Presenter by lazy {
+        IoCProvider.get<EventDetailContract.Presenter>()
+    }
 
-    @Inject
-    lateinit var speakerNavigator: SpeakerNavigator
-
-    @Inject
-    lateinit var currentTimeProvider: CurrentTimeProvider
+    private val speakerNavigator: SpeakerNavigator by lazy {
+        IoCProvider.get<SpeakerNavigator>()
+    }
 
     private val speakerAdapter: SpeakerAdapter
     private var sessionId: String? = null
@@ -47,8 +42,6 @@ class EventDetailView(context: Context, attrs: AttributeSet? = null, defStyle: I
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
     init {
-        context.getComponent<EventDetailComponent>().inject(this)
-
         LayoutInflater.from(context).inflate(R.layout.view_session_detail, this, true)
 
         speakerAdapter = SpeakerAdapter(true) { speaker ->
@@ -89,20 +82,20 @@ class EventDetailView(context: Context, attrs: AttributeSet? = null, defStyle: I
     }
 
     @SuppressLint("RestrictedApi")
-    override fun showSessionDetail(session: EventView) {
-        toolbar.title = session.title
+    override fun showSessionDetail(sessionDetail: EventView) {
+        toolbar.title = sessionDetail.title
         val activity = context as AppCompatActivity
         activity.setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener {
             activity.finish()
         }
 
-        val startTime = DateUtils.formatDateTime(context, session.startTime.toMillis(), DateUtils.FORMAT_SHOW_TIME)
-        val endTime = DateUtils.formatDateTime(context, session.endTime.toMillis(), DateUtils.FORMAT_SHOW_TIME)
+        val startTime = DateUtils.formatDateTime(context, sessionDetail.startTime.toMillis(), DateUtils.FORMAT_SHOW_TIME)
+        val endTime = DateUtils.formatDateTime(context, sessionDetail.endTime.toMillis(), DateUtils.FORMAT_SHOW_TIME)
 
-        banner.text = String.format(context.getString(R.string.session_detail_time), session.room,
+        banner.text = String.format(context.getString(R.string.session_detail_time), sessionDetail.room,
                 startTime, endTime)
-        description.text = session.description
+        description.text = sessionDetail.description
 
         // TODO time
 
@@ -153,3 +146,4 @@ class EventDetailView(context: Context, attrs: AttributeSet? = null, defStyle: I
         favorite.setImageDrawable(drawable)
     }
 }
+

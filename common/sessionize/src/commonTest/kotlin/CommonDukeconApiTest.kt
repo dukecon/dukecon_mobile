@@ -1,5 +1,5 @@
 import kotlinx.coroutines.runBlocking
-import org.dukecon.remote.sessionize.api.SessionizeApiImpl
+import org.dukecon.sessionize.api.SessionizeApiImpl
 
 import kotlin.test.Test
 import kotlin.test.assertTrue

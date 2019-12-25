@@ -4,7 +4,7 @@ import kotlinx.coroutines.launch
 import org.dukecon.domain.repository.ConferenceRepository
 import org.dukecon.presentation.CoroutinePresenter
 
-open class EventDatePresenter constructor(val conferenceRepository: ConferenceRepository)
+open class EventDatePresenter constructor(private val conferenceRepository: ConferenceRepository)
     : CoroutinePresenter<EventDateListContract.View>(), EventDateListContract.Presenter {
 
     override fun showError(error: Throwable) {

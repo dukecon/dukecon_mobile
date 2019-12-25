@@ -1,5 +1,6 @@
 package org.dukecon.android.ui.features.feedback
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
@@ -7,24 +8,23 @@ import android.view.LayoutInflater
 import android.view.View
 import kotlinx.android.synthetic.main.dialog_feedback.view.*
 import org.dukecon.android.ui.R
-import org.dukecon.android.ui.ext.getComponent
-import org.dukecon.android.ui.features.eventdetail.di.EventDetailComponent
+import org.dukecon.core.IoCProvider
 import org.dukecon.presentation.feature.feedback.FeedbackMvp
-import javax.inject.Inject
 
-class FeedbackDialog(context: Context, val sessionId: String) : Dialog(context, true, null), FeedbackMvp.View {
+class FeedbackDialog(context: Context, private val sessionId: String) : Dialog(context, true, null), FeedbackMvp.View {
     override fun showError(throwable: Throwable) {
 
     }
 
-    @Inject
-    lateinit var presenter: FeedbackMvp.Presenter
+    private val presenter: FeedbackMvp.Presenter by lazy {
+        IoCProvider.get<FeedbackMvp.Presenter>()
+    }
 
     lateinit var view: View
 
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        context.getComponent<EventDetailComponent>().feedbackComponent().inject(this)
         presenter.setSessionId(sessionId)
 
         view = LayoutInflater.from(context).inflate(R.layout.dialog_feedback, null, false)

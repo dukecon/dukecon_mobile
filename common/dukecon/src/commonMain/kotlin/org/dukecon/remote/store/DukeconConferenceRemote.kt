@@ -20,7 +20,8 @@ class DukeconConferenceRemote(
     }
 
     override suspend fun getEvents(): List<EventEntity> {
-        return dukeconApi.getConference(dukeconApi.conference).events.map { eventEntityMapper.mapFromRemote(it) }
+        val events = dukeconApi.getConference(dukeconApi.conference).events
+        return events.map { eventEntityMapper.mapFromRemote(it) }
     }
 
     override suspend fun getSpeakers(): List<SpeakerEntity> {

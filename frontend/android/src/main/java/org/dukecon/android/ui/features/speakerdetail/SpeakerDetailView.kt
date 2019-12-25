@@ -11,10 +11,9 @@ import coil.api.load
 import kotlinx.android.synthetic.main.view_speaker_detail.view.*
 import org.dukecon.android.ui.R
 import org.dukecon.android.ui.ext.getActivity
-import org.dukecon.android.ui.ext.getComponent
 import org.dukecon.android.ui.utils.DrawableUtils
+import org.dukecon.core.IoCProvider
 import org.dukecon.presentation.feature.speakerdetail.SpeakerDetailContract
-import javax.inject.Inject
 
 class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         ConstraintLayout(context, attrs, defStyle), SpeakerDetailContract.View {
@@ -22,14 +21,13 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
     }
 
-    @Inject
-    lateinit var presenter: SpeakerDetailContract.Presenter
+    private val presenter: SpeakerDetailContract.Presenter by lazy {
+        IoCProvider.get<SpeakerDetailContract.Presenter>()
+    }
 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
     init {
-        context.getComponent<SpeakerDetailComponent>().inject(this)
-
         LayoutInflater.from(context).inflate(R.layout.view_speaker_detail, this, true)
 
         toolbar.setNavigationOnClickListener {
@@ -38,13 +36,13 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
             }
         }
 
-        var speakerId = ""
         getActivity()?.let {
-            speakerId = it.intent.getStringExtra("speaker_id")
+            val speakerId = it.intent.getStringExtra("speaker_id")
+            speakerId?.let {
+                presenter.onAttach(this)
+                presenter.setSpeakerId(speakerId)
+            }
         }
-
-        presenter.onAttach(this)
-        presenter.setSpeakerId(speakerId)
     }
 
     override fun onDetachedFromWindow() {
@@ -93,7 +91,7 @@ class SpeakerDetailView(context: Context, attrs: AttributeSet? = null, defStyle:
 
             github.setOnClickListener {
                 val githubIntent = Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse("${speaker.website}")
+                    data = Uri.parse(speaker.website)
                 }
                 context.startActivity(githubIntent)
             }

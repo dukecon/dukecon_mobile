@@ -8,11 +8,9 @@ import android.widget.FrameLayout
 import io.ktor.util.date.GMTDate
 import kotlinx.android.synthetic.main.view_sessions.view.*
 import org.dukecon.android.ui.R
-import org.dukecon.android.ui.ext.getComponent
-import org.dukecon.android.ui.features.main.MainComponent
+import org.dukecon.core.IoCProvider
 import org.dukecon.domain.features.time.CurrentTimeProvider
 import org.dukecon.presentation.feature.event.EventDateListContract
-import javax.inject.Inject
 
 class EventDateView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         FrameLayout(context, attrs, defStyle), EventDateListContract.View {
@@ -24,26 +22,25 @@ class EventDateView @JvmOverloads constructor(context: Context, attrs: Attribute
         if (sessionDates.size > 1) {
             tabs.visibility = View.VISIBLE
         }
-
     }
 
     override fun showError(throwable: Throwable) {
 
     }
 
-    @Inject
-    lateinit var currentTimeProvider: CurrentTimeProvider
+    private val currentTimeProvider: CurrentTimeProvider by lazy {
+        IoCProvider.get<CurrentTimeProvider>()
+    }
 
-    @Inject
-    lateinit var presenter: EventDateListContract.Presenter
+    private val presenter: EventDateListContract.Presenter by lazy {
+        IoCProvider.get<EventDateListContract.Presenter>()
+    }
 
     private val adapter: SessionPagerAdapter
 
     var showFavoritesOnly: Boolean = false
 
     init {
-        context.getComponent<MainComponent>().sessionListComponent().inject(this)
-
         LayoutInflater.from(context).inflate(R.layout.view_sessions, this, true)
 
         adapter = SessionPagerAdapter()

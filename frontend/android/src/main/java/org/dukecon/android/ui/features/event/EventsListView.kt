@@ -6,12 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.ktor.util.date.GMTDate
-import org.dukecon.android.ui.ext.getComponent
-import org.dukecon.android.ui.features.main.MainComponent
+import org.dukecon.core.IoCProvider
 import org.dukecon.domain.features.time.CurrentTimeProvider
 import org.dukecon.presentation.feature.event.EventListContract
 import org.dukecon.presentation.model.EventView
-import javax.inject.Inject
 
 class EventsListView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
         RecyclerView(context, attrs, defStyle), EventListContract.View {
@@ -23,17 +21,17 @@ class EventsListView @JvmOverloads constructor(context: Context, attrs: Attribut
     private val adapter: EventsAdapter
     private var date: GMTDate? = null
 
-    @Inject
-    lateinit var presenter: EventListContract.Presenter
-    @Inject
-    lateinit var sessionNavigator: SessionNavigator
-    @Inject
-    lateinit var currentTimeProvider: CurrentTimeProvider
-
+    private val presenter by lazy {
+        IoCProvider.get<EventListContract.Presenter>()
+    }
+    private val sessionNavigator by lazy {
+        IoCProvider.get<SessionNavigator>()
+    }
+    private val currentTimeProvider by lazy {
+        IoCProvider.get<CurrentTimeProvider>()
+    }
 
     init {
-        context.getComponent<MainComponent>().sessionListComponent().inject(this)
-
         layoutParams = ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
@@ -57,7 +55,7 @@ class EventsListView @JvmOverloads constructor(context: Context, attrs: Attribut
         super.onDetachedFromWindow()
     }
 
-    private var showFavoritesOnly: Boolean = false;
+    private var showFavoritesOnly: Boolean = false
 
     fun setDate(date: GMTDate, showFavoritesOnly: Boolean) {
         this.showFavoritesOnly = showFavoritesOnly
