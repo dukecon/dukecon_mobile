@@ -20,7 +20,6 @@ class SessionizeApiImpl(override val conferenceInstanceId: String) : SessionizeA
             })
 
     private val client = HttpClient {
-        install(ExpectSuccess)
     }
 
     override suspend fun getSpeakers(): List<Speaker> =

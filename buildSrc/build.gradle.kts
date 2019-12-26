@@ -49,7 +49,7 @@ configurations.all {
             @Suppress("UnstableApiUsage")
             if (requested.group == "org.jetbrains.kotlin" &&
                     requested.module.name == "kotlin-compiler-embeddable"
-            ) useVersion("1.3.50")
+            ) useVersion("1.3.61")
         }
     }
 }
