@@ -1,9 +1,9 @@
 package org.dukecon.cache.model
 
 import io.ktor.util.date.GMTDate
+import io.ktor.util.date.Month
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
-import org.dukecon.date.parseDate
 
 @Suppress("PLUGIN_WARNING")
 @Serializable
@@ -31,4 +31,19 @@ data class EventModel(val id: String,
     val endsAt: GMTDate
         get() = endTime.parseDate()
 }
+
+fun String.parseDate(): GMTDate {
+    val year = substring(0, 4).toIntOrFormatError()
+    val month = substring(5, 7).toIntOrFormatError()
+    val day = substring(8, 10).toIntOrFormatError()
+
+    val hour = substring(11, 13).toIntOrFormatError()
+    val minute = substring(14, 16).toIntOrFormatError()
+    val second = substring(17, 19).toIntOrFormatError()
+
+    return GMTDate(second, minute, hour, day, Month.from(month - 1), year)
+}
+
+fun String.toIntOrFormatError() = toIntOrNull() ?: throw Error("Format of $this is not correct")
+
 

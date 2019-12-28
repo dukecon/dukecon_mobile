@@ -50,28 +50,28 @@ android {
             flavorDimensions("sessionize")
             applicationIdSuffix = ".bedcon"
             dependencies {
-                implementation(project(":common:sessionize"))
+                implementation(project(":common:backend:sessionize"))
             }
         }
         create("apachecon") {
             flavorDimensions("sessionize")
             applicationIdSuffix = ".apachecon"
             dependencies {
-                implementation(project(":common:dukecon"))
+                implementation(project(":common:backend:dukecon"))
             }
         }
         create("javaland") {
             flavorDimensions("sessionize")
             applicationIdSuffix = ".javaland"
             dependencies {
-                implementation(project(":common:dukecon"))
+                implementation(project(":common:backend:dukecon"))
             }
         }
         create("macoun") {
             flavorDimensions("sessionize")
             applicationIdSuffix = ".macoun"
             dependencies {
-                implementation(project(":common:macoun"))
+                implementation(project(":common:backend:macoun"))
             }
         }
     }

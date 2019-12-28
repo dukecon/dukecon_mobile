@@ -1,30 +1,19 @@
 plugins {
     kotlin("multiplatform")
+    id("com.android.library")
+    id("kotlin-android-extensions")
+    id("dev.icerock.mobile.multiplatform")
 }
 
-//https://youtrack.jetbrains.com/issue/KT-27170
-configurations.create("compileClasspath")
+android {
+    setDefaults()
+}
 
-kotlin {
-    targets {
-        jvm()
-    }
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(Libraries.kotlinStdLibCommon)
-                implementation(Libraries.kotlinxCoroutinesCommon)
-                implementation(Libraries.ktorUtilsCommon)
-            }
-        }
+dependencies {
+    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
+    mppLibrary(Deps.Libs.MultiPlatform.coroutines)
+    mppLibrary(Deps.Libs.MultiPlatform.ktorUtils)
 
-        val jvmMain by getting {
-            dependencies {
-                implementation(Libraries.kotlinStdLib)
-                implementation(Libraries.kotlinxCoroutinesCore)
-                implementation(Libraries.ktorUtilsJvm)
-                implementation("org.slf4j:slf4j-api:1.7.26")
-            }
-        }
-    }
+    mppLibrary(Deps.Libs.MultiPlatform.settings)
+    mppLibrary(Deps.Libs.MultiPlatform.napier)
 }

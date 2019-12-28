@@ -41,9 +41,12 @@ object Libraries {
 
     const val kotlinxCoroutinesCommon = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$kotlinxCoroutinesVersion"
     const val kotlinxCoroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
+    const val kotlinxCoroutinesNative = "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$kotlinxCoroutinesVersion"
 
     const val kotlinxSerializeCommon = "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlinxSerialization"
     const val kotlinxSerializeJvm = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinxSerialization"
+    const val kotlinxSerializeNative = "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlinxSerialization"
+
 
     const val ktorUtilsCommon = "io.ktor:ktor-utils:${Versions.ktor}"
     const val ktorCoreCommon = "io.ktor:ktor-client-core:${Versions.ktor}"
@@ -58,4 +61,5 @@ object Libraries {
     const val okhttInterceptorpJvm = "com.squareup.okhttp3:logging-interceptor:4.2.1"
 
     const val ktorUtilsJvm = "io.ktor:ktor-utils-jvm:${Versions.ktor}"
+    const val ktorUtilsNative = "io.ktor:ktor-utils-native:${Versions.ktor}"
 }
