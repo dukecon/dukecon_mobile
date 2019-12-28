@@ -6,16 +6,7 @@ include (":common:core")
 include (":common:domain")
 include (":common:data")
 include (":common:presentation")
-include (":common:dukecon")
-include (":common:macoun")
-include (":common:sessionize")
+include (":common:backend:dukecon")
+include (":common:backend:macoun")
+include (":common:backend:sessionize")
 include (":frontend:android")
-// include ':common:presentation'
-// include ':common:dukecon'
-// include ':common:sessionize'
-// include ':common:bedcon'
-// include ':common:bedconcombined'
-// include ':common:apachecon'
-// include ':common:apacheconcombined'
-// include ':android:app'
-

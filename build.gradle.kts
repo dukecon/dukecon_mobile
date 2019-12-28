@@ -1,5 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+plugins {
+    id("project-dependencies-graph-plugin")
+}
+
 buildscript {
     repositories {
         google()
@@ -20,17 +24,22 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        maven { url = uri("https://kotlin.bintray.com/kotlin") }
+        maven { url = uri("https://kotlin.bintray.com/kotlinx") }
+        maven { url = uri("https://dl.bintray.com/icerockdev/moko") }
+        maven { url = uri("https://kotlin.bintray.com/ktor") }
+        maven { url = uri("https://dl.bintray.com/aakira/maven") }
     }
+
+    // workaround for https://youtrack.jetbrains.com/issue/KT-27170
+    configurations.create("compileClasspath")
 
     tasks.withType<KotlinCompile> {
         kotlinOptions.jvmTarget = "1.8"
     }
 }
 
-tasks.register("clean").configure {
-    delete("build")
-}
-
-plugins {
-    id("project-dependencies-graph-plugin")
+tasks.register("clean", Delete::class).configure {
+    delete(rootProject.buildDir)
 }
