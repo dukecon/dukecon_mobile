@@ -1,0 +1,12 @@
+= Javaland Kotlin Multiplatform workshop
+Michal Harakal
+2020-01-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: asciidoc
+:idprefix:
+
+Wir bauen gemeinsam eine auf der DukeCon Kotlin Native Library basierende App, die das Vortragsprogramm der JavaLand anzeigen kann. Hier lernt ihr Kotlin/Native und Kotlin Multiplatform kennen und erfahrt, wie man eine KLib baut, sie konsumiert und auf unterschiedlichen Zielplattformen einsetzt.
+
+== Voraussetzungen:
+Ein Laptop mit IDE nach Wahl (IntelliJ, Eclipse etc.) und Android Studio, Android SDK, Emulator/Smartphone oder Apple Mac mit XCode.
