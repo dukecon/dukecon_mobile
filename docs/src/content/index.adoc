@@ -8,5 +8,15 @@ Michal Harakal
 
 Wir bauen gemeinsam eine auf der DukeCon Kotlin Native Library basierende App, die das Vortragsprogramm der JavaLand anzeigen kann. Hier lernt ihr Kotlin/Native und Kotlin Multiplatform kennen und erfahrt, wie man eine KLib baut, sie konsumiert und auf unterschiedlichen Zielplattformen einsetzt.
 
+== Workshop
+
+https://programm.javaland.eu/2020/#/scheduledEvent/591631[Javaland 2020 Workshop zu Kotlin/Native und -Multiplatform]
+
+=== Referenten
+
+https://harakal.de[Michal Harakal]
+
+https://programm.javaland.eu/2020/#/speaker/363284[Falk Sippach]
+
 == Voraussetzungen:
 Ein Laptop mit IDE nach Wahl (IntelliJ, Eclipse etc.) und Android Studio, Android SDK, Emulator/Smartphone oder Apple Mac mit XCode.
