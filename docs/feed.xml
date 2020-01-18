@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JBake</title>
+    <link>http://jbake.org</link>
+    <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
+    <description>JBake Bootstrap Template</description>
+    <language>en-gb</language>
+    <pubDate>Sa, 18 Jan 2020 17:07:11 +0100</pubDate>
+    <lastBuildDate>Sa, 18 Jan 2020 17:07:11 +0100</lastBuildDate>
+
+    <item>
+      <title>Javaland Kotlin Multiplatform workshop</title>
+      <link>http://jbake.org/index.html</link>
+      <pubDate>Fr, 17 Jan 2020 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">index.html</guid>
+      	<description>
+	&lt;div id=&quot;preamble&quot;&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wir bauen gemeinsam eine auf der DukeCon Kotlin Native Library basierende App, die das Vortragsprogramm der JavaLand anzeigen kann. Hier lernt ihr Kotlin/Native und Kotlin Multiplatform kennen und erfahrt, wie man eine KLib baut, sie konsumiert und auf unterschiedlichen Zielplattformen einsetzt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;voraussetzungen&quot;&gt;Voraussetzungen:&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Ein Laptop mit IDE nach Wahl (IntelliJ, Eclipse etc.) und Android Studio, Android SDK, Emulator/Smartphone oder Apple Mac mit XCode.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	</description>
+    </item>
+
+  </channel> 
+</rss>
