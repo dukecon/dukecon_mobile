@@ -1,9 +1,8 @@
-package org.dukecon.android.configuration
+package org.dukecon.android.ui.configuration
 
 import org.dukecon.data.source.ConferenceConfiguration
 
 object MacounConfiguration : ConferenceConfiguration {
-
     override val baseUrl: String
         get() = "https://backend.macoun.de/fahrplan"
     override val conferenceId: String

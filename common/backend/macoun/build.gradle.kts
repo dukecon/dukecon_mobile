@@ -1,93 +1,33 @@
 plugins {
     kotlin("multiplatform")
     id("kotlinx-serialization")
-    id(BuildPlugins.androidLibrary)
-    id(BuildPlugins.kotlinAndroidExtensions)
+    id("com.android.library")
+    id("kotlin-android-extensions")
+    id("dev.icerock.mobile.multiplatform")
 }
 
 android {
-    compileSdkVersion(AndroidSdk.compile)
-    defaultConfig {
-        minSdkVersion(AndroidSdk.min)
-        targetSdkVersion(AndroidSdk.target)
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
+    setDefaults()
 }
+
+val mppModules = listOf(
+        Modules.MultiPlatform.data,
+        Modules.MultiPlatform.core
+)
 
 dependencies {
-    implementation(Libraries.kotlinStdLib)
-    implementation(Libraries.kotlinxCoroutinesCore)
-    implementation(Libraries.kotlinxSerializeJvm)
-    implementation(Libraries.ktorUtilsJvm)
-    implementation(Libraries.ktorCoreJvm)
-    implementation(Libraries.ktorSerializationJvm)
-    implementation(Libraries.ktorLoggingJvm)
-    implementation(Libraries.ktorOkhttpJvm)
-    implementation("com.google.code.gson:gson:2.8.6")
+    androidLibrary(Deps.Libs.Android.gson)
+    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
+    mppLibrary(Deps.Libs.MultiPlatform.coroutines)
+    mppLibrary(Deps.Libs.MultiPlatform.serialization)
+    mppLibrary(Deps.Libs.MultiPlatform.ktorClient)
+    mppLibrary(Deps.Libs.MultiPlatform.ktorClientJson)
+    mppLibrary(Deps.Libs.MultiPlatform.ktorClientJsonSerializer)
+    mppLibrary(Deps.Libs.MultiPlatform.ktorUtils)
+    mppLibrary(Deps.Libs.MultiPlatform.ktorClientLogging)
 
+    mppLibrary(Deps.Libs.MultiPlatform.settings)
+    mppLibrary(Deps.Libs.MultiPlatform.napier)
 
-    implementation("org.slf4j:slf4j-api:1.7.28")
-
-    testImplementation(Libraries.kotlinTestJvm)
-    testImplementation(Libraries.kotlinxCoroutinesCore)
-    testImplementation(Libraries.kotlinTestJunit)
-}
-
-kotlin {
-    targets {
-        android()
-        jvm()
-    }
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(project(":common:data"))
-
-                implementation(Libraries.kotlinStdLibCommon)
-                implementation(Libraries.kotlinxCoroutinesCommon)
-                implementation(Libraries.ktorCoreCommon)
-                implementation(Libraries.ktorUtilsCommon)
-                implementation(Libraries.ktorSerializationCommon)
-                implementation(Libraries.ktorLoggingCommon)
-            }
-        }
-
-        val commonTest by getting {
-            dependencies {
-                implementation(Libraries.kotlinTestCommon)
-                implementation(Libraries.kotlinTestAnnotations)
-                implementation(Libraries.kotlinxCoroutinesCommon)
-
-            }
-        }
-
-        val jvmMain by getting {
-            dependencies {
-                implementation(Libraries.kotlinStdLib)
-                implementation(Libraries.kotlinxCoroutinesCore)
-                implementation(Libraries.kotlinxSerializeJvm)
-                implementation(Libraries.ktorUtilsJvm)
-                implementation(Libraries.ktorCoreJvm)
-                implementation(Libraries.ktorSerializationJvm)
-                implementation(Libraries.ktorLoggingJvm)
-                implementation(Libraries.ktorOkhttpJvm)
-                implementation("com.google.code.gson:gson:2.8.6")
-            }
-        }
-        val jvmTest by getting {
-            dependencies {
-                implementation(Libraries.kotlinTestJvm)
-                implementation(Libraries.kotlinxCoroutinesCore)
-                implementation(Libraries.kotlinTestJunit)
-            }
-        }
-    }
+    mppModules.forEach { mppModule(it) }
 }
