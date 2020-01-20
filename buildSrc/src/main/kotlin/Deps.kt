@@ -26,6 +26,9 @@ object Deps {
             val lifecycle = AndroidLibrary(
                     name = "androidx.lifecycle:lifecycle-extensions:${Versions.Libs.Android.lifecycle}"
             )
+            val gson = AndroidLibrary(
+                    name = "com.google.code.gson:gson:2.8.6"
+            )
         }
 
         object MultiPlatform {

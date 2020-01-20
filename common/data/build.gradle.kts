@@ -16,6 +16,7 @@ val mppModules = listOf(
 )
 
 dependencies {
+
     mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
     mppLibrary(Deps.Libs.MultiPlatform.coroutines)
     mppLibrary(Deps.Libs.MultiPlatform.serialization)
