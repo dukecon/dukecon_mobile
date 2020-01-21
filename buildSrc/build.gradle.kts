@@ -6,11 +6,9 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
-
     jcenter()
     google()
-
+    mavenCentral()
     maven { url = uri("https://dl.bintray.com/icerockdev/plugins") }
 }
 
@@ -27,6 +25,10 @@ gradlePlugin {
         register("DependencyGraphGenerator") {
             id = "project-dependencies-graph-plugin"
             implementationClass = "plugins.graph.DependencyGraphGeneratorPlugin"
+        }
+        register("KtorOpenApiGenerator") {
+            id = "ktor-open-api-plugin"
+            implementationClass = "org.dukecon.plugin.openapi.NetworkGeneratorPlugin"
         }
     }
 }
@@ -48,6 +50,8 @@ dependencies {
     implementation("com.android.tools.build:gradle:3.5.3")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
     implementation("guru.nidi:graphviz-java:0.12.1")
+    implementation("org.openapitools:openapi-generator-gradle-plugin:4.2.2")
+    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
 }
 
 configurations.all {
