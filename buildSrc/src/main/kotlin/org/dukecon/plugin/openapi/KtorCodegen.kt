@@ -13,7 +13,7 @@ class KtorCodegen : AbstractKotlinCodegen() {
      */
     init {
         artifactId = "kotlin-ktor-client"
-        packageName = "dev.icerock.moko.network.generated"
+        packageName = "org.dukecon.network.generated"
 
         typeMapping["array"] = "kotlin.collections.List"
         typeMapping["number"] = "kotlin.Double"
@@ -33,8 +33,6 @@ class KtorCodegen : AbstractKotlinCodegen() {
 
         modelTemplateFiles["model.mustache"] = ".kt"
         apiTemplateFiles["api.mustache"] = ".kt"
-        modelDocTemplateFiles["model_doc.mustache"] = ".md"
-        apiDocTemplateFiles["api_doc.mustache"] = ".md"
         apiPackage = "$packageName.apis"
         modelPackage = "$packageName.models"
     }

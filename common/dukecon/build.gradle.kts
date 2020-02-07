@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("kotlinx-serialization")
+    id("ktor-open-api-plugin")
     id("com.android.library")
     id("kotlin-android-extensions")
     id("dev.icerock.mobile.multiplatform")
@@ -50,5 +51,5 @@ publishing {
             name.set("dukecon mobile sdk")
             url.set("https://github.com/dukecon/dukecon_mobile")
         }
-    }   
+    }
 }
