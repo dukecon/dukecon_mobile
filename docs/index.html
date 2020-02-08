@@ -4,13 +4,17 @@
     <meta charset="utf-8"/>
     <title>JBake</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-    <meta name="generator" content="JBake">
+    <meta name="description" content="Kotlin multiplatform tutorial">
+    <meta name="author" content="Java user group Darmstadt">
+    <meta name="keywords" content="kotlin, multiplatform, mobile, apps, dukecon">
 
     <!-- Le styles -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="css/asciidoctor.css" rel="stylesheet">
     <link href="css/base.css" rel="stylesheet">
     <link href="css/prettify.css" rel="stylesheet">
@@ -27,46 +31,43 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
     <link rel="shortcut icon" href="favicon.ico">
   </head>
+  
   <body onload="prettyPrint()">
-    <div id="wrap">
-	
-	<!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="">JBake</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="feed.xml">Subscribe</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Dukecon.org</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">Introduction</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Kotlin MPP Library</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Integration JVM</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Integration Android</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Integration iOS</a>
       </div>
     </div>
-    <div class="container">
-	<div class="page-header">
-		<h1>Blog</h1>
-	</div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="impressum.html">Impressum <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dsvgo.html">Datenschutz <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/dukecon/dukecon_mobile">Github</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
   			<a href="index.html"><h1>Javaland Kotlin Multiplatform workshop</h1></a>
   			<p>17 Januar 2020</p>
   			<p><div id="preamble">
@@ -103,24 +104,27 @@
 </div></p>
 	
 	<hr />
-	
-	<p>Older posts are available in the <a href="archive.html">archive</a>.</p>
 
-		</div>
-		<div id="push"></div>
+      </div>
     </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+		<div id="push"></div>
     
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.4</a></p>
+        <p class="muted credit">&copy; 2015-2020 by JUG DA et al.</a></p>
       </div>
     </div>
     
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/prettify.js"></script>
     
   </body>

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JBake</title>
-    <link>http://jbake.org</link>
-    <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://dukecon.github.io/dukecon_mobile/</link>
+    <atom:link href="https://dukecon.github.io/dukecon_mobile//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sa, 18 Jan 2020 21:57:16 +0100</pubDate>
-    <lastBuildDate>Sa, 18 Jan 2020 21:57:16 +0100</lastBuildDate>
+    <pubDate>Sa, 8 Feb 2020 15:52:19 +0100</pubDate>
+    <lastBuildDate>Sa, 8 Feb 2020 15:52:19 +0100</lastBuildDate>
 
     <item>
       <title>Javaland Kotlin Multiplatform workshop</title>
-      <link>http://jbake.org/index.html</link>
+      <link>https://dukecon.github.io/dukecon_mobile//index.html</link>
       <pubDate>Fr, 17 Jan 2020 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">index.html</guid>
       	<description>
