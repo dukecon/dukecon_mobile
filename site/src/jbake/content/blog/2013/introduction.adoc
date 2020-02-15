@@ -1,0 +1,16 @@
+= Einführung
+Michal Harakal
+2020-02-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+Wilkommen bei *Kotlin Multiplatfom Javaland Workshop*
+
+Das Ziel ist mit *Kotlin Multiplatform* weiter (*KMP*) eine einfache App zu bauen, die das Program der _Javaland Konferenz 2020_ anzeigt. Dabei das Lernen vom *KMP* im Vordegrung steht.
+
+WARNING: *Kotlin Multiplatform* befindet sich gerade (März.2020) noch in *preliminary state* in dieses Projekt versucht die aktuelle Information an aktuellen Stand zu halten, weil vielle gegoogelte Informationen schon bereits veraltet sind.
+
+NOTE: Wir empfehlen, ja es ist inzwischen unüglich, die offizielle Doku von Jetbrains zum Thema *KMP* als die erste Anlaufstelle.
+
