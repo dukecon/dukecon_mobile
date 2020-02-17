@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.preference.PreferenceManager
 
-
 @SuppressLint("StaticFieldLeak")
 var appAndroidContext: Context? = null
 

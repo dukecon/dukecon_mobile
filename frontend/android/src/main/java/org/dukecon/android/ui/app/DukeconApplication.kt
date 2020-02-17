@@ -18,9 +18,9 @@ class DukeconApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         appAndroidContext = this
+        IoCRegister.registerTimeProvider()
         IoCRegister.registerEventDetail(this)
         IoCRegister.registerSpeakerDetail(this)
-        IoCRegister.registerTimeProvider()
         initLogger()
     }
 

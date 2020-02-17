@@ -42,7 +42,7 @@ open class EventListPresenter constructor(private val currentTimeProvider: Curre
 
         this.date = conferenceDay
         this.showFavoritesOnly = showFavoritesOnly
-        launch(coroutineContext) {
+        launch {
             val events = conferenceRepository.getEvents(date)
             val filtered = events.filter {
                 if (showFavoritesOnly) {
