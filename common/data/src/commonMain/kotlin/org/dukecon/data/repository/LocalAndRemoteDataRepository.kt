@@ -119,11 +119,15 @@ class LocalAndRemoteDataRepository constructor(
 
     override suspend fun getEventDates(): List<GMTDate> {
         val dataStore = localDataStore
-        val events = dataStore.getEvents()
-        return events.distinctBy { it.startTime.dayOfMonth }
-                .map {
-                    it.startTime
-                }.sortedBy { it.dayOfMonth }
+        try {
+            val events = dataStore.getEvents()
+            return events.distinctBy { it.startTime.dayOfMonth }
+                    .map {
+                        it.startTime
+                    }.sortedBy { it.dayOfMonth }
+        }  catch (e: Exception) {
+            return emptyList()
+        }
     }
 
     override suspend fun saveEvents(events: List<Event>) {

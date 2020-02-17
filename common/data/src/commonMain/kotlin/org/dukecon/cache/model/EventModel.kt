@@ -33,15 +33,20 @@ data class EventModel(val id: String,
 }
 
 fun String.parseDate(): GMTDate {
-    val year = substring(0, 4).toIntOrFormatError()
-    val month = substring(5, 7).toIntOrFormatError()
-    val day = substring(8, 10).toIntOrFormatError()
+    try {
+        val year = substring(0, 4).toIntOrFormatError()
+        val month = substring(5, 7).toIntOrFormatError()
+        val day = substring(8, 10).toIntOrFormatError()
 
-    val hour = substring(11, 13).toIntOrFormatError()
-    val minute = substring(14, 16).toIntOrFormatError()
-    val second = substring(17, 19).toIntOrFormatError()
+        val hour = substring(11, 13).toIntOrFormatError()
+        val minute = substring(14, 16).toIntOrFormatError()
+        val second = substring(17, 19).toIntOrFormatError()
 
-    return GMTDate(second, minute, hour, day, Month.from(month - 1), year)
+        return GMTDate(second, minute, hour, day, Month.from(month - 1), year)
+    } catch (e:Error) {
+        return GMTDate(0)
+    }
+
 }
 
 fun String.toIntOrFormatError() = toIntOrNull() ?: throw Error("Format of $this is not correct")

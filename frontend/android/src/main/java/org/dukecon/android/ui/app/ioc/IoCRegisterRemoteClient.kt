@@ -11,6 +11,7 @@ import org.dukecon.core.IoCProvider
 import org.dukecon.data.source.ConferenceConfiguration
 import org.dukecon.domain.aspects.auth.AuthManager
 import org.dukecon.domain.repository.ConferenceRepository
+import org.dukecon.time.CurrentDataTimeProvider
 import org.slf4j.LoggerFactory
 import java.security.cert.X509Certificate
 import java.util.concurrent.TimeUnit
@@ -53,7 +54,7 @@ object IoCRegisterRemoteClient {
             e.printStackTrace()
         }
 
-        val interceptor = HttpLoggingInterceptor( object : HttpLoggingInterceptor.Logger {
+        val interceptor = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
             override fun log(message: String) {
                 LOGGER.debug("XXX = $message")
             }
@@ -74,8 +75,14 @@ object IoCRegisterRemoteClient {
         IoCProvider.registerType(AuthManager::class, DummyDukeconAuthManager())
         val conferenceConfiguration = IoCProvider.get<ConferenceConfiguration>()
         val okHttpClient = provideNonCachedOkHttpClient(context)
+        val currentTimeProvider = IoCProvider.get<org.dukecon.domain.features.time.CurrentTimeProvider>()
         IoCProvider.registerType(ConferenceRepository::class,
-                RepositoryFactory.createConferenceRepository(conferenceConfiguration, okHttpClient))
+                RepositoryFactory.createConferenceRepository(
+                        conferenceConfiguration,
+                        okHttpClient,
+                        object : CurrentDataTimeProvider {
+                            override fun currentTimeMillis(): Long = currentTimeProvider.currentTimeMillis()
+                        }))
 
     }
 }

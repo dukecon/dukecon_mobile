@@ -16,11 +16,13 @@ import org.dukecon.domain.repository.ConferenceRepository
 import org.dukecon.remote.api.DukeconApi
 import org.dukecon.remote.mapper.*
 import org.dukecon.remote.store.DukeconConferenceRemote
+import org.dukecon.time.CurrentDataTimeProvider
 
 object RepositoryFactory {
     fun createConferenceRepository(
             conferenceConfiguration: ConferenceConfiguration,
-            okHttpClient: OkHttpClient
+            okHttpClient: OkHttpClient,
+            currentTimeProvider: CurrentDataTimeProvider
     ): ConferenceRepository {
 
         val api = DukeconApi(
@@ -40,7 +42,7 @@ object RepositoryFactory {
 
         return LocalAndRemoteDataRepository(
                 remoteDataStore = EventRemoteDataStore(conferenceRemote),
-                localDataStore = EventCacheDataStore(JsonSerializedConferenceDataCache()),
+                localDataStore = EventCacheDataStore(JsonSerializedConferenceDataCache(currentTimeProvider)),
                 eventMapper = EventMapper(),
                 speakerMapper = SpeakerMapper(TwitterLinks()),
                 roomMapper = RoomMapper(),
