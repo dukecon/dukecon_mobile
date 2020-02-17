@@ -5,17 +5,21 @@ import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 import org.dukecon.cache.model.ConferenceModel
 import org.dukecon.cache.storage.ApplicationStorage
+import org.dukecon.time.CurrentDataTimeProvider
 import kotlin.native.concurrent.ThreadLocal
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 @ThreadLocal
-object ConferenceModelJsonSerializer {
+class ConferenceModelJsonSerializer(val currentTimeProvider: CurrentDataTimeProvider) {
 
     private val storage: ApplicationStorage = ApplicationStorage()
 
     var conference: ConferenceModel by storage(ConferenceModel.serializer()) { ConferenceModel() }
 
+    fun lastUpadte(): Long? {
+        return storage.getString("lastCacheTimeStamp")?.toLongOrNull()
+    }
 
     @UseExperimental(UnstableDefault::class)
     inline operator fun <reified T> ApplicationStorage.invoke(
@@ -28,6 +32,7 @@ object ConferenceModelJsonSerializer {
             val key = property.name
             currentValue = value
             putString(key, Json.stringify(serializer, value))
+            putString("lastCacheTimeStamp", currentTimeProvider.currentTimeMillis().toString())
         }
 
         override fun getValue(thisRef: ConferenceModelJsonSerializer, property: KProperty<*>): T {
