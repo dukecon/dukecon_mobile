@@ -1,0 +1,16 @@
+PODS:
+  - dukecon (1.0)
+
+DEPENDENCIES:
+  - dukecon (from `../../common/dukecon/`)
+
+EXTERNAL SOURCES:
+  dukecon:
+    :path: "../../common/dukecon/"
+
+SPEC CHECKSUMS:
+  dukecon: 0b8fadf9fb45dd58be2a71a6f9a72c3309fd1652
+
+PODFILE CHECKSUM: 671d16037949b3f17c669de1160454877b053fdb
+
+COCOAPODS: 1.8.4

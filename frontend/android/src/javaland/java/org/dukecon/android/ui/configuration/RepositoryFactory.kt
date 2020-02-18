@@ -40,9 +40,11 @@ object RepositoryFactory {
                 roomEntityMapper = RoomEntityMapper()
         )
 
+        val cache = JsonSerializedConferenceDataCache(currentTimeProvider)
         return LocalAndRemoteDataRepository(
                 remoteDataStore = EventRemoteDataStore(conferenceRemote),
-                localDataStore = EventCacheDataStore(JsonSerializedConferenceDataCache(currentTimeProvider)),
+                localDataStore = EventCacheDataStore(cache),
+                conferenceDataCache = cache,
                 eventMapper = EventMapper(),
                 speakerMapper = SpeakerMapper(TwitterLinks()),
                 roomMapper = RoomMapper(),

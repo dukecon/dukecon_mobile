@@ -82,7 +82,7 @@ class EventDetailPresenter constructor(
         }
     }
 
-    fun refreshDataFromRepo() {
+    private fun refreshDataFromRepo() {
         launch {
             conferenceRepository.getEvent(sessionId)?.let { event ->
                 handleGetEventSuccess(event)
