@@ -80,6 +80,8 @@ android {
             variant.resValue("string", "versionInfo", variant.versionName)
         }
     })
+
+
 }
 /*
     def buildTime = new Date().format("yyyy-MM-dd'T'HH:mm:ss'Z'", TimeZone.getTimeZone("UTC"))
@@ -125,7 +127,6 @@ dependencies {
     implementation("io.coil-kt:coil:0.6.1")
     implementation("androidx.browser:browser:1.0.0")
     implementation("androidx.multidex:multidex:2.0.1")
-
 
     implementation("org.slf4j:slf4j-api:1.7.28")
     implementation ("com.github.tony19:logback-android:1.3.0-3")

@@ -1,6 +1,8 @@
 package org.dukecon.data.repository
 
 import io.ktor.util.date.GMTDate
+import org.dukecon.aspects.logging.LogLevel
+import org.dukecon.aspects.logging.log
 import org.dukecon.data.mapper.*
 import org.dukecon.data.model.EventEntity
 import org.dukecon.data.model.FavoriteEntity
@@ -85,13 +87,17 @@ class LocalAndRemoteDataRepository constructor(
     }
 
     override suspend fun getEvent(id: String): Event {
+        log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "getEvent=${id} ==>")
+
         val dataStore = localDataStore
 
         val speakers = dataStore.getSpeakers().map { speakerMapper.mapFromEntity(it) }
         val favorites = dataStore.getFavorites().map { favoriteMapper.mapFromEntity(it) }
         val metaData = metadataMapper.mapFromEntity(dataStore.getMetaData())
 
-        return eventMapper.mapFromEntity(dataStore.getEvents().first { it.id == id }, speakers, favorites, metaData)
+        return eventMapper.mapFromEntity(dataStore.getEvents().first { it.id == id }, speakers, favorites, metaData).also {
+            log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "getEvent=${id} <==")
+        }
     }
 
     override suspend fun getRooms(): List<Room> {
@@ -118,15 +124,20 @@ class LocalAndRemoteDataRepository constructor(
     }
 
     override suspend fun getEventDates(): List<GMTDate> {
+        log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "getEventDates==>")
         val dataStore = localDataStore
-        try {
+        return try {
             val events = dataStore.getEvents()
-            return events.distinctBy { it.startTime.dayOfMonth }
+            events.distinctBy { it.startTime.dayOfMonth }
                     .map {
                         it.startTime
-                    }.sortedBy { it.dayOfMonth }
-        }  catch (e: Exception) {
-            return emptyList()
+                    }.sortedBy { it.dayOfMonth }.also {
+                        log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "getEventDates<==")
+                    }
+        } catch (e: Exception) {
+            emptyList<GMTDate>().also {
+                log(LogLevel.ERROR, "LocalAndRemoteDataRepository", "getEventDates<==")
+            }
         }
     }
 
@@ -154,6 +165,7 @@ class LocalAndRemoteDataRepository constructor(
 
     override suspend fun update() {
         try {
+            log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update==>")
             val events = remoteDataStore.getEvents()
             localDataStore.saveEvents(events)
             localDataStore.saveMetaData(remoteDataStore.getMetaData())
@@ -162,7 +174,9 @@ class LocalAndRemoteDataRepository constructor(
             localDataStore.saveSpeakers(remoteDataStore.getSpeakers())
 
             callRefreshListeners()
+            log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update<==")
         } catch (e: Exception) {
+            log(LogLevel.ERROR, "LocalAndRemoteDataRepository", "update", e)
             localDataStore.saveEvents(emptyList())
         }
     }
