@@ -3,7 +3,7 @@ package org.dukecon.android.ui.features.timemachine
 import org.dukecon.domain.features.time.CurrentTimeProvider
 import java.util.*
 
-class ReleaseCurrentTimeProvider : CurrentTimeProvider() {
+class ReleaseCurrentTimeProvider : CurrentTimeProvider {
 
     // todo add proper support for locales
     override fun currentTimeMillis(): Long {

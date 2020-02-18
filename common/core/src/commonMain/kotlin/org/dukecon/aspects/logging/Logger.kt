@@ -1,4 +1,4 @@
-package org.dukecon.domain.aspects.log
+package org.dukecon.aspects.logging
 
 sealed class LogLevel {
     object DEBUG : LogLevel()
@@ -7,9 +7,6 @@ sealed class LogLevel {
     object ERROR : LogLevel()
 }
 
-@Suppress("NO_ACTUAL_FOR_EXPECT")
 expect fun log(level: LogLevel, tag: String, message: String)
 
-@Suppress("NO_ACTUAL_FOR_EXPECT")
 expect fun log(level: LogLevel, tag: String, message: String, error: Throwable)
-
