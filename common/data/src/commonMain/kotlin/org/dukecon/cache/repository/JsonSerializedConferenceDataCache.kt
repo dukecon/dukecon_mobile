@@ -148,15 +148,15 @@ class JsonSerializedConferenceDataCache(private val currentTimeProvider: Current
 
     //"yyyy-MM-dd'T'HH:mm:ss"
     private fun toIsoTime(startTime: GMTDate): String {
-        return "${startTime.year}-${twoDigits(startTime.month.ordinal + 1 )}-${twoDigits(startTime.dayOfMonth)}T${twoDigits(startTime.hours)}:${twoDigits(startTime.minutes)}:${twoDigits(startTime.seconds)}"
+        return "${startTime.year}-${twoDigits(startTime.month.ordinal + 1)}-${twoDigits(startTime.dayOfMonth)}T${twoDigits(startTime.hours)}:${twoDigits(startTime.minutes)}:${twoDigits(startTime.seconds)}"
     }
 
     private fun twoDigits(value: Int): String {
-       if (value >= 10) {
-           return value.toString()
-       } else {
-           return "0$value"
-       }
+        if (value >= 10) {
+            return value.toString()
+        } else {
+            return "0$value"
+        }
     }
 
     override fun getEvents(): List<EventEntity> {
@@ -218,6 +218,11 @@ class JsonSerializedConferenceDataCache(private val currentTimeProvider: Current
     override fun saveMetaData(metaDataEntity: MetaDataEntity) {
         cachedMetaData = metaDataEntity
         json.conference = json.conference.copy(metaData = toMetadataModel(metaDataEntity))
+    }
+
+    override fun isCacheValid(): Boolean {
+        val currentTime = currentTimeProvider.currentTimeMillis()
+        return (json.lastUpadte() ?: currentTime - currentTime < 10 * 60 * 1000)
     }
 
     override fun clearEvents() {

@@ -21,9 +21,6 @@ open class EventListPresenter constructor(private val currentTimeProvider: Curre
     override fun onAttach(view: EventListContract.View) {
         this.view = view
         conferenceRepository.onRefreshListeners += onRefreshListener
-        launch(coroutineContext) {
-            conferenceRepository.update()
-        }
     }
 
     override fun onDetach() {

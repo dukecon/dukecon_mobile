@@ -20,6 +20,7 @@ import org.dukecon.domain.repository.ConferenceRepository
 class LocalAndRemoteDataRepository constructor(
         private val remoteDataStore: EventRemoteDataStore,
         private val localDataStore: EventCacheDataStore,
+        private val conferenceDataCache: ConferenceDataCache,
         private val eventMapper: EventMapper,
         private val speakerMapper: SpeakerMapper,
         private val roomMapper: RoomMapper,
@@ -165,6 +166,10 @@ class LocalAndRemoteDataRepository constructor(
 
     override suspend fun update() {
         try {
+            if (conferenceDataCache.isCacheValid()) {
+                // skip update, cache is valid
+                return
+            }
             log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update==>")
             val events = remoteDataStore.getEvents()
             localDataStore.saveEvents(events)
@@ -195,6 +200,8 @@ class LocalAndRemoteDataRepository constructor(
     }
 
     override suspend fun getEvents(day: Int): List<Event> {
+        log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "getEvents=${day} ==>")
+
         val dataStore = localDataStore
 
         val speakers = dataStore.getSpeakers().map { speakerMapper.mapFromEntity(it) }
@@ -213,6 +220,8 @@ class LocalAndRemoteDataRepository constructor(
             eventMapper.mapFromEntity(it, speakers, favorites, metaData)
         }.sortedBy {
             it.startTime
+        }.also {
+            log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "events=${it.size} getEvents=${day} <==")
         }
     }
 

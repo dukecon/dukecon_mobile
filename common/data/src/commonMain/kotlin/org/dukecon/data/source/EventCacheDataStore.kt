@@ -14,7 +14,6 @@ open class EventCacheDataStore constructor(private val conferenceDataCache: Conf
         return conferenceDataCache.getMetaData()
     }
 
-
     override fun submitFeedback(feedback: FeedbackEntity) {
         throw UnsupportedOperationException()
     }
@@ -26,7 +25,6 @@ open class EventCacheDataStore constructor(private val conferenceDataCache: Conf
     override fun getFavorites(): List<FavoriteEntity> {
         return conferenceDataCache.getFavorites()
     }
-
 
     override suspend fun getRooms(): List<RoomEntity> {
         return conferenceDataCache.getRooms()
