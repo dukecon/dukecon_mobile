@@ -1,3 +1,9 @@
+import io.ktor.util.date.GMTDate
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import org.dukecon.aspects.logging.LogLevel
 import org.dukecon.aspects.logging.log
 import org.dukecon.cache.repository.JsonSerializedConferenceDataCache
@@ -8,14 +14,16 @@ import org.dukecon.data.source.EventCacheDataStore
 import org.dukecon.data.source.EventRemoteDataStore
 import org.dukecon.date.now
 import org.dukecon.domain.aspects.twitter.TwitterLinks
-import org.dukecon.domain.repository.ConferenceRepository
+import org.dukecon.domain.model.Event
 import org.dukecon.remote.api.DukeconApi
 import org.dukecon.remote.mapper.*
 import org.dukecon.remote.store.DukeconConferenceRemote
 import org.dukecon.time.CurrentDataTimeProvider
 
-object RepositoryFactory {
-    fun createConferenceRepositoryInstance(): ConferenceRepository {
+private object RepositoryFactory {
+    val repository: LocalAndRemoteDataRepository
+
+    init {
         log(LogLevel.DEBUG, "RepositoryFactory", "start")
         val api = DukeconApi(
                 endpoint = conferenceConfiguration.baseUrl,
@@ -35,7 +43,7 @@ object RepositoryFactory {
                 return now()
             }
         })
-        return LocalAndRemoteDataRepository(
+        repository = LocalAndRemoteDataRepository(
                 remoteDataStore = EventRemoteDataStore(conferenceRemote),
                 localDataStore = EventCacheDataStore(cache),
                 conferenceDataCache = cache,
@@ -45,6 +53,27 @@ object RepositoryFactory {
                 feedbackMapper = FeedbackMapper(),
                 favoriteMapper = FavoriteMapper(),
                 metadataMapper = MetaDateMapper())
+    }
+}
+
+class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
+    companion object {
+        internal val DB_TIMESTAMP_KEY = "DbTimestampKey"
+    }
+
+    init {
+        //ensureNeverFrozen()
+        mainScope.launch {
+            viewUpdate(RepositoryFactory.repository.getEvents(17))
+        }
+    }
+
+    fun getEventsFromNetwork() {
+        ktorScope.launch {
+            RepositoryFactory.repository.update()
+            RepositoryFactory.repository.getEvents(17)
+            viewUpdate(RepositoryFactory.repository.getEvents(17))
+        }
     }
 }
 

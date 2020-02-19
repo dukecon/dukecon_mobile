@@ -1,0 +1,25 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+use_frameworks!
+platform :ios, '11.0'
+
+# workaround for https://github.com/CocoaPods/CocoaPods/issues/8073
+# need for correct invalidate of cache MultiPlatformLibrary.framework
+install! 'cocoapods', :disable_input_output_paths => true
+
+pre_install do |installer|
+  # We represent a Kotlin/Native module to CocoaPods as a vendored framework.
+  # CocoaPods needs access to such frameworks during installation process to obtain
+  # their type (static or dynamic) and configure the Xcode project accordingly.
+  # Build MultiPlatformLibrary framework to correct install Pod
+  puts "prepare MultiPlatformLibrary.framework (require some time...)"
+  `cd ../../ && ./gradlew :common:dukecon:syncMultiPlatformLibraryDebugFrameworkIosX64`
+  puts "preparing MultiPlatformLibrary.framework complete"
+end
+
+target 'iosApp' do
+  pod 'MultiPlatformLibrary', :path => '../../common/dukecon'
+end
