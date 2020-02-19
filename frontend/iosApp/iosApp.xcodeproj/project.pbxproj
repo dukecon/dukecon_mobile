@@ -7,39 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520479EDCD0429FE82E2E124 /* libPods-iosApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC61E09641B774893BF67C37 /* libPods-iosApp.a */; };
-		6720DBB322BA2AB40085C08D /* SpeakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6720DBB222BA2AB40085C08D /* SpeakerViewController.swift */; };
+		33FFE62311EFD7D1229EED2E /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC0187F58DEFCBD236CC469 /* Pods_iosApp.framework */; };
 		6756D13923AA34F100321D71 /* app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA56719231D89DE00841F29 /* app.framework */; };
 		6756D13A23AA34F100321D71 /* app.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA56719231D89DE00841F29 /* app.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C6E95C4232040BE002473ED /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6E95C1232040BE002473ED /* OpenSans-Semibold.ttf */; };
 		8C6E95C5232040BE002473ED /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6E95C2232040BE002473ED /* OpenSans-Light.ttf */; };
 		8C6E95C6232040BE002473ED /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6E95C3232040BE002473ED /* OpenSans-Regular.ttf */; };
 		8C6E95D42321949C002473ED /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6E95D32321949C002473ED /* LaunchImage.xib */; };
-		8CA5672F231D9C4000841F29 /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5672D231D9C4000841F29 /* SpeakersViewController.swift */; };
-		8CA56730231D9C4000841F29 /* SpeakersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5672E231D9C4000841F29 /* SpeakersViewController.xib */; };
-		8CA56733231D9E7B00841F29 /* SpeakersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA56731231D9E7B00841F29 /* SpeakersTableViewCell.swift */; };
-		8CA56734231D9E7B00841F29 /* SpeakersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA56732231D9E7B00841F29 /* SpeakersTableViewCell.xib */; };
-		8CA5673C231DAD2100841F29 /* SpeakerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5673B231DAD2100841F29 /* SpeakerViewController.xib */; };
-		8CA56740231DB72F00841F29 /* SpeakerHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5673E231DB72F00841F29 /* SpeakerHeaderTableViewCell.swift */; };
-		8CA56741231DB72F00841F29 /* SpeakerHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5673F231DB72F00841F29 /* SpeakerHeaderTableViewCell.xib */; };
-		8CA56744231DB75000841F29 /* SpeakerEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA56742231DB75000841F29 /* SpeakerEventTableViewCell.swift */; };
-		8CA56745231DB75000841F29 /* SpeakerEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA56743231DB75000841F29 /* SpeakerEventTableViewCell.xib */; };
-		8CA5674F231DC9D600841F29 /* SchedulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5674D231DC9D600841F29 /* SchedulesViewController.swift */; };
-		8CA56750231DC9D600841F29 /* SchedulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA5674E231DC9D600841F29 /* SchedulesViewController.xib */; };
-		8CA56753231DC9EF00841F29 /* SchedulesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA56751231DC9EF00841F29 /* SchedulesTableViewCell.swift */; };
-		8CA56754231DC9EF00841F29 /* SchedulesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA56752231DC9EF00841F29 /* SchedulesTableViewCell.xib */; };
 		8CA5675D231ED55600841F29 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5675C231ED55600841F29 /* Utils.swift */; };
 		8CFBE39B231EF1B300CD4A3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFBE39A231EF1B300CD4A3C /* Images.xcassets */; };
-		8CFBE39E231F0CB900CD4A3C /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBE39C231F0CB900CD4A3C /* SessionViewController.swift */; };
-		8CFBE39F231F0CB900CD4A3C /* SessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFBE39D231F0CB900CD4A3C /* SessionViewController.xib */; };
-		8CFBE3A2231F0CD100CD4A3C /* SessionSpeakerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBE3A0231F0CD100CD4A3C /* SessionSpeakerTableViewCell.swift */; };
-		8CFBE3A3231F0CD100CD4A3C /* SessionSpeakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFBE3A1231F0CD100CD4A3C /* SessionSpeakerTableViewCell.xib */; };
-		8CFBE3A6231F0CE200CD4A3C /* SessionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBE3A4231F0CE200CD4A3C /* SessionHeaderTableViewCell.swift */; };
-		8CFBE3A7231F0CE200CD4A3C /* SessionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFBE3A5231F0CE200CD4A3C /* SessionHeaderTableViewCell.xib */; };
-		8CFBE3AB231F323F00CD4A3C /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBE3A9231F323F00CD4A3C /* VenueViewController.swift */; };
-		8CFBE3AC231F323F00CD4A3C /* VenueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFBE3AA231F323F00CD4A3C /* VenueViewController.xib */; };
-		8CFBE3B8231FBDB200CD4A3C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBE3B6231FBDB100CD4A3C /* FavoritesViewController.swift */; };
-		8CFBE3B9231FBDB200CD4A3C /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFBE3B7231FBDB200CD4A3C /* FavoritesViewController.xib */; };
 		8CFBE3BB231FEBEF00CD4A3C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBE3BA231FEBEF00CD4A3C /* Model.swift */; };
 		F861D7E1207FA40F0085E80D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861D7E0207FA40F0085E80D /* AppDelegate.swift */; };
 		F861D7EB207FA4100085E80D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F861D7E9207FA4100085E80D /* LaunchScreen.storyboard */; };
@@ -72,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		670AF93823397D6200DED127 /* app.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = app.framework; path = ../app/build/bin/ios/debugFramework/app.framework; sourceTree = "<group>"; };
-		6720DBB222BA2AB40085C08D /* SpeakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerViewController.swift; sourceTree = "<group>"; };
+		6CC0187F58DEFCBD236CC469 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D944F53711B782C26FA1473 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7D8DD2E7E66841CE9C294D0E /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		8C6E95C1232040BE002473ED /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -81,33 +57,9 @@
 		8C6E95D32321949C002473ED /* LaunchImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchImage.xib; sourceTree = "<group>"; };
 		8CA56719231D89DE00841F29 /* app.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = app.framework; path = ../app/build/bin/ios/debugFramework/app.framework; sourceTree = "<group>"; };
 		8CA56726231D993000841F29 /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CA5672D231D9C4000841F29 /* SpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewController.swift; sourceTree = "<group>"; };
-		8CA5672E231D9C4000841F29 /* SpeakersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakersViewController.xib; sourceTree = "<group>"; };
-		8CA56731231D9E7B00841F29 /* SpeakersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersTableViewCell.swift; sourceTree = "<group>"; };
-		8CA56732231D9E7B00841F29 /* SpeakersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakersTableViewCell.xib; sourceTree = "<group>"; };
-		8CA5673B231DAD2100841F29 /* SpeakerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerViewController.xib; sourceTree = "<group>"; };
-		8CA5673E231DB72F00841F29 /* SpeakerHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeakerHeaderTableViewCell.swift; path = Speaker/SpeakerHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		8CA5673F231DB72F00841F29 /* SpeakerHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SpeakerHeaderTableViewCell.xib; path = Speaker/SpeakerHeaderTableViewCell.xib; sourceTree = "<group>"; };
-		8CA56742231DB75000841F29 /* SpeakerEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeakerEventTableViewCell.swift; path = Speaker/SpeakerEventTableViewCell.swift; sourceTree = "<group>"; };
-		8CA56743231DB75000841F29 /* SpeakerEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SpeakerEventTableViewCell.xib; path = Speaker/SpeakerEventTableViewCell.xib; sourceTree = "<group>"; };
-		8CA5674D231DC9D600841F29 /* SchedulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewController.swift; sourceTree = "<group>"; };
-		8CA5674E231DC9D600841F29 /* SchedulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulesViewController.xib; sourceTree = "<group>"; };
-		8CA56751231DC9EF00841F29 /* SchedulesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesTableViewCell.swift; sourceTree = "<group>"; };
-		8CA56752231DC9EF00841F29 /* SchedulesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulesTableViewCell.xib; sourceTree = "<group>"; };
 		8CA5675C231ED55600841F29 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8CFBE39A231EF1B300CD4A3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8CFBE39C231F0CB900CD4A3C /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
-		8CFBE39D231F0CB900CD4A3C /* SessionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionViewController.xib; sourceTree = "<group>"; };
-		8CFBE3A0231F0CD100CD4A3C /* SessionSpeakerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSpeakerTableViewCell.swift; sourceTree = "<group>"; };
-		8CFBE3A1231F0CD100CD4A3C /* SessionSpeakerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionSpeakerTableViewCell.xib; sourceTree = "<group>"; };
-		8CFBE3A4231F0CE200CD4A3C /* SessionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		8CFBE3A5231F0CE200CD4A3C /* SessionHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionHeaderTableViewCell.xib; sourceTree = "<group>"; };
-		8CFBE3A9231F323F00CD4A3C /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
-		8CFBE3AA231F323F00CD4A3C /* VenueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueViewController.xib; sourceTree = "<group>"; };
-		8CFBE3B6231FBDB100CD4A3C /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		8CFBE3B7231FBDB200CD4A3C /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		8CFBE3BA231FEBEF00CD4A3C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		EC61E09641B774893BF67C37 /* libPods-iosApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F861D7DD207FA40F0085E80D /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F861D7E0207FA40F0085E80D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F861D7EA207FA4100085E80D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,7 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6756D13923AA34F100321D71 /* app.framework in Frameworks */,
-				520479EDCD0429FE82E2E124 /* libPods-iosApp.a in Frameworks */,
+				33FFE62311EFD7D1229EED2E /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,70 +105,9 @@
 			children = (
 				8CA56726231D993000841F29 /* libSDWebImage.a */,
 				8CA56719231D89DE00841F29 /* app.framework */,
-				EC61E09641B774893BF67C37 /* libPods-iosApp.a */,
+				6CC0187F58DEFCBD236CC469 /* Pods_iosApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8CA5672C231D9B0500841F29 /* Speakers */ = {
-			isa = PBXGroup;
-			children = (
-				8CA5672D231D9C4000841F29 /* SpeakersViewController.swift */,
-				8CA5672E231D9C4000841F29 /* SpeakersViewController.xib */,
-				8CA56731231D9E7B00841F29 /* SpeakersTableViewCell.swift */,
-				8CA56732231D9E7B00841F29 /* SpeakersTableViewCell.xib */,
-				8CA5673D231DB6F900841F29 /* Speaker */,
-			);
-			path = Speakers;
-			sourceTree = "<group>";
-		};
-		8CA5673D231DB6F900841F29 /* Speaker */ = {
-			isa = PBXGroup;
-			children = (
-				6720DBB222BA2AB40085C08D /* SpeakerViewController.swift */,
-				8CA5673B231DAD2100841F29 /* SpeakerViewController.xib */,
-				8CA5673E231DB72F00841F29 /* SpeakerHeaderTableViewCell.swift */,
-				8CA5673F231DB72F00841F29 /* SpeakerHeaderTableViewCell.xib */,
-				8CA56742231DB75000841F29 /* SpeakerEventTableViewCell.swift */,
-				8CA56743231DB75000841F29 /* SpeakerEventTableViewCell.xib */,
-			);
-			path = Speaker;
-			sourceTree = "<group>";
-		};
-		8CA56746231DC98200841F29 /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				8CA5674D231DC9D600841F29 /* SchedulesViewController.swift */,
-				8CA5674E231DC9D600841F29 /* SchedulesViewController.xib */,
-				8CA56751231DC9EF00841F29 /* SchedulesTableViewCell.swift */,
-				8CA56752231DC9EF00841F29 /* SchedulesTableViewCell.xib */,
-				8CFBE3BC231FEF3600CD4A3C /* Session */,
-				8CFBE3B6231FBDB100CD4A3C /* FavoritesViewController.swift */,
-				8CFBE3B7231FBDB200CD4A3C /* FavoritesViewController.xib */,
-			);
-			path = Schedule;
-			sourceTree = "<group>";
-		};
-		8CFBE3A8231F322200CD4A3C /* Venue */ = {
-			isa = PBXGroup;
-			children = (
-				8CFBE3A9231F323F00CD4A3C /* VenueViewController.swift */,
-				8CFBE3AA231F323F00CD4A3C /* VenueViewController.xib */,
-			);
-			path = Venue;
-			sourceTree = "<group>";
-		};
-		8CFBE3BC231FEF3600CD4A3C /* Session */ = {
-			isa = PBXGroup;
-			children = (
-				8CFBE39C231F0CB900CD4A3C /* SessionViewController.swift */,
-				8CFBE39D231F0CB900CD4A3C /* SessionViewController.xib */,
-				8CFBE3A4231F0CE200CD4A3C /* SessionHeaderTableViewCell.swift */,
-				8CFBE3A5231F0CE200CD4A3C /* SessionHeaderTableViewCell.xib */,
-				8CFBE3A0231F0CD100CD4A3C /* SessionSpeakerTableViewCell.swift */,
-				8CFBE3A1231F0CD100CD4A3C /* SessionSpeakerTableViewCell.xib */,
-			);
-			path = Session;
 			sourceTree = "<group>";
 		};
 		BB7DE398A46ACF2BC5780E7B /* Pods */ = {
@@ -256,11 +147,8 @@
 				F861D7E0207FA40F0085E80D /* AppDelegate.swift */,
 				8CFBE3BA231FEBEF00CD4A3C /* Model.swift */,
 				8CA5675C231ED55600841F29 /* Utils.swift */,
-				8CA5672C231D9B0500841F29 /* Speakers */,
 				F861D7E9207FA4100085E80D /* LaunchScreen.storyboard */,
 				F861D7EC207FA4100085E80D /* Info.plist */,
-				8CA56746231DC98200841F29 /* Schedule */,
-				8CFBE3A8231F322200CD4A3C /* Venue */,
 				8C6E95C0232040BE002473ED /* Fonts */,
 				8CFBE39A231EF1B300CD4A3C /* Images.xcassets */,
 				8C6E95D32321949C002473ED /* LaunchImage.xib */,
@@ -289,6 +177,7 @@
 				F861D7DA207FA40F0085E80D /* Frameworks */,
 				F861D7DB207FA40F0085E80D /* Resources */,
 				6756D13B23AA34F100321D71 /* Embed Frameworks */,
+				C246FC750AB74188DB7B8693 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,23 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFBE39B231EF1B300CD4A3C /* Images.xcassets in Resources */,
-				8CFBE3AC231F323F00CD4A3C /* VenueViewController.xib in Resources */,
 				8C6E95D42321949C002473ED /* LaunchImage.xib in Resources */,
-				8CFBE3A3231F0CD100CD4A3C /* SessionSpeakerTableViewCell.xib in Resources */,
-				8CA56750231DC9D600841F29 /* SchedulesViewController.xib in Resources */,
-				8CFBE3B9231FBDB200CD4A3C /* FavoritesViewController.xib in Resources */,
-				8CA5673C231DAD2100841F29 /* SpeakerViewController.xib in Resources */,
-				8CA56730231D9C4000841F29 /* SpeakersViewController.xib in Resources */,
-				8CA56745231DB75000841F29 /* SpeakerEventTableViewCell.xib in Resources */,
 				F861D7EB207FA4100085E80D /* LaunchScreen.storyboard in Resources */,
 				8C6E95C4232040BE002473ED /* OpenSans-Semibold.ttf in Resources */,
 				8C6E95C5232040BE002473ED /* OpenSans-Light.ttf in Resources */,
-				8CFBE3A7231F0CE200CD4A3C /* SessionHeaderTableViewCell.xib in Resources */,
-				8CA56734231D9E7B00841F29 /* SpeakersTableViewCell.xib in Resources */,
-				8CA56754231DC9EF00841F29 /* SchedulesTableViewCell.xib in Resources */,
 				8C6E95C6232040BE002473ED /* OpenSans-Regular.ttf in Resources */,
-				8CA56741231DB72F00841F29 /* SpeakerHeaderTableViewCell.xib in Resources */,
-				8CFBE39F231F0CB900CD4A3C /* SessionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +285,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C246FC750AB74188DB7B8693 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -416,20 +308,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFBE3BB231FEBEF00CD4A3C /* Model.swift in Sources */,
-				8CA5674F231DC9D600841F29 /* SchedulesViewController.swift in Sources */,
-				8CA56740231DB72F00841F29 /* SpeakerHeaderTableViewCell.swift in Sources */,
-				8CFBE3B8231FBDB200CD4A3C /* FavoritesViewController.swift in Sources */,
 				8CA5675D231ED55600841F29 /* Utils.swift in Sources */,
-				8CFBE39E231F0CB900CD4A3C /* SessionViewController.swift in Sources */,
-				8CA56753231DC9EF00841F29 /* SchedulesTableViewCell.swift in Sources */,
-				8CFBE3AB231F323F00CD4A3C /* VenueViewController.swift in Sources */,
-				8CA5672F231D9C4000841F29 /* SpeakersViewController.swift in Sources */,
-				8CA56744231DB75000841F29 /* SpeakerEventTableViewCell.swift in Sources */,
-				6720DBB322BA2AB40085C08D /* SpeakerViewController.swift in Sources */,
 				F861D7E1207FA40F0085E80D /* AppDelegate.swift in Sources */,
-				8CFBE3A2231F0CD100CD4A3C /* SessionSpeakerTableViewCell.swift in Sources */,
-				8CFBE3A6231F0CE200CD4A3C /* SessionHeaderTableViewCell.swift in Sources */,
-				8CA56733231D9E7B00841F29 /* SpeakersTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
