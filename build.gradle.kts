@@ -9,11 +9,14 @@ buildscript {
         google()
         jcenter()
         maven { setUrl("https://maven.fabric.io/public") }
+        maven { url = uri("https://dl.bintray.com/icerockdev/plugins") }
     }
     dependencies {
         classpath(BuildPlugins.androidGradlePlugin)
         classpath(BuildPlugins.kotlinGradlePlugin)
         classpath(BuildPlugins.kotlinSerializationGradlePlugin)
+        classpath("dev.icerock:mobile-multiplatform:0.5.2")
+
         classpath("com.google.gms:google-services:4.3.3")
         classpath("io.spring.gradle:dependency-management-plugin:1.0.7.RELEASE")
         classpath("io.fabric.tools:gradle:1.31.0")

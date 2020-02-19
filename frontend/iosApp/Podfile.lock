@@ -1,16 +1,16 @@
 PODS:
-  - dukecon (1.0)
+  - MultiPlatformLibrary (0.1.0)
 
 DEPENDENCIES:
-  - dukecon (from `../../common/dukecon/`)
+  - MultiPlatformLibrary (from `../../common/dukecon`)
 
 EXTERNAL SOURCES:
-  dukecon:
-    :path: "../../common/dukecon/"
+  MultiPlatformLibrary:
+    :path: "../../common/dukecon"
 
 SPEC CHECKSUMS:
-  dukecon: 0b8fadf9fb45dd58be2a71a6f9a72c3309fd1652
+  MultiPlatformLibrary: 293fb60ba7a9c5779d10fd350d1381675e65f42d
 
-PODFILE CHECKSUM: 671d16037949b3f17c669de1160454877b053fdb
+PODFILE CHECKSUM: 4f955f4dc2c75672dedf1855b12cfa78c6a8f40d
 
 COCOAPODS: 1.8.4

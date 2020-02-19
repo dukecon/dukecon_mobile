@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.multiplatform")
-    id("kotlin-android-extensions")
     id("kotlinx-serialization")
     id("dev.icerock.mobile.multiplatform")
 }
@@ -16,6 +15,7 @@ val mppModules = listOf(
 )
 
 dependencies {
+    mppModules.forEach { mppModule(it) }
 
     mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
     mppLibrary(Deps.Libs.MultiPlatform.coroutines)
@@ -26,5 +26,4 @@ dependencies {
     mppLibrary(Deps.Libs.MultiPlatform.settings)
     mppLibrary(Deps.Libs.MultiPlatform.napier)
 
-    mppModules.forEach { mppModule(it) }
 }

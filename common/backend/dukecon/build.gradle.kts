@@ -2,7 +2,6 @@ plugins {
     kotlin("multiplatform")
     id("kotlinx-serialization")
     id("com.android.library")
-    id("kotlin-android-extensions")
     id("dev.icerock.mobile.multiplatform")
 }
 
@@ -12,21 +11,22 @@ android {
 
 val mppModules = listOf(
         Modules.MultiPlatform.data,
-                Modules.MultiPlatform.core
+        Modules.MultiPlatform.core
+)
+
+val mppLibraries = listOf(
+        Deps.Libs.MultiPlatform.kotlinStdLib,
+        Deps.Libs.MultiPlatform.coroutines,
+        Deps.Libs.MultiPlatform.serialization,
+        Deps.Libs.MultiPlatform.ktorClient,
+        Deps.Libs.MultiPlatform.ktorClientJson,
+        Deps.Libs.MultiPlatform.ktorClientJsonSerializer,
+        Deps.Libs.MultiPlatform.ktorUtils,
+        Deps.Libs.MultiPlatform.ktorClientLogging,
+        Deps.Libs.MultiPlatform.settings
 )
 
 dependencies {
-    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
-    mppLibrary(Deps.Libs.MultiPlatform.coroutines)
-    mppLibrary(Deps.Libs.MultiPlatform.serialization)
-    mppLibrary(Deps.Libs.MultiPlatform.ktorClient)
-    mppLibrary(Deps.Libs.MultiPlatform.ktorClientJson)
-    mppLibrary(Deps.Libs.MultiPlatform.ktorClientJsonSerializer)
-    mppLibrary(Deps.Libs.MultiPlatform.ktorUtils)
-    mppLibrary(Deps.Libs.MultiPlatform.ktorClientLogging)
-
-    mppLibrary(Deps.Libs.MultiPlatform.settings)
-    mppLibrary(Deps.Libs.MultiPlatform.napier)
-
+    mppLibraries.forEach { mppLibrary(it) }
     mppModules.forEach { mppModule(it) }
 }

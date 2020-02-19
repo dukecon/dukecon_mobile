@@ -1,15 +1,11 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("kotlin-android-extensions")
     id("dev.icerock.mobile.multiplatform")
 }
 
 android {
     setDefaults()
-    dependencies {
-        implementation("org.slf4j:slf4j-api:1.7.30")
-    }
 }
 
 dependencies {
