@@ -40,7 +40,7 @@ private var appContext: ApplicationContext? = null
 private var applicationStorage: ApplicationStorage? = null
 private var repositoryFactory = RepositoryFactory(cfg)
 
-private class RepositoryFactory(val conferenceConfiguration:ConferenceConfiguration) {
+private class RepositoryFactory(val conferenceConfiguration: ConferenceConfiguration) {
     val repository: LocalAndRemoteDataRepository
     val api: DukeconApi
 
@@ -91,17 +91,8 @@ class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
     fun getEventsFromNetwork() {
         log(LogLevel.INFO, "EventsModel", "getEventsFromNetwork")
         ktorScope.launch {
-            //RepositoryFactory.repository.update()
-            val eventsDto = repositoryFactory.api.getEvents("javaland2020")
-            //emptyList<org.dukecon.remote.api.Event>()//
-            log(LogLevel.INFO, "EventsModel", "1")
-            val maperDto = EventEntityMapper()
-            log(LogLevel.INFO, "EventsModel", "2")
-            val mapped = eventsDto.map { maperDto.mapFromRemote(it) }
-            log(LogLevel.INFO, "EventsModel", "3")
-            val eventMapper = EventMapper()
-            log(LogLevel.INFO, "EventsModel", "4")
-            viewUpdate(mapped.map { eventMapper.mapFromEntity(it, emptyList(), emptyList(), MetaData()) })
+            repositoryFactory.repository.update()
+            viewUpdate(repositoryFactory.repository.getEvents(17))
         }
     }
 }
