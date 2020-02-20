@@ -1,17 +1,18 @@
 package org.dukecon.cache.storage
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.preference.PreferenceManager
 
-@SuppressLint("StaticFieldLeak")
-var appAndroidContext: Context? = null
+actual class ApplicationContext(val appAndroidContext: Context)
 
-actual fun ApplicationStorage(): ApplicationStorage = AndroidStorage
+actual fun ApplicationStorage(context: ApplicationContext?): ApplicationStorage = AndroidApplicationStorage(context)
 
-object AndroidStorage : ApplicationStorage {
+class AndroidApplicationStorage(context: ApplicationContext?) : ApplicationStorage {
+
     private val sharedPreferences by lazy {
-        PreferenceManager.getDefaultSharedPreferences(appAndroidContext)
+        PreferenceManager.getDefaultSharedPreferences(context?.appAndroidContext)
     }
 
     override fun putBoolean(key: String, value: Boolean) {

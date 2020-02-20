@@ -32,7 +32,7 @@ object Versions {
 
             const val coroutines = "1.3.3"
             const val serialization = "0.14.0"
-            const val ktorClient = "1.3.0-rc"
+            const val ktorClient = "1.3.0"
             const val ktorClientLogging = ktorClient
 
             const val napier = "1.1.0"
