@@ -1,3 +1,3 @@
 package org.dukecon.date
 
-expect fun now():Long
+expect fun now(): Long;

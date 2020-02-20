@@ -11,14 +11,17 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 @ThreadLocal
-class ConferenceModelJsonSerializer(val currentTimeProvider: CurrentDataTimeProvider) {
-
-    private val storage: ApplicationStorage = ApplicationStorage()
+class ConferenceModelJsonSerializer(val currentTimeProvider: CurrentDataTimeProvider,
+                                    private val storage: ApplicationStorage) {
 
     var conference: ConferenceModel by storage(ConferenceModel.serializer()) { ConferenceModel() }
 
-    fun lastUpadte(): Long? {
-        return storage.getString("lastCacheTimeStamp")?.toLongOrNull()
+    fun lastUpadte(): Long {
+        val last = storage.getString("lastCacheTimeStamp")?.toLongOrNull()
+        last?.let {
+            return it
+        }
+        return 0
     }
 
     @UseExperimental(UnstableDefault::class)

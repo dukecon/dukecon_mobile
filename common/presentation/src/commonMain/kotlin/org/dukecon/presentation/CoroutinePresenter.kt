@@ -3,6 +3,7 @@ package org.dukecon.presentation
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
+import org.dukecon.platform.dispatcher
 import kotlin.coroutines.CoroutineContext
 
 abstract class CoroutinePresenter<V : BaseView>: CoroutineScope, BasePresenter<V> {

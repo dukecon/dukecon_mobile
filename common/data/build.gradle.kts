@@ -26,4 +26,5 @@ dependencies {
     mppLibrary(Deps.Libs.MultiPlatform.settings)
     mppLibrary(Deps.Libs.MultiPlatform.napier)
 
+    implementation("androidx.preference:preference:1.1.0")
 }

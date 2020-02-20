@@ -4,6 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import org.dukecon.aspects.logging.LogLevel
 import org.dukecon.aspects.logging.log
+import org.dukecon.platform.dispatcher
 import kotlin.coroutines.CoroutineContext
 
 open class BaseModel {
@@ -18,7 +19,7 @@ open class BaseModel {
 
 internal class MainScope(private val mainContext: CoroutineContext) : CoroutineScope {
     override val coroutineContext: CoroutineContext
-        get() = mainContext + job + exceptionHandler
+        get() = dispatcher() + job + exceptionHandler
 
     internal val job = Job()
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->

@@ -167,22 +167,20 @@ class LocalAndRemoteDataRepository constructor(
 
     override suspend fun update() {
         try {
-            if (conferenceDataCache.isCacheValid()) {
-                // skip update, cache is valid
-                return
-            }
             log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update==>")
             val events = remoteDataStore.getEvents()
+            log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update - remoteDataStore.getEvents()")
             localDataStore.saveEvents(events)
+            log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update - saveEvents(events)")
             localDataStore.saveMetaData(remoteDataStore.getMetaData())
             //val merged = mergeFavorites(localDataStore.getFavorites(), remoteDataStore.getFavorites())
             // localDataStore.saveFavorites(merged)
+            log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update - saveMetaData")
             localDataStore.saveSpeakers(remoteDataStore.getSpeakers())
-
             callRefreshListeners()
             log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update<==")
         } catch (e: Exception) {
-            log(LogLevel.ERROR, "LocalAndRemoteDataRepository", "update", e)
+            log(LogLevel.ERROR, "LocalAndRemoteDataRepository", "update ERROR", e)
             localDataStore.saveEvents(emptyList())
         }
     }

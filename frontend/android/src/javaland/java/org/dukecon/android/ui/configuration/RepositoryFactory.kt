@@ -6,6 +6,7 @@ import io.ktor.client.engine.okhttp.OkHttpEngine
 import io.ktor.util.InternalAPI
 import okhttp3.OkHttpClient
 import org.dukecon.cache.repository.JsonSerializedConferenceDataCache
+import org.dukecon.cache.storage.ApplicationStorage
 import org.dukecon.data.mapper.*
 import org.dukecon.data.repository.LocalAndRemoteDataRepository
 import org.dukecon.data.source.ConferenceConfiguration
@@ -22,7 +23,8 @@ object RepositoryFactory {
     fun createConferenceRepository(
             conferenceConfiguration: ConferenceConfiguration,
             okHttpClient: OkHttpClient,
-            currentTimeProvider: CurrentDataTimeProvider
+            currentTimeProvider: CurrentDataTimeProvider,
+            storage: ApplicationStorage
     ): ConferenceRepository {
 
         val api = DukeconApi(
@@ -40,7 +42,7 @@ object RepositoryFactory {
                 roomEntityMapper = RoomEntityMapper()
         )
 
-        val cache = JsonSerializedConferenceDataCache(currentTimeProvider)
+        val cache = JsonSerializedConferenceDataCache(currentTimeProvider, storage)
         return LocalAndRemoteDataRepository(
                 remoteDataStore = EventRemoteDataStore(conferenceRemote),
                 localDataStore = EventCacheDataStore(cache),
