@@ -124,6 +124,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.recyclerview:recyclerview:1.0.0")
+    implementation("androidx.preference:preference:1.1.0")
     implementation("io.coil-kt:coil:0.6.1")
     implementation("androidx.browser:browser:1.0.0")
     implementation("androidx.multidex:multidex:2.0.1")

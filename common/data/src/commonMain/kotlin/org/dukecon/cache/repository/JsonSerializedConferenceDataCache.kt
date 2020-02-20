@@ -3,12 +3,14 @@ package org.dukecon.cache.repository
 import io.ktor.util.date.GMTDate
 import org.dukecon.cache.model.*
 import org.dukecon.cache.serializer.ConferenceModelJsonSerializer
+import org.dukecon.cache.storage.ApplicationStorage
 import org.dukecon.data.model.*
 import org.dukecon.data.repository.ConferenceDataCache
 import org.dukecon.time.CurrentDataTimeProvider
 
-class JsonSerializedConferenceDataCache(private val currentTimeProvider: CurrentDataTimeProvider) : ConferenceDataCache {
-    private val json = ConferenceModelJsonSerializer(currentTimeProvider)
+class JsonSerializedConferenceDataCache(private val currentTimeProvider: CurrentDataTimeProvider,
+                                        storage: ApplicationStorage) : ConferenceDataCache {
+    private val json = ConferenceModelJsonSerializer(currentTimeProvider, storage)
 
     private var cachedRooms: List<RoomEntity> = listOf()
     private var cachedEvents: List<EventEntity> = listOf()
@@ -29,7 +31,7 @@ class JsonSerializedConferenceDataCache(private val currentTimeProvider: Current
             )
 
     init {
-        if (json.lastUpadte() ?: 0 > 0) {
+        if (json.lastUpadte()  > 0) {
             json.run {
                 cachedRooms = conference.rooms.map {
                     toRooms(it)
