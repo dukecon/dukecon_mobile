@@ -3,11 +3,34 @@ plugins {
     id("kotlinx-serialization")
     id("com.android.library")
     id("dev.icerock.mobile.multiplatform")
+    id("ktor-open-api-plugin")
 }
 
 android {
     setDefaults()
 }
+
+tasks {
+    named<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("openApiGenerate") {
+        generatorName.set("kotlin-ktor-client")
+        inputSpec.set("$rootDir/specs/conference_api.json")
+        /*
+        inputSpec = "$rootDir/petstore-v3.0.yaml".toString()
+        outputDir = "$buildDir/kotlin".toString()
+        apiPackage = "org.openapitools.example.api"
+        invokerPackage = "org.openapitools.example.invoker"
+        modelPackage = "org.openapitools.example.model"
+        configOptions = [
+            dateLibrary: "java8"
+        ]
+        systemProperties = [
+            modelDocs: "false"
+        ]
+
+         */
+    }
+}
+
 
 val mppModules = listOf(
         Modules.MultiPlatform.data,
