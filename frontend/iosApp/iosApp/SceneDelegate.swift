@@ -25,6 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         model = EventsModel(){events in
             print("Summary: \(events)")
+            for item in events {
+                print( item.eventId)
+                print( item.title)
+                //print( item.startTime.hours. + ":" + item.startTime.minutes)
+                print( item.room.names)
+            }
         }
         
         print("Misko")
