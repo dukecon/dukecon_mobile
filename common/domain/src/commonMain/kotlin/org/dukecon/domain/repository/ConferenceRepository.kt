@@ -35,3 +35,9 @@ interface ConferenceRepository {
     suspend fun getMetaData(): MetaData
 
 }
+
+interface SyncConferenceRepository {
+    fun update()
+    fun getEvents(day: Int): List<Event>
+    fun getEventDates(): List<GMTDate>
+}

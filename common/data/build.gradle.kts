@@ -1,51 +1,30 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("multiplatform")
+    id("com.android.library")
+    id("org.jetbrains.kotlin.multiplatform")
     id("kotlinx-serialization")
-    id ("com.android.library")
-    id (BuildPlugins.kotlinAndroidExtensions)
+    id("dev.icerock.mobile.multiplatform")
 }
-
-//https://youtrack.jetbrains.com/issue/KT-27170
-configurations.create("compileClasspath")
 
 android {
     setDefaults()
 }
 
+val mppModules = listOf(
+        Modules.MultiPlatform.domain,
+        Modules.MultiPlatform.core
+)
+
 dependencies {
-    implementation(Libraries.kotlinStdLib)
-    implementation(Libraries.kotlinxCoroutinesCore)
-    implementation(Libraries.kotlinxSerializeJvm)
-    implementation(Libraries.ktorUtilsJvm)
-}
+    mppModules.forEach { mppModule(it) }
 
-kotlin {
-    targets {
-        android()
-        jvm()
-    }
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(project(":common:domain"))
+    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
+    mppLibrary(Deps.Libs.MultiPlatform.coroutines)
+    mppLibrary(Deps.Libs.MultiPlatform.serialization)
+    mppLibrary(Deps.Libs.MultiPlatform.ktorClient)
+    mppLibrary(Deps.Libs.MultiPlatform.ktorClientLogging)
 
-                implementation(Libraries.kotlinStdLibCommon)
-                implementation(Libraries.kotlinxCoroutinesCommon)
-                implementation(Libraries.kotlinxSerializeCommon)
-                implementation(Libraries.ktorUtilsCommon)
-            }
-        }
+    mppLibrary(Deps.Libs.MultiPlatform.settings)
+    mppLibrary(Deps.Libs.MultiPlatform.napier)
 
-        val jvmMain by getting {
-            dependencies {
-                implementation(Libraries.kotlinStdLib)
-                implementation(Libraries.kotlinxCoroutinesCore)
-                implementation(Libraries.kotlinxSerializeJvm)
-                implementation(Libraries.ktorUtilsJvm)
-                implementation("org.slf4j:slf4j-api:1.7.28")
-            }
-        }
-    }
+    implementation("androidx.preference:preference:1.1.0")
 }

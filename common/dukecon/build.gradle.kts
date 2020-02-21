@@ -1,77 +1,54 @@
 plugins {
     kotlin("multiplatform")
     id("kotlinx-serialization")
-    id(BuildPlugins.androidLibrary)
-    id(BuildPlugins.kotlinAndroidExtensions)
+    id("com.android.library")
+    id("kotlin-android-extensions")
+    id("dev.icerock.mobile.multiplatform")
+    id("maven-publish")
 }
 
 android {
     setDefaults()
 }
 
+val mppModules = listOf(
+        Modules.MultiPlatform.core,
+        Modules.MultiPlatform.domain,
+        Modules.MultiPlatform.data,
+        Modules.MultiPlatform.presentation,
+        Modules.MultiPlatform.RemoteBackends.dukecon
+)
+
+val mppLibraries = listOf(
+        Deps.Libs.MultiPlatform.kotlinStdLib,
+        Deps.Libs.MultiPlatform.coroutines,
+        Deps.Libs.MultiPlatform.serialization,
+        Deps.Libs.MultiPlatform.ktorClient,
+        Deps.Libs.MultiPlatform.ktorClientJson,
+        Deps.Libs.MultiPlatform.ktorClientJsonSerializer,
+        Deps.Libs.MultiPlatform.ktorUtils,
+        Deps.Libs.MultiPlatform.ktorClientLogging,
+        Deps.Libs.MultiPlatform.settings
+)
+
+setupFramework(
+        exports = mppModules + mppLibraries
+)
+
 dependencies {
-    implementation(Libraries.kotlinStdLib)
-    implementation(Libraries.kotlinxCoroutinesCore)
-    implementation(Libraries.kotlinxSerializeJvm)
-    implementation(Libraries.ktorUtilsJvm)
-    implementation(Libraries.ktorCoreJvm)
-    implementation(Libraries.ktorSerializationJvm)
-    implementation(Libraries.ktorLoggingJvm)
-    implementation(Libraries.ktorOkhttpJvm)
-
-    implementation("org.slf4j:slf4j-api:1.7.28")
-
-    testImplementation(Libraries.kotlinTestJvm)
-    testImplementation(Libraries.kotlinxCoroutinesCore)
-    testImplementation(Libraries.kotlinTestJunit)
+    mppLibraries.forEach { mppLibrary(it) }
+    mppModules.forEach { mppModule(it) }
 }
 
-kotlin {
-    targets {
-        android()
-        jvm()
-    }
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(project(":common:data"))
+group = "org.dukecon.mobile"
+version = "0.0.1"
 
-                implementation(Libraries.kotlinStdLibCommon)
-                implementation(Libraries.kotlinxCoroutinesCommon)
-                implementation(Libraries.ktorCoreCommon)
-                implementation(Libraries.ktorUtilsCommon)
-                implementation(Libraries.ktorSerializationCommon)
-                implementation(Libraries.ktorLoggingCommon)
-            }
+publishing {
+    publications.withType<MavenPublication>().all {
+        pom {
+            description.set("Dukecon Mobile SDK")
+            name.set("dukecon mobile sdk")
+            url.set("https://github.com/dukecon/dukecon_mobile")
         }
-
-        val commonTest by getting {
-            dependencies {
-                implementation(Libraries.kotlinTestCommon)
-                implementation(Libraries.kotlinTestAnnotations)
-                implementation(Libraries.kotlinxCoroutinesCommon)
-
-            }
-        }
-
-        val jvmMain by getting {
-            dependencies {
-                implementation(Libraries.kotlinStdLib)
-                implementation(Libraries.kotlinxCoroutinesCore)
-                implementation(Libraries.kotlinxSerializeJvm)
-                implementation(Libraries.ktorUtilsJvm)
-                implementation(Libraries.ktorCoreJvm)
-                implementation(Libraries.ktorSerializationJvm)
-                implementation(Libraries.ktorLoggingJvm)
-                implementation(Libraries.ktorOkhttpJvm)
-            }
-        }
-        val jvmTest by getting {
-            dependencies {
-                implementation(Libraries.kotlinTestJvm)
-                implementation(Libraries.kotlinxCoroutinesCore)
-                implementation(Libraries.kotlinTestJunit)
-            }
-        }
-    }
+    }   
 }

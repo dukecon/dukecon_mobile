@@ -28,4 +28,6 @@ interface ConferenceDataCache {
 
     fun getMetaData(): MetaDataEntity
     fun saveMetaData(metaDataEntity: MetaDataEntity)
+
+    fun isCacheValid():Boolean
 }
