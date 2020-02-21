@@ -89,7 +89,7 @@ open class EventMapper() {
         return EventEntity(
                 type.eventId,
                 type.title,
-                type.description,
+                type.eventDescription,
                 type.startTime,
                 type.endTime,
                 createIdsList(type.speakers),

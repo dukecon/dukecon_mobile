@@ -16,7 +16,7 @@ open class EventMapper constructor(private val speakersMapper: SpeakerMapper) : 
         return EventView(
                 type.eventId,
                 type.title,
-                type.description,
+                type.eventDescription,
                 type.startTime,
                 type.endTime,
                 type.speakers.map {

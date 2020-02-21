@@ -2,34 +2,23 @@
 //  SceneDelegate.swift
 //  iosApp
 //
-//  Created by Michal Harakal on 19.02.20.
-//  Copyright © 2020 Michal Harakal. All rights reserved.
+//  Created by Alexander v. Below on 21.02.20.
+//  Copyright © 2020 Alexander von Below. All rights reserved.
 //
 
 import UIKit
 import SwiftUI
-import MultiPlatformLibrary
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    
-    private var model: EventsModel?
-
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationFoxrConnectingSceneSession` instead).
+        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        model = EventsModel(){events in
-            print("Summary: \(events)")
-        }
-        
-        print("Misko")
-         model!.getEventsFromNetwork()
-        
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
 
