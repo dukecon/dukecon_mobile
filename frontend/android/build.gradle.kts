@@ -27,6 +27,16 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+        getByName("debug") {
+            signingConfigs {
+                getByName("debug") {
+                    keyAlias = "androiddebugkey"
+                    keyPassword = "android"
+                    storeFile = file("debug.keystore")
+                    storePassword = "android"
+                }
+            }
+        }
     }
 
     compileOptions {
@@ -130,7 +140,7 @@ dependencies {
     implementation("androidx.multidex:multidex:2.0.1")
 
     implementation("org.slf4j:slf4j-api:1.7.28")
-    implementation ("com.github.tony19:logback-android:1.3.0-3")
+    implementation("com.github.tony19:logback-android:1.3.0-3")
 
 
     testImplementation(Libraries.kotlinTestJvm)
