@@ -21,9 +21,6 @@ open class EventListPresenter constructor(private val currentTimeProvider: Curre
     override fun onAttach(view: EventListContract.View) {
         this.view = view
         conferenceRepository.onRefreshListeners += onRefreshListener
-        launch(coroutineContext) {
-            conferenceRepository.update()
-        }
     }
 
     override fun onDetach() {
@@ -42,7 +39,7 @@ open class EventListPresenter constructor(private val currentTimeProvider: Curre
 
         this.date = conferenceDay
         this.showFavoritesOnly = showFavoritesOnly
-        launch(coroutineContext) {
+        launch {
             val events = conferenceRepository.getEvents(date)
             val filtered = events.filter {
                 if (showFavoritesOnly) {

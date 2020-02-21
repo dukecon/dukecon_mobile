@@ -6,7 +6,6 @@ import org.dukecon.android.ui.app.ioc.IoCRegisterRemoteClient
 import org.dukecon.android.ui.configuration.ConfigurationFactory
 import org.dukecon.android.ui.features.info.AndroidWebNavigator
 import org.dukecon.android.ui.features.login.SettingsTokenStorage
-import org.dukecon.android.ui.features.speakerdetail.SpeakerNavigator
 import org.dukecon.android.ui.features.timemachine.CurrentTimeProviderFactory
 import org.dukecon.core.IoCProvider
 import org.dukecon.data.repository.LibrariesListRepository
@@ -24,7 +23,6 @@ import org.dukecon.presentation.feature.eventdetail.EventDetailContract
 import org.dukecon.presentation.feature.eventdetail.EventDetailPresenter
 import org.dukecon.presentation.feature.info.InfoContract
 import org.dukecon.presentation.feature.info.InfoPresenter
-import org.dukecon.presentation.feature.info.WebNavigator
 import org.dukecon.presentation.feature.speakerdetail.SpeakerDetailContract
 import org.dukecon.presentation.feature.speakerdetail.SpeakerDetailPresenter
 import org.dukecon.presentation.feature.speakers.SpeakerListContract

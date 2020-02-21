@@ -13,8 +13,7 @@ class JavalandConfiguration(val application: Application) : ConferenceConfigurat
         get() = "https://programm.javaland.eu/${getYear()}/rest/" //https://latest.dukecon.org/javaland/2018/rest/") //endpoitUrlProvider.getUrl())
 
     private fun getYear(): String {
-        //return Calendar.getInstance().get(Calendar.YEAR).toString()
-        return "2020"
+        return Calendar.getInstance().get(Calendar.YEAR).toString()
     }
 
     override val conferenceId: String

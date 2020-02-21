@@ -5,14 +5,15 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import org.dukecon.android.ui.features.event.SessionNavigator
 import org.dukecon.android.ui.features.speakerdetail.SpeakerNavigator
 import org.dukecon.core.IoCProvider
 import org.dukecon.presentation.feature.speakers.SpeakerListContract
 import org.dukecon.presentation.model.SpeakerView
 
 class SpeakerListView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) :
-    RecyclerView(context, attrs, defStyle),
-    SpeakerListContract.View {
+        RecyclerView(context, attrs, defStyle),
+        SpeakerListContract.View {
     override fun showError(throwable: Throwable) {
 
     }
@@ -23,7 +24,9 @@ class SpeakerListView @JvmOverloads constructor(context: Context, attrs: Attribu
         IoCProvider.get<SpeakerListContract.Presenter>()
     }
 
-    lateinit var speakerNavigator: SpeakerNavigator
+    private val speakerNavigator: SpeakerNavigator by lazy {
+        IoCProvider.get<SpeakerNavigator>()
+    }
 
     init {
         layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)

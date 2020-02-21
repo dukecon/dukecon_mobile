@@ -1,7 +1,3 @@
-/*
- * Copyright 2019 Louis Cognault Ayeva Derman. Use of this source code is governed by the Apache 2.0 license.
- */
-
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import com.android.build.gradle.LibraryExtension as AndroidLibraryExtension

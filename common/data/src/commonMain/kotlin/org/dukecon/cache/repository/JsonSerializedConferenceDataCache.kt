@@ -1,15 +1,16 @@
 package org.dukecon.cache.repository
 
+import io.ktor.util.date.GMTDate
 import org.dukecon.cache.model.*
 import org.dukecon.cache.serializer.ConferenceModelJsonSerializer
 import org.dukecon.cache.storage.ApplicationStorage
 import org.dukecon.data.model.*
 import org.dukecon.data.repository.ConferenceDataCache
+import org.dukecon.time.CurrentDataTimeProvider
 
-class JsonSerializedConferenceDataCache : ConferenceDataCache {
-    private val storage: ApplicationStorage = ApplicationStorage()
-
-    private val json = ConferenceModelJsonSerializer
+class JsonSerializedConferenceDataCache(private val currentTimeProvider: CurrentDataTimeProvider,
+                                        storage: ApplicationStorage) : ConferenceDataCache {
+    private val json = ConferenceModelJsonSerializer(currentTimeProvider, storage)
 
     private var cachedRooms: List<RoomEntity> = listOf()
     private var cachedEvents: List<EventEntity> = listOf()
@@ -29,26 +30,22 @@ class JsonSerializedConferenceDataCache : ConferenceDataCache {
                     defaultIcon = ""
             )
 
-
     init {
-        storage.getString("lastCacheTimeStamp")?.let { lastCacheStr ->
-            val lastCache = lastCacheStr.toLong()
-            if (lastCache > 0) {
-                json.run {
-                    cachedRooms = conference.rooms.map {
-                        toRooms(it)
-                    }
-                    cachedEvents = conference.sessions.map {
-                        toEvent(it)
-                    }
-                    cacheSpeakers = conference.speakers.map {
-                        toSpeaker(it)
-                    }
-                    cacheFavorites = conference.favorites.map {
-                        toFavorite(it)
-                    }
-                    cachedMetaData = toMetadata(conference.metaData)
+        if (json.lastUpadte()  > 0) {
+            json.run {
+                cachedRooms = conference.rooms.map {
+                    toRooms(it)
                 }
+                cachedEvents = conference.sessions.map {
+                    toEvent(it)
+                }
+                cacheSpeakers = conference.speakers.map {
+                    toSpeaker(it)
+                }
+                cacheFavorites = conference.favorites.map {
+                    toFavorite(it)
+                }
+                cachedMetaData = toMetadata(conference.metaData)
             }
         }
     }
@@ -130,14 +127,15 @@ class JsonSerializedConferenceDataCache : ConferenceDataCache {
 
     override fun saveEvents(events: List<EventEntity>) {
         cachedEvents = events
-        json.conference = json.conference.copy(sessions = events.map { event -> toSessionModel(event) })
+        val mappedEvents = events.map { event -> toSessionModel(event) }
+        json.conference = json.conference.copy(sessions = mappedEvents)
     }
 
     private fun toSessionModel(event: EventEntity): EventModel = EventModel(id = event.id,
             title = event.title,
             abstractText = event.abstractText,
-            startTime = event.startTime.toString(),
-            endTime = event.endTime.toString(),
+            startTime = toIsoTime(event.startTime),
+            endTime = toIsoTime(event.endTime),
             speakerIds = event.speakerIds,
             locationId = event.locationId,
             languageId = event.languageId,
@@ -149,6 +147,19 @@ class JsonSerializedConferenceDataCache : ConferenceDataCache {
             veryPopular = event.veryPopular,
             fullyBooked = event.fullyBooked,
             numberOfFavorites = event.numberOfFavorites)
+
+    //"yyyy-MM-dd'T'HH:mm:ss"
+    private fun toIsoTime(startTime: GMTDate): String {
+        return "${startTime.year}-${twoDigits(startTime.month.ordinal + 1)}-${twoDigits(startTime.dayOfMonth)}T${twoDigits(startTime.hours)}:${twoDigits(startTime.minutes)}:${twoDigits(startTime.seconds)}"
+    }
+
+    private fun twoDigits(value: Int): String {
+        if (value >= 10) {
+            return value.toString()
+        } else {
+            return "0$value"
+        }
+    }
 
     override fun getEvents(): List<EventEntity> {
         return cachedEvents
@@ -209,6 +220,11 @@ class JsonSerializedConferenceDataCache : ConferenceDataCache {
     override fun saveMetaData(metaDataEntity: MetaDataEntity) {
         cachedMetaData = metaDataEntity
         json.conference = json.conference.copy(metaData = toMetadataModel(metaDataEntity))
+    }
+
+    override fun isCacheValid(): Boolean {
+        val currentTime = currentTimeProvider.currentTimeMillis()
+        return (json.lastUpadte() ?: currentTime - currentTime < 10 * 60 * 1000)
     }
 
     override fun clearEvents() {
