@@ -4,7 +4,7 @@ import io.ktor.util.date.GMTDate
 
 data class Event(val eventId: String,
                  val title: String,
-                 val description: String,
+                 val eventDescription: String,
                  val startTime: GMTDate,
                  val endTime: GMTDate,
                  val speakers: List<Speaker>,

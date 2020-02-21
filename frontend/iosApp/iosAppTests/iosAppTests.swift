@@ -2,8 +2,8 @@
 //  iosAppTests.swift
 //  iosAppTests
 //
-//  Created by Michal Harakal on 19.02.20.
-//  Copyright © 2020 Michal Harakal. All rights reserved.
+//  Created by Alexander v. Below on 21.02.20.
+//  Copyright © 2020 Alexander von Below. All rights reserved.
 //
 
 import XCTest
