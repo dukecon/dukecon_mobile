@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android-extensions")
     id("dev.icerock.mobile.multiplatform")
+    id("maven-publish")
 }
 
 android {
@@ -37,4 +38,17 @@ setupFramework(
 dependencies {
     mppLibraries.forEach { mppLibrary(it) }
     mppModules.forEach { mppModule(it) }
+}
+
+group = "org.dukecon.mobile"
+version = "0.0.1"
+
+publishing {
+    publications.withType<MavenPublication>().all {
+        pom {
+            description.set("Dukecon Mobile SDK")
+            name.set("dukecon mobile sdk")
+            url.set("https://github.com/dukecon/dukecon_mobile")
+        }
+    }   
 }
