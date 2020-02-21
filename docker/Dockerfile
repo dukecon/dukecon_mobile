@@ -49,6 +49,7 @@ RUN    mkdir -p /root/.android \
     && sdkmanager --verbose \
         "add-ons;addon-google_apis-google-24" \
         "build-tools;29.0.2" \
+        "build-tools;28.0.3" \
         "platform-tools" \
         "platforms;android-28" \
         "platforms;android-29" \
