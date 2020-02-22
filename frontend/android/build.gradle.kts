@@ -63,13 +63,6 @@ android {
                 implementation(project(":common:backend:sessionize"))
             }
         }
-        create("apachecon") {
-            flavorDimensions("sessionize")
-            applicationIdSuffix = ".apachecon"
-            dependencies {
-                implementation(project(":common:backend:dukecon"))
-            }
-        }
         create("javaland") {
             flavorDimensions("sessionize")
             applicationIdSuffix = ".javaland"
