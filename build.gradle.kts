@@ -16,10 +16,10 @@ buildscript {
         classpath(BuildPlugins.kotlinGradlePlugin)
         classpath(BuildPlugins.kotlinSerializationGradlePlugin)
         classpath("dev.icerock:mobile-multiplatform:0.5.2")
-
+        classpath("dev.icerock.moko:network-generator:0.5.0")
         classpath("com.google.gms:google-services:4.3.3")
         classpath("io.spring.gradle:dependency-management-plugin:1.0.7.RELEASE")
-        classpath("io.fabric.tools:gradle:1.31.0")
+        classpath("io.fabric.tools:gradle:1.31.2")
     }
 }
 
