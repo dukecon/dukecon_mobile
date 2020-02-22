@@ -15,12 +15,19 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selection){
+            VStack {
+                HStack {
+                    ForEach(publisher.dates, id:\.timestamp ) { day in
+                        Text((day as Ktor_utilsGMTDate).dayOfWeek.value)
+                    }
+                }
                 List(publisher.events, id: \.eventId) { event in
                     VStack (alignment: .leading) {
                         Text(event.title).font(.headline)
                     Text(event.eventDescription).font(.body)
                     }
                 }.font(.title)
+            }
                 .tabItem {
                     VStack {
                         Image("ic_schedule")
