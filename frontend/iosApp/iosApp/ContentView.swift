@@ -24,7 +24,9 @@ struct ContentView: View {
                 List(publisher.events, id: \.eventId) { event in
                     VStack (alignment: .leading) {
                         Text(event.title).font(.headline)
-                    Text(event.eventDescription).font(.body)
+                        Text(event.speakerList).font(.body)
+                        Spacer()
+                        Text(event.room.localizedName).font(.body)
                     }
                 }.font(.title)
             }
