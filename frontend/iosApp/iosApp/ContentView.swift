@@ -9,29 +9,27 @@
 import SwiftUI
 import MultiPlatformLibrary
 
-class Repository {
-    func something () {
-        let model = EventsModel { (events: [Event_]) in
-            for item in events {
-                item.component1()
-            }
-        }
-        model.getEventsFromNetwork()
-    }
-}
-
 struct ContentView: View {
     @State private var selection = 0
     @ObservedObject var publisher = EventsPublisher()
 
     var body: some View {
         TabView(selection: $selection){
-            List(publisher.events, id: \.eventId) { event in
-                VStack (alignment: .leading) {
-                    Text(event.title).font(.headline)
-                    Text(event.eventDescription).font(.body)
+            VStack {
+                HStack {
+                    ForEach(publisher.dates, id:\.timestamp ) { day in
+                        Text(day.dayOfWeek.value)
+                    }
                 }
-            }.font(.title)
+                List(publisher.events, id: \.eventId) { event in
+                    VStack (alignment: .leading) {
+                        Text(event.title).font(.headline)
+                        Text(event.speakerList).font(.body)
+                        Spacer()
+                        Text(event.room.localizedName).font(.body)
+                    }
+                }.font(.title)
+            }
                 .tabItem {
                     VStack {
                         Image("ic_schedule")
