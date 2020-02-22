@@ -23,7 +23,7 @@ Ein Laptop mit IDE nach Wahl (IntelliJ, Eclipse etc.) und Android Studio, Androi
 
 === Updates
 
-22.2.2002 danke an https://twitter.com/buk/status/1231289200890253313?s=21 es ist *Xcode*
+22.02.2020 danke an https://twitter.com/buk/status/1231289200890253313?s=21 es ist *Xcode*
 
 [quote, Chris Espinosa]
 ____
