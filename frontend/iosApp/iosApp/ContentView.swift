@@ -18,7 +18,7 @@ struct ContentView: View {
             VStack {
                 HStack {
                     ForEach(publisher.dates, id:\.timestamp ) { day in
-                        Text((day as Ktor_utilsGMTDate).dayOfWeek.value)
+                        Text(day.dayOfWeek.value)
                     }
                 }
                 List(publisher.events, id: \.eventId) { event in
