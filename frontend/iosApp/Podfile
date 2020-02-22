@@ -23,3 +23,7 @@ end
 target 'iosApp' do
   pod 'MultiPlatformLibrary', :path => '../../common/dukecon'
 end
+
+target 'iosAppTests' do
+  pod 'MultiPlatformLibrary', :path => '../../common/dukecon'
+end
