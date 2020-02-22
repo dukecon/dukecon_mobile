@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  iosApp
 //
-//  Created by Michal Harakal on 19.02.20.
-//  Copyright © 2020 Michal Harakal. All rights reserved.
+//  Created by Alexander v. Below on 21.02.20.
+//  Copyright © 2020 Alexander von Below. All rights reserved.
 //
 
 import UIKit
@@ -12,11 +12,12 @@ import MultiPlatformLibrary
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var publisher: EventsPublisher!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         RepositoryFactoryKt.doInitApplication(context: nil)
+
         return true
     }
 
