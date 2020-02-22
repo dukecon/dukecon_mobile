@@ -19,4 +19,13 @@ https://harakal.de[Michal Harakal]
 https://programm.javaland.eu/2020/#/speaker/363284[Falk Sippach]
 
 == Voraussetzungen:
-Ein Laptop mit IDE nach Wahl (IntelliJ, Eclipse etc.) und Android Studio, Android SDK, Emulator/Smartphone oder Apple Mac mit XCode.
+Ein Laptop mit IDE nach Wahl (IntelliJ, Eclipse etc.) und Android Studio, Android SDK, Emulator/Smartphone oder Apple Mac mit *Xcode*. 
+
+=== Updates
+
+22.2.2002 danke an https://twitter.com/buk/status/1231289200890253313?s=21 es ist *Xcode*
+
+[quote, Chris Espinosa]
+____
+"The C language is case-sensitive. Compilers are case-sensitive. The Unix command line, ufs, and nfs file systems are case-sensitive. I'm case-sensitive too, especially about product names. The IDE is called Xcode. Big X, little c. Not XCode or xCode or X-Code. Remember that now."
+____
