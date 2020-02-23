@@ -1,3 +1,4 @@
+import io.ktor.util.date.GMTDate
 import kotlinx.coroutines.launch
 import org.dukecon.aspects.logging.LogLevel
 import org.dukecon.aspects.logging.log
@@ -87,11 +88,37 @@ class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
     }
 
     fun getEventsFromNetwork() {
-        log(LogLevel.INFO, "EventsModel", "getEventsFromNetwork")
+        log(LogLevel.INFO, "EventsModel", "getEventsFromNetwork==>")
         ktorScope.launch {
             repositoryFactory.repository.update()
             viewUpdate(repositoryFactory.repository.getEvents(17))
+            log(LogLevel.INFO, "EventsModel", "getEventsFromNetwork<==")
         }
     }
+
+    fun getConferenceDays(viewUpdate: (List<GMTDate>) -> Unit) {
+        log(LogLevel.INFO, "EventsModel", "getConferenceDays==>")
+        ktorScope.launch {
+            viewUpdate(repositoryFactory.repository.getEventDates())
+            log(LogLevel.INFO, "EventsModel", "getConferenceDays<==")
+        }
+    }
+
+    fun getEvents(day: Int, viewUpdate: (List<GMTDate>) -> Unit) {
+        log(LogLevel.INFO, "EventsModel", "getEvents==>")
+        ktorScope.launch {
+            viewUpdate(repositoryFactory.repository.getEvents(day))
+            log(LogLevel.INFO, "EventsModel", "getEvents<==")
+        }
+    }
+
+    fun getEvent(eventId: String, viewUpdate: (Event) -> Unit) {
+        log(LogLevel.INFO, "EventsModel", "getEvent==>")
+        ktorScope.launch {
+            viewUpdate(repositoryFactory.repository.getEvent(eventId))
+            log(LogLevel.INFO, "EventsModel", "getEvent<==")
+        }
+    }
+
 }
 
