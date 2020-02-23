@@ -53,10 +53,8 @@ private class RepositoryFactory(val conferenceConfiguration: ConferenceConfigura
 
         val conferenceRemote = DukeconConferenceRemote(
                 dukeconApi = api,
-                eventEntityMapper = EventEntityMapper(),
-                speakerEntityMapper = SpeakerEntityMapper(conferenceConfiguration, TwitterUrlMapper()),
-                metaDataEntityMapper = MetaDataEntityMapper(),
-                roomEntityMapper = RoomEntityMapper()
+                conferenceConfiguration = conferenceConfiguration,
+                twitterLinkMapper = TwitterUrlMapper()
         )
 
         val cache = JsonSerializedConferenceDataCache(object : CurrentDataTimeProvider {

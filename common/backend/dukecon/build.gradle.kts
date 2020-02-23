@@ -3,10 +3,18 @@ plugins {
     id("kotlinx-serialization")
     id("com.android.library")
     id("dev.icerock.mobile.multiplatform")
+    id("ktor-open-api-plugin")
 }
 
 android {
     setDefaults()
+}
+
+openApiGenerate {
+    inputSpec.set("$rootDir/specs/conference_api.json")
+    generatorName.set("kotlin-ktor-client")
+    apiPackage.set("org.dukecon.remote.api")
+    modelPackage.set("org.dukecon.remote.api")
 }
 
 val mppModules = listOf(

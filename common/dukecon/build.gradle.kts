@@ -50,5 +50,5 @@ publishing {
             name.set("dukecon mobile sdk")
             url.set("https://github.com/dukecon/dukecon_mobile")
         }
-    }   
+    }
 }
