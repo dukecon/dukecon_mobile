@@ -11,7 +11,7 @@ import MultiPlatformLibrary
 // These look like they might be good candiates for the common
 // Kotlin library. These are tasks required on both platforms
 
-extension Event_ {
+extension Event{
     var speakerList : String {
         let stringmap = self.speakers.map { (speaker) -> String in
             return speaker.name
@@ -20,7 +20,7 @@ extension Event_ {
     }
 }
 
-extension Location_ {
+extension Location{
     var localizedName : String {
         if let languageCode = Locale.autoupdatingCurrent.languageCode, let localizedName = self.names[languageCode] {
             return localizedName

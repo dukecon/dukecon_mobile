@@ -10,7 +10,7 @@ import Foundation
 import MultiPlatformLibrary
 
 class EventsPublisher: ObservableObject {
-    @Published var events = [Event_]()
+    @Published var events = [Event]()
     @Published var dates: [Ktor_utilsGMTDate] = [Ktor_utilsGMTDate]()
     var model: EventsModel!
 
@@ -22,7 +22,7 @@ class EventsPublisher: ObservableObject {
         model.getEventsFromNetwork()
     }
 
-    func eventDays (events: [Event_]) -> [Ktor_utilsGMTDate] {
+    func eventDays (events: [Event]) -> [Ktor_utilsGMTDate] {
 
         var foundDates = [Ktor_utilsGMTDate]()
         for event in events {
