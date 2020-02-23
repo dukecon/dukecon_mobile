@@ -8,21 +8,21 @@ import org.dukecon.remote.api.Speaker
  * Map a [Speaker] to and from a [SpeakerEntity] instance when data is moving between
  * this later and the Data layer
  */
-open class SpeakerEntityMapper constructor(private val conferenceConfiguration: ConferenceConfiguration,
-                                           private val twitterLinkMapper: TwitterUrlMapper) : EntityMapper<Speaker, SpeakerEntity> {
+internal open class SpeakerEntityMapper constructor(private val conferenceConfiguration: ConferenceConfiguration,
+                                                    private val twitterLinkMapper: TwitterUrlMapper) : EntityMapper<Speaker, SpeakerEntity> {
 
     /**
      * Map an instance of a [Speaker] to a [SpeakerEntity] model
      */
     override fun mapFromRemote(type: Speaker): SpeakerEntity {
         return SpeakerEntity(
-                type.id,
-                type.name,
-                type.company,
-                twitterLinkMapper.getNormalizedTwitterUrl(type.twitter),
-                type.bio,
-                type.website,
-                getAvatarUrlFromId(type.photoId)
+                id = type.id ?: "",
+                name = type.name ?: "",
+                title = type.company ?: "",
+                twitter = twitterLinkMapper.getNormalizedTwitterUrl(type.twitter ?: ""),
+                bio = type.bio ?: "",
+                website = type.website ?: "",
+                avatar = getAvatarUrlFromId(type.photoId ?: "")
         )
     }
 

@@ -37,7 +37,6 @@ object Versions {
 
             const val napier = "1.1.0"
             const val settings = "0.5"
-            const val mokoNetwork = "0.5.0"
         }
     }
 }

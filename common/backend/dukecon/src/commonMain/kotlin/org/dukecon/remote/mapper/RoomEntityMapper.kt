@@ -8,9 +8,12 @@ import org.dukecon.remote.mapper.EntityMapper
  * Map a [Location] to and from a [RoomEntity] instance when data is moving between
  * this later and the Data layer
  */
-class RoomEntityMapper() : EntityMapper<Location, RoomEntity> {
+internal class RoomEntityMapper() : EntityMapper<Location, RoomEntity> {
 
     override fun mapFromRemote(type: Location): RoomEntity {
-        return RoomEntity(type.id, type.names.de)
+        return RoomEntity(
+                type.id ?: "",
+                type.names?.let { a -> a["de"] } ?: ""
+        )
     }
 }

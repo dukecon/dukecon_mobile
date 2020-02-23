@@ -1,38 +1,72 @@
 package org.dukecon.remote.mapper
 
+import kotlinx.serialization.Mapper.Companion.map
 import org.dukecon.data.model.*
 import org.dukecon.remote.api.*
 
-class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
+internal class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
     override fun mapFromRemote(type: MetaData): MetaDataEntity {
         return MetaDataEntity(
-                id = type.id,
-                audiences = type.audiences.map { mapAudiences(it) },
-                eventTypes = type.eventTypes.map { mapEventTypes(it) },
-                languages = type.languages.map { mapLanguages(it) },
-                defaultLanguage = mapLanguages(type.defaultLanguage),
-                tracks = type.tracks.map { mapTracks(it) },
-                locations = type.locations.map { mapLocations(it) },
-                defaultIcon = type.defaultIcon)
+                id = type.id ?: "",
+                audiences = type.audiences?.let { it.map { aud -> mapAudiences(aud) } } ?: emptyList(),
+                eventTypes = type.eventTypes?.let { it.map { event -> mapEventTypes(event) } } ?: emptyList(),
+                languages = type.languages?.let { it.map { lang -> mapLanguages(lang) } } ?: emptyList(),
+                defaultLanguage = mapLanguages(getDefaultLangugae(type.defaultLanguage)),
+                tracks = type.tracks?.let { it.map { track -> mapTracks(track) } } ?: emptyList(),
+                locations = type.locations?.let { it.map { loc -> mapLocations(loc) } } ?: emptyList(),
+                defaultIcon = type.defaultIcon ?: "")
+    }
+
+    private fun getDefaultLangugae(defaultLanguage: Language?): Language {
+        return defaultLanguage?.let {
+            defaultLanguage
+        } ?: Language()
     }
 
     private fun mapLocations(it: Location): LocationsEntity {
-        return LocationsEntity(it.id, it.order, it.names.toMap(), it.icon, it.capacity)
+        return LocationsEntity(
+                id = it.id ?: "",
+                order = it.order ?: 0,
+                names = it.names?.let { it.toMap() } ?: emptyMap(),
+                icon = it.icon ?: "",
+                capacity = it.capacity ?: 0
+        )
     }
 
     private fun mapTracks(it: Track): TrackEntity {
-        return TrackEntity(it.id, it.order, it.names.toMap(), it.icon)
+        return TrackEntity(
+                id = it.id ?: "",
+                order = it.order ?: 0,
+                names = it.names?.let { it.toMap() } ?: emptyMap(),
+                icon = it.icon ?: ""
+        )
     }
 
     private fun mapLanguages(it: Language): LanguageEntity {
-        return LanguageEntity(it.id, it.code, it.order, it.names.toMap(), it.icon)
+        return LanguageEntity(
+                it.id ?: "",
+                it.code ?: "",
+                it.order ?: 0,
+                it.names?.let { it.toMap() } ?: emptyMap(),
+                it.icon ?: ""
+        )
     }
 
     private fun mapEventTypes(it: EventType): EventTypeEntity {
-        return EventTypeEntity(it.id, it.order, it.names.toMap(), it.icon)
+        return EventTypeEntity(
+                id = it.id ?: "",
+                order = it.order ?: 0,
+                names = it.names?.let { it.toMap() } ?: emptyMap(),
+                icon = it.icon ?: ""
+        )
     }
 
     private fun mapAudiences(audience: Audience): AudienceEntity {
-        return AudienceEntity(audience.id, audience.order, audience.names.toMap(), audience.icon)
+        return AudienceEntity(
+                audience.id ?: "",
+                audience.order ?: 0,
+                audience.names?.let { it.toMap() } ?: emptyMap(),
+                audience.icon ?: ""
+        )
     }
 }

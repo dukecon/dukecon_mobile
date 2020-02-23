@@ -3,7 +3,7 @@ plugins {
     id("kotlinx-serialization")
     id("com.android.library")
     id("dev.icerock.mobile.multiplatform")
-    id("dev.icerock.mobile.multiplatform-network-generator")
+    id("ktor-open-api-plugin")
 }
 
 android {
@@ -15,7 +15,6 @@ openApiGenerate {
     generatorName.set("kotlin-ktor-client")
     apiPackage.set("org.dukecon.remote.api")
     modelPackage.set("org.dukecon.remote.api")
-
 }
 
 val mppModules = listOf(
@@ -32,8 +31,7 @@ val mppLibraries = listOf(
         Deps.Libs.MultiPlatform.ktorClientJsonSerializer,
         Deps.Libs.MultiPlatform.ktorUtils,
         Deps.Libs.MultiPlatform.ktorClientLogging,
-        Deps.Libs.MultiPlatform.settings,
-        Deps.Libs.MultiPlatform.Moko.mokoNetwork
+        Deps.Libs.MultiPlatform.settings
 )
 
 dependencies {
