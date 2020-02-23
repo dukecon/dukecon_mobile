@@ -29,17 +29,13 @@ object RepositoryFactory {
 
         val api = DukeconApi(
                 endpoint = conferenceConfiguration.baseUrl,
-                conference = conferenceConfiguration.conferenceId,
-                engine = okhttpEngine(okHttpClient)
-
+                conference = conferenceConfiguration.conferenceId
         )
 
         val conferenceRemote = DukeconConferenceRemote(
                 dukeconApi = api,
-                eventEntityMapper = EventEntityMapper(),
-                speakerEntityMapper = SpeakerEntityMapper(conferenceConfiguration, TwitterUrlMapper()),
-                metaDataEntityMapper = MetaDataEntityMapper(),
-                roomEntityMapper = RoomEntityMapper()
+                conferenceConfiguration = conferenceConfiguration,
+                twitterLinkMapper = TwitterUrlMapper()
         )
 
         val cache = JsonSerializedConferenceDataCache(currentTimeProvider, storage)

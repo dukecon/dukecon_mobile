@@ -17,12 +17,12 @@ import io.ktor.http.HttpHeaders
 import io.ktor.http.takeFrom
 import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
 
 /**
- * use default http engine by defualt
+ * use default http engine by default
  */
 class DukeconApi(private val endpoint: String, val conference: String, engine: HttpClientEngine? = null) {
-    @UseExperimental(UnstableDefault::class)
 
     private val client = engine?.let {
         HttpClient(engine) {
@@ -49,7 +49,7 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getAllConferences(
+    internal suspend fun getAllConferences(
     ): List<Conference> {
         return client.get<List<Conference>>("$endpoint/conferences") {
         }
@@ -62,7 +62,7 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getConference(
+    internal suspend fun getConference(
             id: String // PATH
     ): Conference {
         return client.get<Conference>("$endpoint/conferences/$id") {
@@ -77,7 +77,7 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getEvents(
+    internal suspend fun getEvents(
             id: String // PATH
     ): List<Event> {
         return client.get<List<Event>>("$endpoint/conferences/$id/events") {
@@ -91,7 +91,7 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getMeta(
+    internal suspend fun getMeta(
             id: String // PATH
     ): MetaData {
         return client.get<MetaData>("$endpoint/conferences/$id/metadata") {
@@ -105,7 +105,7 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getSpeakers(
+    internal suspend fun getSpeakers(
             id: String // PATH
     ): List<Speaker> {
         return client.get<List<Speaker>>("$endpoint/conferences/$id/speakers") {
@@ -121,7 +121,7 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return OK
      */
-    suspend fun updateFeedback(
+    internal suspend fun updateFeedback(
             id: String, // PATH
             sessionId: String, // PATH
             body: Feedback // BODY
@@ -154,7 +154,7 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getKeyCloak(
+    internal suspend fun getKeyCloak(
             id: String // PATH
     ): Keycloak {
         return client.get<Keycloak>("$endpoint/conferences/$id/keycloak.json") {
