@@ -82,14 +82,6 @@ object Deps {
                     iosX64 = "com.github.aakira:napier-iosX64:${Versions.Libs.MultiPlatform.napier}",
                     iosArm64 = "com.github.aakira:napier-iosArm64:${Versions.Libs.MultiPlatform.napier}"
             )
-
-            object Moko {
-                val mokoNetwork = MultiPlatformLibrary(
-                        common = "dev.icerock.moko:network:${Versions.Libs.MultiPlatform.mokoNetwork}",
-                        iosX64 = "dev.icerock.moko:network-iosx64:${Versions.Libs.MultiPlatform.mokoNetwork}",
-                        iosArm64 = "dev.icerock.moko:network-iosarm64:${Versions.Libs.MultiPlatform.mokoNetwork}"
-                )
-            }
         }
     }
 

@@ -1,7 +1,6 @@
 package org.dukecon.android.ui.app.ioc
 
 import android.app.Application
-import android.util.Log
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

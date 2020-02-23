@@ -15,16 +15,16 @@ import io.ktor.client.request.header
 import io.ktor.client.request.put
 import io.ktor.http.HttpHeaders
 import io.ktor.http.takeFrom
+import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
-import org.dukecon.network.generated.apis.ConferencesApi
 
 /**
  * use default http engine by default
  */
 class DukeconApi(private val endpoint: String, val conference: String, engine: HttpClientEngine? = null) {
 
-    private val httpClient = engine?.let {
+    private val client = engine?.let {
         HttpClient(engine) {
             config()
         }
@@ -44,16 +44,15 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
         }
     }
 
-    private val client = ConferencesApi(endpoint, httpClient, Json(JsonConfiguration.Default))
-
     /**
      * returns list of conferences
      *
      * @return successful operation
      */
-    suspend fun getAllConferences(
+    internal suspend fun getAllConferences(
     ): List<Conference> {
-        TODO("not implemented yet")
+        return client.get<List<Conference>>("$endpoint/conferences") {
+        }
     }
 
     /**
@@ -63,10 +62,12 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getConference(
+    internal suspend fun getConference(
             id: String // PATH
     ): Conference {
-        return client.getConference(id)
+        return client.get<Conference>("$endpoint/conferences/$id") {
+
+        }
     }
 
     /**
@@ -76,10 +77,11 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getEvents(
+    internal suspend fun getEvents(
             id: String // PATH
     ): List<Event> {
-        return client.getEvents(id)
+        return client.get<List<Event>>("$endpoint/conferences/$id/events") {
+        }
     }
 
     /**
@@ -89,10 +91,11 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getMeta(
+    internal suspend fun getMeta(
             id: String // PATH
     ): MetaData {
-        return client.getMeta(id)
+        return client.get<MetaData>("$endpoint/conferences/$id/metadata") {
+        }
     }
 
     /**
@@ -102,10 +105,11 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getSpeakers(
+    internal suspend fun getSpeakers(
             id: String // PATH
     ): List<Speaker> {
-        return client.getSpeakers(id)
+        return client.get<List<Speaker>>("$endpoint/conferences/$id/speakers") {
+        }
     }
 
     /**
@@ -117,12 +121,30 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return OK
      */
-    suspend fun updateFeedback(
+    internal suspend fun updateFeedback(
             id: String, // PATH
             sessionId: String, // PATH
             body: Feedback // BODY
     ): String {
-        return client.updateFeedback(id, sessionId, body) as String
+        return client.put<String>("$endpoint/feedback/event/$id/$sessionId") {
+            this.body = mutableMapOf<String, Any?>().apply {
+                this["body"] = body
+            }
+        }
+    }
+
+    /**
+     * Conference styles
+     *
+     * @param id null
+     *
+     * @return successful operation
+     */
+    suspend fun getConferenceStyles(
+            id: String // PATH
+    ): String {
+        return client.get<String>("$endpoint/conferences/$id/styles.css") {
+        }
     }
 
     /**
@@ -132,9 +154,22 @@ class DukeconApi(private val endpoint: String, val conference: String, engine: H
      *
      * @return successful operation
      */
-    suspend fun getKeyCloak(
+    internal suspend fun getKeyCloak(
             id: String // PATH
     ): Keycloak {
-        return client.getKeyCloak(id)
+        return client.get<Keycloak>("$endpoint/conferences/$id/keycloak.json") {
+        }
     }
+
+    private fun HttpRequestBuilder.apiUrl(path: String, userId: String? = null) {
+        if (userId != null) {
+            header(HttpHeaders.Authorization, "Bearer $userId")
+        }
+        header(HttpHeaders.CacheControl, "no-cache")
+        url {
+            takeFrom(endpoint)
+            encodedPath = path
+        }
+    }
+
 }
