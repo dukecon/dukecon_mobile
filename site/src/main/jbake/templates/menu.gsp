@@ -6,7 +6,7 @@
           'Docs': [
                   'Workshops': 'workshops'
           ],
-          'Dateschütz (DE)': 'dsvgo.html',
+          'Dateschütz (DE)': 'dsvgo',
           'Imprint (DE)': 'impressum',
         ]
     ]
