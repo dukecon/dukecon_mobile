@@ -1,0 +1,3 @@
+:filename: main/jbake/content/.asciidoctorconfig.adoc
+:imagesdir: images/
+:linkattrs: true

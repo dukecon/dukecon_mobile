@@ -2,53 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JBake</title>
-    <link>https://dukecon.github.io/dukecon_mobile/</link>
-    <atom:link href="https://dukecon.github.io/dukecon_mobile//feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://dukecon.org</link>
+    <atom:link href="https://dukecon.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sa, 8 Feb 2020 15:52:19 +0100</pubDate>
-    <lastBuildDate>Sa, 8 Feb 2020 15:52:19 +0100</lastBuildDate>
+    <pubDate>Mon, 24 Feb 2020 14:13:19 +0100</pubDate>
+    <lastBuildDate>Mon, 24 Feb 2020 14:13:19 +0100</lastBuildDate>
 
+    
     <item>
-      <title>Javaland Kotlin Multiplatform workshop</title>
-      <link>https://dukecon.github.io/dukecon_mobile//index.html</link>
-      <pubDate>Fr, 17 Jan 2020 00:00:00 +0100</pubDate>
-      <guid isPermaLink="false">index.html</guid>
-      	<description>
-	&lt;div id=&quot;preamble&quot;&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Wir bauen gemeinsam eine auf der DukeCon Kotlin Native Library basierende App, die das Vortragsprogramm der JavaLand anzeigen kann. Hier lernt ihr Kotlin/Native und Kotlin Multiplatform kennen und erfahrt, wie man eine KLib baut, sie konsumiert und auf unterschiedlichen Zielplattformen einsetzt.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;workshop&quot;&gt;Workshop&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://programm.javaland.eu/2020/#/scheduledEvent/591631&quot;&gt;Javaland 2020 Workshop zu Kotlin/Native und -Multiplatform&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;referenten&quot;&gt;Referenten&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://harakal.de&quot;&gt;Michal Harakal&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://programm.javaland.eu/2020/#/speaker/363284&quot;&gt;Falk Sippach&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;voraussetzungen&quot;&gt;Voraussetzungen:&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Ein Laptop mit IDE nach Wahl (IntelliJ, Eclipse etc.) und Android Studio, Android SDK, Emulator/Smartphone oder Apple Mac mit XCode.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-	</description>
+      <title>Datenschutzerklärung</title>
+      <link>https://dukecon.org/dsvgo.html</link>
+      <pubDate>Sat, 22 Feb 2020 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">dsvgo.html</guid>
+      <description>
+      &lt;h1&gt;Datenschutzerklärung&lt;/h1&gt;
+&lt;p&gt;Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:&lt;/p&gt;
+&lt;p&gt;dukecon.org&lt;/p&gt;
+&lt;h2&gt;Ihre Betroffenenrechte&lt;/h2&gt;
+&lt;p&gt;Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte ausüben:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung (Art. 15 DSGVO),&lt;/li&gt;
+&lt;li&gt;Berichtigung unrichtiger personenbezogener Daten (Art. 16 DSGVO),&lt;/li&gt;
+&lt;li&gt;Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO),&lt;/li&gt;
+&lt;li&gt;Einschränkung der Datenverarbeitung, sofern wir Ihre Daten aufgrund gesetzlicher Pflichten noch nicht löschen dürfen (Art. 18 DSGVO),&lt;/li&gt;
+&lt;li&gt;Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21 DSGVO) und&lt;/li&gt;
+&lt;li&gt;Datenübertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen Vertrag mit uns abgeschlossen haben (Art. 20 DSGVO).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.&lt;/p&gt;
+&lt;p&gt;Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden, z. B. an die zuständige Aufsichtsbehörde des Bundeslands Ihres Wohnsitzes oder an die für uns als verantwortliche Stelle zuständige Behörde.&lt;/p&gt;
+&lt;p&gt;Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen Bereich) mit Anschrift finden Sie unter: &lt;a href=&quot;https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener&quot;&gt;https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;SSL-Verschlüsselung&lt;/h2&gt;
+&lt;p&gt;Um die Sicherheit Ihrer Daten bei der Übertragung zu schützen, verwenden wir dem aktuellen Stand der Technik entsprechende Verschlüsselungsverfahren (z. B. SSL) über HTTPS.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Änderung unserer Datenschutzbestimmungen&lt;/h2&gt;
+&lt;p&gt;Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.&lt;/p&gt;
+&lt;h2&gt;Fragen an den Datenschutzbeauftragten&lt;/h2&gt;
+&lt;p&gt;Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserer Organisation:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;Die Datenschutzerklärung wurde mithilfe der activeMind AG erstellt, den Experten für &lt;a href=&quot;https://www.activemind.de/datenschutz/datenschutzhinweis-generator/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;externe Datenschutzbeauftragte&lt;/a&gt; (Version #2019-04-10).&lt;/em&gt;&lt;/p&gt;
+
+	  </description>
     </item>
+    
 
   </channel> 
 </rss>

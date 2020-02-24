@@ -1,0 +1,39 @@
+:filename: main/jbake/content/impressum.adoc
+:jbake-type: page
+:jbake-title: Impressum
+:jbake-status: published
+
+== Kontakt - Impressum
+
+include::config.adoc[]
+{improve}
+
+=== Anbieterkennzeichnung gemäß §5 TMG:
+
+[cols=2]
+|===
+| Name:
+   | Gerd Aschemann
+
+| Adresse:
+  | Lilienthalstr. 9 +
+D-64347 Griesheim
+
+| E-Mail:
+  | info@dukecon.org
+
+| Telefon:
+  | +49-173-3264070
+
+| USt.-Id.:
+  | DE 175604214
+
+|===
+
+Es gilt das Recht der Bundesrepublik Deutschland +
+Gerichtsstand ist Darmstadt
+
+
+== Legal attribution
+
+Google Play and the Google Play logo are trademarks of Google LLC.

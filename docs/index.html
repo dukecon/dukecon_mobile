@@ -3,21 +3,55 @@
   <head>
     <meta charset="utf-8"/>
     <title>JBake</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kotlin multiplatform tutorial">
-    <meta name="author" content="Java user group Darmstadt">
-    <meta name="keywords" content="kotlin, multiplatform, mobile, apps, dukecon">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
 
     <!-- Le styles -->
-
-  <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/asciidoctor.css" rel="stylesheet">
     <link href="css/base.css" rel="stylesheet">
     <link href="css/prettify.css" rel="stylesheet">
+      <style>
+      @media only screen and (min-width:768px){
+          #toctitle{font-size:1.375em}
+          #toc.toc{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto; padding-top: 60px;}
+          #toc.toc #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+          #toc.toc>ul{font-size:.9em;margin-bottom:0}
+          #toc.toc ul ul{margin-left:0;padding-left:1em}
+          #toc.toc ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+          body.toc2{ padding-left: 15.5em;padding-right:0; width: 100% !important;}
+          body.toc2 div#wrap div.content {width: auto !important;}
+          #toc.toc{width:15em; padding-top: 60px;}
+      }
+      @media only screen and (min-width:1280px){
+          body.toc2{ padding-left: 20.5em;padding-right:0; width: 100% !important;}
+          body.toc2 div#wrap div.content {width: auto !important;}
+          #toc.toc{width:20em; padding-top: 60px;}
+          #toc.toc #toctitle{font-size:1.375em}
+          #toc.toc>ul{font-size:.95em}
+          #toc.toc ul ul{padding-left:1.25em}
+      }
+      body {
+          overflow-y: scroll;
+      }
+      html, body {
+          font-size: 1.06rem;
+      }
+      body.toc2{ overflow-x: hidden}
+      #toc.toc ul {
+          padding-inline-start: 0;
+      }
+      :target::before {
+          content: "";
+          display: block;
+          height: 60px; /* fixed header height*/
+          margin: -60px 0 0; /* negative fixed header height */
+      }
+      </style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -31,117 +65,90 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
     <link rel="shortcut icon" href="favicon.ico">
   </head>
-  
-  <body onload="prettyPrint()">
 
-  <div class="d-flex" id="wrapper">
+<body onload="prettyPrint()" >
+<div id="wrap">
 
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Dukecon.org</div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Introduction</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Kotlin MPP Library</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Integration JVM</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Integration Android</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Integration iOS</a>
-      </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="impressum.html">Impressum <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dsvgo.html">Datenschutz <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/dukecon/dukecon_mobile">Github</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <div class="container-fluid">
-  			<a href="index.html"><h1>Javaland Kotlin Multiplatform workshop</h1></a>
-  			<p>17 Januar 2020</p>
-  			<p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Wir bauen gemeinsam eine auf der DukeCon Kotlin Native Library basierende App, die das Vortragsprogramm der JavaLand anzeigen kann. Hier lernt ihr Kotlin/Native und Kotlin Multiplatform kennen und erfahrt, wie man eine KLib baut, sie konsumiert und auf unterschiedlichen Zielplattformen einsetzt.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="workshop">Workshop</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://programm.javaland.eu/2020/#/scheduledEvent/591631">Javaland 2020 Workshop zu Kotlin/Native und -Multiplatform</a></p>
-</div>
-<div class="sect2">
-<h3 id="referenten">Referenten</h3>
-<div class="paragraph">
-<p><a href="https://harakal.de">Michal Harakal</a></p>
-</div>
-<div class="paragraph">
-<p><a href="https://programm.javaland.eu/2020/#/speaker/363284">Falk Sippach</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="voraussetzungen">Voraussetzungen:</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Ein Laptop mit IDE nach Wahl (IntelliJ, Eclipse etc.) und Android Studio, Android SDK, Emulator/Smartphone oder Apple Mac mit <strong>Xcode</strong>.</p>
-</div>
-<div class="sect2">
-<h3 id="updates">Updates</h3>
-<div class="paragraph">
-<p>22.02.2020 danke an <a href="https://twitter.com/buk/status/1231289200890253313?s=21" class="bare">https://twitter.com/buk/status/1231289200890253313?s=21</a> es ist <strong>Xcode</strong></p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>"The C language is case-sensitive. Compilers are case-sensitive. The Unix command line, ufs, and nfs file systems are case-sensitive. I&#8217;m case-sensitive too, especially about product names. The IDE is called Xcode. Big X, little c. Not XCode or xCode or X-Code. Remember that now."</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; Chris Espinosa
-</div>
-</div>
-</div>
-</div>
-</div></p>
 	
-	<hr />
-
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">DukeCon</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              
+                
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      
+                        <li><a href="workshops.html">Workshops</a></li>
+                      
+                    </ul>
+                  </li>
+                
+              
+                
+                  <li><a href="dsvgo.html.html">Dateschütz (DE)</a></li>
+                
+              
+                
+                  <li><a href="impressum.html">Imprint (DE)</a></li>
+                
+              
+          </ul>
+            <!-- tag::search[] -->
+            <form class="navbar-form navbar-right" action="https://google.de/search">
+                <div class="form-group">
+                    <input type="hidden" name="q" value="site:dukecon.org">
+                    <input type="text" name="q" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <!-- end::search[] -->
+        </div><!--/.nav-collapse -->
       </div>
     </div>
-    <!-- /#page-content-wrapper -->
 
-  </div>
-  <!-- /#wrapper -->
+	<div class="container content">
 
-		<div id="push"></div>
-    
+
+	<div class="jumbotron">
+    <div class="container">
+        <h1>Welcome to the DukeCon Mobile clients Project!</h1>
+        <p class="text-center"><img alt="dukes" src="images/dukes.jpg" style="max-height: 150px"></p>
+    </div>
+</div>
+
+
+
+	</div>
+	<div id="push"></div>
+</div>
+
+
     <div id="footer">
       <div class="container">
-        <p class="muted credit">&copy; 2015-2020 by JUG DA et al.</a></p>
+        <p class="muted credit">&copy; 2019 | Mixed with Bootstrap v3.3.7 | Baked with JBake v2.6.4</p>
       </div>
     </div>
-    
+
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/prettify.js"></script>
-    
-  </body>
+
+
+
+</body>
 </html>

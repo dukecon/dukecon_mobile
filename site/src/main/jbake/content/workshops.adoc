@@ -1,0 +1,15 @@
+:filename: main/jbake/content/workshops/javaland2020.adoc
+:jbake-type: page
+:jbake-title: Dukecon Mobile
+:jbake-status: published
+
+
+= Talks&Workshops
+
+== Talks
+
+https://www.meetup.com/de-DE/TechTalk-Beer/events/lhqdcqybcfbjb/
+
+== Workshops
+
+link:workshops/javaland2020.html[Javaland 2020 Workshop zu Kotlin/Native und -Multiplatform]
