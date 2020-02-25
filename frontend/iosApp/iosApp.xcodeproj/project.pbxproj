@@ -11,6 +11,7 @@
 		CB1FDB712401A5AC00705876 /* Event+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB702401A5AC00705876 /* Event+Extensions.swift */; };
 		CB1FDB732401D6D900705876 /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB722401D6D900705876 /* TalkView.swift */; };
 		CB1FDB772401E14600705876 /* TalkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB762401E14600705876 /* TalkDetailView.swift */; };
+		CB1FDB7924051C0B00705876 /* SpeakerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB7824051C0B00705876 /* SpeakerMapper.swift */; };
 		CB88D20C2400365600BCBCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D20B2400365600BCBCA0 /* AppDelegate.swift */; };
 		CB88D20E2400365600BCBCA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D20D2400365600BCBCA0 /* SceneDelegate.swift */; };
 		CB88D2102400365600BCBCA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D20F2400365600BCBCA0 /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 		CB1FDB702401A5AC00705876 /* Event+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Extensions.swift"; sourceTree = "<group>"; };
 		CB1FDB722401D6D900705876 /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		CB1FDB762401E14600705876 /* TalkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetailView.swift; sourceTree = "<group>"; };
+		CB1FDB7824051C0B00705876 /* SpeakerMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerMapper.swift; sourceTree = "<group>"; };
 		CB88D2082400365600BCBCA0 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB88D20B2400365600BCBCA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB88D20D2400365600BCBCA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				CB88D20B2400365600BCBCA0 /* AppDelegate.swift */,
 				CB88D20D2400365600BCBCA0 /* SceneDelegate.swift */,
 				CB88D20F2400365600BCBCA0 /* ContentView.swift */,
+				CB1FDB7824051C0B00705876 /* SpeakerMapper.swift */,
 				CB1FDB722401D6D900705876 /* TalkView.swift */,
 				CB1FDB762401E14600705876 /* TalkDetailView.swift */,
 				CB88D22D2400797300BCBCA0 /* EventsPublisher.swift */,
@@ -353,6 +356,7 @@
 				CB88D23724011B6D00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift in Sources */,
 				CB88D2102400365600BCBCA0 /* ContentView.swift in Sources */,
 				CB88D22E2400797400BCBCA0 /* EventsPublisher.swift in Sources */,
+				CB1FDB7924051C0B00705876 /* SpeakerMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
