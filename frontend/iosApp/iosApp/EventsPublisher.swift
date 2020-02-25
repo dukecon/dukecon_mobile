@@ -17,31 +17,10 @@ class EventsPublisher: ObservableObject {
     init() {
         model = EventsModel { (events) in
             self.events = events
-            self.dates = self.eventDays(events: events)
+            self.model.getConferenceDays { (dates) in
+                self.dates = dates
+            }
         }
         model.getEventsFromNetwork()
     }
-
-    func eventDays (events: [Event]) -> [Ktor_utilsGMTDate] {
-
-        var foundDates = [Ktor_utilsGMTDate]()
-        for event in events {
-            let start = event.startTime
-
-            var isNew = true
-            for existing in foundDates {
-                if start.isSameDate(existing) {
-                    isNew = false
-                    break
-                }
-            }
-            if isNew {
-                foundDates.append(start)
-            }
-        }
-
-        return foundDates
-    }
-
-
 }
