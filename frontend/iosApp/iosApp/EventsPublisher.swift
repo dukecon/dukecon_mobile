@@ -14,7 +14,7 @@ class EventsPublisher: ObservableObject {
     @Published var dates: [Ktor_utilsGMTDate] = [Ktor_utilsGMTDate]()
     var model: EventsModel!
 
-    var day = 0 {
+    var day: Int32 = 0 {
         didSet {
             self.updateEvents(day: day)
         }
@@ -30,8 +30,8 @@ class EventsPublisher: ObservableObject {
         model.getEventsFromNetwork()
     }
 
-    func updateEvents(day: Int) {
-        self.model.getEvents(day: Int32(day)) { (events) in
+    func updateEvents(day: Int32) {
+        self.model.getEvents(day: day) { (events) in
             self.events = events
         }
     }
