@@ -20,10 +20,7 @@ struct ContentView: View {
                     HStack {
                         ForEach(publisher.dates, id:\.timestamp ) { day in
                             Button(action: {
-
-                                if let index = self.publisher.dates.firstIndex(of: day) {
-                                    self.publisher.day = index
-                                }
+                                    self.publisher.day = day.dayOfMonth
                             }) {
                                 Text(day.dayOfWeek.value)
                             }
