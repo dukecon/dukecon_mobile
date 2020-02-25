@@ -104,7 +104,7 @@ class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
         }
     }
 
-    fun getEvents(day: Int, viewUpdate: (List<GMTDate>) -> Unit) {
+    fun getEvents(day: Int, viewUpdate: (List<Event>) -> Unit) {
         log(LogLevel.INFO, "EventsModel", "getEvents==>")
         ktorScope.launch {
             viewUpdate(repositoryFactory.repository.getEvents(day))
