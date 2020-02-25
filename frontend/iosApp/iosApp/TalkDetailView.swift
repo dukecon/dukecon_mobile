@@ -8,10 +8,24 @@
 
 import SwiftUI
 
+struct SpeakerViewModel {
+    var name: String
+    var subtitle: String
+    var imageURL: URL? = nil
+}
+
+struct TalkDetailViewModel {
+    var title: String
+    var room: String
+    var description: String
+    var speakers: [SpeakerViewModel]
+}
+
 struct TalkDetailView: View {
     var title: String
     var room: String
     var description: String
+    var speakers: [SpeakerViewModel]
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -30,17 +44,16 @@ struct TalkDetailView: View {
             }.frame(width: nil, height: 100, alignment: .top).background(Color.blue)
             VStack(alignment: .leading, spacing: nil) {
                 HStack {
-                    Image("sample").resizable().frame(width: 40, height: 40, alignment: .center).clipShape(Circle())
-                    VStack {
-                        Text ("Alexander")
-                        Text ("Telekom")
-                    }
-                    VStack {
-                        Text ("Michal")
-                        Text ("Telekom")
+                    ForEach(speakers, id:\.name ) {
+                        speaker in
+                        // speakerImage.resizable().frame(width: 40, height: 40, alignment: .center).clipShape(Circle())
+                        VStack {
+                            Text (speaker.name)
+                            Text (speaker.subtitle)
+                        }
                     }
                     Spacer()
-                }.font(.body)
+                }.font(.body).padding(.bottom)
                 Text(description).font(.body)
                 Spacer()
             }.padding()
@@ -50,6 +63,6 @@ struct TalkDetailView: View {
 
 struct TalkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TalkDetailView(title: "Kotlin", room: "Shanghai", description: "Lorem Ipsum")
+        TalkDetailView(title: "Kotlin", room: "Shanghai", description: "Lorem Ipsum", speakers:[SpeakerViewModel(name: "Alexander von Below", subtitle: "Deutsche Telekom AG")])
     }
 }

@@ -32,7 +32,7 @@ struct ContentView: View {
                     
                     List(publisher.events, id: \.eventId) { event in
                         VStack (alignment: .leading) {
-                            NavigationLink(destination: TalkDetailView(title: event.title, room: event.room.localizedName, description: event.eventDescription)) {
+                            NavigationLink(destination: TalkDetailView(title: event.title, room: event.room.localizedName, description: event.eventDescription, speakers: event.speakers.viewModel)) {
                                 TalkView(title: event.title, speakers: event.speakerList, room: event.room.localizedName)
                             }
                         }
