@@ -15,30 +15,37 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selection){
-            VStack {
-                HStack {
-                    ForEach(publisher.dates, id:\.timestamp ) { day in
-                        Text(day.dayOfWeek.value)
-                    }
-                }
-                List(publisher.events, id: \.eventId) { event in
-                    VStack (alignment: .leading) {
-                        Text(event.title).font(.headline)
-                        if (event.speakers.count > 0) {
-                            Text(event.speakers[0].name).font(.body)
+            NavigationView {
+                VStack {
+                    HStack {
+                        ForEach(publisher.dates, id:\.timestamp ) { day in
+                            Button(action: {
+
+                                if let index = self.publisher.dates.firstIndex(of: day) {
+                                    self.publisher.day = index
+                                }
+                            }) {
+                                Text(day.dayOfWeek.value)
+                            }
                         }
-                        Spacer()
-                        Text(event.room.localizedName).font(.body)
                     }
-                }.font(.title)
-            }
+                    
+                    List(publisher.events, id: \.eventId) { event in
+                        VStack (alignment: .leading) {
+                            NavigationLink(destination: TalkDetailView(title: event.title, room: event.room.localizedName, description: event.eventDescription, speakers: event.speakers.viewModel)) {
+                                TalkView(title: event.title, speakers: event.speakerList, room: event.room.localizedName)
+                            }
+                        }
+                    }.font(.title)
+                }
+            }.navigationBarTitle(Text("action_schedule"))
                 .tabItem {
                     VStack {
                         Image("ic_schedule")
                         Text("action_schedule")
                     }
-                }
-                .tag(0)
+            }
+            .tag(0)
             Text("Second View")
                 .font(.title)
                 .tabItem {
@@ -46,8 +53,8 @@ struct ContentView: View {
                         Image("second")
                         Text("Second")
                     }
-                }
-                .tag(1)
+            }
+            .tag(1)
         }
     }
 }
