@@ -14,24 +14,6 @@ struct SpeakerViewModel {
     var imageURL: URL? = nil
 }
 
-class ImageProvider: ObservableObject {
-    @Published var image: UIImage = UIImage(named: "sample")!
-    var url: URL? {
-        didSet {
-            if let url = url {
-                URLSession(configuration: .default).dataTask(with: url) { (data, response, error) in
-                    if let data = data, error == nil {
-                        guard let image = UIImage(data: data) else {
-                            return
-                        }
-                        self.image = image
-                    }
-                }.resume()
-            }
-        }
-    }
-}
-
 struct TalkDetailViewModel {
     var title: String
     var room: String
@@ -45,17 +27,11 @@ struct TalkDetailView: View {
     var description: String
     var speakers: [SpeakerViewModel]
 
-    @ObservedObject var imageProvider = ImageProvider()
-
     init(viewModel: TalkDetailViewModel) {
         self.title = viewModel.title
         self.room = viewModel.room
         self.description = viewModel.description
         self.speakers = viewModel.speakers
-
-        if let speaker = speakers.first, let imageUrl = speaker.imageURL {
-            imageProvider.url = imageUrl
-        }
     }
 
     var body: some View {
@@ -77,13 +53,7 @@ struct TalkDetailView: View {
                 HStack {
                     ForEach(speakers, id:\.name ) {
                         speaker in
-                        HStack {
-                            Image(uiImage: self.imageProvider.image).resizable().frame(width: 40, height: 40, alignment: .center).clipShape(Circle())
-                            VStack {
-                                Text (speaker.name)
-                                Text (speaker.subtitle)
-                            }
-                        }
+                        TalkSpeakerView(speaker: speaker)
                     }
                     Spacer()
                 }.font(.body).padding(.bottom)

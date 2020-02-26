@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3683AA1C95D40DB1086B38E5 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AFE71391091A8649C8A56C /* Pods_iosApp.framework */; };
+		CB1DA1BE24067D05006532BB /* TalkSpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */; };
 		CB1FDB712401A5AC00705876 /* Event+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB702401A5AC00705876 /* Event+Extensions.swift */; };
 		CB1FDB732401D6D900705876 /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB722401D6D900705876 /* TalkView.swift */; };
 		CB1FDB772401E14600705876 /* TalkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB762401E14600705876 /* TalkDetailView.swift */; };
@@ -43,6 +44,7 @@
 		57B26FBC07776A1080B04DCB /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		BE8D7FDFA5162EAE8378A038 /* Pods-iosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.release.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C085905DA17CC1D39A67D105 /* Pods_iosAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkSpeakerView.swift; sourceTree = "<group>"; };
 		CB1FDB702401A5AC00705876 /* Event+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Extensions.swift"; sourceTree = "<group>"; };
 		CB1FDB722401D6D900705876 /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		CB1FDB762401E14600705876 /* TalkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetailView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				CB1FDB7A24066EBF00705876 /* EventMapper.swift */,
 				CB1FDB722401D6D900705876 /* TalkView.swift */,
 				CB1FDB762401E14600705876 /* TalkDetailView.swift */,
+				CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */,
 				CB88D22D2400797300BCBCA0 /* EventsPublisher.swift */,
 				CB1FDB702401A5AC00705876 /* Event+Extensions.swift */,
 				CB88D23624011B6C00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift */,
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1DA1BE24067D05006532BB /* TalkSpeakerView.swift in Sources */,
 				CB1FDB732401D6D900705876 /* TalkView.swift in Sources */,
 				CB1FDB712401A5AC00705876 /* Event+Extensions.swift in Sources */,
 				CB88D20C2400365600BCBCA0 /* AppDelegate.swift in Sources */,
