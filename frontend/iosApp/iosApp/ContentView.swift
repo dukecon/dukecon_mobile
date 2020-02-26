@@ -38,7 +38,7 @@ struct ContentView: View {
             }.navigationBarTitle(Text("action_schedule"))
                 .tabItem {
                     VStack {
-                        Image("ic_schedule")
+                        Image(systemName: "calendar")
                         Text("action_schedule")
                     }
             }
