@@ -13,6 +13,7 @@ import org.dukecon.data.source.EventRemoteDataStore
 import org.dukecon.date.now
 import org.dukecon.domain.aspects.twitter.TwitterLinks
 import org.dukecon.domain.model.Event
+import org.dukecon.domain.model.Speaker
 import org.dukecon.domain.model.MetaData
 import org.dukecon.remote.api.DukeconApi
 import org.dukecon.remote.mapper.*
@@ -101,6 +102,14 @@ class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
         ktorScope.launch {
             viewUpdate(repositoryFactory.repository.getEventDates())
             log(LogLevel.INFO, "EventsModel", "getConferenceDays<==")
+        }
+    }
+
+    fun getSpeakers(viewUpdate: (List<Speaker>) -> Unit) {
+        log(LogLevel.INFO, "EventsModel", "getSpeakers==>")
+        ktorScope.launch {
+            viewUpdate(repositoryFactory.repository.getSpeakers())
+            log(LogLevel.INFO, "EventsModel", "getSpeakers<==")
         }
     }
 
