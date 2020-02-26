@@ -50,14 +50,16 @@ struct TalkDetailView: View {
                 }.padding()
             }.frame(width: nil, height: 100, alignment: .top).background(Color.blue)
             VStack(alignment: .leading, spacing: nil) {
-                HStack {
-                    ForEach(speakers, id:\.name ) {
-                        speaker in
-                        TalkSpeakerView(speaker: speaker)
-                    }
-                    Spacer()
-                }.font(.body).padding(.bottom)
-                Text(description).font(.body)
+                ScrollView {
+                    HStack {
+                        ForEach(speakers, id:\.name ) {
+                            speaker in
+                            TalkSpeakerView(speaker: speaker)
+                        }
+                        Spacer()
+                    }.font(.body).padding(.bottom)
+                    Text(description).font(.body)
+                }
                 Spacer()
             }.padding()
         }
