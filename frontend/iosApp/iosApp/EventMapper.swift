@@ -10,6 +10,19 @@ import MultiPlatformLibrary
 
 extension Event {
     var talkDetailViewModel: TalkDetailViewModel {
-        return TalkDetailViewModel(title: self.title, room: self.room.localizedName, description: self.eventDescription, speakers: self.speakers.viewModel)
+        var timeDisplay = String()
+
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+
+        if let startDate = self.startTime.date {
+            timeDisplay = formatter.string(from: startDate)
+            if let endDate = self.endTime.date {
+                timeDisplay.append(" - \(formatter.string(from: endDate))")
+            }
+        }
+
+        return TalkDetailViewModel(title: self.title, room: self.room.localizedName, timeDisplay: timeDisplay, description: self.eventDescription, speakers: self.speakers.viewModel)
     }
 }
