@@ -22,6 +22,9 @@ buildscript {
     }
 }
 
+group = "com.github.dukecon"
+version = "0.0.1"
+
 allprojects {
     repositories {
         google()

@@ -56,6 +56,7 @@ android {
     }
 
     productFlavors {
+        /*
         create("bedcon") {
             flavorDimensions("sessionize")
             applicationIdSuffix = ".bedcon"
@@ -63,6 +64,8 @@ android {
                 implementation(project(":common:backend:sessionize"))
             }
         }
+
+         */
         create("javaland") {
             flavorDimensions("sessionize")
             applicationIdSuffix = ".javaland"
@@ -70,6 +73,7 @@ android {
                 implementation(project(":common:backend:dukecon"))
             }
         }
+        /*
         create("macoun") {
             flavorDimensions("sessionize")
             applicationIdSuffix = ".macoun"
@@ -77,6 +81,8 @@ android {
                 implementation(project(":common:backend:macoun"))
             }
         }
+        
+         */
     }
     applicationVariants.all(object : Action<ApplicationVariant> {
         override fun execute(variant: ApplicationVariant) {

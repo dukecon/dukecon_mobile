@@ -76,12 +76,6 @@ object Deps {
                     iosX64 = "com.russhwolf:multiplatform-settings-iosx64:${Versions.Libs.MultiPlatform.settings}",
                     iosArm64 = "com.russhwolf:multiplatform-settings-iosarm64:${Versions.Libs.MultiPlatform.settings}"
             )
-            val napier = MultiPlatformLibrary(
-                    android = "com.github.aakira:napier-android:${Versions.Libs.MultiPlatform.napier}",
-                    common = "com.github.aakira:napier:${Versions.Libs.MultiPlatform.napier}",
-                    iosX64 = "com.github.aakira:napier-iosX64:${Versions.Libs.MultiPlatform.napier}",
-                    iosArm64 = "com.github.aakira:napier-iosArm64:${Versions.Libs.MultiPlatform.napier}"
-            )
         }
     }
 

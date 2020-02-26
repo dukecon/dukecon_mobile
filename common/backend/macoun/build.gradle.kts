@@ -27,7 +27,6 @@ dependencies {
     mppLibrary(Deps.Libs.MultiPlatform.ktorClientLogging)
 
     mppLibrary(Deps.Libs.MultiPlatform.settings)
-    mppLibrary(Deps.Libs.MultiPlatform.napier)
 
     mppModules.forEach { mppModule(it) }
 }

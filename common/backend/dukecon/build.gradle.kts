@@ -10,6 +10,14 @@ android {
     setDefaults()
 }
 
+/*
+tasks.withType<org.dukecon.plugin.openapi.PoetOpenApiTask>().all {
+    openApiSpec = "$rootDir/specs/conference_api.json"
+    apiPackage = "org.dukecon.remote.api"
+    modelPackage = "org.dukecon.remote.api"
+}
+ */
+
 openApiGenerate {
     inputSpec.set("$rootDir/specs/conference_api.json")
     generatorName.set("kotlin-ktor-client")

@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("kotlinx-serialization")
     id("dev.icerock.mobile.multiplatform")
+    id("maven-publish")
 }
 
 android {
@@ -24,7 +25,6 @@ dependencies {
     mppLibrary(Deps.Libs.MultiPlatform.ktorClientLogging)
 
     mppLibrary(Deps.Libs.MultiPlatform.settings)
-    mppLibrary(Deps.Libs.MultiPlatform.napier)
 
     implementation("androidx.preference:preference:1.1.0")
 }

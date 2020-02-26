@@ -3,6 +3,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android-extensions")
     id("dev.icerock.mobile.multiplatform")
+    id("maven-publish")    
 }
 
 android {
@@ -15,5 +16,4 @@ dependencies {
     mppLibrary(Deps.Libs.MultiPlatform.ktorUtils)
 
     mppLibrary(Deps.Libs.MultiPlatform.settings)
-    mppLibrary(Deps.Libs.MultiPlatform.napier)
 }

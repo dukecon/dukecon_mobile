@@ -20,7 +20,5 @@ dependencies {
     mppLibrary(Deps.Libs.MultiPlatform.coroutines)
     mppLibrary(Deps.Libs.MultiPlatform.ktorUtils)
 
-    mppLibrary(Deps.Libs.MultiPlatform.napier)
-
     mppModules.forEach { mppModule(it) }
 }

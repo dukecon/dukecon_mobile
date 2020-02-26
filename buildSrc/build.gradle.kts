@@ -18,10 +18,16 @@ gradlePlugin {
             id = "loc-plugin"
             implementationClass = "org.dukecon.plugin.LocPlugin"
         }
+        register("PoetGeneratorPlugin") {
+            id = "poet-generator-plugin"
+            implementationClass = "org.dukecon.plugin.openapi.PoetGeneratorPlugin"
+        }
+
         register("DependencyGraphGenerator") {
             id = "project-dependencies-graph-plugin"
             implementationClass = "plugins.graph.DependencyGraphGeneratorPlugin"
         }
+
         register("KtorOpenApiGenerator") {
             id = "ktor-open-api-plugin"
             implementationClass = "org.dukecon.plugin.openapi.NetworkGeneratorPlugin"
@@ -47,7 +53,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
     implementation("guru.nidi:graphviz-java:0.12.1")
     implementation("org.openapitools:openapi-generator-gradle-plugin:4.2.3")
+    implementation("com.squareup:kotlinpoet:1.5.0")
+    //implementation( "com.reprezen.kaizen:openapi-parser:4.0.4")
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
+    //implementation( "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0")
 }
 
 configurations.all {
