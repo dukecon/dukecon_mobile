@@ -52,6 +52,17 @@ struct ContentView: View {
                     }
             }
             .tag(1)
+            NavigationView {
+                List(eventPublisher.speakers.viewModel, id: \.name) { (speakerViewModel) in
+                    TalkSpeakerView(speaker: speakerViewModel)
+                }
+            }.tabItem {
+                VStack {
+                    Image(systemName: "person.fill")
+                    Text("action_speakers")
+                }
+            }
+        .tag(2)
         }
     }
 }
