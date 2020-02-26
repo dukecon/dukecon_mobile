@@ -1,3 +1,5 @@
 = Dukecon MPP/Kotlin Native
 
+image:https://jitpack.io/v/dukecon/dukecon_mobile.svg[https://jitpack.io/#dukecon/dukecon_mobile]
+
 This repository is experimental conversion of Dukecon Android client https://github.com/dukecon/dukecon_android[Dukecon Android Client] into kotlin/nativ with Multiplatform Plugin
