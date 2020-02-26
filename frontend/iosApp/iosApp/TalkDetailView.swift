@@ -59,7 +59,9 @@ struct TalkDetailView: View {
                     HStack {
                         ForEach(speakers, id:\.name ) {
                             speaker in
+                            NavigationLink(destination: SpeakerDetailsView(viewModel: SpeakerDetailsViewModel(name: speaker.name, imageURL:speaker.imageURL, link: speaker.url, description: speaker.description))) {
                                 TalkSpeakerView(speaker: speaker)
+                            }.buttonStyle(PlainButtonStyle())
                         }
                         Spacer()
                     }.font(.body).padding(.bottom)

@@ -25,6 +25,7 @@
 		CB88D23124008A7500BCBCA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB88D23324008A7500BCBCA0 /* Localizable.strings */; };
 		CB88D23724011B6D00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D23624011B6C00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift */; };
 		CB88D23924011DF000BCBCA0 /* Ktor_utilsGMTDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D23824011DF000BCBCA0 /* Ktor_utilsGMTDateTests.swift */; };
+		CBEFE10F2406AEF100E48567 /* SpeakerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFE10E2406AEF000E48567 /* SpeakerDetailsView.swift */; };
 		FF56E5C91959FEF38DF99622 /* Pods_iosAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C085905DA17CC1D39A67D105 /* Pods_iosAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		CB88D23524008B6400BCBCA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB88D23624011B6C00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ktor_utilsGMTDate+Extensions.swift"; sourceTree = "<group>"; };
 		CB88D23824011DF000BCBCA0 /* Ktor_utilsGMTDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ktor_utilsGMTDateTests.swift; sourceTree = "<group>"; };
+		CBEFE10E2406AEF000E48567 /* SpeakerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailsView.swift; sourceTree = "<group>"; };
 		D9B07BEA237C8DAFBAD72792 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 				CB1FDB722401D6D900705876 /* TalkView.swift */,
 				CB1FDB762401E14600705876 /* TalkDetailView.swift */,
 				CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */,
+				CBEFE10E2406AEF000E48567 /* SpeakerDetailsView.swift */,
 				CB88D22D2400797300BCBCA0 /* EventsPublisher.swift */,
 				CB1FDB702401A5AC00705876 /* Event+Extensions.swift */,
 				CB88D23624011B6C00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift */,
@@ -365,6 +368,7 @@
 				CB88D22E2400797400BCBCA0 /* EventsPublisher.swift in Sources */,
 				CB1FDB7924051C0B00705876 /* SpeakerMapper.swift in Sources */,
 				CB1FDB7B24066EBF00705876 /* EventMapper.swift in Sources */,
+				CBEFE10F2406AEF100E48567 /* SpeakerDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
