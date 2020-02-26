@@ -25,7 +25,10 @@ class EventsPublisher: ObservableObject {
             self.model.getConferenceDays { (dates) in
                 self.dates = dates
             }
-            self.updateEvents(day: self.day)
+            if let firstDate = self.dates.first {
+                self.day = firstDate.dayOfMonth
+                self.updateEvents(day: self.day)
+            }
         }
         model.getEventsFromNetwork()
     }
