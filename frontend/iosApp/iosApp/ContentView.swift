@@ -20,7 +20,7 @@ struct ContentView: View {
                     HStack {
                         ForEach(eventPublisher.dates, id:\.timestamp ) { day in
                             Button(action: {
-                                    self.eventPublisher.day = day.dayOfMonth
+                                self.eventPublisher.day = day.dayOfMonth
                             }) {
                                 Text(day.dayOfWeek.value)
                             }
@@ -47,8 +47,8 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image(systemName: "star.fill")
+                        Text("action_favorites")
                     }
             }
             .tag(1)
@@ -62,7 +62,16 @@ struct ContentView: View {
                     Text("action_speakers")
                 }
             }
-        .tag(2)
+            .tag(2)
+            Text("Info View")
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "info.circle.fill")
+                        Text("action_info")
+                    }
+            }
+            .tag(3)
         }
     }
 }
