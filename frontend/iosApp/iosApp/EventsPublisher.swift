@@ -11,7 +11,9 @@ import MultiPlatformLibrary
 
 class EventsPublisher: ObservableObject {
     @Published var events = [Event]()
-    @Published var dates: [Ktor_utilsGMTDate] = [Ktor_utilsGMTDate]()
+    @Published var dates = [Ktor_utilsGMTDate]()
+    @Published var speakers = [Speaker]()
+
     var model: EventsModel!
 
     var day: Int32 = 0 {
@@ -28,6 +30,9 @@ class EventsPublisher: ObservableObject {
             if let firstDate = self.dates.first {
                 self.day = firstDate.dayOfMonth
                 self.updateEvents(day: self.day)
+            }
+            self.model.getSpeakers { (speakers) in
+                self.speakers = speakers
             }
         }
         model.getEventsFromNetwork()
