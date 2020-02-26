@@ -52,6 +52,6 @@ struct TalkSpeakerView: View {
 
 struct TalkSpeakerView_Previews: PreviewProvider {
     static var previews: some View {
-        TalkSpeakerView(speaker: SpeakerViewModel(name: "Alexander", subtitle: "Telekom"))
+        TalkSpeakerView(speaker: SpeakerViewModel(name: "Alexander", subtitle: "Telekom", description: "Lorem Ipsum"))
     }
 }
