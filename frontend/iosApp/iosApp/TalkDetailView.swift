@@ -12,6 +12,8 @@ struct SpeakerViewModel {
     var name: String
     var subtitle: String
     var imageURL: URL? = nil
+    var url: URL?
+    var description: String
 }
 
 struct TalkDetailViewModel {
@@ -57,7 +59,7 @@ struct TalkDetailView: View {
                     HStack {
                         ForEach(speakers, id:\.name ) {
                             speaker in
-                            TalkSpeakerView(speaker: speaker)
+                                TalkSpeakerView(speaker: speaker)
                         }
                         Spacer()
                     }.font(.body).padding(.bottom)
@@ -71,7 +73,7 @@ struct TalkDetailView: View {
 
 struct TalkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = TalkDetailViewModel(title: "Kotlin", room: "Foo", timeDisplay: "9-10", description: "Lorem Ipsum", speakers: [SpeakerViewModel(name: "Alexander von Below", subtitle: "Deutsche Telekom AG")])
+        let viewModel = TalkDetailViewModel(title: "Kotlin", room: "Foo", timeDisplay: "9-10", description: "Lorem Ipsum", speakers: [SpeakerViewModel(name: "Alexander von Below", subtitle: "Deutsche Telekom AG", description: "Lorem Ipsum")])
         return TalkDetailView(viewModel: viewModel)
     }
 }
