@@ -10,24 +10,24 @@ import SwiftUI
 import MultiPlatformLibrary
 
 struct ContentView: View {
+    @EnvironmentObject var eventPublisher: EventsPublisher
     @State private var selection = 0
-    @ObservedObject var publisher = EventsPublisher()
 
     var body: some View {
         TabView(selection: $selection){
             NavigationView {
                 VStack {
                     HStack {
-                        ForEach(publisher.dates, id:\.timestamp ) { day in
+                        ForEach(eventPublisher.dates, id:\.timestamp ) { day in
                             Button(action: {
-                                    self.publisher.day = day.dayOfMonth
+                                    self.eventPublisher.day = day.dayOfMonth
                             }) {
                                 Text(day.dayOfWeek.value)
                             }
                         }
                     }
                     
-                    List(publisher.events, id: \.eventId) { event in
+                    List(eventPublisher.events, id: \.eventId) { event in
                         VStack (alignment: .leading) {
                             NavigationLink(destination: TalkDetailView(viewModel: event.talkDetailViewModel)) {
                                 TalkView(title: event.title, speakers: event.speakerList, room: event.room.localizedName)
