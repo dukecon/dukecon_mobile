@@ -6,5 +6,7 @@
   Copyright © 2020 Alexander von Below. All rights reserved.
 */
 
+"action_favorites" = "Favorites";
 "action_schedule" = "Schedule";
 "action_speakers" = "Speakers";
+"action_info" = "Info";
