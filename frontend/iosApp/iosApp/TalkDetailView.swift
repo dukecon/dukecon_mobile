@@ -40,7 +40,7 @@ struct TalkDetailView: View {
                 Spacer()
                 VStack {
                     HStack {
-                        Text(title).font(.callout)
+                        Text(title).font(.body).bold()
                         Spacer()
                     }
                     HStack {
