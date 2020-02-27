@@ -13,8 +13,7 @@ class EventsPublisher: ObservableObject {
     @Published var events = [Event]()
     @Published var dates = [Ktor_utilsGMTDate]()
     @Published var speakers = [Speaker]()
-    @Published var libraries = [Library]()
-
+    @Published var licenses = [Library]()
     var model: EventsModel!
 
     var day: Int32 = 0 {
@@ -35,11 +34,14 @@ class EventsPublisher: ObservableObject {
             self.model.getSpeakers { (speakers) in
                 self.speakers = speakers
             }
-            self.model.getLicenses{ (licences) in
-                self.libraries = licences
+            self.model.getLicenses { (libraries) in
+                self.licenses = libraries.filter({ (library) -> Bool in
+                    return library.targetHost == TargetHost.ios || library.targetHost == TargetHost.common
+                })
             }
         }
         model.getEventsFromNetwork()
+
     }
 
     func updateEvents(day: Int32) {
