@@ -30,7 +30,11 @@ struct SpeakerDetailsView: View {
         VStack(alignment: .leading) {
             Image(uiImage: self.imageProvider.image).resizable() .aspectRatio(contentMode: .fit).frame(maxWidth: .infinity, alignment: .center)
             Text(viewModel.name).frame(maxWidth: .infinity, alignment: .leading)
-            Text(viewModel.link?.absoluteString ?? "Foo")
+            Button(action: {
+                UIApplication.shared.open(self.viewModel.link!)
+            }) {
+                Text(viewModel.link?.absoluteString ?? "Weird")
+            }
             Text(viewModel.description)
             Spacer()
         }.padding(.leading)
