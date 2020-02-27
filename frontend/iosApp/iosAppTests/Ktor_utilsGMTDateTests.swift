@@ -7,7 +7,8 @@
 //
 
 import XCTest
-import MultiPlatformLibrary
+@testable import MultiPlatformLibrary
+@testable import iosApp
 
 class Ktor_utilsGMTDateTests: XCTestCase {
 
@@ -20,8 +21,22 @@ class Ktor_utilsGMTDateTests: XCTestCase {
     }
 
     func testExample() {
-        let ktorDate = DateFormatKt.parseDate("2020-03-17T12:40:00")
+
+        let originalDate = Date()
+
+        let formatter = ISO8601DateFormatter()
+        let dateString = formatter.string(from: originalDate)
+//
+        let ktorDate = DateFormatKt.parseDate(dateString)
         XCTAssertNotNil(ktorDate)
+
+        let date = ktorDate.date
+        XCTAssertNotNil(date)
+
+        let r1 = floor(date!.timeIntervalSinceReferenceDate)
+        let r2 = floor(originalDate.timeIntervalSinceReferenceDate.rounded())
+
+        XCTAssertEqual(r1, r2)
     }
 
 

@@ -12,11 +12,14 @@ struct SpeakerViewModel {
     var name: String
     var subtitle: String
     var imageURL: URL? = nil
+    var url: URL?
+    var description: String
 }
 
 struct TalkDetailViewModel {
     var title: String
     var room: String
+    var timeDisplay: String
     var description: String
     var speakers: [SpeakerViewModel]
 }
@@ -26,6 +29,15 @@ struct TalkDetailView: View {
     var room: String
     var description: String
     var speakers: [SpeakerViewModel]
+    var viewModel: TalkDetailViewModel
+
+    init(viewModel: TalkDetailViewModel) {
+        self.viewModel = viewModel
+        self.title = viewModel.title
+        self.room = viewModel.room
+        self.description = viewModel.description
+        self.speakers = viewModel.speakers
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,28 +45,28 @@ struct TalkDetailView: View {
                 Spacer()
                 VStack {
                     HStack {
-                        Text(title).font(.callout)
+                        Text(title).font(.body).bold()
                         Spacer()
                     }
                     HStack {
-                        Text([room, "9-10"].joined(separator: ", ")).font(.body)
+                        Text([room, viewModel.timeDisplay].joined(separator: ", ")).font(.body)
                         Spacer()
                     }
                 }.padding()
             }.frame(width: nil, height: 100, alignment: .top).background(Color.blue)
             VStack(alignment: .leading, spacing: nil) {
-                HStack {
-                    ForEach(speakers, id:\.name ) {
-                        speaker in
-                        // speakerImage.resizable().frame(width: 40, height: 40, alignment: .center).clipShape(Circle())
-                        VStack {
-                            Text (speaker.name)
-                            Text (speaker.subtitle)
+                ScrollView {
+                    HStack {
+                        ForEach(speakers, id:\.name ) {
+                            speaker in
+                            NavigationLink(destination: SpeakerDetailsView(viewModel: SpeakerDetailsViewModel(name: speaker.name, imageURL:speaker.imageURL, link: speaker.url, description: speaker.description))) {
+                                TalkSpeakerView(speaker: speaker)
+                            }.buttonStyle(PlainButtonStyle())
                         }
-                    }
-                    Spacer()
-                }.font(.body).padding(.bottom)
-                Text(description).font(.body)
+                        Spacer()
+                    }.font(.body).padding(.bottom)
+                    Text(description).font(.body)
+                }
                 Spacer()
             }.padding()
         }
@@ -63,6 +75,7 @@ struct TalkDetailView: View {
 
 struct TalkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TalkDetailView(title: "Kotlin", room: "Shanghai", description: "Lorem Ipsum", speakers:[SpeakerViewModel(name: "Alexander von Below", subtitle: "Deutsche Telekom AG")])
+        let viewModel = TalkDetailViewModel(title: "Kotlin", room: "Foo", timeDisplay: "9-10", description: "Lorem Ipsum", speakers: [SpeakerViewModel(name: "Alexander von Below", subtitle: "Deutsche Telekom AG", description: "Lorem Ipsum")])
+        return TalkDetailView(viewModel: viewModel)
     }
 }

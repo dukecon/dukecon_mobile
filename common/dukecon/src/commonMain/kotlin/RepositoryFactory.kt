@@ -13,11 +13,16 @@ import org.dukecon.data.source.EventRemoteDataStore
 import org.dukecon.date.now
 import org.dukecon.domain.aspects.twitter.TwitterLinks
 import org.dukecon.domain.model.Event
+import org.dukecon.domain.model.Speaker
 import org.dukecon.domain.model.MetaData
 import org.dukecon.remote.api.DukeconApi
 import org.dukecon.remote.mapper.*
 import org.dukecon.remote.store.DukeconConferenceRemote
 import org.dukecon.time.CurrentDataTimeProvider
+import org.dukecon.domain.repository.LibrariesRepository
+import org.dukecon.domain.model.Library
+import org.dukecon.data.repository.LibrariesListRepository
+
 
 val cfg = object : ConferenceConfiguration {
     override val baseUrl: String
@@ -43,10 +48,14 @@ private var repositoryFactory = RepositoryFactory(cfg)
 
 private class RepositoryFactory(val conferenceConfiguration: ConferenceConfiguration) {
     val repository: LocalAndRemoteDataRepository
+    val licensesRepository: LibrariesRepository
     val api: DukeconApi
 
     init {
         log(LogLevel.DEBUG, "RepositoryFactory", "start ${conferenceConfiguration.baseUrl}")
+
+        licensesRepository = LibrariesListRepository()
+
         api = DukeconApi(
                 endpoint = conferenceConfiguration.baseUrl,
                 conference = conferenceConfiguration.conferenceId
@@ -104,6 +113,14 @@ class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
         }
     }
 
+    fun getSpeakers(viewUpdate: (List<Speaker>) -> Unit) {
+        log(LogLevel.INFO, "EventsModel", "getSpeakers==>")
+        ktorScope.launch {
+            viewUpdate(repositoryFactory.repository.getSpeakers())
+            log(LogLevel.INFO, "EventsModel", "getSpeakers<==")
+        }
+    }
+
     fun getEvents(day: Int, viewUpdate: (List<Event>) -> Unit) {
         log(LogLevel.INFO, "EventsModel", "getEvents==>")
         ktorScope.launch {
@@ -119,6 +136,15 @@ class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
             log(LogLevel.INFO, "EventsModel", "getEvent<==")
         }
     }
+
+    fun getLicenses(viewUpdate: (List<Library>) -> Unit) {
+        log(LogLevel.INFO, "EventsModel", "getLicenses==>")
+        ktorScope.launch {
+            viewUpdate(repositoryFactory.licensesRepository.getLibraries())
+            log(LogLevel.INFO, "EventsModel", "getLicenses<==")
+        }
+    }
+
 
 }
 

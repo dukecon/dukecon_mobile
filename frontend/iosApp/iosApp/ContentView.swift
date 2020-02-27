@@ -10,29 +10,26 @@ import SwiftUI
 import MultiPlatformLibrary
 
 struct ContentView: View {
+    @EnvironmentObject var eventPublisher: EventsPublisher
     @State private var selection = 0
-    @ObservedObject var publisher = EventsPublisher()
 
     var body: some View {
         TabView(selection: $selection){
             NavigationView {
                 VStack {
                     HStack {
-                        ForEach(publisher.dates, id:\.timestamp ) { day in
+                        ForEach(eventPublisher.dates, id:\.timestamp ) { day in
                             Button(action: {
-
-                                if let index = self.publisher.dates.firstIndex(of: day) {
-                                    self.publisher.day = index
-                                }
+                                self.eventPublisher.day = day.dayOfMonth
                             }) {
                                 Text(day.dayOfWeek.value)
                             }
                         }
                     }
                     
-                    List(publisher.events, id: \.eventId) { event in
+                    List(eventPublisher.events, id: \.eventId) { event in
                         VStack (alignment: .leading) {
-                            NavigationLink(destination: TalkDetailView(title: event.title, room: event.room.localizedName, description: event.eventDescription, speakers: event.speakers.viewModel)) {
+                            NavigationLink(destination: TalkDetailView(viewModel: event.talkDetailViewModel)) {
                                 TalkView(title: event.title, speakers: event.speakerList, room: event.room.localizedName)
                             }
                         }
@@ -41,7 +38,7 @@ struct ContentView: View {
             }.navigationBarTitle(Text("action_schedule"))
                 .tabItem {
                     VStack {
-                        Image("ic_schedule")
+                        Image(systemName: "calendar")
                         Text("action_schedule")
                     }
             }
@@ -50,11 +47,38 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image(systemName: "star.fill")
+                        Text("action_favorites")
                     }
             }
             .tag(1)
+            NavigationView {
+                List(eventPublisher.speakers.viewModel, id: \.name) { (speakerViewModel) in
+                    TalkSpeakerView(speaker: speakerViewModel)
+                }
+            }.tabItem {
+                VStack {
+                    Image(systemName: "person.fill")
+                    Text("action_speakers")
+                }
+            }
+            .tag(2)
+            List(eventPublisher.licenses, id: \.self) {
+                (license) in
+                VStack (alignment: .leading) {
+                    Text (license.name)
+                    Text (license.owner)
+                    Text (license.license)
+                    Text (license.targetHost.name)
+                }
+            }
+                .tabItem {
+                    VStack {
+                        Image(systemName: "info.circle.fill")
+                        Text("action_info")
+                    }
+            }
+            .tag(3)
         }
     }
 }

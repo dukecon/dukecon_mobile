@@ -11,10 +11,12 @@ import MultiPlatformLibrary
 
 class EventsPublisher: ObservableObject {
     @Published var events = [Event]()
-    @Published var dates: [Ktor_utilsGMTDate] = [Ktor_utilsGMTDate]()
+    @Published var dates = [Ktor_utilsGMTDate]()
+    @Published var speakers = [Speaker]()
+    @Published var licenses = [Library]()
     var model: EventsModel!
 
-    var day = 0 {
+    var day: Int32 = 0 {
         didSet {
             self.updateEvents(day: day)
         }
@@ -25,13 +27,25 @@ class EventsPublisher: ObservableObject {
             self.model.getConferenceDays { (dates) in
                 self.dates = dates
             }
-            self.updateEvents(day: self.day)
+            if let firstDate = self.dates.first {
+                self.day = firstDate.dayOfMonth
+                self.updateEvents(day: self.day)
+            }
+            self.model.getSpeakers { (speakers) in
+                self.speakers = speakers
+            }
+            self.model.getLicenses { (libraries) in
+                self.licenses = libraries.filter({ (library) -> Bool in
+                    return library.targetHost == TargetHost.ios || library.targetHost == TargetHost.common
+                })
+            }
         }
         model.getEventsFromNetwork()
+
     }
 
-    func updateEvents(day: Int) {
-        self.model.getEvents(day: Int32(day)) { (events) in
+    func updateEvents(day: Int32) {
+        self.model.getEvents(day: day) { (events) in
             self.events = events
         }
     }

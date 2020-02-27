@@ -15,4 +15,11 @@ extension Ktor_utilsGMTDate {
         }
         return false
     }
+
+    var date: Date? {
+
+        let components = DateComponents(calendar: nil, timeZone: TimeZone(secondsFromGMT: 0), era: nil, year: Int(self.year), month: Int(self.month.ordinal) + 1, day: Int(self.dayOfMonth), hour: Int(self.hours), minute: Int(self.minutes), second: Int(self.seconds), nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+
+        return Calendar.autoupdatingCurrent.date(from: components)
+    }
 }

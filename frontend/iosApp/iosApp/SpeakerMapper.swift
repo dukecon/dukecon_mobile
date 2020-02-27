@@ -10,12 +10,13 @@ import MultiPlatformLibrary
 
 extension Sequence where Iterator.Element : Speaker {
     var viewModel: [SpeakerViewModel] {
-        var result = [SpeakerViewModel(name: "Alex", subtitle: "DT")]
-        result = self.map({ (speaker) -> SpeakerViewModel in
+        let result = self.map({ (speaker) -> SpeakerViewModel in
             let name = speaker.name
             let company = speaker.title
-            let url = URL(string:speaker.avatar)
-            return SpeakerViewModel(name: name, subtitle: company, imageURL: url)
+            let imageUrl = URL(string:speaker.avatar)
+            let url = URL(string: speaker.website)
+            let description = speaker.bio
+            return SpeakerViewModel(name: name, subtitle: company, imageURL: imageUrl, url:url, description: description)
         })
         return result
     }
