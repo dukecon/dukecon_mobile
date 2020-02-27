@@ -63,8 +63,15 @@ struct ContentView: View {
                 }
             }
             .tag(2)
-            Text("Info View")
-                .font(.title)
+            List(eventPublisher.licenses, id: \.self) {
+                (license) in
+                VStack (alignment: .leading) {
+                    Text (license.name)
+                    Text (license.owner)
+                    Text (license.license)
+                    Text (license.targetHost.name)
+                }
+            }
                 .tabItem {
                     VStack {
                         Image(systemName: "info.circle.fill")
