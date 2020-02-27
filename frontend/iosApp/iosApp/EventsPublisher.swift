@@ -13,6 +13,7 @@ class EventsPublisher: ObservableObject {
     @Published var events = [Event]()
     @Published var dates = [Ktor_utilsGMTDate]()
     @Published var speakers = [Speaker]()
+    @Published var libraries = [Library]()
 
     var model: EventsModel!
 
@@ -33,6 +34,9 @@ class EventsPublisher: ObservableObject {
             }
             self.model.getSpeakers { (speakers) in
                 self.speakers = speakers
+            }
+            self.model.getLicenses{ (licences) in
+                self.libraries = licences
             }
         }
         model.getEventsFromNetwork()
