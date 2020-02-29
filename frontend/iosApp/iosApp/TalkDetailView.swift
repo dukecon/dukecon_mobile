@@ -41,19 +41,10 @@ struct TalkDetailView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            VStack {
+            HStack {
+                Text([room, viewModel.timeDisplay].joined(separator: ", ")).font(.body)
                 Spacer()
-                VStack {
-                    HStack {
-                        Text(title).font(.body).bold()
-                        Spacer()
-                    }
-                    HStack {
-                        Text([room, viewModel.timeDisplay].joined(separator: ", ")).font(.body)
-                        Spacer()
-                    }
-                }.padding()
-            }.frame(width: nil, height: 100, alignment: .top).background(Color.blue)
+            }.padding().frame(width: nil, height: 100, alignment: .top).background(Color.blue)
             VStack(alignment: .leading, spacing: nil) {
                 ScrollView {
                     HStack {
@@ -69,7 +60,7 @@ struct TalkDetailView: View {
                 }
                 Spacer()
             }.padding()
-        }
+        }.navigationBarTitle(title)
     }
 }
 
