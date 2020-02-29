@@ -51,7 +51,6 @@ struct ContentView: View {
                     Text (license.name)
                     Text (license.owner)
                     Text (license.license)
-                    Text (license.targetHost.name)
                 }
             }
                 .tabItem {
