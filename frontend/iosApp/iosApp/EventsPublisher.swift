@@ -26,10 +26,10 @@ class EventsPublisher: ObservableObject {
         model = EventsModel { (events) in
             self.model.getConferenceDays { (dates) in
                 self.dates = dates
-            }
-            if let firstDate = self.dates.first {
-                self.day = firstDate.dayOfMonth
-                self.updateEvents(day: self.day)
+                if let firstDate = self.dates.first {
+                    self.day = firstDate.dayOfMonth
+                    self.updateEvents(day: self.day)
+                }
             }
             self.model.getSpeakers { (speakers) in
                 self.speakers = speakers
