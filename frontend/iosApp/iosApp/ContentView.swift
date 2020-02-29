@@ -36,6 +36,8 @@ struct ContentView: View {
             .tag(1)
             NavigationView {
                 List(eventPublisher.speakers.viewModel, id: \.name) { (speakerViewModel) in
+                    NavigationLink(destination: SpeakerDetailsView(viewModel: SpeakerDetailsViewModel(name: speakerViewModel.name, imageURL:speakerViewModel.imageURL, link: speakerViewModel.url, description: speakerViewModel.description))) {
+
                         TalkSpeakerView(speaker: speakerViewModel)
                     }
                 }.navigationBarTitle(Text("action_speakers"))
