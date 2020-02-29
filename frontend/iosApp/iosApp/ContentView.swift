@@ -16,8 +16,8 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection){
             NavigationView {
-                SpeakerView()
-            }.navigationBarTitle(Text("action_schedule"))
+                SpeakerView().navigationBarTitle(Text("action_schedule"))
+            }
                 .tabItem {
                     VStack {
                         Image(systemName: "calendar")
@@ -36,8 +36,9 @@ struct ContentView: View {
             .tag(1)
             NavigationView {
                 List(eventPublisher.speakers.viewModel, id: \.name) { (speakerViewModel) in
-                    TalkSpeakerView(speaker: speakerViewModel)
-                }
+                        TalkSpeakerView(speaker: speakerViewModel)
+                    }
+                }.navigationBarTitle(Text("action_speakers"))
             }.tabItem {
                 VStack {
                     Image(systemName: "person.fill")
