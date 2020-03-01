@@ -29,7 +29,6 @@ struct SpeakerDetailsView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Image(uiImage: self.imageProvider.image).resizable() .aspectRatio(contentMode: .fit).frame(maxWidth: .infinity, alignment: .center)
-            Text(viewModel.name).frame(maxWidth: .infinity, alignment: .leading)
             Button(action: {
                 UIApplication.shared.open(self.viewModel.link!)
             }) {
@@ -37,7 +36,7 @@ struct SpeakerDetailsView: View {
             }
             Text(viewModel.description)
             Spacer()
-        }.padding(.leading)
+        }.padding(.leading).navigationBarTitle(viewModel.name)
     }
 }
 

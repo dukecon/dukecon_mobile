@@ -16,26 +16,8 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection){
             NavigationView {
-                VStack {
-                    HStack {
-                        ForEach(eventPublisher.dates, id:\.timestamp ) { day in
-                            Button(action: {
-                                self.eventPublisher.day = day.dayOfMonth
-                            }) {
-                                Text(day.dayOfWeek.value)
-                            }
-                        }
-                    }
-                    
-                    List(eventPublisher.events, id: \.eventId) { event in
-                        VStack (alignment: .leading) {
-                            NavigationLink(destination: TalkDetailView(viewModel: event.talkDetailViewModel)) {
-                                TalkView(title: event.title, speakers: event.speakerList, room: event.room.localizedName)
-                            }
-                        }
-                    }.font(.title)
-                }
-            }.navigationBarTitle(Text("action_schedule"))
+                SpeakerView().navigationBarTitle(Text("action_schedule"))
+            }
                 .tabItem {
                     VStack {
                         Image(systemName: "calendar")
@@ -54,8 +36,11 @@ struct ContentView: View {
             .tag(1)
             NavigationView {
                 List(eventPublisher.speakers.viewModel, id: \.name) { (speakerViewModel) in
-                    TalkSpeakerView(speaker: speakerViewModel)
-                }
+                    NavigationLink(destination: SpeakerDetailsView(viewModel: SpeakerDetailsViewModel(name: speakerViewModel.name, imageURL:speakerViewModel.imageURL, link: speakerViewModel.url, description: speakerViewModel.description))) {
+
+                        TalkSpeakerView(speaker: speakerViewModel)
+                    }
+                }.navigationBarTitle(Text("action_speakers"))
             }.tabItem {
                 VStack {
                     Image(systemName: "person.fill")
@@ -69,7 +54,6 @@ struct ContentView: View {
                     Text (license.name)
                     Text (license.owner)
                     Text (license.license)
-                    Text (license.targetHost.name)
                 }
             }
                 .tabItem {
