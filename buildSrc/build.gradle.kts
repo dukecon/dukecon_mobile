@@ -47,6 +47,8 @@ kotlinDslPluginOptions {
 
 dependencies {
     compileOnly(gradleApi())
+    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
+
     implementation(kotlin("stdlib"))
     implementation("dev.icerock:mobile-multiplatform:0.5.2")
     implementation("com.android.tools.build:gradle:3.5.3")
@@ -54,9 +56,7 @@ dependencies {
     implementation("guru.nidi:graphviz-java:0.12.1")
     implementation("org.openapitools:openapi-generator-gradle-plugin:4.2.3")
     implementation("com.squareup:kotlinpoet:1.5.0")
-    //implementation( "com.reprezen.kaizen:openapi-parser:4.0.4")
-    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
-    //implementation( "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0")
+    implementation("org.jetbrains.dokka:dokka-gradle-plugin:0.10.0")
 }
 
 configurations.all {

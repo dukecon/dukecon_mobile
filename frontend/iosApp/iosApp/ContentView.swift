@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import MultiPlatformLibrary
+import DukeconSdk
 
 struct ContentView: View {
     @EnvironmentObject var eventPublisher: EventsPublisher

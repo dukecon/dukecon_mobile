@@ -1,24 +1,45 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.multiplatform")
-    id("kotlin-android-extensions")
+    kotlin("multiplatform")
     id("kotlinx-serialization")
-    id("dev.icerock.mobile.multiplatform")
+    id("com.android.library")
+    id("maven-publish")
 }
 
 android {
     setDefaults()
 }
 
-val mppModules = listOf(
-        Modules.MultiPlatform.domain,
-        Modules.MultiPlatform.core
-)
+kotlin {
+    android()
+    jvm()
 
-dependencies {
-    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
-    mppLibrary(Deps.Libs.MultiPlatform.coroutines)
-    mppLibrary(Deps.Libs.MultiPlatform.ktorUtils)
+    sourceSets["commonMain"].dependencies {
+        implementation(project(":common:core"))
+        implementation(project(":common:domain"))
 
-    mppModules.forEach { mppModule(it) }
+        implementation(kotlin("stdlib-common", Versions.kotlin))
+        implementation(Deps.Libs.MultiPlatform.KtorClient.common)
+        implementation(Deps.Libs.MultiPlatform.KtorClientJson.common)
+        implementation(Deps.Libs.MultiPlatform.Coroutines.common)
+        implementation(Deps.Libs.MultiPlatform.Serialization.common)
+        implementation(Deps.Libs.MultiPlatform.KtorClientJsonSerializer.common)
+    }
+
+    sourceSets["androidMain"].dependencies {
+        implementation(kotlin("stdlib", Versions.kotlin))
+        implementation(Deps.Libs.MultiPlatform.KtorClient.android)
+        implementation(Deps.Libs.MultiPlatform.KtorClientJson.android)
+        implementation(Deps.Libs.MultiPlatform.Coroutines.android)
+        implementation(Deps.Libs.MultiPlatform.Serialization.android)
+        implementation(Deps.Libs.MultiPlatform.KtorClientJsonSerializer.android)
+    }
+
+    sourceSets["jvmMain"].dependencies {
+        implementation(kotlin("stdlib", Versions.kotlin))
+        implementation(Deps.Libs.MultiPlatform.KtorClient.android)
+        implementation(Deps.Libs.MultiPlatform.KtorClientJson.android)
+        implementation(Deps.Libs.MultiPlatform.Coroutines.android)
+        implementation(Deps.Libs.MultiPlatform.Serialization.android)
+        implementation(Deps.Libs.MultiPlatform.KtorClientJsonSerializer.android)
+    }
 }

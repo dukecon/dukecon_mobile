@@ -6,9 +6,9 @@
 //  Copyright © 2020 Alexander von Below. All rights reserved.
 //
 
-import MultiPlatformLibrary
+import DukeconSdk
 
-extension Event {
+extension DomainEvent {
     var talkDetailViewModel: TalkDetailViewModel {
         var timeDisplay = String()
 

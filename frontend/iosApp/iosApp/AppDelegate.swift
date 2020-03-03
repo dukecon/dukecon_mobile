@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MultiPlatformLibrary
+import DukeconSdk
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

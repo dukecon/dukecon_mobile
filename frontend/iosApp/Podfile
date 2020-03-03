@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 
 # ignore all warnings from all pods
 inhibit_all_warnings!
@@ -15,15 +15,15 @@ pre_install do |installer|
   # CocoaPods needs access to such frameworks during installation process to obtain
   # their type (static or dynamic) and configure the Xcode project accordingly.
   # Build MultiPlatformLibrary framework to correct install Pod
-  puts "prepare MultiPlatformLibrary.framework (require some time...)"
-  `cd ../../ && ./gradlew :common:dukecon:syncMultiPlatformLibraryDebugFrameworkIosX64`
-  puts "preparing MultiPlatformLibrary.framework complete"
+  puts "prepare DukeconSdk.framework (require some time...)"
+  `cd ../../ && ./gradlew :common:dukecon-umb:debugFatFramework`
+  puts "preparing DukeconSdk.framework complete"
 end
 
 target 'iosApp' do
-  pod 'MultiPlatformLibrary', :path => '../../common/dukecon'
+  pod 'DukeconSdk', :path => '../../common/dukecon-umbrella'
 end
 
 target 'iosAppTests' do
-  pod 'MultiPlatformLibrary', :path => '../../common/dukecon'
+  pod 'DukeconSdk', :path => '../../common/dukecon-umbrella'
 end

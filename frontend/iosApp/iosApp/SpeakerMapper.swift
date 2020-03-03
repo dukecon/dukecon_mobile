@@ -6,9 +6,9 @@
 //  Copyright © 2020 Alexander von Below. All rights reserved.
 //
 
-import MultiPlatformLibrary
+import DukeconSdk
 
-extension Sequence where Iterator.Element : Speaker {
+extension Sequence where Iterator.Element : DomainSpeaker {
     var viewModel: [SpeakerViewModel] {
         let result = self.map({ (speaker) -> SpeakerViewModel in
             let name = speaker.name

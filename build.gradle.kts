@@ -19,6 +19,8 @@ buildscript {
         classpath("com.google.gms:google-services:4.3.3")
         classpath("io.spring.gradle:dependency-management-plugin:1.0.7.RELEASE")
         classpath("io.fabric.tools:gradle:1.31.0")
+        classpath("co.touchlab:kotlinxcodesync:0.2")
+        classpath("com.github.jengelman.gradle.plugins:shadow:4.0.3")
     }
 }
 
@@ -43,8 +45,4 @@ allprojects {
     tasks.withType<KotlinCompile> {
         kotlinOptions.jvmTarget = "1.8"
     }
-}
-
-tasks.register("clean", Delete::class).configure {
-    delete(rootProject.buildDir)
 }
