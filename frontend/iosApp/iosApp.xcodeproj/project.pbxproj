@@ -44,6 +44,7 @@
 		00AFE71391091A8649C8A56C /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B49096F12569EEB6A57553 /* Pods-iosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		57B26FBC07776A1080B04DCB /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		B09270225F263A2FF4917162 /* Main.kt */ = {isa = PBXFileReference; includeInIndex = 1; name = Main.kt; path = "../../common/dukecon-umb/src/commonMain/kotlin/Main.kt"; sourceTree = "<group>"; };
 		BE8D7FDFA5162EAE8378A038 /* Pods-iosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.release.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C085905DA17CC1D39A67D105 /* Pods_iosAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkSpeakerView.swift; sourceTree = "<group>"; };
@@ -93,6 +94,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08546826F5C61004F29E27CD /* main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		631E4172FEC379ECD5749462 /* commonMain */ = {
+			isa = PBXGroup;
+			children = (
+				F124229A9336723528CB57DC /* kotlin */,
+			);
+			name = commonMain;
+			sourceTree = "<group>";
+		};
+		70868F16C40B6EC8CA53EA84 /* Kotlin */ = {
+			isa = PBXGroup;
+			children = (
+				631E4172FEC379ECD5749462 /* commonMain */,
+				08546826F5C61004F29E27CD /* main */,
+			);
+			name = Kotlin;
+			sourceTree = "<group>";
+		};
 		B3F28C0296A0491218F76974 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +146,7 @@
 				CB88D2092400365600BCBCA0 /* Products */,
 				B3F28C0296A0491218F76974 /* Pods */,
 				C7E6AF2B1B9F7EA5712BEEB8 /* Frameworks */,
+				70868F16C40B6EC8CA53EA84 /* Kotlin */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +202,14 @@
 			path = iosAppTests;
 			sourceTree = "<group>";
 		};
+		F124229A9336723528CB57DC /* kotlin */ = {
+			isa = PBXGroup;
+			children = (
+				B09270225F263A2FF4917162 /* Main.kt */,
+			);
+			name = kotlin;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,7 +221,6 @@
 				CB88D2042400365600BCBCA0 /* Sources */,
 				CB88D2052400365600BCBCA0 /* Frameworks */,
 				CB88D2062400365600BCBCA0 /* Resources */,
-				6459CEF6E6DBB9FFCE342890 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,7 +239,6 @@
 				CB88D21A2400365900BCBCA0 /* Sources */,
 				CB88D21B2400365900BCBCA0 /* Frameworks */,
 				CB88D21C2400365900BCBCA0 /* Resources */,
-				F44C1D395994B00B7F77A123 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,21 +333,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6459CEF6E6DBB9FFCE342890 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C86DFBF2334D041C25A9F1E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,21 +353,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F44C1D395994B00B7F77A123 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosAppTests/Pods-iosAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
