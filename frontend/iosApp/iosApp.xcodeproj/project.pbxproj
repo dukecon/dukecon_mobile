@@ -14,7 +14,7 @@
 		CB1FDB772401E14600705876 /* TalkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB762401E14600705876 /* TalkDetailView.swift */; };
 		CB1FDB7924051C0B00705876 /* SpeakerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB7824051C0B00705876 /* SpeakerMapper.swift */; };
 		CB1FDB7B24066EBF00705876 /* EventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB7A24066EBF00705876 /* EventMapper.swift */; };
-		CB29A21D240AB47600850A47 /* SpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29A21C240AB47500850A47 /* SpeakerView.swift */; };
+		CB29A21D240AB47600850A47 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29A21C240AB47500850A47 /* ScheduleView.swift */; };
 		CB88D20C2400365600BCBCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D20B2400365600BCBCA0 /* AppDelegate.swift */; };
 		CB88D20E2400365600BCBCA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D20D2400365600BCBCA0 /* SceneDelegate.swift */; };
 		CB88D2102400365600BCBCA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D20F2400365600BCBCA0 /* ContentView.swift */; };
@@ -44,7 +44,7 @@
 		00AFE71391091A8649C8A56C /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B49096F12569EEB6A57553 /* Pods-iosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		57B26FBC07776A1080B04DCB /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
-		B09270225F263A2FF4917162 /* Main.kt */ = {isa = PBXFileReference; includeInIndex = 1; name = Main.kt; path = "../../common/dukecon-umb/src/commonMain/kotlin/Main.kt"; sourceTree = "<group>"; };
+		B09270225F263A2FF4917162 /* Main.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = Main.kt; path = "../../common/dukecon-umb/src/commonMain/kotlin/Main.kt"; sourceTree = "<group>"; };
 		BE8D7FDFA5162EAE8378A038 /* Pods-iosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.release.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C085905DA17CC1D39A67D105 /* Pods_iosAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkSpeakerView.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		CB1FDB762401E14600705876 /* TalkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetailView.swift; sourceTree = "<group>"; };
 		CB1FDB7824051C0B00705876 /* SpeakerMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerMapper.swift; sourceTree = "<group>"; };
 		CB1FDB7A24066EBF00705876 /* EventMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapper.swift; sourceTree = "<group>"; };
-		CB29A21C240AB47500850A47 /* SpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerView.swift; sourceTree = "<group>"; };
+		CB29A21C240AB47500850A47 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		CB88D2082400365600BCBCA0 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB88D20B2400365600BCBCA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB88D20D2400365600BCBCA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				CB88D20B2400365600BCBCA0 /* AppDelegate.swift */,
 				CB88D20D2400365600BCBCA0 /* SceneDelegate.swift */,
 				CB88D20F2400365600BCBCA0 /* ContentView.swift */,
-				CB29A21C240AB47500850A47 /* SpeakerView.swift */,
+				CB29A21C240AB47500850A47 /* ScheduleView.swift */,
 				CB1FDB7824051C0B00705876 /* SpeakerMapper.swift */,
 				CB1FDB7A24066EBF00705876 /* EventMapper.swift */,
 				CB1FDB722401D6D900705876 /* TalkView.swift */,
@@ -368,7 +368,7 @@
 				CB88D20C2400365600BCBCA0 /* AppDelegate.swift in Sources */,
 				CB1FDB772401E14600705876 /* TalkDetailView.swift in Sources */,
 				CB88D20E2400365600BCBCA0 /* SceneDelegate.swift in Sources */,
-				CB29A21D240AB47600850A47 /* SpeakerView.swift in Sources */,
+				CB29A21D240AB47600850A47 /* ScheduleView.swift in Sources */,
 				CB88D23724011B6D00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift in Sources */,
 				CB88D2102400365600BCBCA0 /* ContentView.swift in Sources */,
 				CB88D22E2400797400BCBCA0 /* EventsPublisher.swift in Sources */,

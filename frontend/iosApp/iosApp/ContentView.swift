@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection){
             NavigationView {
-                SpeakerView().navigationBarTitle(Text("action_schedule"), displayMode: .inline)
+                ScheduleView().navigationBarTitle(Text("action_schedule"), displayMode: .inline)
             }
                 .tabItem {
                     VStack {

@@ -1,5 +1,5 @@
 //
-//  SpeakerView.swift
+//  ScheduleView.swift
 //  iosApp
 //
 //  Created by Alexander v. Below on 29.02.20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SpeakerView: View {
+struct ScheduleView: View {
     @EnvironmentObject var eventPublisher: EventsPublisher
 
     var body: some View {
@@ -36,6 +36,6 @@ struct SpeakerView: View {
 
 struct SpeakerView_Previews: PreviewProvider {
     static var previews: some View {
-        SpeakerView()
+        ScheduleView()
     }
 }
