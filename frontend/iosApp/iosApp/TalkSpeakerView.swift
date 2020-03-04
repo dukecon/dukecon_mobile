@@ -44,7 +44,7 @@ struct TalkSpeakerView: View {
             Image(uiImage: self.imageProvider.image).resizable().frame(width: 40, height: 40, alignment: .center).clipShape(Circle())
             VStack {
                 Text (speaker.name)
-                Text (speaker.subtitle)
+                Text (speaker.subtitle).multilineTextAlignment(.center)
             }
         }
     }
