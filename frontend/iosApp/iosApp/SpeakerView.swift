@@ -30,7 +30,8 @@ struct SpeakerView: View {
                     }
                 }
             }.font(.title)
-        }    }
+        }
+    }
 }
 
 struct SpeakerView_Previews: PreviewProvider {
