@@ -1,8 +1,12 @@
 package org.dukecon.cache.storage
 
-actual fun ApplicationStorage(): ApplicationStorage = InMemoryStorage()
+actual class ApplicationContext()
+
+@Suppress("FunctionName")
+actual fun ApplicationStorage(context: ApplicationContext?): ApplicationStorage = InMemoryStorage()
 
 class InMemoryStorage : ApplicationStorage {
+
     private val booleans: HashMap<String, Boolean> = HashMap()
     private val strings: HashMap<String, String> = HashMap()
 

@@ -1,16 +1,16 @@
 PODS:
-  - MultiPlatformLibrary (0.1.0)
+  - dukecon_umbrella (0.1.0)
 
 DEPENDENCIES:
-  - MultiPlatformLibrary (from `../../common/dukecon`)
+  - dukecon_umbrella (from `../../common/dukecon-umbrella`)
 
 EXTERNAL SOURCES:
-  MultiPlatformLibrary:
-    :path: "../../common/dukecon"
+  dukecon_umbrella:
+    :path: "../../common/dukecon-umbrella"
 
 SPEC CHECKSUMS:
-  MultiPlatformLibrary: 293fb60ba7a9c5779d10fd350d1381675e65f42d
+  dukecon_umbrella: 3786d3597d47b2252f7ec4c412814858267d535f
 
-PODFILE CHECKSUM: d23d37e5366945eb3fe23d3be2de49237eea5519
+PODFILE CHECKSUM: 17f471c4d20ba5eb921914aba8320417edd5e532
 
 COCOAPODS: 1.8.4

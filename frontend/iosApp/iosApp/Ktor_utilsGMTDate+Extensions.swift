@@ -6,7 +6,7 @@
 //  Copyright © 2020 Alexander von Below. All rights reserved.
 //
 
-import MultiPlatformLibrary
+import DukeconSdk
 
 extension Ktor_utilsGMTDate {
     func isSameDate(_ other: Ktor_utilsGMTDate) -> Bool {

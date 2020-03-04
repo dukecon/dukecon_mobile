@@ -6,15 +6,6 @@ plugins {
     id("kotlinx-serialization")
     id("com.android.library")
     id("co.touchlab.kotlinxcodesync")
-    id("ktor-open-api-plugin")
-    id("maven-publish")
-}
-
-openApiGenerate {
-    inputSpec.set("$rootDir/specs/conference_api.json")
-    generatorName.set("kotlin-ktor-client")
-    apiPackage.set("org.dukecon.remote.api")
-    modelPackage.set("org.dukecon.remote.api")
 }
 
 val ideaActive = System.getProperty("idea.active") == "true"
@@ -40,7 +31,9 @@ kotlin {
             dependencies {
                 implementation(project(":common:core"))
                 implementation(project(":common:domain"))
+                //implementation(project(":common:presentation"))
                 implementation(project(":common:data"))
+                implementation(project(":common:backend:dukecon"))
 
                 implementation(kotlin("stdlib-common", Versions.kotlin))
                 implementation(Deps.Libs.MultiPlatform.KtorClient.common)
@@ -123,7 +116,7 @@ kotlin {
         }
     }
 
-    tasks.register<org.jetbrains.kotlin.gradle.tasks.FatFrameworkTask>("debugFatFramework") {
+    tasks.register<FatFrameworkTask>("debugFatFramework") {
         baseName = frameworkName
         group = "Universal framework"
         description = "Builds a universal (fat) debug framework"
@@ -131,7 +124,7 @@ kotlin {
         from(iosX64.binaries.getFramework("DEBUG"))
     }
 
-    tasks.register<org.jetbrains.kotlin.gradle.tasks.FatFrameworkTask>("releaseFatFramework") {
+    tasks.register<FatFrameworkTask>("releaseFatFramework") {
         baseName = frameworkName
         group = "Universal framework"
         description = "Builds a universal (release) debug framework"

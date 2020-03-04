@@ -31,7 +31,7 @@ class JsonSerializedConferenceDataCache(private val currentTimeProvider: Current
             )
 
     init {
-        if (json.lastUpadte()  > 0) {
+        if (json.lastUpadte() > 0) {
             json.run {
                 cachedRooms = conference.rooms.map {
                     toRooms(it)
@@ -224,7 +224,7 @@ class JsonSerializedConferenceDataCache(private val currentTimeProvider: Current
 
     override fun isCacheValid(): Boolean {
         val currentTime = currentTimeProvider.currentTimeMillis()
-        return (json.lastUpadte() ?: currentTime - currentTime < 10 * 60 * 1000)
+        return (json.lastUpadte() < 10 * 60 * 1000)
     }
 
     override fun clearEvents() {

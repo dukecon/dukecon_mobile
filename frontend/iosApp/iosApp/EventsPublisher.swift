@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import MultiPlatformLibrary
+import DukeconSdk
 
 class EventsPublisher: ObservableObject {
-    @Published var events = [Event]()
+    @Published var events = [DomainEvent]()
     @Published var dates = [Ktor_utilsGMTDate]()
-    @Published var speakers = [Speaker]()
-    @Published var licenses = [Library]()
+    @Published var speakers = [DomainSpeaker]()
+    @Published var licenses = [DomainLibrary]()
     var model: EventsModel!
 
     var day: Int32 = 0 {
@@ -36,7 +36,7 @@ class EventsPublisher: ObservableObject {
             }
             self.model.getLicenses { (libraries) in
                 self.licenses = libraries.filter({ (library) -> Bool in
-                    return library.targetHost == TargetHost.ios || library.targetHost == TargetHost.common
+                    return library.targetHost == DomainTargetHost.ios || library.targetHost == DomainTargetHost.common
                 })
             }
         }

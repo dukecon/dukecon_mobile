@@ -6,12 +6,12 @@
 //  Copyright © 2020 Alexander von Below. All rights reserved.
 //
 
-import MultiPlatformLibrary
+import DukeconSdk
 
 // These look like they might be good candiates for the common
 // Kotlin library. These are tasks required on both platforms
 
-extension Event{
+extension DomainEvent{
     var speakerList : String {
         let stringmap = self.speakers.map { (speaker) -> String in
             return speaker.name
@@ -20,7 +20,7 @@ extension Event{
     }
 }
 
-extension Location{
+extension DomainLocation{
     var localizedName : String {
         if let languageCode = Locale.autoupdatingCurrent.languageCode, let localizedName = self.names[languageCode] {
             return localizedName
