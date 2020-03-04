@@ -12,16 +12,13 @@ import org.dukecon.data.source.EventCacheDataStore
 import org.dukecon.data.source.EventRemoteDataStore
 import org.dukecon.date.now
 import org.dukecon.domain.aspects.twitter.TwitterLinks
-import org.dukecon.domain.model.Event
-import org.dukecon.domain.model.Speaker
-import org.dukecon.domain.model.MetaData
 import org.dukecon.remote.api.DukeconApi
 import org.dukecon.remote.mapper.*
 import org.dukecon.remote.store.DukeconConferenceRemote
 import org.dukecon.time.CurrentDataTimeProvider
 import org.dukecon.domain.repository.LibrariesRepository
-import org.dukecon.domain.model.Library
 import org.dukecon.data.repository.LibrariesListRepository
+import org.dukecon.domain.model.*
 
 
 val cfg = object : ConferenceConfiguration {
@@ -145,6 +142,24 @@ class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
         }
     }
 
+    fun getFavorites(day: Int, viewUpdate: (List<Event>) -> Unit) {
+        log(LogLevel.INFO, "EventsModel", "getFavorites==>")
+        ktorScope.launch {
+            val favorites = repositoryFactory.repository.getEvents(day).filter {
+                (it.favorite.selected)
+            }
+            viewUpdate(favorites)
+            log(LogLevel.INFO, "EventsModel", "getFavorites<==")
+        }
+    }
 
+    fun saveFavorite(favorite: Favorite, viewUpdate: (List<Favorite>) -> Unit) {
+        log(LogLevel.INFO, "EventsModel", "getFavorites==>")
+        ktorScope.launch {
+            val favorites = repositoryFactory.repository.saveFavorite(favorite)
+            viewUpdate(favorites)
+            log(LogLevel.INFO, "EventsModel", "getFavorites<==")
+        }
+    }
 }
 

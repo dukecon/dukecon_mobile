@@ -39,6 +39,15 @@ class EventsPublisher: ObservableObject {
                     return library.targetHost == DomainTargetHost.ios || library.targetHost == DomainTargetHost.common
                 })
             }
+            self.model.getFavorites(day: 18) { (favorites) in
+                print(favorites)
+            }
+            /*
+            self.model.saveFavorite(favorite: DomainFavorite(id:"123" selected:true version:1 ), viewUpdate: { (favorites) in
+                print(favorites)
+                
+            })
+ */
         }
         model.getEventsFromNetwork()
 
