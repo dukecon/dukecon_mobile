@@ -14,7 +14,9 @@ class EventsPublisher: ObservableObject {
     @Published var dates = [Ktor_utilsGMTDate]()
     @Published var speakers = [DomainSpeaker]()
     @Published var licenses = [DomainLibrary]()
-    var model: EventsModel!
+    @Published var favorites = [DomainEvent]()
+
+    private var model: EventsModel!
 
     var day: Int32 = 0 {
         didSet {
@@ -39,17 +41,14 @@ class EventsPublisher: ObservableObject {
                     return library.targetHost == DomainTargetHost.ios || library.targetHost == DomainTargetHost.common
                 })
             }
-            /*self.model.getFavorites(day: 18) { (favorites) in
-                print(favorites)
-            }
- */
-            self.model.searchEventOrSpeaker(query: "Michal", viewUpdate: {(searchResult) in
-                print(searchResult)
-                
-            })
-            /*
+
+/*
             self.model.saveFavorite(favorite: DomainFavorite(id:"123" selected:true version:1 ), viewUpdate: { (favorites) in
                 print(favorites)
+            })
+
+            self.model.searchEventOrSpeaker(query: "Michal", viewUpdate: {(searchResult) in
+                print(searchResult)
                 
             })
  */
@@ -61,6 +60,9 @@ class EventsPublisher: ObservableObject {
     func updateEvents(day: Int32) {
         self.model.getEvents(day: day) { (events) in
             self.events = events
+        }
+        self.model.getFavorites(day: day) { (favorites) in
+            self.favorites = favorites
         }
     }
 }
