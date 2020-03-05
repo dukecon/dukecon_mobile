@@ -1,10 +1,13 @@
 package org.dukecon.presentation.feature.event
 
 import io.ktor.util.date.GMTDate
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.dukecon.presentation.date.Duration
 import org.dukecon.date.isAfter
 import org.dukecon.date.isBefore
+import org.dukecon.domain.SuspendUseCase
+import org.dukecon.domain.features.search.SearchUseCase
 import org.dukecon.domain.features.time.CurrentTimeProvider
 import org.dukecon.domain.model.Event
 import org.dukecon.domain.repository.ConferenceRepository
@@ -39,6 +42,11 @@ open class EventListPresenter constructor(private val currentTimeProvider: Curre
 
         this.date = conferenceDay
         this.showFavoritesOnly = showFavoritesOnly
+
+        val use = SearchUseCase(conferenceRepository, Dispatchers.Default)
+        launch {
+            use.invoke("Michal")
+        }
         launch {
             val events = conferenceRepository.getEvents(date)
             val filtered = events.filter {

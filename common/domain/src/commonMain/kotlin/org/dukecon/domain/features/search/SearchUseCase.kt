@@ -14,25 +14,29 @@ open class SearchUseCase constructor(
 
     override suspend fun execute(parameters: String): List<SearchResult> {
         try {
+            log(LogLevel.DEBUG, "SearchUseCase", "search for $parameters")
             val results = ArrayList<SearchResult>()
             val dates = repository.getEventDates()
             dates.forEach { date ->
                 repository.getEvents(date.dayOfMonth)
                         .filter { session ->
-                            session.title.toLowerCase().contains(parameters)
-                                    || session.eventDescription.toLowerCase().contains(parameters)
+                            session.title.toLowerCase().contains(parameters.toLowerCase())
+                                    || session.eventDescription.toLowerCase().contains(parameters.toLowerCase())
                         }
                         .sortedBy { it.startTime }
                         .map { results.add(SearchResult(null, it)) }
             }
+            log(LogLevel.DEBUG, "SearchUseCase", "found events $results")
             val speakers = repository.getSpeakers()
             speakers
                     .filter { speaker ->
-                        speaker.title.toLowerCase().contains(parameters)
-                                || speaker.bio.toLowerCase().contains(parameters)
+                        speaker.title.toLowerCase().contains(parameters.toLowerCase())
+                                || speaker.name.toLowerCase().contains(parameters.toLowerCase())
+                                || speaker.bio.toLowerCase().contains(parameters.toLowerCase())
                     }
                     .sortedBy { it.name }
                     .map { results.add(SearchResult(it, null)) }
+            log(LogLevel.DEBUG, "SearchUseCase", "found events and speakers $results")
 
             return results
         } catch (e: Exception) {

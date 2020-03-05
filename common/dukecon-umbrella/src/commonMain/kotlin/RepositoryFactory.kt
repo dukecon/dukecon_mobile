@@ -1,4 +1,5 @@
 import io.ktor.util.date.GMTDate
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.dukecon.aspects.logging.LogLevel
@@ -22,6 +23,7 @@ import org.dukecon.data.repository.LibrariesListRepository
 import org.dukecon.domain.data
 import org.dukecon.domain.features.search.SearchUseCase
 import org.dukecon.domain.model.*
+import org.dukecon.platform.dispatcher
 
 
 val cfg = object : ConferenceConfiguration {
@@ -83,10 +85,9 @@ private class RepositoryFactory(val conferenceConfiguration: ConferenceConfigura
                 feedbackMapper = FeedbackMapper(),
                 favoriteMapper = FavoriteMapper(),
                 metadataMapper = MetaDateMapper())
-        search = SearchUseCase(repository, Dispatchers.Main)
+        search = SearchUseCase(repository, dispatcher())
     }
 }
-
 
 fun initApplication(context: Any?) {
     appContext = context?.let { it as ApplicationContext }
@@ -170,9 +171,9 @@ class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
     fun searchEventOrSpeaker(query: String, viewUpdate: (List<SearchResult>) -> Unit) {
         log(LogLevel.INFO, "EventsModel", "searchEventOrSpeaker==>")
         ktorScope.launch {
-            val result = repositoryFactory.search(query)
+            val result = repositoryFactory.search.invoke(query)
             viewUpdate(result.data ?: emptyList())
-            log(LogLevel.INFO, "EventsModel", "getFavorites<==")
+            log(LogLevel.INFO, "EventsModel", "searchEventOrSpeaker<==")
         }
     }
 }
