@@ -1,6 +1,6 @@
 # dukecon_mobile
-[float]
-AsciiDoc image:https://img.shields.io/badge/License-Apache%202.0-blue.svg["License", link="https://opensource.org/licenses/Apache-2.0"]
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Release](https://jitpack.io/v/kotlinx/ast.svg)](https://jitpack.io/#kotlinx/ast)
 
 
 
