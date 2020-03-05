@@ -15,9 +15,7 @@ import io.ktor.client.request.header
 import io.ktor.client.request.put
 import io.ktor.http.HttpHeaders
 import io.ktor.http.takeFrom
-import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 
 /**
  * use default http engine by default
