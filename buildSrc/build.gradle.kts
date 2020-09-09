@@ -9,7 +9,6 @@ repositories {
     jcenter()
     google()
     mavenCentral()
-    maven { url = uri("https://dl.bintray.com/icerockdev/plugins") }
 }
 
 gradlePlugin {
@@ -47,14 +46,10 @@ kotlinDslPluginOptions {
 
 dependencies {
     compileOnly(gradleApi())
-    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
+    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.0")
 
-    implementation(kotlin("stdlib"))
-    implementation("dev.icerock:mobile-multiplatform:0.5.2")
-    implementation("com.android.tools.build:gradle:3.5.3")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
     implementation("guru.nidi:graphviz-java:0.12.1")
-    implementation("org.openapitools:openapi-generator-gradle-plugin:4.2.3")
+    implementation("org.openapitools:openapi-generator-gradle-plugin:5.0.0-beta2")
     implementation("com.squareup:kotlinpoet:1.5.0")
     implementation("org.jetbrains.dokka:dokka-gradle-plugin:0.10.0")
 }

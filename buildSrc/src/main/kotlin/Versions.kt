@@ -9,7 +9,8 @@ object Versions {
         const val minSdk = 21
     }
 
-    const val kotlin = "1.3.61"
+    const val ktor = "1.4.0"
+    const val kotlin = "1.4.0"
 
     object Plugins {
         const val kotlin = Versions.kotlin
@@ -32,7 +33,7 @@ object Versions {
 
             const val coroutines = "1.3.3"
             const val serialization = "0.14.0"
-            const val ktorClient = "1.3.0"
+            const val ktorClient = "1.4.0"
             const val ktorClientLogging = ktorClient
 
             const val napier = "1.1.0"

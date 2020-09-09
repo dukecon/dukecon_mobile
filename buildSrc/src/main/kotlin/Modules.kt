@@ -1,4 +1,5 @@
 object Modules {
+    /*
     object MultiPlatform {
         val domain = MultiPlatformModule(
             name = ":common:domain",
@@ -35,4 +36,6 @@ object Modules {
             )
         }
     }
+
+     */
 }

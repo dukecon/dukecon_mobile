@@ -4,20 +4,29 @@ plugins {
     id("maven-publish")
 }
 
-val ideaActive = System.getProperty("idea.active") == "true"
 
 
 kotlin {
-    jvm()
+    targets {
+        val sdkName: String? = System.getenv("SDK_NAME")
 
-    val iosArm32 = iosArm32("iosArm32")
-    val iosArm64 = iosArm64("iosArm64")
-    val iosX64 = iosX64("iosX64")
+        val isiOSDevice = sdkName.orEmpty().startsWith("iphoneos")
+        if (isiOSDevice) {
+            iosArm64("iOS")
+        } else {
+            iosX64("iOS")
+        }
 
-    if (ideaActive) {
-        iosX64("ios")
+        val isWatchOSDevice = sdkName.orEmpty().startsWith("watchos")
+        if (isWatchOSDevice) {
+            watchosArm64("watch")
+        } else {
+            watchosX86("watch")
+        }
+
+        macosX64("macOS")
+       jvm()
     }
-
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -39,27 +48,25 @@ kotlin {
             }
         }
 
-        val iosMain = if (ideaActive) {
-            getByName("iosMain")
-        } else {
-            create("iosMain")
-        }
 
-        iosMain.apply {
-            dependsOn(mobileMain)
-
+        val iOSMain by getting {
             dependencies {
-                implementation(Deps.Libs.MultiPlatform.Coroutines.ios)
-                implementation(Deps.Libs.MultiPlatform.KtorUtils.ios)
-            }
+                implementation("io.ktor:ktor-utils:${Versions.ktor}")
+
+
+              }
         }
 
-        val iosArm32Main by getting
-        val iosArm64Main by getting
-        val iosX64Main by getting
+        val watchMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-utils:${Versions.ktor}")
+             }
+        }
 
-        configure(listOf(iosArm32Main, iosArm64Main, iosX64Main)) {
-            dependsOn(iosMain)
+        val macOSMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-utils:${Versions.ktor}")
+            }
         }
     }
 }

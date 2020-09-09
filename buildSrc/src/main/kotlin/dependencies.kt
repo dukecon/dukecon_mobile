@@ -1,12 +1,12 @@
 import Libraries.Versions.kotlinxCoroutinesVersion
 import Libraries.Versions.kotlinxSerialization
 
-const val kotlinVersion = "1.3.61"
+const val kotlinVersion = "1.4.0"
 
 object BuildPlugins {
 
     object Versions {
-        const val buildToolsVersion = "3.5.2"
+        const val buildToolsVersion = "4.0.1"
     }
 
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.buildToolsVersion}"

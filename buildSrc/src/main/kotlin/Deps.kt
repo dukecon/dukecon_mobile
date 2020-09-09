@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.com.google.api.client.util.Data.mapOf
+
 object Deps {
     object Plugins {
         const val kotlinSerialization =
@@ -8,32 +10,19 @@ object Deps {
 
     object Libs {
         object Android {
-            val kotlinStdLib = AndroidLibrary(
-                    name = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.Libs.Android.kotlinStdLib}"
-            )
-            val appCompat = AndroidLibrary(
-                    name = "androidx.appcompat:appcompat:${Versions.Libs.Android.appCompat}"
-            )
-            val material = AndroidLibrary(
-                    name = "com.google.android.material:material:${Versions.Libs.Android.material}"
-            )
-            val recyclerView = AndroidLibrary(
-                    name = "androidx.recyclerview:recyclerview:${Versions.Libs.Android.recyclerView}"
-            )
-            val constraintLayout = AndroidLibrary(
-                    name = "androidx.constraintlayout:constraintlayout:${Versions.Libs.Android.constraintLayout}"
-            )
-            val lifecycle = AndroidLibrary(
-                    name = "androidx.lifecycle:lifecycle-extensions:${Versions.Libs.Android.lifecycle}"
-            )
-            val gson = AndroidLibrary(
-                    name = "com.google.code.gson:gson:2.8.6"
-            )
+            const val material = "com.google.android.material:material:${Versions.Libs.Android.material}"
+
+            const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.Libs.Android.recyclerView}"
+
+            const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.Libs.Android.constraintLayout}"
+
+            const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.Libs.Android.lifecycle}"
+
+            const val gson = "com.google.code.gson:gson:2.8.6"
         }
 
         object MultiPlatform {
             object KotlinStdLib {
-                val android = Android.kotlinStdLib.name
                 val common = "org.jetbrains.kotlin:kotlin-stdlib-common:${Versions.Libs.MultiPlatform.kotlinStdLib}"
             }
 
@@ -88,12 +77,10 @@ object Deps {
                 val iosArm64 = "com.russhwolf:multiplatform-settings-iosarm64:${Versions.Libs.MultiPlatform.settings}"
             }
 
-            val kotlinStdLib = MultiPlatformLibrary(
-                    android = Android.kotlinStdLib.name,
-                    common = "org.jetbrains.kotlin:kotlin-stdlib-common:${Versions.Libs.MultiPlatform.kotlinStdLib}"
-            )
-            val ktorUtils = MultiPlatformLibrary(
-                    android = "io.ktor:ktor-utils-jvm:${Versions.Libs.MultiPlatform.ktorClient}",
+            const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-common:${Versions.Libs.MultiPlatform.kotlinStdLib}"
+
+            /*
+            const val ktorUtils =  "io.ktor:ktor-utils-jvm:${Versions.Libs.MultiPlatform.ktorClient}",
                     common = "io.ktor:ktor-utils:${Versions.Libs.MultiPlatform.ktorClient}",
                     ios = "io.ktor:ktor-utils-native:${Versions.Libs.MultiPlatform.ktorClient}"
             )
@@ -132,12 +119,7 @@ object Deps {
                     iosX64 = "com.russhwolf:multiplatform-settings-iosx64:${Versions.Libs.MultiPlatform.settings}",
                     iosArm64 = "com.russhwolf:multiplatform-settings-iosarm64:${Versions.Libs.MultiPlatform.settings}"
             )
-
+*/
         }
     }
-
-    val plugins: Map<String, String> = mapOf(
-            "kotlin-android-extensions" to Plugins.androidExtensions,
-            "kotlinx-serialization" to Plugins.kotlinSerialization
-    )
 }
