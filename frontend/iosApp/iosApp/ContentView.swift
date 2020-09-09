@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection){
             NavigationView {
-                SpeakerView().navigationBarTitle(Text("action_schedule"))
+                ScheduleView().navigationBarTitle(Text("action_schedule"), displayMode: .inline)
             }
                 .tabItem {
                     VStack {
@@ -43,7 +43,7 @@ struct ContentView: View {
                 }.navigationBarTitle(Text("action_speakers"))
             }.tabItem {
                 VStack {
-                    Image(systemName: "person.fill")
+                    Image(systemName: "person.2.fill")
                     Text("action_speakers")
                 }
             }
