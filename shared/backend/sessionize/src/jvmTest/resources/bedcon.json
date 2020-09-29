@@ -1,0 +1,2432 @@
+[
+  {
+    "date": "2019-09-05T00:00:00",
+    "rooms": [
+      {
+        "id": 7049,
+        "name": "Humboldtsaal (1.OG)",
+        "sessions": [
+          {
+            "id": "129693",
+            "title": "Techno­lo­gie­ent­schei­dungen in selbstorganisierten Teams",
+            "description": "Es fühlt sich völlig natürlich an: Technologieentscheidungen werden von den Entwicklern in den Teams getroffen – nicht durch den CTO oder einen übergeordneten Architekten. Die Entwickler in den selbstorganisierten Teams kennen die zu lösenden Probleme am besten und haben meist auch einen guten Überblick über die möglichen technischen Lösungen.\r\n\r\nNach einigen Wochen aber entsteht Streit: Jeder will mitreden. Die Entwickler sind nicht immer alle einer Meinung. Wie viele Standards brauchen wir für alle Teams?\r\n\r\nEin Praxisbericht über sinnvolle Rahmenbedingungen für Technologieentscheidungen in selbstorganisierten Teams.",
+            "startsAt": "2019-09-05T09:00:00",
+            "endsAt": "2019-09-05T10:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "d6f16311-e6f9-4910-abd2-7ff048f882ed",
+                "name": "Konstantin Diener"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "131676",
+            "title": "Beten wir Komplexität an?",
+            "description": "Komplexität ist die wichtigste Herausforderung in der Softwareentwicklung. Daher ist es wichtig, immer danach zu streben, Komplexität zu eliminieren. Aber manchmal beten wir Komplexität an - und das kann das Problem der Komplexität unlösbar machen.",
+            "startsAt": "2019-09-05T10:20:00",
+            "endsAt": "2019-09-05T11:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "4750ed21-fcda-4dc5-9fe5-1a6fca25cd8c",
+                "name": "Eberhard Wolff"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "130948",
+            "title": "Anwendungsmetriken sammeln und auswerten mit Micrometer",
+            "description": "Metriken sind neben Logging und Tracing ein wichtiger Pfeiler zur Überwachung der Anwendung. Mit Metriken können Probleme erkannt und Ressourcen-Engpässe identifiziert werden. \r\nDas Projekt Micrometer bietet für Java-Anwendungen eine Fassade, mit der Metriken herstellerneutral in verschiedene Monitoring-Systeme geliefert werden können. Parallel zu Spring Boot Version 2.0 wurde Micrometer Version 1.0 veröffentlicht, welches nun die Standard-Bibliothek für Metriken in Spring Boot ist. Micrometer selbst kann unabhängig von Spring in allen Java-Projekten eingesetzt werden.\r\nDamit versetzt es Teams in die Lage, technische und fachliche Metriken effizient zu sammeln und für eigene Auswertungen einzusetzen.\r\nDer Vortrag stellt die Verwendung von Micrometer in Spring Boot vor und zeigt die Auswertung von Metriken mit Prometheus und Grafana.\r\n",
+            "startsAt": "2019-09-05T11:40:00",
+            "endsAt": "2019-09-05T12:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "68ac17bc-add8-49d2-9604-7150a99b52b4",
+                "name": "Alexander Schwartz"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "91e11ea0-075f-4ace-af0b-5199578b4108",
+            "title": "Mittag",
+            "description": null,
+            "startsAt": "2019-09-05T12:40:00",
+            "endsAt": "2019-09-05T13:40:00",
+            "isServiceSession": true,
+            "isPlenumSession": true,
+            "speakers": [],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "128504",
+            "title": "Bessere Monolithen – modulithische Applikationen mit Spring Boot",
+            "description": "Vergleicht man verschiedene Ansätze um Bounded Contexte zu implementieren, ist eine modulare aber monolithische Applikation oft eine pragmatische Alternative zu Microservices, die viele neue Herausforderungen und Komplexität eines verteilten Systems erzeugen. Dennoch degenerieren die Modularität und Wart- bzw. Erweiterbarkeit monolithischer Applikationen über deren Lebenszyklus signifikant.\r\n\r\nDer Vortrag identifiziert oft beobachte Phänomene in unstrukturierten Monolithen und diskutiert Ansätze zur Codeorganisation, Komponentenstruktur, dem Paketdesign, Transaktionen und der Nutzung von Events um die Interaktion zwischen Bounded Contexts zu implementieren. Wir betrachten dann unterstützende Technologien und Features von Spring Boot und dessen Ökosystem um architektonische Konzepte in modularen, monolithischen Applikationen zu implementieren um definierte Architektur über die Zeit zu erhalten und auf eine spätere Aufteilung mehrere Systeme vorzubereiten.",
+            "startsAt": "2019-09-05T13:40:00",
+            "endsAt": "2019-09-05T14:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "6c4698c8-1a2f-436b-a5f4-3770e0bd3e20",
+                "name": "Oliver Drotbohm"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "131126",
+            "title": "Elasticsearch - Securing a search engine while maintaining usability",
+            "description": "Elasticsearch - integraler Bestandteil des Elastic Stack - ist für seine Volltextsuche- und Analyse-Fähigkeiten bekannt. Es läuft auf zehntausenden Knoten weltweit, deshalb müssen wir parallel zu den neuen Funktionalitäten, die mit jedem neuen Release verfügbar werden, auch stets über Sicherheitsfragen nachdenken. Dieser Vortrag wird verschiedene Aspekte von Elasticsearch abdecken und dabei auf Features und damit verbundene, teilweise unpopuläre Designentscheidungen und deren Gründe eingehen. Im Detail sprechen wir sprechen über folgendes:\r\n\r\n* Nutzung des Java Security Managers inkl. der Integration mit Plugins\r\n* Produktions- vs. Entwicklungs-Modus\r\n* Filterung von Systemaufrufen\r\n* ES-spezifische Script-Sprache „Painless“, welche andere Sprachen wie MVEL, Groovy oder Javascript ersetzt.\r\n\r\nDas Ziel des Vortrags ist nicht nur die Demonstration von Elasticsearch-Features - vielmehr soll eine Anregung gegeben werden, wie mit ähnlichen nichtfunktionalen Anforderungen in euren Anwendungen umzugehen ist.",
+            "startsAt": "2019-09-05T15:00:00",
+            "endsAt": "2019-09-05T16:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "64ce4fc8-75ef-48b9-a649-67bbca05c876",
+                "name": "Alexander Reelsen"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "127057",
+            "title": "Funktioniert dieses HomeOffice wirklich?",
+            "description": "Wer kennt ihn nicht, den Held der Arbeit der bis in die späten Abendstunden im Büro gesessen hat und die Produktion repariert hat? Dass vielleicht ein weiterer Kollege zuhause auf dem Sofa gesessen hat und einen gleichwertigen Anteil an diesem Erfolg gehabt hat, wird leider in den meisten Firmenkulturen nicht so wertgeschätzt. Aber woran liegt das? Vielleicht weil wir es nicht gewohnt sind zuhause zu arbeiten? Vielleicht weil wir denken, dass man zuhause nicht so produktiv ist? Vielleicht weil man Familie, Garten odere andere Tätigkeiten zuhause hat, die einen ablenken?\r\nJochen und Johannes arbeiten seit längerer Zeit für verteilte Firmen von zuhause, haben aber vorher aber auch lange Zeit in Büros oder für Kunden gearbeitet. Wir wollen euch mit auf unsere Reise durch verschiedene Arbeitsumgebungen nehmen und euch berichten was für uns gut oder wenig gut funktioniert hat.",
+            "startsAt": "2019-09-05T16:20:00",
+            "endsAt": "2019-09-05T17:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "62c6bbf2-5f0b-423c-9cc4-e01e32afe2c5",
+                "name": "Johannes Unterstein"
+              },
+              {
+                "id": "be3147d6-8f3d-4528-885d-4814898fe230",
+                "name": "Jochen Mader"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "0839bebf-b5f0-4c8d-b939-de8a97b48ca8",
+            "title": "Panel und Verlosung",
+            "description": null,
+            "startsAt": "2019-09-05T17:35:00",
+            "endsAt": "2019-09-05T18:35:00",
+            "isServiceSession": true,
+            "isPlenumSession": true,
+            "speakers": [],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      },
+      {
+        "id": 7050,
+        "name": "Kleistsaal (1.OG)",
+        "sessions": [
+          {
+            "id": "132605",
+            "title": "Service oriented alerting",
+            "description": "Es ist leicht, viele herumliegende Metriken einzusammeln und damit bunte Regenbogen zu malen. Aber hat eine volllaufende Festplatte wirklich Auswirkung auf den Endkunden, so dass die Rufbereitschaft mitten in der Nacht geweckt werden muss? In diesem Vortrag werden wir einen umgekehrten Ansatz vorstellen, wie man ausgehend von fachlichen Anforderungen Ziele definiert, und diese automatisiert überprüfbar in ein bestehendes Alarmierungssystem integriert.",
+            "startsAt": "2019-09-05T09:00:00",
+            "endsAt": "2019-09-05T10:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "0eef6010-8df7-4302-af4d-d04fab81ee2e",
+                "name": "Daniel Fuchs"
+              },
+              {
+                "id": "9b287bda-a062-412f-aca9-2323188f8565",
+                "name": "Vladimir Dobriakov"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "133394",
+            "title": "Skalierbares Auditing",
+            "description": "Der Linux Audit-Daemon sammelt sicherheitsrelevante Aktivitäten, auf die man mit Hilfe von ausearch und aureport zugreifen kann. Das Analysieren und Zentralisieren dieser Datensätze ist allerdings nicht so einfach, wie man es erwarten würden. Der neue Auditbeat von Elastic behebt dies, indem er die ursprüngliche Konfiguration beibehält, die gesammelten Daten jedoch zentral speichern sowie einfach visualisieren kann. Außerdem kann Auditbeat auch verwenden, um Änderungen an wichtigen Dateien, wie Binärdateien und Konfigurationsdateien, zu erkennen und mögliche Verstöße gegen Sicherheitsrichtlinien zu erkennen. Dieser Vortrag zeigt, was man tun kann, um Änderungen, Ereignisse und potenzielle Sicherheitsverletzungen auf interaktiven Dashboards so schnell wie möglich zu entdecken. Darüber hinaus kombinieren wir Auditd-Ereignisse mit Logs, die sicherheitsrelevant sind.",
+            "startsAt": "2019-09-05T10:20:00",
+            "endsAt": "2019-09-05T11:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "48bba77e-6187-42e9-bfd3-10c9ae781b89",
+                "name": "Philipp Krenn"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "128611",
+            "title": "Machine Learning und autonomes Fahren mit dem AWS DeepRacer",
+            "description": "Machine Learning ist derzeit in jedermanns Munde. Auf der re:Invent 2018 hat AWS den DeepRacer vorgestellt, ein vollständig autonomer Rennwagen im Maßstab 1:18. Laut AWS \"der schnellste Weg, um mit Machine Learning durchzustarten - im wahrsten Sinne des Wortes.“. Der Talk bietet einen Einstieg in DeepRacer, den zugrunde liegenden AWS Diensten und eine Starthilfe zum Reinforcement Learning. Im Fokus der Session stehen hier zwei Dinge: MachineLearning ohne Vorkenntnisse spielerisch ausprobieren und Spaß haben etwas Neues zu lernen.",
+            "startsAt": "2019-09-05T11:40:00",
+            "endsAt": "2019-09-05T12:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "ea27ba16-93c8-4c62-af6f-9166d0698e18",
+                "name": "Marco Buss"
+              },
+              {
+                "id": "82f2e4f5-ad91-4931-bc92-6e46500e1059",
+                "name": "Martin Münn"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "133506",
+            "title": "Building (not so) static websites with Gatsby.js",
+            "description": "How do you easily build a website with different sources like Markdown, Google Sheets or a Headless CMS using the hottest frontend technologies (like React, Next.js, and GraphQL) of 2019? What do you use to build the presentation layer for your headless CMS? For sure you are not going to build everything from scratch! And also performance - you won't want to reinvent the wheel. There is one great answer to your problems: Gatsby.js.",
+            "startsAt": "2019-09-05T13:40:00",
+            "endsAt": "2019-09-05T14:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "22591e60-cd8a-4d6d-9ac3-d3c876063bba",
+                "name": "Sebastian Waschnick"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "132345",
+            "title": "Ktor - asynchrones Kotlin Web Framework",
+            "description": "In dieser Session sehen wir anhand einer Live Demo wie wir mit dem Kotlin Web Framework \"Ktor\" eine Rest-Schnittstelle bauen. Dabei lernen wir einige Key-Features von Kotlin, wie z.B. Coroutines kennen. ",
+            "startsAt": "2019-09-05T15:00:00",
+            "endsAt": "2019-09-05T16:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "5dc076b5-8d22-48fa-8330-6c1f806acccd",
+                "name": "Marcel Dohnal"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "126524",
+            "title": "Kotlin Multiplatform Achterbahnfahrt mit einer Freizeitpark-Konferenz App ",
+            "description": "Es werden ungefähr 2 Apps pro Minute in jeweiligen mobilen App Store hochgeladen. Bei den bereits über 2 Millionen Apps hochgeladenen und bei einer bedeutenden Weiterentwicklung von hybriden und progressiven web Apps (PWA) ist es eine harte Konkurrenz, der sich ein mobiler Entwickler durchschlagen muss. Ich habe mir die Frage gestellt, wie man nicht nur qualitativ hochwertige Apps ohne Abstriche in der Performance und User Experience bauen kann und das auch noch schnell und wirtschaftlich. Und Code Sharing mit Kotlin Multiplatform ist für mich die Antwort. Und das wollte ich auch unter eine Probe stellen. In dem Talk werde ich Grundprinzipen von Kotlin Multiplatform erläutern und über den Ablauf meiner Herausforderung berichten.\r\n",
+            "startsAt": "2019-09-05T16:20:00",
+            "endsAt": "2019-09-05T17:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "bf79ffe5-f576-43e2-8d4b-3a43161c1a50",
+                "name": "Michal Harakal"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      },
+      {
+        "id": 7051,
+        "name": "Edison (2.OG)",
+        "sessions": [
+          {
+            "id": "129259",
+            "title": "\"Hey Duke, let's talk...\" - Ein Voice-UI-System auf Basis der JVM erstellen",
+            "description": "Immer mehr Interaktionen mit einem Computer erfolgen über die Stimme. Dabei werden die meisten Konversation mit Unterstützung von Siri, Alex, Google und Cortana durchgeführt, aber warum starten wir nicht auch mit Duke, also einer Application auf der JVM eine Konversation?\r\nDieser Vortrag möchte grundlegend in das Thema \"Voice UI\" einführen. Ebenso aber auch aufzeigen, welche Möglichkeiten sich für JVM Applikationen und deren Entwickler ergeben. Neben Java-Bibliotheken werden auch Standards wie JSGF (JSpeech Grammar Format) und SSML (Speech Synthesis Markup Language) zu den Interessierten näher gebracht. Am Ende in einer Demo-Implementierung eine erste Konversation dargeboten. Anhand der zur Verfügung gestellten Sourcen kann diese dann durch die Zuhörer im Anschluss erweitert oder verändert werden.",
+            "startsAt": "2019-09-05T09:00:00",
+            "endsAt": "2019-09-05T10:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "fb37fe52-097c-4cc7-b765-cbd60e548ed2",
+                "name": "Daniel Kocot"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "133344",
+            "title": "Rise and Fall of Single-Page-Monoliths – Micro-Frontends und deren Integration",
+            "description": "Der explorative Aufbau eines schnell wachsenden FinTechs gelang uns Backend-seitig recht gut mit Microservices. Doch Frontend-seitig konnten wir die Schaffung eines komplexen Single-Page-Monolithen nicht wirklich verhindern. Resultat: geringe Performance, lange Build-Zeiten, zyklische Abhängigkeiten, keine eindeutige Teamzuordnung, Frust…\r\n\r\nWir zeigen unsere neue Architektur eines zerlegten Dashboards in eigenständige Micro-Frontends mit Angular und Web Components. Eine „Software aus einem Guss“ - hinsichtlich UX und übergreifend einheitlichem Styling kein triviales Unterfangen!\r\n\r\nWir gehen gemeinsam durch relevante Code-Stellen, schildern die Herausforderungen und diskutieren Vor- und Nachteile unserer Lösung.",
+            "startsAt": "2019-09-05T10:20:00",
+            "endsAt": "2019-09-05T11:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "01451c0c-7d33-4abc-8402-c8dbbe9732f1",
+                "name": "Harm Norden"
+              },
+              {
+                "id": "800208c3-021a-4817-89fe-94517269a1cf",
+                "name": "Adrian Lehmann"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "133398",
+            "title": "Ich möchte auch mal einen Vortrag halten - Wo fange ich bloß an?",
+            "description": "Vor einer Gruppe von Menschen einen Vortrag zu halten, ist für viele von uns eine große Hürde. Mit der richtigen Vorbereitung und etwas Übung muss das aber gar kein Problem sein und ist gerade für den beruflichen Alltag sehr nützlich. Und auch wenn es paradox klingt, bieten User Groups und Konferenzen die besten Voraussetzungen, sich mal vor Publikum auszuprobieren. Aber wie findet man ein spannendes Thema, wie schreibt man einen interessanten Abstract, wie sieht die Vorbereitung aus, wenn man angenommen wurde und was sind die besten Tricks, um auf der Bühne eine gute Figur zu machen? Ich möchte Euch von meinen Erfahrungen als Sprecher und auch Konferenz- und User Group Organisator berichten und bin mir sicher, einige zu animieren. \"Nachbetreuung\" ist übrigens kostenfrei und inklusive.",
+            "startsAt": "2019-09-05T11:40:00",
+            "endsAt": "2019-09-05T12:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "2fa7d3c1-e216-4dc8-b05c-f94fe34390e7",
+                "name": "Falk Sippach"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "133358",
+            "title": "Standardisierte CD auf GitLab",
+            "description": "Um modulare Software automatisch bei jeder Änderung auszuliefern / zu deployen müssen verschiedene Schritte automatisiert werden: Versionen sollten automatisch inkrementiert werden, die Versionen von Dependencies sollten automatisch aktualisiert werden, die Auslieferung / das Deployment sollte automatisiert sein, Build-Pipelines für verschiedene Build-Verfahren wie Maven, Gradle und Docker sollten möglichst homogen sein und auf einmal aktualisiert werden können. Der Vortrag stellt Open-Source Build-Tools für GitLab vor, die in Projekten verwendet werden können, um diese Build-Features direkt nutzen zu können.",
+            "startsAt": "2019-09-05T12:00:00",
+            "endsAt": "2019-09-05T12:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "e366b0ff-20b0-412c-ae70-a81e789db4aa",
+                "name": "Sebastian Lohmeier"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "133078",
+            "title": "Building simple CRUD services with Spring Data REST",
+            "description": "Imagine you want to build a simple web service, providing an API for CRUD (Create, Read, Update, Delete) operations. You need to \r\n\r\n* connect to databases\r\n* create database-specific queries\r\n* build query statements\r\n* create controllers\r\n* analyse results sets\r\n\r\nYou see, that's a lot of boilerplate. Using Spring Boot and Spring Data helps you reducing this boilerplate. You don't need to care on database connections and queries anymore and use Spring Data repositories instead of query statements. The auditing feature helps to keep consistency.\r\n\r\nWith [Spring Data REST](https://spring.io/projects/spring-data-rest) you can even do more. It uses a Domain-class centric approach to repository interactions. You only need to define what's really important - the domain classes. Domains created with Spring Data REST generate controllers and their dependencies. On top you get [HATEOAS](https://spring.io/understanding/HATEOAS) links you need to walk through your data.\r\n\r\n### Key Learnings\r\n\r\n* comparison of a handwritten REST service and a Spring Data REST service \r\n* use ApplicationListeners, e.g. to do some more specific validations\r\n* how to use HTTP verbs GET, PUT, POST, PATCH and DELETE",
+            "startsAt": "2019-09-05T12:20:00",
+            "endsAt": "2019-09-05T12:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "9229c4df-d437-43ab-9089-2cd453d144f4",
+                "name": "Andreas Bräu"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "127597",
+            "title": "Building a Serverless Slack Bot",
+            "description": "We'll be demonstrating how to build a serverless chat bot you can connect to your (and other's) company's Slack workspaces. We'll look at setting up the infrastracture, dealing with Slack authentication, and even do some live coding!",
+            "startsAt": "2019-09-05T13:40:00",
+            "endsAt": "2019-09-05T14:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "bad1caef-3d00-4e6e-8a5f-7fff48257a94",
+                "name": "Alex Pruss"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "133343",
+            "title": "DevOps for n00bs o_O",
+            "description": "How do you get started with DevOps? Are you part of the “How hard can it be” camp and believe you can set up a cluster environment to work for your microservices software project with CI/CD in an afternoon? Or are you totally overwhelmed to start with such a thing, because you have no idea where to begin? \r\n\r\nFor me, back when I was a total DevOps n00b, fortunately it was neither. In this talk you will learn how to start from scratch and to evolve your setup for your own project. For this, I want to guide you through the evolutionary process we went through with our DevOps setup while developing a customer portal for an insurance company. I will use that as an example to show you how we started from total DevOps n00bs to setting up a build pipeline, working on a deployment on Azure App Services, moving that to a Service Fabric Cluster and then having to solve a lot of issues that no n00b could have anticipated. Solving each of these problems (configuration of a load balancer, reverse proxy, DNS, docker issues, …) allowed us to improve the setup over time. You will learn that while there are no silver bullets, it also doesn’t have to be totally overwhelming. Instead, you just need to keep working on solving the problems you encounter to get to a nice, reliably working setup. ",
+            "startsAt": "2019-09-05T15:00:00",
+            "endsAt": "2019-09-05T16:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "3e075df0-5683-4432-903b-966be27610d0",
+                "name": "Michelle Fernandez Bieber"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "132370",
+            "title": "Kubernetes Security",
+            "description": "The talk gives a comprehensive overview on Kubernetes security for developers. DevOps has evolved to DevSecOps, and taking this approach seriously, this has an impact on CI/CD pipelines, building images, running databases and serverless applications.\r\n\r\nKubernetes is going to run more and more in security critical environments.\r\n\r\nWhat does this mean to run microservices in a \"secure\" way? \r\n\r\nThe good news is: Kubernetes has everything build in to run microservices on the highest security level.\r\n\r\nThe bad news: it is hard to sort out which level is appropriate for your application.\r\n\r\nSeveral examples are discussed like doing DevSecOps with access logs in medical environments, traffic control systems, energy in critical infrastructure, trains, telephony.\r\n\r\nWe report the feedback from security audits.\r\n\r\nThe art of the microservice architecture is to find the appropriate level of security starting with running distributed databases correctly, setting up roles the right way for the level of multitenancy, applying a network policy implementing network layer or using TLS sidecar proxies and Istio in a zero trust infrastructure. ",
+            "startsAt": "2019-09-05T16:20:00",
+            "endsAt": "2019-09-05T17:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "76d372e6-bdc9-4af1-a2e0-9fc286374723",
+                "name": "Thomas Fricke"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      },
+      {
+        "id": 7052,
+        "name": "Voltaire (3.OG)",
+        "sessions": [
+          {
+            "id": "133562",
+            "title": "\"Dies ist keine sichere Verbindung\" - Edge Router Konfiguration leicht gemacht",
+            "description": "Jeder kennt folgendes Szenario: Ich deploye meine Applikation auf einen Server meiner Wahl, installiere meinen favorisierten Reverse-Proxy und konfiguriere meine Applikation\r\nals Upstream. Fertig. Im Zeitalter von Containern und Microservices sieht dies ein wenig anders aus. Aufgrund der steigenden Anzahl der zu betreuenden \r\nServices in Kombination mit der Schnelllebigkeit der Endpunkte wird das Management des Reverse-Proxys schnell eine Herausforderung. Kommen dann noch\r\nweitere Anforderungen wie z.B. SSL oder Authentifizierung dazu, wird es schnell unübersichtlich. \r\n\r\nDieser Talk stellt Traefik vor. Einen Open-Source Reverse Proxy dessen Hauptziel es ist, diese Herausforderung zu meistern. Die Hauptmerkmale von Traefik\r\nsind Einfachheit und Automatisierung. Traefik selber benötigt keine Routing Konfiguration, da es sich die nötigen Information direkt aus dem \r\nContainer Backend wie z.B. Docker Swarm oder Kubernetes lädt und daher eine dynamische Konfiguration anbietet. Darüber hinaus automatisiert Traefik z.B. das erneuern\r\nvon Lets Encrypt Zertifikaten.\r\n\r\nMit dem nächsten großen Release von Traefik 2.0 wird unter anderem auch TCP Support angeboten. Diese und die weiteren Neuerungen werden außerdem\r\nkurz vorgestellt und die Konzepte dahinter aufgezeigt.",
+            "startsAt": "2019-09-05T09:00:00",
+            "endsAt": "2019-09-05T10:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "80018ddb-c2d5-46ba-9054-c89ab35bb8b0",
+                "name": "Manuel Zapf"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "133561",
+            "title": "A new best practice in style? A computational analysis of R style based on 94 million lines of code",
+            "description": "The coexistence of multiple programming styles confuses new users and makes enforcing best practice difficult. This problem is aggravated by the lack of a universally accepted style guide in the R community. \r\n\r\nTo investigate that, we quantified the programming style variation (PSV) in all CRAN packages and observed an emerging consensus in style since 2016, as indicated by the dampened increasing trend in PSV. It seems that a new consensus-based best practice is forming, which is a mixture of various R style guides. \r\n\r\nConcretely, we summarized the ”ins & outs” of different styles based on popularity across years (e.g., rapid rise of underscore fun name and fall of dotted.fun.name since 2013) and pointed out the least agreed style elements (e.g., -> v.s. =, space after a comma). Moreover, we identified a source of PSV (the ”Naughty, Naughty! ”) by looking into the style differences between clusters of related packages (e.g., Finance v.s. Biostatistics). \r\n\r\nOur analysis raises an open question to all stakeholders of the R community, i.e., the R Foundation, opinion leaders, package developers, and ordinary users: should we adopt an official R style guide as in the case of Python’s PEP8? The findings from this study validate the R community’s effort in reducing PSV and suggests future directions.",
+            "startsAt": "2019-09-05T10:20:00",
+            "endsAt": "2019-09-05T11:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "89249bbe-b023-43f6-bcc0-7141e06459ba",
+                "name": "Mia Chang"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "128120",
+            "title": "Remote Mob Programming: Team-Work im Home-Office",
+            "description": "Seit einem Jahr machen wir Remote Mob Programming (https://www.remotemobprogramming.org/), also nur eine Tastatur für ein verteiltes Team den ganzen Tag lang. Warum wir nicht mehr anders arbeiten wollen? Wir haben noch nie so fokussiert gearbeitet. Wir haben noch nie so viel gelernt. Wir hatten noch nie so sauberen und einheitlichen Code. Und vor allem: Wir hatte noch nie so viel Zeit für unsere Familien. \r\n\r\nBegleite uns einen typischen Tag in unserem Projekt und erlebe, was es heißt, Remote Mob Programming zu machen. Wir erzählen, wann Remote Mob Programming für uns funktioniert (Test-Driven Development und schriftliche Entscheidungen) und wann nicht (Kickoff, Workshops und Doku lesen), welche Werkzeuge (appear.in und Slack) wir einsetzen, auf welche Probleme (schlechtes WLAN, zu wenig Pausen und unterschiedliche Arbeitszeiten) und Widerstände (\"Seid ihr nicht schneller wenn ihr die Arbeit parallelisiert?\" und \"Es reicht doch wenn nur einer von euch ins Meeting kommt?\") wir gestoßen sind und wie wir diese gelöst haben.",
+            "startsAt": "2019-09-05T11:40:00",
+            "endsAt": "2019-09-05T12:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "37824af4-91f5-4a5a-847d-6d88241db461",
+                "name": "Jochen Christ"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "133314",
+            "title": "Verifikation von Answer Set Programming",
+            "description": "Answer Set Programming (ASP) ist eine einfache und kompakte Sprache zur Wissensrepräsentation und Lösung kombinatorischer Probleme. Diese wird insbesondere im Bereich der Künstlichen Intelligenz sowie im Bereich des Constraint Solving eingesetzt. Viele Anwendungsdomänen profitieren heute vom Einsatz von ASP Solvern, da sie hoch effizient und somit vielen domänen spezifischen Algorithmen überlegen sind. Zudem können neue Anforderungen an die Software leicht integriert werden. Anwendungsbereiche aus der IT-Sicherheit sind z.B. das Generieren von Scheduling-Plänen für hoch sichere Systeme, das Generieren von neuen Angriffsvektoren oder im Gebiet der kryptographischen Analyse.\r\n\r\nHeutzutage bestehen ASP Solver aus Tausenden Zeilen Code, der nur schwer auf seine Korrektheit zu prüfen ist. Die Entwicklung von ASP Solvern schreitet in rasanter Zeit voran, sodass es nicht zielführend erscheint jede Zeile Code formal zu verifizieren um ihre Korrektheit zu beweisen.\r\n\r\nIn diesem Vortrag werde ich die Grundlagen des Answer Set Programming anhand von aktuellen industriellen Anwendungen im Bereich der IT-Sicherheit präsentieren. Anschließend werde ich zeigen, wie die Korrektheit von ASP Solvern leicht geprüft werden kann. ",
+            "startsAt": "2019-09-05T13:40:00",
+            "endsAt": "2019-09-05T14:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "4b6c2975-ea48-4e0f-9919-3e9515fbfdf0",
+                "name": "Tobias Philipp"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "131557",
+            "title": "Turning any CMS (e.g. Sophora) into a headless CMS",
+            "description": "At Exozet we relaunched the https://zdf.de in 2016 by using Subshells Java/JCR-based Sophora CMS (see https://www.subshell.com/de/sophora/). Lots of public broadcasters in germany are using Sophora, but not in an headless way and struggle issues in maintenance and scale. In this talk I will present, how we successfully used Sophora with Elasticsearch to build a headless CMS and read the data with react + graphql to render HTML in our most recent project in 2019.\r\n\r\n",
+            "startsAt": "2019-09-05T15:00:00",
+            "endsAt": "2019-09-05T16:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "ab44e94d-f092-4f88-9e36-e2e968b08046",
+                "name": "Jan Schütze"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "132174",
+            "title": "Offene Daten und IT-Lösungen für den Radverkehr",
+            "description": "Das Fahrrad gewinnt als flexibles und umweltfreundliches Verkehrsmittel wieder eine stärkere Bedeutung für die Mobilität in Städten. Zivilgesellschaftliche Initiativen wie z.B. die Radentscheide fordern von Politik und Planung eine schnellere Schaffung zeitgemäßer Infrastruktur, bringen sich ein und schaffen eine neue Fahrradkultur. Aber auch Unternehmen entdecken das Rad als Teil innovativer Mobilitätskonzepte.\r\n\r\nDer Talk gibt einen Überblick über IT-Ansätze für die Unterstützung des Radverkehrs von Experimenten und Kampagnen über Sensoren, Apps und Tools bis hin zur Integration mit Verwaltungsprozessen zur Erhöhung der Transparenz.\r\n\r\nOffene Daten stellen eine wesentliche Basis dar, um sowohl der Zivilgesellschaft als auch Unternehmen die Entwicklung innovativer Mobilitätslösungen zu ermöglichen. Am Beispiel von Berlin wird aufgezeigt welche Daten es schon gibt und wie ein umfassendes Open Data Angebot aussehen sollte.",
+            "startsAt": "2019-09-05T16:20:00",
+            "endsAt": "2019-09-05T17:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "4682b7ae-0351-48e0-97c4-830d9935ba7f",
+                "name": "Ulrich Deiters"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      }
+    ],
+    "timeSlots": [
+      {
+        "slotStart": "09:00:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "129693",
+              "title": "Techno­lo­gie­ent­schei­dungen in selbstorganisierten Teams",
+              "description": "Es fühlt sich völlig natürlich an: Technologieentscheidungen werden von den Entwicklern in den Teams getroffen – nicht durch den CTO oder einen übergeordneten Architekten. Die Entwickler in den selbstorganisierten Teams kennen die zu lösenden Probleme am besten und haben meist auch einen guten Überblick über die möglichen technischen Lösungen.\r\n\r\nNach einigen Wochen aber entsteht Streit: Jeder will mitreden. Die Entwickler sind nicht immer alle einer Meinung. Wie viele Standards brauchen wir für alle Teams?\r\n\r\nEin Praxisbericht über sinnvolle Rahmenbedingungen für Technologieentscheidungen in selbstorganisierten Teams.",
+              "startsAt": "2019-09-05T09:00:00",
+              "endsAt": "2019-09-05T10:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "d6f16311-e6f9-4910-abd2-7ff048f882ed",
+                  "name": "Konstantin Diener"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "132605",
+              "title": "Service oriented alerting",
+              "description": "Es ist leicht, viele herumliegende Metriken einzusammeln und damit bunte Regenbogen zu malen. Aber hat eine volllaufende Festplatte wirklich Auswirkung auf den Endkunden, so dass die Rufbereitschaft mitten in der Nacht geweckt werden muss? In diesem Vortrag werden wir einen umgekehrten Ansatz vorstellen, wie man ausgehend von fachlichen Anforderungen Ziele definiert, und diese automatisiert überprüfbar in ein bestehendes Alarmierungssystem integriert.",
+              "startsAt": "2019-09-05T09:00:00",
+              "endsAt": "2019-09-05T10:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "0eef6010-8df7-4302-af4d-d04fab81ee2e",
+                  "name": "Daniel Fuchs"
+                },
+                {
+                  "id": "9b287bda-a062-412f-aca9-2323188f8565",
+                  "name": "Vladimir Dobriakov"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "129259",
+              "title": "\"Hey Duke, let's talk...\" - Ein Voice-UI-System auf Basis der JVM erstellen",
+              "description": "Immer mehr Interaktionen mit einem Computer erfolgen über die Stimme. Dabei werden die meisten Konversation mit Unterstützung von Siri, Alex, Google und Cortana durchgeführt, aber warum starten wir nicht auch mit Duke, also einer Application auf der JVM eine Konversation?\r\nDieser Vortrag möchte grundlegend in das Thema \"Voice UI\" einführen. Ebenso aber auch aufzeigen, welche Möglichkeiten sich für JVM Applikationen und deren Entwickler ergeben. Neben Java-Bibliotheken werden auch Standards wie JSGF (JSpeech Grammar Format) und SSML (Speech Synthesis Markup Language) zu den Interessierten näher gebracht. Am Ende in einer Demo-Implementierung eine erste Konversation dargeboten. Anhand der zur Verfügung gestellten Sourcen kann diese dann durch die Zuhörer im Anschluss erweitert oder verändert werden.",
+              "startsAt": "2019-09-05T09:00:00",
+              "endsAt": "2019-09-05T10:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "fb37fe52-097c-4cc7-b765-cbd60e548ed2",
+                  "name": "Daniel Kocot"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "133562",
+              "title": "\"Dies ist keine sichere Verbindung\" - Edge Router Konfiguration leicht gemacht",
+              "description": "Jeder kennt folgendes Szenario: Ich deploye meine Applikation auf einen Server meiner Wahl, installiere meinen favorisierten Reverse-Proxy und konfiguriere meine Applikation\r\nals Upstream. Fertig. Im Zeitalter von Containern und Microservices sieht dies ein wenig anders aus. Aufgrund der steigenden Anzahl der zu betreuenden \r\nServices in Kombination mit der Schnelllebigkeit der Endpunkte wird das Management des Reverse-Proxys schnell eine Herausforderung. Kommen dann noch\r\nweitere Anforderungen wie z.B. SSL oder Authentifizierung dazu, wird es schnell unübersichtlich. \r\n\r\nDieser Talk stellt Traefik vor. Einen Open-Source Reverse Proxy dessen Hauptziel es ist, diese Herausforderung zu meistern. Die Hauptmerkmale von Traefik\r\nsind Einfachheit und Automatisierung. Traefik selber benötigt keine Routing Konfiguration, da es sich die nötigen Information direkt aus dem \r\nContainer Backend wie z.B. Docker Swarm oder Kubernetes lädt und daher eine dynamische Konfiguration anbietet. Darüber hinaus automatisiert Traefik z.B. das erneuern\r\nvon Lets Encrypt Zertifikaten.\r\n\r\nMit dem nächsten großen Release von Traefik 2.0 wird unter anderem auch TCP Support angeboten. Diese und die weiteren Neuerungen werden außerdem\r\nkurz vorgestellt und die Konzepte dahinter aufgezeigt.",
+              "startsAt": "2019-09-05T09:00:00",
+              "endsAt": "2019-09-05T10:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "80018ddb-c2d5-46ba-9054-c89ab35bb8b0",
+                  "name": "Manuel Zapf"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "10:20:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "131676",
+              "title": "Beten wir Komplexität an?",
+              "description": "Komplexität ist die wichtigste Herausforderung in der Softwareentwicklung. Daher ist es wichtig, immer danach zu streben, Komplexität zu eliminieren. Aber manchmal beten wir Komplexität an - und das kann das Problem der Komplexität unlösbar machen.",
+              "startsAt": "2019-09-05T10:20:00",
+              "endsAt": "2019-09-05T11:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "4750ed21-fcda-4dc5-9fe5-1a6fca25cd8c",
+                  "name": "Eberhard Wolff"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "133394",
+              "title": "Skalierbares Auditing",
+              "description": "Der Linux Audit-Daemon sammelt sicherheitsrelevante Aktivitäten, auf die man mit Hilfe von ausearch und aureport zugreifen kann. Das Analysieren und Zentralisieren dieser Datensätze ist allerdings nicht so einfach, wie man es erwarten würden. Der neue Auditbeat von Elastic behebt dies, indem er die ursprüngliche Konfiguration beibehält, die gesammelten Daten jedoch zentral speichern sowie einfach visualisieren kann. Außerdem kann Auditbeat auch verwenden, um Änderungen an wichtigen Dateien, wie Binärdateien und Konfigurationsdateien, zu erkennen und mögliche Verstöße gegen Sicherheitsrichtlinien zu erkennen. Dieser Vortrag zeigt, was man tun kann, um Änderungen, Ereignisse und potenzielle Sicherheitsverletzungen auf interaktiven Dashboards so schnell wie möglich zu entdecken. Darüber hinaus kombinieren wir Auditd-Ereignisse mit Logs, die sicherheitsrelevant sind.",
+              "startsAt": "2019-09-05T10:20:00",
+              "endsAt": "2019-09-05T11:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "48bba77e-6187-42e9-bfd3-10c9ae781b89",
+                  "name": "Philipp Krenn"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "133344",
+              "title": "Rise and Fall of Single-Page-Monoliths – Micro-Frontends und deren Integration",
+              "description": "Der explorative Aufbau eines schnell wachsenden FinTechs gelang uns Backend-seitig recht gut mit Microservices. Doch Frontend-seitig konnten wir die Schaffung eines komplexen Single-Page-Monolithen nicht wirklich verhindern. Resultat: geringe Performance, lange Build-Zeiten, zyklische Abhängigkeiten, keine eindeutige Teamzuordnung, Frust…\r\n\r\nWir zeigen unsere neue Architektur eines zerlegten Dashboards in eigenständige Micro-Frontends mit Angular und Web Components. Eine „Software aus einem Guss“ - hinsichtlich UX und übergreifend einheitlichem Styling kein triviales Unterfangen!\r\n\r\nWir gehen gemeinsam durch relevante Code-Stellen, schildern die Herausforderungen und diskutieren Vor- und Nachteile unserer Lösung.",
+              "startsAt": "2019-09-05T10:20:00",
+              "endsAt": "2019-09-05T11:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "01451c0c-7d33-4abc-8402-c8dbbe9732f1",
+                  "name": "Harm Norden"
+                },
+                {
+                  "id": "800208c3-021a-4817-89fe-94517269a1cf",
+                  "name": "Adrian Lehmann"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "133561",
+              "title": "A new best practice in style? A computational analysis of R style based on 94 million lines of code",
+              "description": "The coexistence of multiple programming styles confuses new users and makes enforcing best practice difficult. This problem is aggravated by the lack of a universally accepted style guide in the R community. \r\n\r\nTo investigate that, we quantified the programming style variation (PSV) in all CRAN packages and observed an emerging consensus in style since 2016, as indicated by the dampened increasing trend in PSV. It seems that a new consensus-based best practice is forming, which is a mixture of various R style guides. \r\n\r\nConcretely, we summarized the ”ins & outs” of different styles based on popularity across years (e.g., rapid rise of underscore fun name and fall of dotted.fun.name since 2013) and pointed out the least agreed style elements (e.g., -> v.s. =, space after a comma). Moreover, we identified a source of PSV (the ”Naughty, Naughty! ”) by looking into the style differences between clusters of related packages (e.g., Finance v.s. Biostatistics). \r\n\r\nOur analysis raises an open question to all stakeholders of the R community, i.e., the R Foundation, opinion leaders, package developers, and ordinary users: should we adopt an official R style guide as in the case of Python’s PEP8? The findings from this study validate the R community’s effort in reducing PSV and suggests future directions.",
+              "startsAt": "2019-09-05T10:20:00",
+              "endsAt": "2019-09-05T11:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "89249bbe-b023-43f6-bcc0-7141e06459ba",
+                  "name": "Mia Chang"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "11:40:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "130948",
+              "title": "Anwendungsmetriken sammeln und auswerten mit Micrometer",
+              "description": "Metriken sind neben Logging und Tracing ein wichtiger Pfeiler zur Überwachung der Anwendung. Mit Metriken können Probleme erkannt und Ressourcen-Engpässe identifiziert werden. \r\nDas Projekt Micrometer bietet für Java-Anwendungen eine Fassade, mit der Metriken herstellerneutral in verschiedene Monitoring-Systeme geliefert werden können. Parallel zu Spring Boot Version 2.0 wurde Micrometer Version 1.0 veröffentlicht, welches nun die Standard-Bibliothek für Metriken in Spring Boot ist. Micrometer selbst kann unabhängig von Spring in allen Java-Projekten eingesetzt werden.\r\nDamit versetzt es Teams in die Lage, technische und fachliche Metriken effizient zu sammeln und für eigene Auswertungen einzusetzen.\r\nDer Vortrag stellt die Verwendung von Micrometer in Spring Boot vor und zeigt die Auswertung von Metriken mit Prometheus und Grafana.\r\n",
+              "startsAt": "2019-09-05T11:40:00",
+              "endsAt": "2019-09-05T12:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "68ac17bc-add8-49d2-9604-7150a99b52b4",
+                  "name": "Alexander Schwartz"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "128611",
+              "title": "Machine Learning und autonomes Fahren mit dem AWS DeepRacer",
+              "description": "Machine Learning ist derzeit in jedermanns Munde. Auf der re:Invent 2018 hat AWS den DeepRacer vorgestellt, ein vollständig autonomer Rennwagen im Maßstab 1:18. Laut AWS \"der schnellste Weg, um mit Machine Learning durchzustarten - im wahrsten Sinne des Wortes.“. Der Talk bietet einen Einstieg in DeepRacer, den zugrunde liegenden AWS Diensten und eine Starthilfe zum Reinforcement Learning. Im Fokus der Session stehen hier zwei Dinge: MachineLearning ohne Vorkenntnisse spielerisch ausprobieren und Spaß haben etwas Neues zu lernen.",
+              "startsAt": "2019-09-05T11:40:00",
+              "endsAt": "2019-09-05T12:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "ea27ba16-93c8-4c62-af6f-9166d0698e18",
+                  "name": "Marco Buss"
+                },
+                {
+                  "id": "82f2e4f5-ad91-4931-bc92-6e46500e1059",
+                  "name": "Martin Münn"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "133398",
+              "title": "Ich möchte auch mal einen Vortrag halten - Wo fange ich bloß an?",
+              "description": "Vor einer Gruppe von Menschen einen Vortrag zu halten, ist für viele von uns eine große Hürde. Mit der richtigen Vorbereitung und etwas Übung muss das aber gar kein Problem sein und ist gerade für den beruflichen Alltag sehr nützlich. Und auch wenn es paradox klingt, bieten User Groups und Konferenzen die besten Voraussetzungen, sich mal vor Publikum auszuprobieren. Aber wie findet man ein spannendes Thema, wie schreibt man einen interessanten Abstract, wie sieht die Vorbereitung aus, wenn man angenommen wurde und was sind die besten Tricks, um auf der Bühne eine gute Figur zu machen? Ich möchte Euch von meinen Erfahrungen als Sprecher und auch Konferenz- und User Group Organisator berichten und bin mir sicher, einige zu animieren. \"Nachbetreuung\" ist übrigens kostenfrei und inklusive.",
+              "startsAt": "2019-09-05T11:40:00",
+              "endsAt": "2019-09-05T12:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "2fa7d3c1-e216-4dc8-b05c-f94fe34390e7",
+                  "name": "Falk Sippach"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "128120",
+              "title": "Remote Mob Programming: Team-Work im Home-Office",
+              "description": "Seit einem Jahr machen wir Remote Mob Programming (https://www.remotemobprogramming.org/), also nur eine Tastatur für ein verteiltes Team den ganzen Tag lang. Warum wir nicht mehr anders arbeiten wollen? Wir haben noch nie so fokussiert gearbeitet. Wir haben noch nie so viel gelernt. Wir hatten noch nie so sauberen und einheitlichen Code. Und vor allem: Wir hatte noch nie so viel Zeit für unsere Familien. \r\n\r\nBegleite uns einen typischen Tag in unserem Projekt und erlebe, was es heißt, Remote Mob Programming zu machen. Wir erzählen, wann Remote Mob Programming für uns funktioniert (Test-Driven Development und schriftliche Entscheidungen) und wann nicht (Kickoff, Workshops und Doku lesen), welche Werkzeuge (appear.in und Slack) wir einsetzen, auf welche Probleme (schlechtes WLAN, zu wenig Pausen und unterschiedliche Arbeitszeiten) und Widerstände (\"Seid ihr nicht schneller wenn ihr die Arbeit parallelisiert?\" und \"Es reicht doch wenn nur einer von euch ins Meeting kommt?\") wir gestoßen sind und wie wir diese gelöst haben.",
+              "startsAt": "2019-09-05T11:40:00",
+              "endsAt": "2019-09-05T12:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "37824af4-91f5-4a5a-847d-6d88241db461",
+                  "name": "Jochen Christ"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "12:00:00",
+        "rooms": [
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "133358",
+              "title": "Standardisierte CD auf GitLab",
+              "description": "Um modulare Software automatisch bei jeder Änderung auszuliefern / zu deployen müssen verschiedene Schritte automatisiert werden: Versionen sollten automatisch inkrementiert werden, die Versionen von Dependencies sollten automatisch aktualisiert werden, die Auslieferung / das Deployment sollte automatisiert sein, Build-Pipelines für verschiedene Build-Verfahren wie Maven, Gradle und Docker sollten möglichst homogen sein und auf einmal aktualisiert werden können. Der Vortrag stellt Open-Source Build-Tools für GitLab vor, die in Projekten verwendet werden können, um diese Build-Features direkt nutzen zu können.",
+              "startsAt": "2019-09-05T12:00:00",
+              "endsAt": "2019-09-05T12:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "e366b0ff-20b0-412c-ae70-a81e789db4aa",
+                  "name": "Sebastian Lohmeier"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "12:20:00",
+        "rooms": [
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "133078",
+              "title": "Building simple CRUD services with Spring Data REST",
+              "description": "Imagine you want to build a simple web service, providing an API for CRUD (Create, Read, Update, Delete) operations. You need to \r\n\r\n* connect to databases\r\n* create database-specific queries\r\n* build query statements\r\n* create controllers\r\n* analyse results sets\r\n\r\nYou see, that's a lot of boilerplate. Using Spring Boot and Spring Data helps you reducing this boilerplate. You don't need to care on database connections and queries anymore and use Spring Data repositories instead of query statements. The auditing feature helps to keep consistency.\r\n\r\nWith [Spring Data REST](https://spring.io/projects/spring-data-rest) you can even do more. It uses a Domain-class centric approach to repository interactions. You only need to define what's really important - the domain classes. Domains created with Spring Data REST generate controllers and their dependencies. On top you get [HATEOAS](https://spring.io/understanding/HATEOAS) links you need to walk through your data.\r\n\r\n### Key Learnings\r\n\r\n* comparison of a handwritten REST service and a Spring Data REST service \r\n* use ApplicationListeners, e.g. to do some more specific validations\r\n* how to use HTTP verbs GET, PUT, POST, PATCH and DELETE",
+              "startsAt": "2019-09-05T12:20:00",
+              "endsAt": "2019-09-05T12:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "9229c4df-d437-43ab-9089-2cd453d144f4",
+                  "name": "Andreas Bräu"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "12:40:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "91e11ea0-075f-4ace-af0b-5199578b4108",
+              "title": "Mittag",
+              "description": null,
+              "startsAt": "2019-09-05T12:40:00",
+              "endsAt": "2019-09-05T13:40:00",
+              "isServiceSession": true,
+              "isPlenumSession": true,
+              "speakers": [],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "13:40:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "128504",
+              "title": "Bessere Monolithen – modulithische Applikationen mit Spring Boot",
+              "description": "Vergleicht man verschiedene Ansätze um Bounded Contexte zu implementieren, ist eine modulare aber monolithische Applikation oft eine pragmatische Alternative zu Microservices, die viele neue Herausforderungen und Komplexität eines verteilten Systems erzeugen. Dennoch degenerieren die Modularität und Wart- bzw. Erweiterbarkeit monolithischer Applikationen über deren Lebenszyklus signifikant.\r\n\r\nDer Vortrag identifiziert oft beobachte Phänomene in unstrukturierten Monolithen und diskutiert Ansätze zur Codeorganisation, Komponentenstruktur, dem Paketdesign, Transaktionen und der Nutzung von Events um die Interaktion zwischen Bounded Contexts zu implementieren. Wir betrachten dann unterstützende Technologien und Features von Spring Boot und dessen Ökosystem um architektonische Konzepte in modularen, monolithischen Applikationen zu implementieren um definierte Architektur über die Zeit zu erhalten und auf eine spätere Aufteilung mehrere Systeme vorzubereiten.",
+              "startsAt": "2019-09-05T13:40:00",
+              "endsAt": "2019-09-05T14:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "6c4698c8-1a2f-436b-a5f4-3770e0bd3e20",
+                  "name": "Oliver Drotbohm"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "133506",
+              "title": "Building (not so) static websites with Gatsby.js",
+              "description": "How do you easily build a website with different sources like Markdown, Google Sheets or a Headless CMS using the hottest frontend technologies (like React, Next.js, and GraphQL) of 2019? What do you use to build the presentation layer for your headless CMS? For sure you are not going to build everything from scratch! And also performance - you won't want to reinvent the wheel. There is one great answer to your problems: Gatsby.js.",
+              "startsAt": "2019-09-05T13:40:00",
+              "endsAt": "2019-09-05T14:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "22591e60-cd8a-4d6d-9ac3-d3c876063bba",
+                  "name": "Sebastian Waschnick"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "127597",
+              "title": "Building a Serverless Slack Bot",
+              "description": "We'll be demonstrating how to build a serverless chat bot you can connect to your (and other's) company's Slack workspaces. We'll look at setting up the infrastracture, dealing with Slack authentication, and even do some live coding!",
+              "startsAt": "2019-09-05T13:40:00",
+              "endsAt": "2019-09-05T14:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "bad1caef-3d00-4e6e-8a5f-7fff48257a94",
+                  "name": "Alex Pruss"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "133314",
+              "title": "Verifikation von Answer Set Programming",
+              "description": "Answer Set Programming (ASP) ist eine einfache und kompakte Sprache zur Wissensrepräsentation und Lösung kombinatorischer Probleme. Diese wird insbesondere im Bereich der Künstlichen Intelligenz sowie im Bereich des Constraint Solving eingesetzt. Viele Anwendungsdomänen profitieren heute vom Einsatz von ASP Solvern, da sie hoch effizient und somit vielen domänen spezifischen Algorithmen überlegen sind. Zudem können neue Anforderungen an die Software leicht integriert werden. Anwendungsbereiche aus der IT-Sicherheit sind z.B. das Generieren von Scheduling-Plänen für hoch sichere Systeme, das Generieren von neuen Angriffsvektoren oder im Gebiet der kryptographischen Analyse.\r\n\r\nHeutzutage bestehen ASP Solver aus Tausenden Zeilen Code, der nur schwer auf seine Korrektheit zu prüfen ist. Die Entwicklung von ASP Solvern schreitet in rasanter Zeit voran, sodass es nicht zielführend erscheint jede Zeile Code formal zu verifizieren um ihre Korrektheit zu beweisen.\r\n\r\nIn diesem Vortrag werde ich die Grundlagen des Answer Set Programming anhand von aktuellen industriellen Anwendungen im Bereich der IT-Sicherheit präsentieren. Anschließend werde ich zeigen, wie die Korrektheit von ASP Solvern leicht geprüft werden kann. ",
+              "startsAt": "2019-09-05T13:40:00",
+              "endsAt": "2019-09-05T14:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "4b6c2975-ea48-4e0f-9919-3e9515fbfdf0",
+                  "name": "Tobias Philipp"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "15:00:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "131126",
+              "title": "Elasticsearch - Securing a search engine while maintaining usability",
+              "description": "Elasticsearch - integraler Bestandteil des Elastic Stack - ist für seine Volltextsuche- und Analyse-Fähigkeiten bekannt. Es läuft auf zehntausenden Knoten weltweit, deshalb müssen wir parallel zu den neuen Funktionalitäten, die mit jedem neuen Release verfügbar werden, auch stets über Sicherheitsfragen nachdenken. Dieser Vortrag wird verschiedene Aspekte von Elasticsearch abdecken und dabei auf Features und damit verbundene, teilweise unpopuläre Designentscheidungen und deren Gründe eingehen. Im Detail sprechen wir sprechen über folgendes:\r\n\r\n* Nutzung des Java Security Managers inkl. der Integration mit Plugins\r\n* Produktions- vs. Entwicklungs-Modus\r\n* Filterung von Systemaufrufen\r\n* ES-spezifische Script-Sprache „Painless“, welche andere Sprachen wie MVEL, Groovy oder Javascript ersetzt.\r\n\r\nDas Ziel des Vortrags ist nicht nur die Demonstration von Elasticsearch-Features - vielmehr soll eine Anregung gegeben werden, wie mit ähnlichen nichtfunktionalen Anforderungen in euren Anwendungen umzugehen ist.",
+              "startsAt": "2019-09-05T15:00:00",
+              "endsAt": "2019-09-05T16:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "64ce4fc8-75ef-48b9-a649-67bbca05c876",
+                  "name": "Alexander Reelsen"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "132345",
+              "title": "Ktor - asynchrones Kotlin Web Framework",
+              "description": "In dieser Session sehen wir anhand einer Live Demo wie wir mit dem Kotlin Web Framework \"Ktor\" eine Rest-Schnittstelle bauen. Dabei lernen wir einige Key-Features von Kotlin, wie z.B. Coroutines kennen. ",
+              "startsAt": "2019-09-05T15:00:00",
+              "endsAt": "2019-09-05T16:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "5dc076b5-8d22-48fa-8330-6c1f806acccd",
+                  "name": "Marcel Dohnal"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "133343",
+              "title": "DevOps for n00bs o_O",
+              "description": "How do you get started with DevOps? Are you part of the “How hard can it be” camp and believe you can set up a cluster environment to work for your microservices software project with CI/CD in an afternoon? Or are you totally overwhelmed to start with such a thing, because you have no idea where to begin? \r\n\r\nFor me, back when I was a total DevOps n00b, fortunately it was neither. In this talk you will learn how to start from scratch and to evolve your setup for your own project. For this, I want to guide you through the evolutionary process we went through with our DevOps setup while developing a customer portal for an insurance company. I will use that as an example to show you how we started from total DevOps n00bs to setting up a build pipeline, working on a deployment on Azure App Services, moving that to a Service Fabric Cluster and then having to solve a lot of issues that no n00b could have anticipated. Solving each of these problems (configuration of a load balancer, reverse proxy, DNS, docker issues, …) allowed us to improve the setup over time. You will learn that while there are no silver bullets, it also doesn’t have to be totally overwhelming. Instead, you just need to keep working on solving the problems you encounter to get to a nice, reliably working setup. ",
+              "startsAt": "2019-09-05T15:00:00",
+              "endsAt": "2019-09-05T16:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "3e075df0-5683-4432-903b-966be27610d0",
+                  "name": "Michelle Fernandez Bieber"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "131557",
+              "title": "Turning any CMS (e.g. Sophora) into a headless CMS",
+              "description": "At Exozet we relaunched the https://zdf.de in 2016 by using Subshells Java/JCR-based Sophora CMS (see https://www.subshell.com/de/sophora/). Lots of public broadcasters in germany are using Sophora, but not in an headless way and struggle issues in maintenance and scale. In this talk I will present, how we successfully used Sophora with Elasticsearch to build a headless CMS and read the data with react + graphql to render HTML in our most recent project in 2019.\r\n\r\n",
+              "startsAt": "2019-09-05T15:00:00",
+              "endsAt": "2019-09-05T16:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "ab44e94d-f092-4f88-9e36-e2e968b08046",
+                  "name": "Jan Schütze"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "16:20:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "127057",
+              "title": "Funktioniert dieses HomeOffice wirklich?",
+              "description": "Wer kennt ihn nicht, den Held der Arbeit der bis in die späten Abendstunden im Büro gesessen hat und die Produktion repariert hat? Dass vielleicht ein weiterer Kollege zuhause auf dem Sofa gesessen hat und einen gleichwertigen Anteil an diesem Erfolg gehabt hat, wird leider in den meisten Firmenkulturen nicht so wertgeschätzt. Aber woran liegt das? Vielleicht weil wir es nicht gewohnt sind zuhause zu arbeiten? Vielleicht weil wir denken, dass man zuhause nicht so produktiv ist? Vielleicht weil man Familie, Garten odere andere Tätigkeiten zuhause hat, die einen ablenken?\r\nJochen und Johannes arbeiten seit längerer Zeit für verteilte Firmen von zuhause, haben aber vorher aber auch lange Zeit in Büros oder für Kunden gearbeitet. Wir wollen euch mit auf unsere Reise durch verschiedene Arbeitsumgebungen nehmen und euch berichten was für uns gut oder wenig gut funktioniert hat.",
+              "startsAt": "2019-09-05T16:20:00",
+              "endsAt": "2019-09-05T17:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "62c6bbf2-5f0b-423c-9cc4-e01e32afe2c5",
+                  "name": "Johannes Unterstein"
+                },
+                {
+                  "id": "be3147d6-8f3d-4528-885d-4814898fe230",
+                  "name": "Jochen Mader"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "126524",
+              "title": "Kotlin Multiplatform Achterbahnfahrt mit einer Freizeitpark-Konferenz App ",
+              "description": "Es werden ungefähr 2 Apps pro Minute in jeweiligen mobilen App Store hochgeladen. Bei den bereits über 2 Millionen Apps hochgeladenen und bei einer bedeutenden Weiterentwicklung von hybriden und progressiven web Apps (PWA) ist es eine harte Konkurrenz, der sich ein mobiler Entwickler durchschlagen muss. Ich habe mir die Frage gestellt, wie man nicht nur qualitativ hochwertige Apps ohne Abstriche in der Performance und User Experience bauen kann und das auch noch schnell und wirtschaftlich. Und Code Sharing mit Kotlin Multiplatform ist für mich die Antwort. Und das wollte ich auch unter eine Probe stellen. In dem Talk werde ich Grundprinzipen von Kotlin Multiplatform erläutern und über den Ablauf meiner Herausforderung berichten.\r\n",
+              "startsAt": "2019-09-05T16:20:00",
+              "endsAt": "2019-09-05T17:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "bf79ffe5-f576-43e2-8d4b-3a43161c1a50",
+                  "name": "Michal Harakal"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "132370",
+              "title": "Kubernetes Security",
+              "description": "The talk gives a comprehensive overview on Kubernetes security for developers. DevOps has evolved to DevSecOps, and taking this approach seriously, this has an impact on CI/CD pipelines, building images, running databases and serverless applications.\r\n\r\nKubernetes is going to run more and more in security critical environments.\r\n\r\nWhat does this mean to run microservices in a \"secure\" way? \r\n\r\nThe good news is: Kubernetes has everything build in to run microservices on the highest security level.\r\n\r\nThe bad news: it is hard to sort out which level is appropriate for your application.\r\n\r\nSeveral examples are discussed like doing DevSecOps with access logs in medical environments, traffic control systems, energy in critical infrastructure, trains, telephony.\r\n\r\nWe report the feedback from security audits.\r\n\r\nThe art of the microservice architecture is to find the appropriate level of security starting with running distributed databases correctly, setting up roles the right way for the level of multitenancy, applying a network policy implementing network layer or using TLS sidecar proxies and Istio in a zero trust infrastructure. ",
+              "startsAt": "2019-09-05T16:20:00",
+              "endsAt": "2019-09-05T17:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "76d372e6-bdc9-4af1-a2e0-9fc286374723",
+                  "name": "Thomas Fricke"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "132174",
+              "title": "Offene Daten und IT-Lösungen für den Radverkehr",
+              "description": "Das Fahrrad gewinnt als flexibles und umweltfreundliches Verkehrsmittel wieder eine stärkere Bedeutung für die Mobilität in Städten. Zivilgesellschaftliche Initiativen wie z.B. die Radentscheide fordern von Politik und Planung eine schnellere Schaffung zeitgemäßer Infrastruktur, bringen sich ein und schaffen eine neue Fahrradkultur. Aber auch Unternehmen entdecken das Rad als Teil innovativer Mobilitätskonzepte.\r\n\r\nDer Talk gibt einen Überblick über IT-Ansätze für die Unterstützung des Radverkehrs von Experimenten und Kampagnen über Sensoren, Apps und Tools bis hin zur Integration mit Verwaltungsprozessen zur Erhöhung der Transparenz.\r\n\r\nOffene Daten stellen eine wesentliche Basis dar, um sowohl der Zivilgesellschaft als auch Unternehmen die Entwicklung innovativer Mobilitätslösungen zu ermöglichen. Am Beispiel von Berlin wird aufgezeigt welche Daten es schon gibt und wie ein umfassendes Open Data Angebot aussehen sollte.",
+              "startsAt": "2019-09-05T16:20:00",
+              "endsAt": "2019-09-05T17:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "4682b7ae-0351-48e0-97c4-830d9935ba7f",
+                  "name": "Ulrich Deiters"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "17:35:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "0839bebf-b5f0-4c8d-b939-de8a97b48ca8",
+              "title": "Panel und Verlosung",
+              "description": null,
+              "startsAt": "2019-09-05T17:35:00",
+              "endsAt": "2019-09-05T18:35:00",
+              "isServiceSession": true,
+              "isPlenumSession": true,
+              "speakers": [],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2019-09-06T00:00:00",
+    "rooms": [
+      {
+        "id": 7049,
+        "name": "Humboldtsaal (1.OG)",
+        "sessions": [
+          {
+            "id": "127570",
+            "title": "How to break an 18 yo monolith",
+            "description": "idealo.de launched in 2000 and started growing constantly: More features, more people, more and more lines of code. More than 50 developers in 6 teams worked on the same code base.\r\n\r\n### The Software\r\n\r\nThe software was designed as a Swiss Army knife for our company needs. At the end we've got a big monolith that hard to maintain. Over the last years we had several approaches to extract some parts to reduce complexity. But very central parts, business functionality and the data model were never touched. The approach is centralized with a single database.\r\n\r\nThe tech stack used is up-to-date, we have Java 11 with Spring Boot with daily deployments.\r\n\r\n### The Decision\r\n\r\nIn 2018 we made a decision: remove the single, central database and create [self-contained systems](https://scs-architecture.org). Our main goals were:\r\n\r\n* create independent and lightweight services\r\n* have continuous deployments\r\n* one service - one team\r\n* teams are responsible for \"their\" services, from development to operations\r\n\r\n### Answers\r\n\r\n* What were our steps? How did we achieve our goals?\r\n* What technologies did we use?\r\n* What kind of cultural changes did we have?",
+            "startsAt": "2019-09-06T09:00:00",
+            "endsAt": "2019-09-06T10:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "9229c4df-d437-43ab-9089-2cd453d144f4",
+                "name": "Andreas Bräu"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "131084",
+            "title": "Feature Evolution in Java 13 and Beyond",
+            "description": "Every six months, a new Java release comes along. This increased release frequency was motivated by the desire to introduce new language and library features to a broad audience quickly. Depending on user feedback, there is the possibility of making changes before the design is frozen. I describe the evolution of several such features, including switch expressions and new forms of string literals. By monitoring the vigorous open discussion among the Java design and implementation team members, we can derive valuable insights about the design process. I also show you how to build releases for highly experimental features that will make it into future Java versions, such as projects Valhalla (value types) and Loom (fibers). From this presentation, you will gain insights into the evolution of Java, and you will be better equipped to prepare yourself for new features.",
+            "startsAt": "2019-09-06T10:20:00",
+            "endsAt": "2019-09-06T11:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "bbb8702d-0637-4c8e-ae97-45bde0d6b3a8",
+                "name": "Cay Horstmann"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "133389",
+            "title": "Micronaut – effiziente und performante Microservices für die Cloud",
+            "description": "Den Chancen, die der Microservices-Ansatz bietet, stehen auch einige Herausforderungen gegenüber, die man aber gut mit Frameworks handhaben kann. Mit Micronaut hat nun ein ganz neuer Vertreter die Bühne mit dem Versprechen betreten, modulare, leicht testbare und sehr performante Anwendungen in Java, Kotlin oder Groovy entwickeln zu können.\r\n\r\nAuch wenn Micronaut dem Platzhirsch aus dem Spring-Ökosystem ähnlich sieht, wurde es von Grund auf explizit für die Erstellung von Microservices im Cloud-Computing-Umfeld erstellt. Dank extrem kurzer Startzeiten, einem enorm niedrigen Speicherverbrauch und sehr kleinen JAR-Größen wird es die Microservices-Welt umkrempeln.\r\n\r\nErmöglicht wird das neuartige Programmiermodell mittels Compile-Zeit-Metaprogrammierung, wodurch die Metadaten für beispielsweise Dependency Injection und die aspektorientierte Programmierung bereits beim Kompilieren erzeugt werden. Reflection, Proxy Generierung und Data Caching zur Laufzeit entfallen dadurch. Zur Verwendung in der Cloud oder Serverless-Umgebungen gibt es zudem bereits zahlreiche fertig gestellte oder geplante Anbindungen an Service-Discovery-Dienste, Configuration Sharing, Load Balancing und Serverless Computing.\r\n\r\nIm Rahmen dieser Session wollen wir uns die Funktionsweise näher anschauen und anhand von Codebeispielen und Performancemessungen auf den Prüfstand stellen.",
+            "startsAt": "2019-09-06T11:40:00",
+            "endsAt": "2019-09-06T12:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "2fa7d3c1-e216-4dc8-b05c-f94fe34390e7",
+                "name": "Falk Sippach"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "2a49abaa-af48-47a6-813f-b22fea1df88c",
+            "title": "Mittag",
+            "description": null,
+            "startsAt": "2019-09-06T12:40:00",
+            "endsAt": "2019-09-06T13:40:00",
+            "isServiceSession": true,
+            "isPlenumSession": true,
+            "speakers": [],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "132369",
+            "title": "Gesunde Ernährung im stressigen Software-Alltag",
+            "description": "Wir alle kennen das: Stress im Job und Projekt, keine Zeit oder Lust zu frühstücken, lieber „schnell was unterwegs“, Mittags nach der Kantine in einem „Nahrungskoma“ und Abends mit den Kollegen noch in die Kneipe und dort ein paar Bier und Snacks.\r\nGleichzeitig werden wir immer träger, weniger leistungsfähig, Bewegungen fallen uns schwerer, Krankheiten dauern länger und die Waage zeigt auch von Woche zu Woche mehr an. Willkommen im Metabolischen Syndrom!\r\n\r\nGenau so erging es mir - bis ich mir eines Tages gesagt habe, dass es genau so NICHT weitergeht! Veränderung musste her. Und zwar grundlegend und voll willentlich. Also fing ich an, mich mit dem Thema Ernährung und Fitness (Kraft- und Ausdauersport) intensiver auseinander zu setzen. Heraus kamen mehrere Trainer-Lizenzen  als Fitnesstrainer B und A, Medical Fitness, Personal Trainer und Ernährungs-Coach. Hauptberuflich bin ich immer noch Software-Entwickler. Aber deutlich fitter und leistungsfähiger als all die Jahre zu vor in meinem Leben - und 25 kg leichter.\r\n\r\nWenn auch Ihr mit einer gesunden, aber dennoch leckeren Ernährung, die auch noch satt macht, auf Kriegsfuss steht, dann kommt in meine Session, in der ich Euch gerne ein paar Tipps und Hintergründe zu einer gesunden Ernährung gebe. Wenn man wirklich „will“ und einige grundlegende Dinge verstanden hat, ist ein gesunder Lebensstil gar nicht so schwer. Und man muss noch nicht mal komplett auf die Sünden verzichten. Innere Schweinehunde sind willkommen - jagen wir sie davon!",
+            "startsAt": "2019-09-06T13:40:00",
+            "endsAt": "2019-09-06T14:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "ef54265f-c9ff-45d2-a495-20baff896eff",
+                "name": "Niko Köbler"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "131991",
+            "title": "Microservices - nie mehr ohne Service Mesh!",
+            "description": "Microservices führen zu vielen technischen Herausforderungen. Services Meshes schicken sich an, die meisten dieser Herausforderungen zu lösen - und das mit einem minimalen Einfluss auf den Code der Microservices. Resilience, Sicherheit, Monitoring - in allen diesen Bereichen helfen Service Meshes. \r\n\r\nDiese Präsentation erläutert das Konzept der Service Meshes und zeigt am Beispiel von Istio, wie ein Service Mesh funktioniert.",
+            "startsAt": "2019-09-06T15:00:00",
+            "endsAt": "2019-09-06T16:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "4750ed21-fcda-4dc5-9fe5-1a6fca25cd8c",
+                "name": "Eberhard Wolff"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          },
+          {
+            "id": "133112",
+            "title": "JEE und Micro – kein Widerspruch!",
+            "description": "Die klassische Enterprise-Welt nutzt Server wie WebSphere oder JBoss/WildFly, um darauf große WAR- oder EAR-Files zu deployen. Wenngleich dieses Modell im traditionellen Server-Betrieb sehr gut funktioniert, so erscheint es doch recht schwergewichtig und wenig geeignet für moderne, verteilte – ggf. Cloud-basierte – Services. „Mit Java EE kann man moderne Sachen nicht machen“ ist eine leider verbreitete Ansicht. Vermeintlich leichtgewichtige Alternativen locken – allen voran Spring Boot. Aber stimmt das so? Bei genauerer Betrachtung erscheinen die konkurrierenden Konzepte nahezu deckungsgleich. Zudem bieten das Microprofile und darauf basierende Implementierungen wie Quarkus genau die vielfach vermissten Leichtgewicht-Eigenschaften: Kein separater Server, kleiner Footprint, einfache Konfiguration, Health Monitoring u. v m. Angenehm ist, dass das Programmierkonzept davon unberührt bleibt, d. h. EE-Entwickler können sehr schnell leichtgewichtige Services entwickeln, ohne komplett umlernen zu müssen.",
+            "startsAt": "2019-09-06T16:20:00",
+            "endsAt": "2019-09-06T17:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "c7b1cea4-bdc5-4b07-a2af-38ad8b3dc463",
+                "name": "Dirk Weil"
+              }
+            ],
+            "categories": [],
+            "roomId": 7049,
+            "room": "Humboldtsaal (1.OG)"
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      },
+      {
+        "id": 7050,
+        "name": "Kleistsaal (1.OG)",
+        "sessions": [
+          {
+            "id": "132336",
+            "title": "Serverless und Java - (Wie) Passt das zusammen?",
+            "description": "Serverless heißt mit vielen kleinen und leichtgewichtigen Funktionen umzugehen, wenige Abhängigkeiten zu haben und schnell und flexibel auf Änderungen reagieren zu können. Java wird dagegen oft immer noch mit den Schlagworten \"schwerfällig\", \"langsam\" und \"viele Abhängigkeiten\" in Verbindung gebracht. Und Java auf Serverless \"geht ja sowieso nicht\", da die JVM angeblich so lange für das Starten braucht und das für Funktionen, die immer wieder neu gestartet werden, ja schlecht ist.\r\n\r\nLasst uns zusammen anschauen, ob dem wirklich so ist, was mit Java (u.a. auch Spring und Java EE/Jakarta EE) auf Serverless am Beispiel AWS Lambda zu beachten ist, welche Fallstricke es gibt und wie man auch mit Java und Serverless glücklich werden kann. Ich bringe eine serverlose Java-Anwendung mit, an Hand der wir uns ein paar Beispiele anschauen. Folien zeige ich so gut wie keine.",
+            "startsAt": "2019-09-06T09:00:00",
+            "endsAt": "2019-09-06T10:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "ef54265f-c9ff-45d2-a495-20baff896eff",
+                "name": "Niko Köbler"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "133119",
+            "title": "Carving Microservices out of the Monolith with Domain Storytelling",
+            "description": "For a microservices architecture to be succesful it is crucial to have the right boundaries between the microservices. But where are the right boundaries? I would like to present a tool that helps us answer this question.\r\n\r\nDomain Storytelling (www.domainstorytelling.org) means that we let our users tell us stories about their work. While listening, we record the stories using a pictographic language. The experts can immediately see if we understand their story. After very few stories, we understand the language of our users and find different areas of the domain. Each of these areas (called a subdomain) is a good candicate to become a microservice in our architecture.\r\n\r\nIn this talk I show how to find subdomains and which heuristics can help us.",
+            "startsAt": "2019-09-06T10:20:00",
+            "endsAt": "2019-09-06T11:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "de44a1c1-8728-4063-b3d0-c0b3e7e87c4f",
+                "name": "Henning Schwentner"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "132071",
+            "title": "React 2019 - alles neu?",
+            "description": "Das beliebte JavaScript Framework React hat 2019 einige spannende Neuerungen bekommen: Mit der neuen Hooks API soll Code einfacher und zudem besser wiederverwendbar werden. In Verbindung dieser API mit der renovierten Context API sprechen einige schon vom „Ende von Redux“. Die neue Suspense API bietet ein völlig neues Paradigma bei der Arbeit mit asynchronem Code, z.B. beim Laden von Daten. Und schließlich soll der neue Render Modus „Concurrent Mode“  durch Priorisierung des Renderings für eine noch flüssigere UI der Anwendung sorgen. Das alles bedeutet, dass React Anwendungen jetzt ganz anders gebaut werden können, als noch zu Anfang des Jahres. In diesem Talk zeige ich die neuen APIs, welche Auswirkungen diese auf die Architektur von (bestehenden) React-Anwendungen haben und für welche Anwendungsfälle sie jeweils besonders geeignet sind.",
+            "startsAt": "2019-09-06T11:40:00",
+            "endsAt": "2019-09-06T12:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "b90317c9-5fd7-4f10-b20a-30e216b29fd1",
+                "name": "Nils Hartmann"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "132393",
+            "title": "Keeping up with Upstream",
+            "description": "The internet is a dangerous place. But while new exploits are being created at post DevOps speed, new protections are dearly need vention.\r\n\r\nBut an ancient question has remained: How do you secure the software you are creating?\r\n This talk tells us about a team being visited by three frightening ghosts: The luring ghost of the “DevSecOps past” will make us recall  the teams cheating their codebase to go to market faster.\r\n\r\nThe omnicent ghost of the “ will ruthless show us what is left of  the shift left and our security process. We will also learn to satisfy the compliances demands by pinning our kubernetes deployments to known horrors.\r\n\r\nWhile these deliberations are already around for some time, the process of finding new versions of horror has been a tedious one. On this straining journey we will also encounter the ghost of the “DevSecOps future” who will lecture us the learnings of effective automation and embraced acceleration.\r\n\r\nLet’s renovate our rusty update cycles now!.",
+            "startsAt": "2019-09-06T13:40:00",
+            "endsAt": "2019-09-06T14:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "18314d64-b35a-45c2-96f1-67e9792133dd",
+                "name": "Nicolas Byl"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "133600",
+            "title": "Integration von Security-Checks in die CI-Pipeline",
+            "description": "Dass eine Anwendung gegen Angriffe von Außen abgesichert werden muss, ist in der heutigen Zeit keine Frage mehr. Die OWASP Top10 sind in aller Munde. Um so verwunderlicher ist es, dass in den meisten Projekten die Suche nach Sicherheitslücken frühestens nach Fertigstellung der Software angegangen wird. Dabei gibt es ein paar Möglichkeiten, bekannte Security-Probleme bereits während der Entwicklung automatisiert zu erkennen und dem Entwickler so durch geeignetes Feedback die Möglichkeit zu geben, diese zeitnah zu beheben.\r\n \r\nIn dem Talk werden verschiedene Tools vorgestellt und gezeigt, welche Security-Probleme schon während der Entwicklung durch Continous Integration vermieden werden können. ",
+            "startsAt": "2019-09-06T15:00:00",
+            "endsAt": "2019-09-06T16:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "7b88c8f8-bcf6-42f6-b800-35dfcc74a172",
+                "name": "Christian Schulz"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          },
+          {
+            "id": "128537",
+            "title": "Journey Of Building Streaming Data Pipelines",
+            "description": "Zalandos AI-driven products and distributed landscape of analytical data marts cannot wait for long-running, hard-to-recover, monolithic batch jobs taking all night to calculate already outdated data. Modern data integration pipelines need to deliver fast and easy to consume data sets in high quality. Based on Spark Streaming and Delta, the central data warehousing team was able to deliver widely-used master data as S3 or Kafka streams and snapshots at the same time. The talk will cover challenges in our fashion data platform and a detailed architectural deep dive about separation of integration from enrichment,  providing streams as well as snapshots and feeding the data to distributed data marts. Finally, lessons learned and best practices about Delta's MERGE command, Scala API vs Spark SQL and schema evolution give more insights and guidance for similar use cases.",
+            "startsAt": "2019-09-06T16:20:00",
+            "endsAt": "2019-09-06T17:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "b5ca5ea8-fa43-487e-b0b1-a48f79e26735",
+                "name": "Sebastian Herold"
+              }
+            ],
+            "categories": [],
+            "roomId": 7050,
+            "room": "Kleistsaal (1.OG)"
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      },
+      {
+        "id": 7051,
+        "name": "Edison (2.OG)",
+        "sessions": [
+          {
+            "id": "133386",
+            "title": "Die Zerstörung der Schema-Validierung [sic]",
+            "description": "Das \"JSON-Schema Specification Draft\" ist der aktuelle Standard zur Verifizierung von JSON-Datenstrukturen. Leider enthält die Spezifikation eine Schwachstelle, mit der man eine Applikation komplett blockieren kann. In meinem Talk zeige ich auf, wie man reguläre Ausdrücke für eine einfache DOS-Attacke ausnutzt, und warum jeder Schutz davor immer die Spezifikation verletzt.\r\n\r\nDie Situation bei JSON-Schema ist auch schwieriger als beim älteren XML-Standard. Denn XML-Schema-Bibliotheken sind größtenteils anfällig für dieselbe Attacke, aber nur deshalb, weil sie von der W3C-Spezifikation abweichen.",
+            "startsAt": "2019-09-06T09:00:00",
+            "endsAt": "2019-09-06T10:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "2b7daadc-6cbb-42a5-a827-905338cd8dd3",
+                "name": "Peter Liske"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "129263",
+            "title": "API as a Product oder warum Produktmanagement für die Wertschöpfung bei APIs wichtig ist",
+            "description": "APIs sind ein essentieller Teil jeder modernen IT-Landschaft. Viele Services werden gestützt durch das Paradigma „API first“ angeboten. Um die Entwicklung von Software Architekturen zu beschleunigen werden Anbindungen an Backend Systeme ebenfalls per API angeboten, wobei Integration APIs andere Anforderungen an die Umsetzung stellen als die kundenzentrierten. Hierbei geht es aber nicht um die konkrete technische Umsetzung, da uns diese vor allem durch Verwendung von Frameworks wie zum Beispiel Spring Boot keine großen Schwierigkeiten mehr bereitet. \r\nDamit eine API von vielen genutzt und als wertvoll erachtet, gilt es ein wertschöpfendes API-Design zu entwicklen.\r\nDoch wie erreichen wir dies?\r\nWie erkennt man Wertschöpfung?\r\nWofür ist eine Produktstrategie gut?\r\nMit welchen Methodiken kann ich meine API-Entwicklung weiter verbessern?\r\nInnerhalb des Vortrags wird der gesamte Entwicklungs- und Lebenszyklus einer API betrachtet, um eine Antwort auf die gestellten Fragen zu finden.",
+            "startsAt": "2019-09-06T10:20:00",
+            "endsAt": "2019-09-06T11:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "fb37fe52-097c-4cc7-b765-cbd60e548ed2",
+                "name": "Daniel Kocot"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "131398",
+            "title": "impacts of pair programming",
+            "description": "Let's revisit the XP practice of pair programming, it can help you and your coworkers to create better outcomes faster.\r\nThere is more to it than just two people in front of one computer working on a single work item.\r\nI share what I learned the last years of facilitating coding dojos and coderetreats.",
+            "startsAt": "2019-09-06T11:40:00",
+            "endsAt": "2019-09-06T12:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "133846f7-f0d6-4456-95ce-cafd6aa8ceca",
+                "name": "Markus Decke"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "132521",
+            "title": "Apache Wicket in a Nutshell",
+            "description": "I've been using Wicket since 3 years now and I think it does not get the attention it deserves. In my opinion its an awesome framework - consistent, secure, well maintained and a pleasure to work with. But one has to understand the basic concepts, which are quite different from most other web application frameworks. \r\n\r\nI would love to give a short introduction to these concepts. This would be directed to experienced Java developers with a basic understanding of HTML. Since I haven't prepared anything yet, I could do this in German or English. After some introductory slides it would basically be a live coding session. ",
+            "startsAt": "2019-09-06T12:00:00",
+            "endsAt": "2019-09-06T12:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "7ace6cbc-8a01-4a49-b20c-dba087ddd1a9",
+                "name": "Rene Stolle"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "129022",
+            "title": "Prozessvisualisierung mit Lego",
+            "description": "In diesem Vortrag möchten wir von unseren Erfahrungen mit dem Bau einer Mini-Walzstraße aus Lego berichten. Diese nutzen wir auf Messen und anderen Veranstaltungen um unsere Software anschaulich zu präsentieren. Wie das Lego Modell entstand und wie wir die Integration in unser Java basiertes Backend umgesetzt haben, werden wir in diesem Vortrag zeigen.",
+            "startsAt": "2019-09-06T12:20:00",
+            "endsAt": "2019-09-06T12:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "75fa8229-77f0-454b-ae1a-1ccd22740518",
+                "name": "Johannes Schäfer"
+              },
+              {
+                "id": "eff38fc1-ab50-490b-8970-3dc78beb79e3",
+                "name": "Illia Koniev"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "127774",
+            "title": "Best Practices für Java und JVM in Containern",
+            "description": "Container, egal ob \"low level\" mit LXC oder Docker, oder mit einer Orchestrierungslösung wie Kubernetes und dessen Derivaten, sie sind allgegenwärtig.\r\nZwar hat Oracle und das OpenJDK-Projekt einiges getan, um die JVM besser an die neuen Gegebenheiten einer container-basierten Infrastruktur anzupassen, dennoch gibt es viele Punkte, die beachtet werden müssen damit eine JVM ohne Probleme in einem Container laufen kann. In dieser Session werden wir neben Tuning-Maßnahmen für die \"normalen\" JVM’s uns anschauen, welche Alternativen existieren, um Java-Applikationen in Containern effizient zu betreiben.\r\n",
+            "startsAt": "2019-09-06T13:40:00",
+            "endsAt": "2019-09-06T14:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "d3d7bd6f-a505-4fd7-affe-c65ccdf7c0f1",
+                "name": "Halil-Cem Gürsoy"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "127352",
+            "title": "Practical Auth in a Serverless World",
+            "description": "It became essential for businesses to protect their applications, services and customer data from attackers. If you want to stay competitive, knowing how to efficiently and easily apply security and auth while being aware of the most common pitfalls is key in today's serverless world.\r\nTraditional machine-to-machine auth approaches where you can rely on a stateful environment fall short in a modern serverless and thus stateless world.\r\nAfter a short recap of some auth fundamentals, you'll learn how to efficiently apply authentication to Azure Functions without compromising security - using an external Identity Provider like Auth0, OAuth 2, JWT, the secrets management system Azure Key Vault, Azure Managed Identities and Cloudflare Workers.",
+            "startsAt": "2019-09-06T15:00:00",
+            "endsAt": "2019-09-06T16:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "762f464f-bf2b-4e09-820e-ee1fc39bf6e1",
+                "name": "Andreas Grimm"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          },
+          {
+            "id": "128501",
+            "title": "Services Migrieren - Tücken, Tricks und 3 Fallbeispiele",
+            "description": "Jeder Entwickler wird vermutlich früher oder später einmal in die Situation kommen eine Migration durchführen zu müssen: ein technologisch veraltetes System muss abgelöst werden, ein Monolith wird in Microservices zerschnitten. Neben der reinen Software-seitigen Migration müssen häufig auch Daten migriert werden.\r\n\r\nWas zunächst vielleicht einfach und nach einem reinen Betriebs-Thema klingt, stellt sich nicht selten als komplex und zeitaufwändig heraus - und muss in der Regel schon beim Coden bedacht werden.\r\n\r\nIch erzähle Euch von den Tücken, die Migrationen so mit sich bringen können - und gebe ein paar Tipps wie man verhindern kann, dass der Kunde negative Auswirkungen zu spüren bekommt. Ich zeige drei Beispiele, bei denen verschiedene Migrationsstrategien angewendet wurden und vergleiche die Stärken und Schwächen dieser Ansätze.",
+            "startsAt": "2019-09-06T16:20:00",
+            "endsAt": "2019-09-06T17:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "dbef02c4-dabc-4d42-a1e6-9c3ac192e97a",
+                "name": "Tim Steffens"
+              }
+            ],
+            "categories": [],
+            "roomId": 7051,
+            "room": "Edison (2.OG)"
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      },
+      {
+        "id": 7052,
+        "name": "Voltaire (3.OG)",
+        "sessions": [
+          {
+            "id": "133228",
+            "title": "Formatting for the Masses",
+            "description": "Code formatting is an opinionated beast. It always has been a matter of taste, and it always will be a matter of taste. This is the reason why professional formatting tools, such as Eclipse JDT, offer a gazillion number of options. Which is still not sufficient enough. After all, you can override them inline with tag-comments to make the formatter shut up. Can't we do better than that?\r\n\r\nWhat if we could use machine learning techniques to detect the preferred code style that was used in a codebase so far? Turns out, we can. The Antlr Codebuff project (https://github.com/antlr/codebuff) offers a generic formatter for pretty much any given language. As long as a grammar file exists, existing source can be analyzed to learn about the rules that have been applied while writing the code. Those can than be used to pretty print newly written code. No configuration required. And existing sources will stay as nicely formatted as they are. In the end, the primary purpose of code formatting is not to rearrange all the keywords, but to make the source layout consistent.\r\n\r\nIn this talk, we will demonstrate the usage of the codebuff project and how it can be used to format the sources of your repo in a consistent way. We'll also show some other gems that have been revealed when toying around with the technology.",
+            "startsAt": "2019-09-06T09:00:00",
+            "endsAt": "2019-09-06T10:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "eed2fe32-6d5b-40d3-a400-554249e06a1b",
+                "name": "Sebastian Zarnekow"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "132035",
+            "title": "Going Fullstack",
+            "description": "For many years backend and frontend development felt like two completely different worlds. However, a lot of change took place on both sides and many bridges were built, bringing them surprisingly close to each other and making the step to the other side not only easier but also fun.\r\n\r\nThe target group for this talk are backend Java developers with no or little web UI knowledge.\r\n\r\nThe goal of this talk is to show the way towards frontend development for Java backend developers, using the speaker’s own backend to fullstack journey as an example.\r\n\r\nThe talk will cover some general concepts in web UI development and introduce some common tools and frameworks. Furthermore, we will talk about testing as well as the integration of the UI development into the continuous integration (CI) environment.",
+            "startsAt": "2019-09-06T10:20:00",
+            "endsAt": "2019-09-06T11:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "02509066-05ad-4e2a-a5e5-9ba93cb8944e",
+                "name": "Serafima Gurevich"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "129177",
+            "title": "Testcontainers - Integrationstesten mit Docker leicht gemacht",
+            "description": "Testcontainers ist der Kleber der Integrationstests mit benötigter Infrastruktur in Docker-Containern verbindet. Seit der Verfügbarkeit von Docker ist es leicht geworden unterschiedliche Datenbanken, Message Broker, Application Server, etc. bereitzustellen. Die Registry erleichtert die Distribution. Notwendige Konfigurationen wurden in docker-compose oder dem Build-Tool erledigt. Jetzt musste vor der Ausführung eines Tests nur noch kurz der oder die Container gestartet werden. Leider ein weitere Schritt, der bedacht, bzw. ins Vorgehen eingebaut werden musste. Fast noch wichtiger als das Starten, ist das Aufräumen, ansonsten müllt der Entwicklungsrechner oder CI-Server schnell voll! Hier setzt Testcontainers an, indem der Container-Lifecycle direkt aus dem Test gesteuert wird. So kann nichts vergessen werden, die Grenzen sind hart abgesteckt und ans Aufräumen wurde auch gedacht. Es gibt Adapter für alle gängigen Testframeworks. Falls mal etwas fehlen sollte, ist es relativ schnell geschrieben, da ein Container in zwei Zeilen Code erstellt und gestartet werden kann. Unsere Reise wird mit einem einfachen JDBC basierten Test beginnen, an dem auch die wichtigsten Komponenten erklärt werden, um dann Integrationsszenarien zum Beispiel mit SpringBoot vorzustellen.",
+            "startsAt": "2019-09-06T11:40:00",
+            "endsAt": "2019-09-06T12:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "8c315ba2-f083-4b65-bf91-12514f7df752",
+                "name": "Stefan Hildebrandt"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "130614",
+            "title": "Databases on Kubernetes using a Custom Operator: Day 1, day 2 and beyond.",
+            "description": "We started the journey of building a managed cloud version of the graph database Neo4j. A bit later we started developing an operator to manage multiple database clusters in k8s.\r\n\r\nHandling persistence and Neo4j's own distributed consensus algorithm within k8s gave us a challenge. In this session we want to share the lessons we learned writing this operator and using it in production.\r\n\r\nWe will start with how to get started using the k8s controller tooling to create an operator to manage a CRD. We go beyond the \"day 1\" tasks of creating and deleting databases and discuss how we meet \"day 2\" concerns such as:\r\n- Unit testing our operator using k8s fakes.\r\n- Continuously deploying an operator into a GKE cluster.\r\n- Automatic rolling updates of Neo4j databases with zero downtime and fault tolerance.\r\n- Database administration (backup, restore, password resets etc.) via an operator.\r\n",
+            "startsAt": "2019-09-06T13:40:00",
+            "endsAt": "2019-09-06T14:40:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "62c6bbf2-5f0b-423c-9cc4-e01e32afe2c5",
+                "name": "Johannes Unterstein"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "132301",
+            "title": "java.util.concurrent for Distributed Coordination",
+            "description": "The evolution of distributed coordination tools shows that high-level APIs ease implementation of coordination tasks, such as leader election, locking, synchronized actions. For instance, the Chubby paper highlights familiarity of lock-based interfaces. Similarly, Apache Curator hides complexity of ZooKeeper recipes behind Java APIs, while etcd and Consul implement concurrency primitives on their own.\r\n\r\nA different path in this journey would be extending the long-lasting java.util.concurrent APIs, such as Lock, Semaphore, etc. Simplicity of these APIs makes them very useful in distributed coordination use cases.\r\n\r\nJoin this talk to explore Hazelcast’s brand new implementation of java.util.concurrent APIs on top of the Raft consensus algorithm. I will run demos to show how Java locks, semaphores, etc. can be used in distributed environments that involve partial failures. I will also share our experience of how we coped with several challenges we faced while developing and testing our Raft implementation.",
+            "startsAt": "2019-09-06T15:00:00",
+            "endsAt": "2019-09-06T16:00:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "436563a5-b742-46f9-9bd5-d4909dcacbb0",
+                "name": "Ensar Basri Kahveci"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          },
+          {
+            "id": "132479",
+            "title": "Leichtgewichte Softwarearchitektur mit Architecture Decision Records und Qualitätsszenarien",
+            "description": "Agile Softwareentwicklung stellt die zwischenmenschliche Kommunikation in den Vordergrund, was dazu führen soll das Richtige richtig zu implementieren und Software schneller ausliefern zu können.\r\n \r\nDoch wie dokumentieren agile Teams ihre Softwarearchitektur? Herkömmliche Vorgehensweisen wirken zu schwergewichtig, da sie sich eher für Wasserfall-Projekte eignen. Sollten architekturrelevante Entscheidungen überhaupt dokumentiert werden? Und wie fügt sich eine geeignete Methode in die agile Arbeitsweise ein?\r\n \r\nIn diesem Vortrag wird eine leichtgewichtige Methode zur Dokumentation von Softwarearchitektur vorgestellt. Diese hält Architekturentscheidungen in Architecture Decision Records (ADR) fest. Ein kompaktes Format, angereichert mit Zusatzinformationen, wie Kontext und Randbedingungen. Nicht funktionale Anforderungen werden als Qualitätsszenarien beschrieben, deren Erfüllung durch die ADRs geprüft werden kann. So wird die Dokumentation ein Instrument zur Kommunikation mit allen Stakeholdern.",
+            "startsAt": "2019-09-06T16:20:00",
+            "endsAt": "2019-09-06T17:20:00",
+            "isServiceSession": false,
+            "isPlenumSession": false,
+            "speakers": [
+              {
+                "id": "530eacee-6318-49d8-87d9-f914cf922bf8",
+                "name": "Johannes Dienst"
+              }
+            ],
+            "categories": [],
+            "roomId": 7052,
+            "room": "Voltaire (3.OG)"
+          }
+        ],
+        "hasOnlyPlenumSessions": false
+      }
+    ],
+    "timeSlots": [
+      {
+        "slotStart": "09:00:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "127570",
+              "title": "How to break an 18 yo monolith",
+              "description": "idealo.de launched in 2000 and started growing constantly: More features, more people, more and more lines of code. More than 50 developers in 6 teams worked on the same code base.\r\n\r\n### The Software\r\n\r\nThe software was designed as a Swiss Army knife for our company needs. At the end we've got a big monolith that hard to maintain. Over the last years we had several approaches to extract some parts to reduce complexity. But very central parts, business functionality and the data model were never touched. The approach is centralized with a single database.\r\n\r\nThe tech stack used is up-to-date, we have Java 11 with Spring Boot with daily deployments.\r\n\r\n### The Decision\r\n\r\nIn 2018 we made a decision: remove the single, central database and create [self-contained systems](https://scs-architecture.org). Our main goals were:\r\n\r\n* create independent and lightweight services\r\n* have continuous deployments\r\n* one service - one team\r\n* teams are responsible for \"their\" services, from development to operations\r\n\r\n### Answers\r\n\r\n* What were our steps? How did we achieve our goals?\r\n* What technologies did we use?\r\n* What kind of cultural changes did we have?",
+              "startsAt": "2019-09-06T09:00:00",
+              "endsAt": "2019-09-06T10:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "9229c4df-d437-43ab-9089-2cd453d144f4",
+                  "name": "Andreas Bräu"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "132336",
+              "title": "Serverless und Java - (Wie) Passt das zusammen?",
+              "description": "Serverless heißt mit vielen kleinen und leichtgewichtigen Funktionen umzugehen, wenige Abhängigkeiten zu haben und schnell und flexibel auf Änderungen reagieren zu können. Java wird dagegen oft immer noch mit den Schlagworten \"schwerfällig\", \"langsam\" und \"viele Abhängigkeiten\" in Verbindung gebracht. Und Java auf Serverless \"geht ja sowieso nicht\", da die JVM angeblich so lange für das Starten braucht und das für Funktionen, die immer wieder neu gestartet werden, ja schlecht ist.\r\n\r\nLasst uns zusammen anschauen, ob dem wirklich so ist, was mit Java (u.a. auch Spring und Java EE/Jakarta EE) auf Serverless am Beispiel AWS Lambda zu beachten ist, welche Fallstricke es gibt und wie man auch mit Java und Serverless glücklich werden kann. Ich bringe eine serverlose Java-Anwendung mit, an Hand der wir uns ein paar Beispiele anschauen. Folien zeige ich so gut wie keine.",
+              "startsAt": "2019-09-06T09:00:00",
+              "endsAt": "2019-09-06T10:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "ef54265f-c9ff-45d2-a495-20baff896eff",
+                  "name": "Niko Köbler"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "133386",
+              "title": "Die Zerstörung der Schema-Validierung [sic]",
+              "description": "Das \"JSON-Schema Specification Draft\" ist der aktuelle Standard zur Verifizierung von JSON-Datenstrukturen. Leider enthält die Spezifikation eine Schwachstelle, mit der man eine Applikation komplett blockieren kann. In meinem Talk zeige ich auf, wie man reguläre Ausdrücke für eine einfache DOS-Attacke ausnutzt, und warum jeder Schutz davor immer die Spezifikation verletzt.\r\n\r\nDie Situation bei JSON-Schema ist auch schwieriger als beim älteren XML-Standard. Denn XML-Schema-Bibliotheken sind größtenteils anfällig für dieselbe Attacke, aber nur deshalb, weil sie von der W3C-Spezifikation abweichen.",
+              "startsAt": "2019-09-06T09:00:00",
+              "endsAt": "2019-09-06T10:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "2b7daadc-6cbb-42a5-a827-905338cd8dd3",
+                  "name": "Peter Liske"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "133228",
+              "title": "Formatting for the Masses",
+              "description": "Code formatting is an opinionated beast. It always has been a matter of taste, and it always will be a matter of taste. This is the reason why professional formatting tools, such as Eclipse JDT, offer a gazillion number of options. Which is still not sufficient enough. After all, you can override them inline with tag-comments to make the formatter shut up. Can't we do better than that?\r\n\r\nWhat if we could use machine learning techniques to detect the preferred code style that was used in a codebase so far? Turns out, we can. The Antlr Codebuff project (https://github.com/antlr/codebuff) offers a generic formatter for pretty much any given language. As long as a grammar file exists, existing source can be analyzed to learn about the rules that have been applied while writing the code. Those can than be used to pretty print newly written code. No configuration required. And existing sources will stay as nicely formatted as they are. In the end, the primary purpose of code formatting is not to rearrange all the keywords, but to make the source layout consistent.\r\n\r\nIn this talk, we will demonstrate the usage of the codebuff project and how it can be used to format the sources of your repo in a consistent way. We'll also show some other gems that have been revealed when toying around with the technology.",
+              "startsAt": "2019-09-06T09:00:00",
+              "endsAt": "2019-09-06T10:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "eed2fe32-6d5b-40d3-a400-554249e06a1b",
+                  "name": "Sebastian Zarnekow"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "10:20:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "131084",
+              "title": "Feature Evolution in Java 13 and Beyond",
+              "description": "Every six months, a new Java release comes along. This increased release frequency was motivated by the desire to introduce new language and library features to a broad audience quickly. Depending on user feedback, there is the possibility of making changes before the design is frozen. I describe the evolution of several such features, including switch expressions and new forms of string literals. By monitoring the vigorous open discussion among the Java design and implementation team members, we can derive valuable insights about the design process. I also show you how to build releases for highly experimental features that will make it into future Java versions, such as projects Valhalla (value types) and Loom (fibers). From this presentation, you will gain insights into the evolution of Java, and you will be better equipped to prepare yourself for new features.",
+              "startsAt": "2019-09-06T10:20:00",
+              "endsAt": "2019-09-06T11:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "bbb8702d-0637-4c8e-ae97-45bde0d6b3a8",
+                  "name": "Cay Horstmann"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "133119",
+              "title": "Carving Microservices out of the Monolith with Domain Storytelling",
+              "description": "For a microservices architecture to be succesful it is crucial to have the right boundaries between the microservices. But where are the right boundaries? I would like to present a tool that helps us answer this question.\r\n\r\nDomain Storytelling (www.domainstorytelling.org) means that we let our users tell us stories about their work. While listening, we record the stories using a pictographic language. The experts can immediately see if we understand their story. After very few stories, we understand the language of our users and find different areas of the domain. Each of these areas (called a subdomain) is a good candicate to become a microservice in our architecture.\r\n\r\nIn this talk I show how to find subdomains and which heuristics can help us.",
+              "startsAt": "2019-09-06T10:20:00",
+              "endsAt": "2019-09-06T11:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "de44a1c1-8728-4063-b3d0-c0b3e7e87c4f",
+                  "name": "Henning Schwentner"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "129263",
+              "title": "API as a Product oder warum Produktmanagement für die Wertschöpfung bei APIs wichtig ist",
+              "description": "APIs sind ein essentieller Teil jeder modernen IT-Landschaft. Viele Services werden gestützt durch das Paradigma „API first“ angeboten. Um die Entwicklung von Software Architekturen zu beschleunigen werden Anbindungen an Backend Systeme ebenfalls per API angeboten, wobei Integration APIs andere Anforderungen an die Umsetzung stellen als die kundenzentrierten. Hierbei geht es aber nicht um die konkrete technische Umsetzung, da uns diese vor allem durch Verwendung von Frameworks wie zum Beispiel Spring Boot keine großen Schwierigkeiten mehr bereitet. \r\nDamit eine API von vielen genutzt und als wertvoll erachtet, gilt es ein wertschöpfendes API-Design zu entwicklen.\r\nDoch wie erreichen wir dies?\r\nWie erkennt man Wertschöpfung?\r\nWofür ist eine Produktstrategie gut?\r\nMit welchen Methodiken kann ich meine API-Entwicklung weiter verbessern?\r\nInnerhalb des Vortrags wird der gesamte Entwicklungs- und Lebenszyklus einer API betrachtet, um eine Antwort auf die gestellten Fragen zu finden.",
+              "startsAt": "2019-09-06T10:20:00",
+              "endsAt": "2019-09-06T11:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "fb37fe52-097c-4cc7-b765-cbd60e548ed2",
+                  "name": "Daniel Kocot"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "132035",
+              "title": "Going Fullstack",
+              "description": "For many years backend and frontend development felt like two completely different worlds. However, a lot of change took place on both sides and many bridges were built, bringing them surprisingly close to each other and making the step to the other side not only easier but also fun.\r\n\r\nThe target group for this talk are backend Java developers with no or little web UI knowledge.\r\n\r\nThe goal of this talk is to show the way towards frontend development for Java backend developers, using the speaker’s own backend to fullstack journey as an example.\r\n\r\nThe talk will cover some general concepts in web UI development and introduce some common tools and frameworks. Furthermore, we will talk about testing as well as the integration of the UI development into the continuous integration (CI) environment.",
+              "startsAt": "2019-09-06T10:20:00",
+              "endsAt": "2019-09-06T11:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "02509066-05ad-4e2a-a5e5-9ba93cb8944e",
+                  "name": "Serafima Gurevich"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "11:40:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "133389",
+              "title": "Micronaut – effiziente und performante Microservices für die Cloud",
+              "description": "Den Chancen, die der Microservices-Ansatz bietet, stehen auch einige Herausforderungen gegenüber, die man aber gut mit Frameworks handhaben kann. Mit Micronaut hat nun ein ganz neuer Vertreter die Bühne mit dem Versprechen betreten, modulare, leicht testbare und sehr performante Anwendungen in Java, Kotlin oder Groovy entwickeln zu können.\r\n\r\nAuch wenn Micronaut dem Platzhirsch aus dem Spring-Ökosystem ähnlich sieht, wurde es von Grund auf explizit für die Erstellung von Microservices im Cloud-Computing-Umfeld erstellt. Dank extrem kurzer Startzeiten, einem enorm niedrigen Speicherverbrauch und sehr kleinen JAR-Größen wird es die Microservices-Welt umkrempeln.\r\n\r\nErmöglicht wird das neuartige Programmiermodell mittels Compile-Zeit-Metaprogrammierung, wodurch die Metadaten für beispielsweise Dependency Injection und die aspektorientierte Programmierung bereits beim Kompilieren erzeugt werden. Reflection, Proxy Generierung und Data Caching zur Laufzeit entfallen dadurch. Zur Verwendung in der Cloud oder Serverless-Umgebungen gibt es zudem bereits zahlreiche fertig gestellte oder geplante Anbindungen an Service-Discovery-Dienste, Configuration Sharing, Load Balancing und Serverless Computing.\r\n\r\nIm Rahmen dieser Session wollen wir uns die Funktionsweise näher anschauen und anhand von Codebeispielen und Performancemessungen auf den Prüfstand stellen.",
+              "startsAt": "2019-09-06T11:40:00",
+              "endsAt": "2019-09-06T12:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "2fa7d3c1-e216-4dc8-b05c-f94fe34390e7",
+                  "name": "Falk Sippach"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "132071",
+              "title": "React 2019 - alles neu?",
+              "description": "Das beliebte JavaScript Framework React hat 2019 einige spannende Neuerungen bekommen: Mit der neuen Hooks API soll Code einfacher und zudem besser wiederverwendbar werden. In Verbindung dieser API mit der renovierten Context API sprechen einige schon vom „Ende von Redux“. Die neue Suspense API bietet ein völlig neues Paradigma bei der Arbeit mit asynchronem Code, z.B. beim Laden von Daten. Und schließlich soll der neue Render Modus „Concurrent Mode“  durch Priorisierung des Renderings für eine noch flüssigere UI der Anwendung sorgen. Das alles bedeutet, dass React Anwendungen jetzt ganz anders gebaut werden können, als noch zu Anfang des Jahres. In diesem Talk zeige ich die neuen APIs, welche Auswirkungen diese auf die Architektur von (bestehenden) React-Anwendungen haben und für welche Anwendungsfälle sie jeweils besonders geeignet sind.",
+              "startsAt": "2019-09-06T11:40:00",
+              "endsAt": "2019-09-06T12:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "b90317c9-5fd7-4f10-b20a-30e216b29fd1",
+                  "name": "Nils Hartmann"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "131398",
+              "title": "impacts of pair programming",
+              "description": "Let's revisit the XP practice of pair programming, it can help you and your coworkers to create better outcomes faster.\r\nThere is more to it than just two people in front of one computer working on a single work item.\r\nI share what I learned the last years of facilitating coding dojos and coderetreats.",
+              "startsAt": "2019-09-06T11:40:00",
+              "endsAt": "2019-09-06T12:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "133846f7-f0d6-4456-95ce-cafd6aa8ceca",
+                  "name": "Markus Decke"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "129177",
+              "title": "Testcontainers - Integrationstesten mit Docker leicht gemacht",
+              "description": "Testcontainers ist der Kleber der Integrationstests mit benötigter Infrastruktur in Docker-Containern verbindet. Seit der Verfügbarkeit von Docker ist es leicht geworden unterschiedliche Datenbanken, Message Broker, Application Server, etc. bereitzustellen. Die Registry erleichtert die Distribution. Notwendige Konfigurationen wurden in docker-compose oder dem Build-Tool erledigt. Jetzt musste vor der Ausführung eines Tests nur noch kurz der oder die Container gestartet werden. Leider ein weitere Schritt, der bedacht, bzw. ins Vorgehen eingebaut werden musste. Fast noch wichtiger als das Starten, ist das Aufräumen, ansonsten müllt der Entwicklungsrechner oder CI-Server schnell voll! Hier setzt Testcontainers an, indem der Container-Lifecycle direkt aus dem Test gesteuert wird. So kann nichts vergessen werden, die Grenzen sind hart abgesteckt und ans Aufräumen wurde auch gedacht. Es gibt Adapter für alle gängigen Testframeworks. Falls mal etwas fehlen sollte, ist es relativ schnell geschrieben, da ein Container in zwei Zeilen Code erstellt und gestartet werden kann. Unsere Reise wird mit einem einfachen JDBC basierten Test beginnen, an dem auch die wichtigsten Komponenten erklärt werden, um dann Integrationsszenarien zum Beispiel mit SpringBoot vorzustellen.",
+              "startsAt": "2019-09-06T11:40:00",
+              "endsAt": "2019-09-06T12:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "8c315ba2-f083-4b65-bf91-12514f7df752",
+                  "name": "Stefan Hildebrandt"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "12:00:00",
+        "rooms": [
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "132521",
+              "title": "Apache Wicket in a Nutshell",
+              "description": "I've been using Wicket since 3 years now and I think it does not get the attention it deserves. In my opinion its an awesome framework - consistent, secure, well maintained and a pleasure to work with. But one has to understand the basic concepts, which are quite different from most other web application frameworks. \r\n\r\nI would love to give a short introduction to these concepts. This would be directed to experienced Java developers with a basic understanding of HTML. Since I haven't prepared anything yet, I could do this in German or English. After some introductory slides it would basically be a live coding session. ",
+              "startsAt": "2019-09-06T12:00:00",
+              "endsAt": "2019-09-06T12:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "7ace6cbc-8a01-4a49-b20c-dba087ddd1a9",
+                  "name": "Rene Stolle"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "12:20:00",
+        "rooms": [
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "129022",
+              "title": "Prozessvisualisierung mit Lego",
+              "description": "In diesem Vortrag möchten wir von unseren Erfahrungen mit dem Bau einer Mini-Walzstraße aus Lego berichten. Diese nutzen wir auf Messen und anderen Veranstaltungen um unsere Software anschaulich zu präsentieren. Wie das Lego Modell entstand und wie wir die Integration in unser Java basiertes Backend umgesetzt haben, werden wir in diesem Vortrag zeigen.",
+              "startsAt": "2019-09-06T12:20:00",
+              "endsAt": "2019-09-06T12:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "75fa8229-77f0-454b-ae1a-1ccd22740518",
+                  "name": "Johannes Schäfer"
+                },
+                {
+                  "id": "eff38fc1-ab50-490b-8970-3dc78beb79e3",
+                  "name": "Illia Koniev"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          }
+        ]
+      },
+      {
+        "slotStart": "12:40:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "2a49abaa-af48-47a6-813f-b22fea1df88c",
+              "title": "Mittag",
+              "description": null,
+              "startsAt": "2019-09-06T12:40:00",
+              "endsAt": "2019-09-06T13:40:00",
+              "isServiceSession": true,
+              "isPlenumSession": true,
+              "speakers": [],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          }
+        ]
+      },
+      {
+        "slotStart": "13:40:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "132369",
+              "title": "Gesunde Ernährung im stressigen Software-Alltag",
+              "description": "Wir alle kennen das: Stress im Job und Projekt, keine Zeit oder Lust zu frühstücken, lieber „schnell was unterwegs“, Mittags nach der Kantine in einem „Nahrungskoma“ und Abends mit den Kollegen noch in die Kneipe und dort ein paar Bier und Snacks.\r\nGleichzeitig werden wir immer träger, weniger leistungsfähig, Bewegungen fallen uns schwerer, Krankheiten dauern länger und die Waage zeigt auch von Woche zu Woche mehr an. Willkommen im Metabolischen Syndrom!\r\n\r\nGenau so erging es mir - bis ich mir eines Tages gesagt habe, dass es genau so NICHT weitergeht! Veränderung musste her. Und zwar grundlegend und voll willentlich. Also fing ich an, mich mit dem Thema Ernährung und Fitness (Kraft- und Ausdauersport) intensiver auseinander zu setzen. Heraus kamen mehrere Trainer-Lizenzen  als Fitnesstrainer B und A, Medical Fitness, Personal Trainer und Ernährungs-Coach. Hauptberuflich bin ich immer noch Software-Entwickler. Aber deutlich fitter und leistungsfähiger als all die Jahre zu vor in meinem Leben - und 25 kg leichter.\r\n\r\nWenn auch Ihr mit einer gesunden, aber dennoch leckeren Ernährung, die auch noch satt macht, auf Kriegsfuss steht, dann kommt in meine Session, in der ich Euch gerne ein paar Tipps und Hintergründe zu einer gesunden Ernährung gebe. Wenn man wirklich „will“ und einige grundlegende Dinge verstanden hat, ist ein gesunder Lebensstil gar nicht so schwer. Und man muss noch nicht mal komplett auf die Sünden verzichten. Innere Schweinehunde sind willkommen - jagen wir sie davon!",
+              "startsAt": "2019-09-06T13:40:00",
+              "endsAt": "2019-09-06T14:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "ef54265f-c9ff-45d2-a495-20baff896eff",
+                  "name": "Niko Köbler"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "132393",
+              "title": "Keeping up with Upstream",
+              "description": "The internet is a dangerous place. But while new exploits are being created at post DevOps speed, new protections are dearly need vention.\r\n\r\nBut an ancient question has remained: How do you secure the software you are creating?\r\n This talk tells us about a team being visited by three frightening ghosts: The luring ghost of the “DevSecOps past” will make us recall  the teams cheating their codebase to go to market faster.\r\n\r\nThe omnicent ghost of the “ will ruthless show us what is left of  the shift left and our security process. We will also learn to satisfy the compliances demands by pinning our kubernetes deployments to known horrors.\r\n\r\nWhile these deliberations are already around for some time, the process of finding new versions of horror has been a tedious one. On this straining journey we will also encounter the ghost of the “DevSecOps future” who will lecture us the learnings of effective automation and embraced acceleration.\r\n\r\nLet’s renovate our rusty update cycles now!.",
+              "startsAt": "2019-09-06T13:40:00",
+              "endsAt": "2019-09-06T14:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "18314d64-b35a-45c2-96f1-67e9792133dd",
+                  "name": "Nicolas Byl"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "127774",
+              "title": "Best Practices für Java und JVM in Containern",
+              "description": "Container, egal ob \"low level\" mit LXC oder Docker, oder mit einer Orchestrierungslösung wie Kubernetes und dessen Derivaten, sie sind allgegenwärtig.\r\nZwar hat Oracle und das OpenJDK-Projekt einiges getan, um die JVM besser an die neuen Gegebenheiten einer container-basierten Infrastruktur anzupassen, dennoch gibt es viele Punkte, die beachtet werden müssen damit eine JVM ohne Probleme in einem Container laufen kann. In dieser Session werden wir neben Tuning-Maßnahmen für die \"normalen\" JVM’s uns anschauen, welche Alternativen existieren, um Java-Applikationen in Containern effizient zu betreiben.\r\n",
+              "startsAt": "2019-09-06T13:40:00",
+              "endsAt": "2019-09-06T14:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "d3d7bd6f-a505-4fd7-affe-c65ccdf7c0f1",
+                  "name": "Halil-Cem Gürsoy"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "130614",
+              "title": "Databases on Kubernetes using a Custom Operator: Day 1, day 2 and beyond.",
+              "description": "We started the journey of building a managed cloud version of the graph database Neo4j. A bit later we started developing an operator to manage multiple database clusters in k8s.\r\n\r\nHandling persistence and Neo4j's own distributed consensus algorithm within k8s gave us a challenge. In this session we want to share the lessons we learned writing this operator and using it in production.\r\n\r\nWe will start with how to get started using the k8s controller tooling to create an operator to manage a CRD. We go beyond the \"day 1\" tasks of creating and deleting databases and discuss how we meet \"day 2\" concerns such as:\r\n- Unit testing our operator using k8s fakes.\r\n- Continuously deploying an operator into a GKE cluster.\r\n- Automatic rolling updates of Neo4j databases with zero downtime and fault tolerance.\r\n- Database administration (backup, restore, password resets etc.) via an operator.\r\n",
+              "startsAt": "2019-09-06T13:40:00",
+              "endsAt": "2019-09-06T14:40:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "62c6bbf2-5f0b-423c-9cc4-e01e32afe2c5",
+                  "name": "Johannes Unterstein"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "15:00:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "131991",
+              "title": "Microservices - nie mehr ohne Service Mesh!",
+              "description": "Microservices führen zu vielen technischen Herausforderungen. Services Meshes schicken sich an, die meisten dieser Herausforderungen zu lösen - und das mit einem minimalen Einfluss auf den Code der Microservices. Resilience, Sicherheit, Monitoring - in allen diesen Bereichen helfen Service Meshes. \r\n\r\nDiese Präsentation erläutert das Konzept der Service Meshes und zeigt am Beispiel von Istio, wie ein Service Mesh funktioniert.",
+              "startsAt": "2019-09-06T15:00:00",
+              "endsAt": "2019-09-06T16:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "4750ed21-fcda-4dc5-9fe5-1a6fca25cd8c",
+                  "name": "Eberhard Wolff"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "133600",
+              "title": "Integration von Security-Checks in die CI-Pipeline",
+              "description": "Dass eine Anwendung gegen Angriffe von Außen abgesichert werden muss, ist in der heutigen Zeit keine Frage mehr. Die OWASP Top10 sind in aller Munde. Um so verwunderlicher ist es, dass in den meisten Projekten die Suche nach Sicherheitslücken frühestens nach Fertigstellung der Software angegangen wird. Dabei gibt es ein paar Möglichkeiten, bekannte Security-Probleme bereits während der Entwicklung automatisiert zu erkennen und dem Entwickler so durch geeignetes Feedback die Möglichkeit zu geben, diese zeitnah zu beheben.\r\n \r\nIn dem Talk werden verschiedene Tools vorgestellt und gezeigt, welche Security-Probleme schon während der Entwicklung durch Continous Integration vermieden werden können. ",
+              "startsAt": "2019-09-06T15:00:00",
+              "endsAt": "2019-09-06T16:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "7b88c8f8-bcf6-42f6-b800-35dfcc74a172",
+                  "name": "Christian Schulz"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "127352",
+              "title": "Practical Auth in a Serverless World",
+              "description": "It became essential for businesses to protect their applications, services and customer data from attackers. If you want to stay competitive, knowing how to efficiently and easily apply security and auth while being aware of the most common pitfalls is key in today's serverless world.\r\nTraditional machine-to-machine auth approaches where you can rely on a stateful environment fall short in a modern serverless and thus stateless world.\r\nAfter a short recap of some auth fundamentals, you'll learn how to efficiently apply authentication to Azure Functions without compromising security - using an external Identity Provider like Auth0, OAuth 2, JWT, the secrets management system Azure Key Vault, Azure Managed Identities and Cloudflare Workers.",
+              "startsAt": "2019-09-06T15:00:00",
+              "endsAt": "2019-09-06T16:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "762f464f-bf2b-4e09-820e-ee1fc39bf6e1",
+                  "name": "Andreas Grimm"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "132301",
+              "title": "java.util.concurrent for Distributed Coordination",
+              "description": "The evolution of distributed coordination tools shows that high-level APIs ease implementation of coordination tasks, such as leader election, locking, synchronized actions. For instance, the Chubby paper highlights familiarity of lock-based interfaces. Similarly, Apache Curator hides complexity of ZooKeeper recipes behind Java APIs, while etcd and Consul implement concurrency primitives on their own.\r\n\r\nA different path in this journey would be extending the long-lasting java.util.concurrent APIs, such as Lock, Semaphore, etc. Simplicity of these APIs makes them very useful in distributed coordination use cases.\r\n\r\nJoin this talk to explore Hazelcast’s brand new implementation of java.util.concurrent APIs on top of the Raft consensus algorithm. I will run demos to show how Java locks, semaphores, etc. can be used in distributed environments that involve partial failures. I will also share our experience of how we coped with several challenges we faced while developing and testing our Raft implementation.",
+              "startsAt": "2019-09-06T15:00:00",
+              "endsAt": "2019-09-06T16:00:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "436563a5-b742-46f9-9bd5-d4909dcacbb0",
+                  "name": "Ensar Basri Kahveci"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      },
+      {
+        "slotStart": "16:20:00",
+        "rooms": [
+          {
+            "id": 7049,
+            "name": "Humboldtsaal (1.OG)",
+            "session": {
+              "id": "133112",
+              "title": "JEE und Micro – kein Widerspruch!",
+              "description": "Die klassische Enterprise-Welt nutzt Server wie WebSphere oder JBoss/WildFly, um darauf große WAR- oder EAR-Files zu deployen. Wenngleich dieses Modell im traditionellen Server-Betrieb sehr gut funktioniert, so erscheint es doch recht schwergewichtig und wenig geeignet für moderne, verteilte – ggf. Cloud-basierte – Services. „Mit Java EE kann man moderne Sachen nicht machen“ ist eine leider verbreitete Ansicht. Vermeintlich leichtgewichtige Alternativen locken – allen voran Spring Boot. Aber stimmt das so? Bei genauerer Betrachtung erscheinen die konkurrierenden Konzepte nahezu deckungsgleich. Zudem bieten das Microprofile und darauf basierende Implementierungen wie Quarkus genau die vielfach vermissten Leichtgewicht-Eigenschaften: Kein separater Server, kleiner Footprint, einfache Konfiguration, Health Monitoring u. v m. Angenehm ist, dass das Programmierkonzept davon unberührt bleibt, d. h. EE-Entwickler können sehr schnell leichtgewichtige Services entwickeln, ohne komplett umlernen zu müssen.",
+              "startsAt": "2019-09-06T16:20:00",
+              "endsAt": "2019-09-06T17:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "c7b1cea4-bdc5-4b07-a2af-38ad8b3dc463",
+                  "name": "Dirk Weil"
+                }
+              ],
+              "categories": [],
+              "roomId": 7049,
+              "room": "Humboldtsaal (1.OG)"
+            },
+            "index": 0
+          },
+          {
+            "id": 7050,
+            "name": "Kleistsaal (1.OG)",
+            "session": {
+              "id": "128537",
+              "title": "Journey Of Building Streaming Data Pipelines",
+              "description": "Zalandos AI-driven products and distributed landscape of analytical data marts cannot wait for long-running, hard-to-recover, monolithic batch jobs taking all night to calculate already outdated data. Modern data integration pipelines need to deliver fast and easy to consume data sets in high quality. Based on Spark Streaming and Delta, the central data warehousing team was able to deliver widely-used master data as S3 or Kafka streams and snapshots at the same time. The talk will cover challenges in our fashion data platform and a detailed architectural deep dive about separation of integration from enrichment,  providing streams as well as snapshots and feeding the data to distributed data marts. Finally, lessons learned and best practices about Delta's MERGE command, Scala API vs Spark SQL and schema evolution give more insights and guidance for similar use cases.",
+              "startsAt": "2019-09-06T16:20:00",
+              "endsAt": "2019-09-06T17:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "b5ca5ea8-fa43-487e-b0b1-a48f79e26735",
+                  "name": "Sebastian Herold"
+                }
+              ],
+              "categories": [],
+              "roomId": 7050,
+              "room": "Kleistsaal (1.OG)"
+            },
+            "index": 1
+          },
+          {
+            "id": 7051,
+            "name": "Edison (2.OG)",
+            "session": {
+              "id": "128501",
+              "title": "Services Migrieren - Tücken, Tricks und 3 Fallbeispiele",
+              "description": "Jeder Entwickler wird vermutlich früher oder später einmal in die Situation kommen eine Migration durchführen zu müssen: ein technologisch veraltetes System muss abgelöst werden, ein Monolith wird in Microservices zerschnitten. Neben der reinen Software-seitigen Migration müssen häufig auch Daten migriert werden.\r\n\r\nWas zunächst vielleicht einfach und nach einem reinen Betriebs-Thema klingt, stellt sich nicht selten als komplex und zeitaufwändig heraus - und muss in der Regel schon beim Coden bedacht werden.\r\n\r\nIch erzähle Euch von den Tücken, die Migrationen so mit sich bringen können - und gebe ein paar Tipps wie man verhindern kann, dass der Kunde negative Auswirkungen zu spüren bekommt. Ich zeige drei Beispiele, bei denen verschiedene Migrationsstrategien angewendet wurden und vergleiche die Stärken und Schwächen dieser Ansätze.",
+              "startsAt": "2019-09-06T16:20:00",
+              "endsAt": "2019-09-06T17:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "dbef02c4-dabc-4d42-a1e6-9c3ac192e97a",
+                  "name": "Tim Steffens"
+                }
+              ],
+              "categories": [],
+              "roomId": 7051,
+              "room": "Edison (2.OG)"
+            },
+            "index": 2
+          },
+          {
+            "id": 7052,
+            "name": "Voltaire (3.OG)",
+            "session": {
+              "id": "132479",
+              "title": "Leichtgewichte Softwarearchitektur mit Architecture Decision Records und Qualitätsszenarien",
+              "description": "Agile Softwareentwicklung stellt die zwischenmenschliche Kommunikation in den Vordergrund, was dazu führen soll das Richtige richtig zu implementieren und Software schneller ausliefern zu können.\r\n \r\nDoch wie dokumentieren agile Teams ihre Softwarearchitektur? Herkömmliche Vorgehensweisen wirken zu schwergewichtig, da sie sich eher für Wasserfall-Projekte eignen. Sollten architekturrelevante Entscheidungen überhaupt dokumentiert werden? Und wie fügt sich eine geeignete Methode in die agile Arbeitsweise ein?\r\n \r\nIn diesem Vortrag wird eine leichtgewichtige Methode zur Dokumentation von Softwarearchitektur vorgestellt. Diese hält Architekturentscheidungen in Architecture Decision Records (ADR) fest. Ein kompaktes Format, angereichert mit Zusatzinformationen, wie Kontext und Randbedingungen. Nicht funktionale Anforderungen werden als Qualitätsszenarien beschrieben, deren Erfüllung durch die ADRs geprüft werden kann. So wird die Dokumentation ein Instrument zur Kommunikation mit allen Stakeholdern.",
+              "startsAt": "2019-09-06T16:20:00",
+              "endsAt": "2019-09-06T17:20:00",
+              "isServiceSession": false,
+              "isPlenumSession": false,
+              "speakers": [
+                {
+                  "id": "530eacee-6318-49d8-87d9-f914cf922bf8",
+                  "name": "Johannes Dienst"
+                }
+              ],
+              "categories": [],
+              "roomId": 7052,
+              "room": "Voltaire (3.OG)"
+            },
+            "index": 3
+          }
+        ]
+      }
+    ]
+  }
+]
