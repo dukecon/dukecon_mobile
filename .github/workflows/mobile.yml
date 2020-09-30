@@ -16,4 +16,4 @@ jobs:
     - name: Build android app
       run: ./gradlew assembleDebug
     - name: Build iOS shared code
-      run: ./gradlew :common:compileKotlinIOS
+      run: ./gradlew :shared:backend:sessionize:compileKotlinIOS
