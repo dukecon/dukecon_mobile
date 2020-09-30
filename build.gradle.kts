@@ -6,15 +6,16 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        classpath("com.android.tools.build:gradle:4.1.0-rc03")
+
         val kotlinVersion = "1.4.10"
         classpath(kotlin("gradle-plugin", version = kotlinVersion))
         classpath(kotlin("serialization", version = kotlinVersion))
-        classpath("com.android.tools.build:gradle:4.0.1")
     }
 }
 
 group = "org.dukecon.mobile"
-version = "1.0-SNAPSHOT"
+version = "0.0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()

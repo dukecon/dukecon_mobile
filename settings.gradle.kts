@@ -25,7 +25,9 @@ rootProject.name = "dukecon-mobile"
 include(":shared:core")
 include(":shared:domain")
 include(":shared:data")
+include(":shared:presentation")
 include(":shared:backend:sessionize")
+include (":frontend:android")
 /*
 
 include (":common:presentation")

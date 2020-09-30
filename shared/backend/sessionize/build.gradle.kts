@@ -3,6 +3,7 @@ plugins {
     id("kotlinx-serialization")
     id("com.android.library")
     id("kotlin-android-extensions")
+    id("maven-publish")
 }
 
 android {
@@ -20,6 +21,9 @@ android {
         }
     }
 }
+
+group = "org.dukecon.mobile"
+version = "0.0.1-SNAPSHOT"
 
 kotlin {
     jvm()

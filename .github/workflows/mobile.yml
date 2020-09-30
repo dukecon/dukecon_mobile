@@ -13,6 +13,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Run jvm tests
+        run: ./gradlew testJvm    
     - name: Build android app
       run: ./gradlew assembleDebug
     - name: Build iOS shared code

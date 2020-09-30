@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import coil.load
 import kotlinx.android.synthetic.main.item_speaker.view.*
 import org.dukecon.android.ui.R
 import org.dukecon.presentation.model.SpeakerView
