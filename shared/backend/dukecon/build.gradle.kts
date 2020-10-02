@@ -1,17 +1,25 @@
 plugins {
     kotlin("multiplatform")
+    id("ktor-open-api-plugin")
     id("kotlinx-serialization")
     id("com.android.library")
     id("kotlin-android-extensions")
     id("maven-publish")
 }
 
+openApiGenerate {
+    inputSpec.set("$rootDir/specs/conference_api.json")
+    generatorName.set("kotlin-ktor-client")
+    apiPackage.set("org.dukecon.remote.api")
+    modelPackage.set("org.dukecon.remote.api")
+}
+
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(30)
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdkVersion(24)
-        targetSdkVersion(29)
+        targetSdkVersion(30)
         versionCode = 1
         versionName = "1.0"
     }
@@ -32,11 +40,11 @@ kotlin {
     android()
     sourceSets {
         val commonMain by getting {
+            kotlin.srcDir("$buildDir/generate-resources/main/src/main/kotlin")
             dependencies {
                 implementation(project(":shared:core"))
                 implementation(project(":shared:domain"))
                 implementation(project(":shared:data"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
                 implementation("io.ktor:ktor-utils:1.4.1")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC2")
 
@@ -53,6 +61,14 @@ kotlin {
                 implementation("io.ktor:ktor-client-logging-jvm:1.4.1")
             }
         }
+
+        val androidMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-client-okhttp:1.4.1")
+                implementation("io.ktor:ktor-client-logging-jvm:1.4.1")
+            }
+        }
+
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
@@ -75,3 +91,8 @@ kotlin {
         val iosTest by getting
     }
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    dependsOn("openApiGenerate")
+}
+

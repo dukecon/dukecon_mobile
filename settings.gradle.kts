@@ -27,6 +27,7 @@ include(":shared:domain")
 include(":shared:data")
 include(":shared:presentation")
 include(":shared:backend:sessionize")
+include(":shared:backend:dukecon")
 include (":frontend:android")
 /*
 

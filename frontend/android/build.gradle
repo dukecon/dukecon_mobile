@@ -49,6 +49,16 @@ android {
 
         bedcon {
             applicationId "org.dukecon.mobile.bedcon"
+            dependencies {
+                implementation(project(":shared:backend:sessionize"))
+            }
+        }
+
+        javaland {
+            applicationId "org.dukecon.mobile.javaland"
+            dependencies {
+                implementation(project(":shared:backend:dukecon"))
+            }
         }
     }
 
@@ -70,16 +80,15 @@ dependencies {
     implementation(project(":shared:domain"))
     implementation(project(":shared:data"))
     implementation(project(":shared:presentation"))
-    implementation(project(":shared:backend:sessionize"))
+
 
     // https://mvnrepository.com/artifact/com.squareup.okhttp/logging-interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
 
-    implementation( 'androidx.multidex:multidex:2.0.1')
+    implementation('androidx.multidex:multidex:2.0.1')
 
-    api 'androidx.core:core-ktx:1.3.1'
-
+    api 'androidx.core:core-ktx:1.3.2'
 
 
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
@@ -100,13 +109,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
 
 
-
     implementation("org.slf4j:slf4j-api:1.7.30")
     implementation("com.github.tony19:logback-android:1.3.0-3")
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.core:core-ktx:1.3.1'
-
 
 /*
     implementation "androidx.ui:ui-core:${Versions.compose}"
