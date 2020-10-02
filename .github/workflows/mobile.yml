@@ -18,4 +18,4 @@ jobs:
     - name: Build android app
       run: ./gradlew assembleBedconDebug
     - name: Build iOS shared code
-      run: ./gradlew :shared:backend:sessionize:compileKotlinIOS
+      run: ./gradlew :shared:backend:dukecon-umbrella:compileKotlinIosX64

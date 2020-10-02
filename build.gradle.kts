@@ -11,6 +11,8 @@ buildscript {
         val kotlinVersion = "1.4.10"
         classpath(kotlin("gradle-plugin", version = kotlinVersion))
         classpath(kotlin("serialization", version = kotlinVersion))
+        classpath ("co.touchlab:kotlinxcodesync:0.2")
+        classpath("com.github.jengelman.gradle.plugins:shadow:6.0.0")
     }
 }
 

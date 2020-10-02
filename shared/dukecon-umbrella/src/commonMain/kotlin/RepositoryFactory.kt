@@ -4,6 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.dukecon.aspects.logging.LogLevel
 import org.dukecon.aspects.logging.log
+import org.dukecon.aspects.twitter.TwitterLinks
 import org.dukecon.cache.repository.JsonSerializedConferenceDataCache
 import org.dukecon.cache.storage.ApplicationContext
 import org.dukecon.cache.storage.ApplicationStorage
@@ -13,7 +14,6 @@ import org.dukecon.data.source.ConferenceConfiguration
 import org.dukecon.data.source.EventCacheDataStore
 import org.dukecon.data.source.EventRemoteDataStore
 import org.dukecon.date.now
-import org.dukecon.domain.aspects.twitter.TwitterLinks
 import org.dukecon.remote.api.DukeconApi
 import org.dukecon.remote.mapper.*
 import org.dukecon.remote.store.DukeconConferenceRemote

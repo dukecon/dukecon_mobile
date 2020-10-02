@@ -1,18 +1,20 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'DukeconSdk'
-    spec.version                  = '0.0.1'
-    spec.homepage                 = 'https://github.com/touchlab/KaMPStarter'
+    spec.version                  = '0.0.2'
+    spec.homepage                 = 'https://dukecon.org'
     spec.source                   = { :git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}" }
     spec.authors                  = ''
     spec.license                  = ''
-    spec.summary                  = 'DukeconSdk'
+    spec.summary                  = 'DukeconSdk Javaland'
 
     spec.static_framework         = true
-    spec.vendored_frameworks      = "build/fat-framework/#{spec.name}.framework"
+    spec.vendored_frameworks      = "build/cocoapods/framework/DukeconSdk.framework"
     spec.libraries                = "c++"
     spec.module_name              = "#{spec.name}"
 
-            
+                
+
+                
 
     spec.pod_target_xcconfig = {
         'KOTLIN_TARGET[sdk=iphonesimulator*]' => 'ios_x64',
@@ -26,13 +28,13 @@ Pod::Spec.new do |spec|
 
     spec.script_phases = [
         {
-            :name => 'Build DukeconSdk',
+            :name => 'Build dukecon_umbrella',
             :execution_position => :before_compile,
             :shell_path => '/bin/sh',
             :script => <<-SCRIPT
                 set -ev
                 REPO_ROOT="$PODS_TARGET_SRCROOT"
-                "$REPO_ROOT/../../gradlew" -p "$REPO_ROOT" :common:dukecon-umbrella:debugFatFramework \
+                "$REPO_ROOT/../../gradlew" -p "$REPO_ROOT" :shared:dukecon-umbrella:syncFramework \
                     -Pkotlin.native.cocoapods.target=$KOTLIN_TARGET \
                     -Pkotlin.native.cocoapods.configuration=$CONFIGURATION \
                     -Pkotlin.native.cocoapods.cflags="$OTHER_CFLAGS" \

@@ -29,12 +29,4 @@ include(":shared:presentation")
 include(":shared:backend:sessionize")
 include(":shared:backend:dukecon")
 include (":frontend:android")
-/*
-
-include (":common:presentation")
-include (":common:backend:dukecon")
-include (":common:backend:macoun")
-include (":common:backend:sessionize")
-include (":common:dukecon-umbrella")
-include (":frontend:android")
-*/
+include (":shared:dukecon-umbrella")
