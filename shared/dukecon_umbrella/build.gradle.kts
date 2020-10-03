@@ -22,12 +22,11 @@ kotlin {
             dependencies {
                 implementation(project(":shared:core"))
                 implementation(project(":shared:domain"))
-                //implementation(project(":common:presentation"))
+                implementation(project(":shared:presentation"))
                 implementation(project(":shared:data"))
                 implementation(project(":shared:backend:dukecon"))
 
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9-native-mt")
-                implementation("io.ktor:ktor-utils:1.4.1")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC2")
 
                 implementation("io.ktor:ktor-client-core:1.4.1")
@@ -35,7 +34,6 @@ kotlin {
                 implementation("io.ktor:ktor-client-logging:1.4.1")
                 implementation("io.ktor:ktor-client-serialization:1.4.1")
                 implementation("io.ktor:ktor-utils:1.4.1")
-
             }
         }
         val commonTest by getting {

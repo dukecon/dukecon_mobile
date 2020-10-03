@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3683AA1C95D40DB1086B38E5 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AFE71391091A8649C8A56C /* Pods_iosApp.framework */; };
 		58685D2AC8EC7336030F1ADF /* libPods-iosAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC357F1AC77C83B93699F75 /* libPods-iosAppTests.a */; };
 		CB1DA1BE24067D05006532BB /* TalkSpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */; };
 		CB1FDB712401A5AC00705876 /* Event+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB702401A5AC00705876 /* Event+Extensions.swift */; };
@@ -28,6 +27,7 @@
 		CB88D23724011B6D00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D23624011B6C00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift */; };
 		CB88D23924011DF000BCBCA0 /* Ktor_utilsGMTDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D23824011DF000BCBCA0 /* Ktor_utilsGMTDateTests.swift */; };
 		CBEFE10F2406AEF100E48567 /* SpeakerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFE10E2406AEF000E48567 /* SpeakerDetailsView.swift */; };
+		E2C00699B1FD08C2854A5964 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AFE71391091A8649C8A56C /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +45,9 @@
 		21B49096F12569EEB6A57553 /* Pods-iosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4FC357F1AC77C83B93699F75 /* libPods-iosAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B26FBC07776A1080B04DCB /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
-		9CF637F564A7A74C0CA374B5 /* RepositoryFactory.kt */ = {isa = PBXFileReference; includeInIndex = 1; name = RepositoryFactory.kt; path = "../../shared/dukecon-umbrella/src/commonMain/kotlin/RepositoryFactory.kt"; sourceTree = "<group>"; };
+		9CF637F564A7A74C0CA374B5 /* RepositoryFactory.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = RepositoryFactory.kt; path = "../../shared/dukecon-umbrella/src/commonMain/kotlin/RepositoryFactory.kt"; sourceTree = "<group>"; };
 		B09270225F263A2FF4917162 /* Main.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = Main.kt; path = "../../common/dukecon-umb/src/commonMain/kotlin/Main.kt"; sourceTree = "<group>"; };
-		B64A4167A3314ADADBEDA881 /* BaseModel.kt */ = {isa = PBXFileReference; includeInIndex = 1; name = BaseModel.kt; path = "../../shared/dukecon-umbrella/src/commonMain/kotlin/BaseModel.kt"; sourceTree = "<group>"; };
+		B64A4167A3314ADADBEDA881 /* BaseModel.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = BaseModel.kt; path = "../../shared/dukecon-umbrella/src/commonMain/kotlin/BaseModel.kt"; sourceTree = "<group>"; };
 		BE8D7FDFA5162EAE8378A038 /* Pods-iosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.release.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkSpeakerView.swift; sourceTree = "<group>"; };
 		CB1FDB702401A5AC00705876 /* Event+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Extensions.swift"; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3683AA1C95D40DB1086B38E5 /* Pods_iosApp.framework in Frameworks */,
+				E2C00699B1FD08C2854A5964 /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

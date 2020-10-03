@@ -94,6 +94,8 @@ fun initApplication(context: Any?) {
     applicationStorage = ApplicationStorage(appContext)
 }
 
+fun getLocale():String = org.dukecon.presentation.i18n.getLocalCode()
+
 class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
     init {
         //ensureNeverFrozen()

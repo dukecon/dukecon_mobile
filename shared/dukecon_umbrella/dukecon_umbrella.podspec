@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'DukeconSdk'
+    spec.name                     = 'dukecon_umbrella'
     spec.version                  = '0.0.2'
     spec.homepage                 = 'https://dukecon.org'
     spec.source                   = { :git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}" }
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
     spec.static_framework         = true
     spec.vendored_frameworks      = "build/cocoapods/framework/DukeconSdk.framework"
     spec.libraries                = "c++"
-    spec.module_name              = "#{spec.name}"
+    spec.module_name              = "#{spec.name}_umbrella"
 
                 
 
@@ -34,7 +34,7 @@ Pod::Spec.new do |spec|
             :script => <<-SCRIPT
                 set -ev
                 REPO_ROOT="$PODS_TARGET_SRCROOT"
-                "$REPO_ROOT/../../gradlew" -p "$REPO_ROOT" :shared:dukecon-umbrella:syncFramework \
+                "$REPO_ROOT/../../gradlew" -p "$REPO_ROOT" :shared:dukecon_umbrella:syncFramework \
                     -Pkotlin.native.cocoapods.target=$KOTLIN_TARGET \
                     -Pkotlin.native.cocoapods.configuration=$CONFIGURATION \
                     -Pkotlin.native.cocoapods.cflags="$OTHER_CFLAGS" \
