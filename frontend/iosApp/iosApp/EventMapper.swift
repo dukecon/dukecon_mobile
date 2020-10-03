@@ -8,7 +8,7 @@
 
 import DukeconSdk
 
-extension DomainEvent {
+extension Event {
     var talkDetailViewModel: TalkDetailViewModel {
         var timeDisplay = String()
 

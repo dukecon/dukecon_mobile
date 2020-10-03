@@ -3,10 +3,10 @@
 target 'iosApp' do
     # https://stackoverflow.com/a/41210375/211886
     use_frameworks!
-    pod 'dukecon_umbrella', :path => '../../shared/dukecon_umbrella'
+    pod 'DukeconSdk', :path => '../../shared/DukeconSdk'
 end
 
 target 'iosAppTests' do
-  pod 'dukecon_umbrella', :path => '../../shared/dukecon_umbrella'
+  pod 'DukeconSdk', :path => '../../shared/DukeconSdk'
 end
 

@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
-    kotlin("native.cocoapods")
+    id("co.touchlab.native.cocoapods")
 }
 
 group = "org.dukecon.mobile"
@@ -10,39 +10,31 @@ version = "0.0.2"
 
 kotlin {
 
-    val sdkName: String? = System.getenv("SDK_NAME")
+    ios()
 
-    val isiOSDevice = sdkName.orEmpty().startsWith("iphoneos")
-    if (isiOSDevice) {
-        iosArm64("ios") {
-            binaries.framework("DukeconSdk") {
-                baseName = "DukeconSdk"
-                export(project(":shared:presentation"))
-            }
-        }
-    } else {
-        iosX64("ios") {
-            binaries.framework("DukeconSdk") {
-                baseName = "DukeconSdk"
-                export(project(":shared:presentation"))
-            }
-        }
-    }
-
-    cocoapods {
+    cocoapodsext {
         // Configure fields required by CocoaPods.
         summary = "DukeconSdk Javaland"
         homepage = "https://dukecon.org"
-        frameworkName = "DukeconSdk"
+        framework {
+            isStatic = false
+            export(project(":shared:core"))
+            export(project(":shared:domain"))
+            export(project(":shared:presentation"))
+            export(project(":shared:data"))
+            export(project(":shared:backend:dukecon"))
+            transitiveExport = true
+        }
     }
+
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":shared:core"))
-                implementation(project(":shared:domain"))
+                api(project(":shared:core"))
+                api(project(":shared:domain"))
                 api(project(":shared:presentation"))
-                implementation(project(":shared:data"))
-                implementation(project(":shared:backend:dukecon"))
+                api(project(":shared:data"))
+                api(project(":shared:backend:dukecon"))
 
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9-native-mt")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC2")

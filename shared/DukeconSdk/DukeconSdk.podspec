@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'dukecon_umbrella'
+    spec.name                     = 'DukeconSdk'
     spec.version                  = '0.0.2'
     spec.homepage                 = 'https://dukecon.org'
     spec.source                   = { :git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}" }
@@ -28,13 +28,13 @@ Pod::Spec.new do |spec|
 
     spec.script_phases = [
         {
-            :name => 'Build dukecon_umbrella',
+            :name => 'Build DukeconSdk',
             :execution_position => :before_compile,
             :shell_path => '/bin/sh',
             :script => <<-SCRIPT
                 set -ev
                 REPO_ROOT="$PODS_TARGET_SRCROOT"
-                "$REPO_ROOT/../../gradlew" -p "$REPO_ROOT" :shared:dukecon_umbrella:syncFramework \
+                "$REPO_ROOT/../../gradlew" -p "$REPO_ROOT" :shared:DukeconSdk:syncFramework \
                     -Pkotlin.native.cocoapods.target=$KOTLIN_TARGET \
                     -Pkotlin.native.cocoapods.configuration=$CONFIGURATION \
                     -Pkotlin.native.cocoapods.cflags="$OTHER_CFLAGS" \

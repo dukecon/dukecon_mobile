@@ -31,7 +31,6 @@ kotlin {
             dependencies {
                 implementation(project(":shared:core"))
                 implementation(project(":shared:domain"))
-                implementation(project(":shared:data"))
                 implementation("io.ktor:ktor-utils:1.4.1")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC2")
 

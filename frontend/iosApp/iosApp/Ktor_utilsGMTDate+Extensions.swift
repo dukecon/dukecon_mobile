@@ -8,8 +8,8 @@
 
 import DukeconSdk
 
-extension Ktor_utilsGMTDate {
-    func isSameDate(_ other: Ktor_utilsGMTDate) -> Bool {
+extension GMTDate {
+    func isSameDate(_ other: GMTDate) -> Bool {
         if self.year == other.year, self.month == other.month, self.dayOfMonth == other.dayOfMonth {
             return true
         }
