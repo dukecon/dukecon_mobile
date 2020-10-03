@@ -1,16 +1,5 @@
 #source 'https://github.com/CocoaPods/Specs.git'
 
-
-pre_install do |installer|
-  # We represent a Kotlin/Native module to CocoaPods as a vendored framework.
-  # CocoaPods needs access to such frameworks during installation process to obtain
-  # their type (static or dynamic) and configure the Xcode project accordingly.
-  # Build MultiPlatformLibrary framework to correct install Pod
-  puts "prepare MultiPlatformLibrary.framework (require some time...)"
-  `cd ../../ && ./gradlew :shared:dukecon_umbrella:linkDebugFrameworkIosX64`
-  puts "preparing MultiPlatformLibrary.framework complete"
-end
-
 target 'iosApp' do
     # https://stackoverflow.com/a/41210375/211886
     use_frameworks!

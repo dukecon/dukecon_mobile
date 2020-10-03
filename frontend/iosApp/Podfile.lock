@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../../shared/dukecon_umbrella"
 
 SPEC CHECKSUMS:
-  dukecon_umbrella: e0bad6c701977207e419a6be362f5ac859847f30
+  dukecon_umbrella: ff5e6cb5bf0df06ab5f0e9ff8d9be1ebdab24c37
 
-PODFILE CHECKSUM: f9ff3c41ecf8f2dec6c7a505bfff0be9c608de23
+PODFILE CHECKSUM: cba7e95c134c3d8c0fdf79f63f8c8c86579b2007
 
 COCOAPODS: 1.9.3

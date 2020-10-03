@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import DukeconSdk
 struct ScheduleView: View {
     @EnvironmentObject var eventPublisher: EventsPublisher
 
