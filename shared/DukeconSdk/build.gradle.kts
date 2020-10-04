@@ -20,7 +20,7 @@ kotlin {
             isStatic = false
             export(project(":shared:core"))
             export(project(":shared:domain"))
-            export(project(":shared:presentation"))
+            export(project(":shared:mvvm"))
             export(project(":shared:data"))
             export(project(":shared:backend:dukecon"))
             transitiveExport = true
@@ -32,7 +32,7 @@ kotlin {
             dependencies {
                 api(project(":shared:core"))
                 api(project(":shared:domain"))
-                api(project(":shared:presentation"))
+                api(project(":shared:mvvm"))
                 api(project(":shared:data"))
                 api(project(":shared:backend:dukecon"))
 

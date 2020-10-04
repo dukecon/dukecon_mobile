@@ -1,6 +1,4 @@
 import io.ktor.util.date.GMTDate
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.dukecon.aspects.logging.LogLevel
 import org.dukecon.aspects.logging.log
@@ -9,6 +7,7 @@ import org.dukecon.cache.repository.JsonSerializedConferenceDataCache
 import org.dukecon.cache.storage.ApplicationContext
 import org.dukecon.cache.storage.ApplicationStorage
 import org.dukecon.data.mapper.*
+import org.dukecon.data.repository.LibrariesListRepository
 import org.dukecon.data.repository.LocalAndRemoteDataRepository
 import org.dukecon.data.source.ConferenceConfiguration
 import org.dukecon.data.source.EventCacheDataStore
@@ -19,7 +18,6 @@ import org.dukecon.remote.mapper.*
 import org.dukecon.remote.store.DukeconConferenceRemote
 import org.dukecon.time.CurrentDataTimeProvider
 import org.dukecon.domain.repository.LibrariesRepository
-import org.dukecon.data.repository.LibrariesListRepository
 import org.dukecon.domain.data
 import org.dukecon.domain.features.search.SearchUseCase
 import org.dukecon.domain.model.*
@@ -94,7 +92,7 @@ fun initApplication(context: Any?) {
     applicationStorage = ApplicationStorage(appContext)
 }
 
-fun getLocale():String = org.dukecon.presentation.i18n.getLocalCode()
+fun getLocale():String = org.dukecon.i18n.getLocalCode()
 
 class EventsModel(private val viewUpdate: (List<Event>) -> Unit) : BaseModel() {
     init {

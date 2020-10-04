@@ -1,10 +1,8 @@
 package org.dukecon.domain.model
 
-enum class TargetHost {
-    COMMON,
-    ANDROID,
-    IOS
-}
+import org.dukecon.platform.HostPlatform
 
-data class Library(val name: String, val owner: String, val license: String, val url: String,
-                   val targetHost: TargetHost = TargetHost.ANDROID)
+data class Library(
+    val name: String, val owner: String, val license: String, val url: String,
+    val targetHost: HostPlatform = HostPlatform.ANDROID
+)
