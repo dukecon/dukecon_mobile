@@ -22,7 +22,8 @@ extension Event {
 
 extension Location {
     var localizedName : String {
-        if let languageCode = Locale.autoupdatingCurrent.languageCode, let localizedName = self.names[languageCode] {
+        let languageCode = RepositoryFactoryKt.getLocale()
+        if let localizedName = self.names[languageCode] {
             return localizedName
         } else if let key = names.keys.first, let name = names[key] {
             return name

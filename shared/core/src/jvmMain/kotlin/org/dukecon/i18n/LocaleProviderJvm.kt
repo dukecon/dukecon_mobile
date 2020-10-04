@@ -1,3 +1,3 @@
-package org.dukecon.presentation.i18n
+package org.dukecon.i18n
 
 actual fun getLocalCode(): String = "de"

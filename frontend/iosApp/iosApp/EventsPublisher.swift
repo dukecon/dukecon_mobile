@@ -38,7 +38,7 @@ class EventsPublisher: ObservableObject {
             }
             self.model.getLicenses { (libraries) in
                 self.licenses = libraries.filter({ (library) -> Bool in
-                    return library.targetHost == TargetHost.ios || library.targetHost == TargetHost.common
+                    return library.targetHost == HostPlatform.ios || library.targetHost == HostPlatform.common
                 })
             }
 
