@@ -16,6 +16,6 @@ jobs:
     - name: Run jvm tests
       run: ./gradlew jvmTest
     - name: Build android app
-      run: ./gradlew assembleBedconDebug
+      run: ./gradlew assembleBedconDebug assembleJavalandDebug
     - name: Build iOS shared code
-      run: ./gradlew :shared:backend:dukecon-umbrella:compileKotlinIosX64
+      run: ./gradlew :shared:DukeconSdk:compileKotlinIosX64

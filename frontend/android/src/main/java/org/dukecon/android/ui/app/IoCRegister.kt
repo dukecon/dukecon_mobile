@@ -9,6 +9,7 @@ import org.dukecon.android.ui.features.login.SettingsTokenStorage
 import org.dukecon.android.ui.features.timemachine.CurrentTimeProviderFactory
 import org.dukecon.aspects.twitter.TwitterLinks
 import org.dukecon.core.IoCProvider
+import org.dukecon.data.repository.LibrariesListRepository
 import org.dukecon.data.source.ConferenceConfiguration
 import org.dukecon.domain.aspects.auth.AuthManager
 
