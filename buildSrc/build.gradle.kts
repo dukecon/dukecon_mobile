@@ -50,7 +50,7 @@ dependencies {
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10")
 
     implementation(kotlin("stdlib"))
-    implementation("com.android.tools.build:gradle:4.1.0-rc03")
+    implementation("com.android.tools.build:gradle:4.1.0")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10")
     implementation("guru.nidi:graphviz-java:0.12.1")
     implementation("org.openapitools:openapi-generator-gradle-plugin:4.2.3")
