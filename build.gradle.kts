@@ -1,48 +1,38 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-plugins {
-    id("project-dependencies-graph-plugin")
-}
-
 buildscript {
     repositories {
-        google()
+        gradlePluginPortal()
         jcenter()
-        maven { setUrl("https://maven.fabric.io/public") }
-        maven { url = uri("https://dl.bintray.com/icerockdev/plugins") }
+        google()
+        mavenCentral()
     }
     dependencies {
-        classpath(BuildPlugins.androidGradlePlugin)
-        classpath(BuildPlugins.kotlinGradlePlugin)
-        classpath(BuildPlugins.kotlinSerializationGradlePlugin)
-        classpath("dev.icerock:mobile-multiplatform:0.5.2")
-        classpath("com.google.gms:google-services:4.3.3")
-        classpath("io.spring.gradle:dependency-management-plugin:1.0.7.RELEASE")
-        classpath("io.fabric.tools:gradle:1.31.0")
+        classpath("com.android.tools.build:gradle:4.1.0")
+
+        val kotlinVersion = "1.4.10"
+        classpath(kotlin("gradle-plugin", version = kotlinVersion))
+        classpath(kotlin("serialization", version = kotlinVersion))
         classpath("co.touchlab:kotlinxcodesync:0.2")
-        classpath("com.github.jengelman.gradle.plugins:shadow:4.0.3")
+        classpath("com.github.jengelman.gradle.plugins:shadow:6.0.0")
+        classpath("co.touchlab:kotlinnativecocoapods:0.11")
     }
 }
 
-group = "com.github.dukecon"
-version = "0.0.1"
+group = "org.dukecon.mobile"
+version = "0.0.1-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
 
 allprojects {
     repositories {
-        google()
         jcenter()
-
-        maven { url = uri("https://kotlin.bintray.com/kotlin") }
-        maven { url = uri("https://kotlin.bintray.com/kotlinx") }
-        maven { url = uri("https://dl.bintray.com/icerockdev/moko") }
-        maven { url = uri("https://kotlin.bintray.com/ktor") }
-        maven { url = uri("https://dl.bintray.com/aakira/maven") }
+        google()
+        mavenCentral()
     }
 
-    // workaround for https://youtrack.jetbrains.com/issue/KT-27170
-    configurations.create("compileClasspath")
-
-    tasks.withType<KotlinCompile> {
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "1.8"
     }
 }

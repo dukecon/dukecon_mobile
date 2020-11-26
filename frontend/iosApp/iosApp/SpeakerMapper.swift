@@ -8,7 +8,7 @@
 
 import DukeconSdk
 
-extension Sequence where Iterator.Element : DomainSpeaker {
+extension Sequence where Iterator.Element : Speaker {
     var viewModel: [SpeakerViewModel] {
         let result = self.map({ (speaker) -> SpeakerViewModel in
             let name = speaker.name

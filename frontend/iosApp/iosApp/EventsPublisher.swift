@@ -10,11 +10,11 @@ import Foundation
 import DukeconSdk
 
 class EventsPublisher: ObservableObject {
-    @Published var events = [DomainEvent]()
-    @Published var dates = [Ktor_utilsGMTDate]()
-    @Published var speakers = [DomainSpeaker]()
-    @Published var licenses = [DomainLibrary]()
-    @Published var favorites = [DomainEvent]()
+    @Published var events = [Event]()
+    @Published var dates = [GMTDate]()
+    @Published var speakers = [Speaker]()
+    @Published var licenses = [Library]()
+    @Published var favorites = [Event]()
 
     private var model: EventsModel!
 
@@ -38,7 +38,7 @@ class EventsPublisher: ObservableObject {
             }
             self.model.getLicenses { (libraries) in
                 self.licenses = libraries.filter({ (library) -> Bool in
-                    return library.targetHost == DomainTargetHost.ios || library.targetHost == DomainTargetHost.common
+                    return library.targetHost == HostPlatform.ios || library.targetHost == HostPlatform.common
                 })
             }
 

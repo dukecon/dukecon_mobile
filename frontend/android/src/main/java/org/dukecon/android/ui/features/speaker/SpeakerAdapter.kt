@@ -6,13 +6,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import coil.load
 import kotlinx.android.synthetic.main.item_speaker.view.*
 import org.dukecon.android.ui.R
 import org.dukecon.presentation.model.SpeakerView
 
-internal class SpeakerAdapter(private val wrapsWidth: Boolean = true, private val onSpeakerClickedListener: ((speaker: SpeakerView) -> Unit)) :
-        RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
+internal class SpeakerAdapter(
+    private val wrapsWidth: Boolean = true,
+    private val onSpeakerClickedListener:
+    ((speaker: SpeakerView) -> Unit)
+) : RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
 
     val speakers: MutableList<SpeakerView> = mutableListOf()
 
@@ -21,7 +24,7 @@ internal class SpeakerAdapter(private val wrapsWidth: Boolean = true, private va
         if (!wrapsWidth) {
             v.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
         }
-        return ViewHolder(v, onSpeakerClickedListener)
+        return ViewHolder(v as ImageView, onSpeakerClickedListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -32,8 +35,11 @@ internal class SpeakerAdapter(private val wrapsWidth: Boolean = true, private va
         return speakers.size
     }
 
-    internal class ViewHolder(itemView: View, private val onSpeakerClickedListener: ((speaker: SpeakerView) -> Unit)) :
-            RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    internal class ViewHolder(
+        itemView: ImageView,
+        private val onSpeakerClickedListener: ((speaker: SpeakerView) -> Unit)
+    ) :
+        RecyclerView.ViewHolder(itemView), View.OnClickListener {
         private var speaker: SpeakerView? = null
         val image: ImageView
         val name: TextView

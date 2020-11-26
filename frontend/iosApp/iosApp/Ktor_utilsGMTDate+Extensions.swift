@@ -8,8 +8,8 @@
 
 import DukeconSdk
 
-extension Ktor_utilsGMTDate {
-    func isSameDate(_ other: Ktor_utilsGMTDate) -> Bool {
+extension GMTDate {
+    func isSameDate(_ other: GMTDate) -> Bool {
         if self.year == other.year, self.month == other.month, self.dayOfMonth == other.dayOfMonth {
             return true
         }
@@ -17,6 +17,8 @@ extension Ktor_utilsGMTDate {
     }
 
     var date: Date? {
+        
+        //let  vv = DukeconSdkSpeakerView()
 
         let components = DateComponents(calendar: nil, timeZone: TimeZone(secondsFromGMT: 0), era: nil, year: Int(self.year), month: Int(self.month.ordinal) + 1, day: Int(self.dayOfMonth), hour: Int(self.hours), minute: Int(self.minutes), second: Int(self.seconds), nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
 

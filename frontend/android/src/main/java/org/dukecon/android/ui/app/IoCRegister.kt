@@ -7,11 +7,12 @@ import org.dukecon.android.ui.configuration.ConfigurationFactory
 import org.dukecon.android.ui.features.info.AndroidWebNavigator
 import org.dukecon.android.ui.features.login.SettingsTokenStorage
 import org.dukecon.android.ui.features.timemachine.CurrentTimeProviderFactory
+import org.dukecon.aspects.twitter.TwitterLinks
 import org.dukecon.core.IoCProvider
 import org.dukecon.data.repository.LibrariesListRepository
 import org.dukecon.data.source.ConferenceConfiguration
 import org.dukecon.domain.aspects.auth.AuthManager
-import org.dukecon.domain.aspects.twitter.TwitterLinks
+
 import org.dukecon.domain.features.oauth.TokensStorage
 import org.dukecon.domain.features.time.CurrentTimeProvider
 import org.dukecon.domain.repository.ConferenceRepository

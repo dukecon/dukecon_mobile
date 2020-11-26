@@ -12,7 +12,7 @@ class KtorCodegen : AbstractKotlinCodegen() {
      * Constructs an instance of `KtorCodegen`.
      */
     init {
-        artifactId = "kotlin-ktor-client"
+        artifactId = "kotlin-kktor-client"
         packageName = "org.dukecon.network.generated"
 
         typeMapping["array"] = "kotlin.collections.List"

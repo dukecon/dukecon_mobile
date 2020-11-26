@@ -1,16 +1,16 @@
 PODS:
-  - DukeconSdk (0.0.1)
+  - DukeconSdk (0.0.2)
 
 DEPENDENCIES:
-  - DukeconSdk (from `../../common/dukecon-umbrella`)
+  - DukeconSdk (from `../../shared/DukeconSdk`)
 
 EXTERNAL SOURCES:
   DukeconSdk:
-    :path: "../../common/dukecon-umbrella"
+    :path: "../../shared/DukeconSdk"
 
 SPEC CHECKSUMS:
-  DukeconSdk: 7be4dbf2e9ab98ae3800cd8c2b5b99a757d586cd
+  DukeconSdk: 54a5089670255793cc1e3bcbba1a050837531e6d
 
-PODFILE CHECKSUM: bd32a3a6bacd8764995a5b1bc5b4bb322e6afe08
+PODFILE CHECKSUM: 074f0011306b48a20bc3569fc3e072a25082af23
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

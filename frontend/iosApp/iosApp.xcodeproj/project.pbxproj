@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3683AA1C95D40DB1086B38E5 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AFE71391091A8649C8A56C /* Pods_iosApp.framework */; };
+		58685D2AC8EC7336030F1ADF /* libPods-iosAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC357F1AC77C83B93699F75 /* libPods-iosAppTests.a */; };
 		CB1DA1BE24067D05006532BB /* TalkSpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */; };
 		CB1FDB712401A5AC00705876 /* Event+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB702401A5AC00705876 /* Event+Extensions.swift */; };
 		CB1FDB732401D6D900705876 /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FDB722401D6D900705876 /* TalkView.swift */; };
@@ -27,7 +27,7 @@
 		CB88D23724011B6D00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D23624011B6C00BCBCA0 /* Ktor_utilsGMTDate+Extensions.swift */; };
 		CB88D23924011DF000BCBCA0 /* Ktor_utilsGMTDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88D23824011DF000BCBCA0 /* Ktor_utilsGMTDateTests.swift */; };
 		CBEFE10F2406AEF100E48567 /* SpeakerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFE10E2406AEF000E48567 /* SpeakerDetailsView.swift */; };
-		FF56E5C91959FEF38DF99622 /* Pods_iosAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C085905DA17CC1D39A67D105 /* Pods_iosAppTests.framework */; };
+		E2C00699B1FD08C2854A5964 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AFE71391091A8649C8A56C /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +43,12 @@
 /* Begin PBXFileReference section */
 		00AFE71391091A8649C8A56C /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B49096F12569EEB6A57553 /* Pods-iosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4FC357F1AC77C83B93699F75 /* libPods-iosAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B26FBC07776A1080B04DCB /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		9CF637F564A7A74C0CA374B5 /* RepositoryFactory.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = RepositoryFactory.kt; path = "../../shared/dukecon-umbrella/src/commonMain/kotlin/RepositoryFactory.kt"; sourceTree = "<group>"; };
 		B09270225F263A2FF4917162 /* Main.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = Main.kt; path = "../../common/dukecon-umb/src/commonMain/kotlin/Main.kt"; sourceTree = "<group>"; };
+		B64A4167A3314ADADBEDA881 /* BaseModel.kt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = BaseModel.kt; path = "../../shared/dukecon-umbrella/src/commonMain/kotlin/BaseModel.kt"; sourceTree = "<group>"; };
 		BE8D7FDFA5162EAE8378A038 /* Pods-iosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosAppTests.release.xcconfig"; path = "Target Support Files/Pods-iosAppTests/Pods-iosAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		C085905DA17CC1D39A67D105 /* Pods_iosAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1DA1BD24067D05006532BB /* TalkSpeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkSpeakerView.swift; sourceTree = "<group>"; };
 		CB1FDB702401A5AC00705876 /* Event+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Extensions.swift"; sourceTree = "<group>"; };
 		CB1FDB722401D6D900705876 /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
@@ -79,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3683AA1C95D40DB1086B38E5 /* Pods_iosApp.framework in Frameworks */,
+				E2C00699B1FD08C2854A5964 /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF56E5C91959FEF38DF99622 /* Pods_iosAppTests.framework in Frameworks */,
+				58685D2AC8EC7336030F1ADF /* libPods-iosAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +101,13 @@
 			children = (
 			);
 			name = main;
+			sourceTree = "<group>";
+		};
+		380E57EA331A3EB9F56D3DDB /* androidMain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = androidMain;
 			sourceTree = "<group>";
 		};
 		631E4172FEC379ECD5749462 /* commonMain */ = {
@@ -114,6 +123,7 @@
 			children = (
 				631E4172FEC379ECD5749462 /* commonMain */,
 				08546826F5C61004F29E27CD /* main */,
+				380E57EA331A3EB9F56D3DDB /* androidMain */,
 			);
 			name = Kotlin;
 			sourceTree = "<group>";
@@ -133,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				00AFE71391091A8649C8A56C /* Pods_iosApp.framework */,
-				C085905DA17CC1D39A67D105 /* Pods_iosAppTests.framework */,
+				4FC357F1AC77C83B93699F75 /* libPods-iosAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				B09270225F263A2FF4917162 /* Main.kt */,
+				B64A4167A3314ADADBEDA881 /* BaseModel.kt */,
+				9CF637F564A7A74C0CA374B5 /* RepositoryFactory.kt */,
 			);
 			name = kotlin;
 			sourceTree = "<group>";
@@ -221,6 +233,7 @@
 				CB88D2042400365600BCBCA0 /* Sources */,
 				CB88D2052400365600BCBCA0 /* Frameworks */,
 				CB88D2062400365600BCBCA0 /* Resources */,
+				B4408BC10AC4A6053F35E816 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +252,7 @@
 				CB88D21A2400365900BCBCA0 /* Sources */,
 				CB88D21B2400365900BCBCA0 /* Frameworks */,
 				CB88D21C2400365900BCBCA0 /* Resources */,
+				3227B5A6183DE99A57198EB4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,6 +345,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3227B5A6183DE99A57198EB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosAppTests/Pods-iosAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosAppTests/Pods-iosAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosAppTests/Pods-iosAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4408BC10AC4A6053F35E816 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C86DFBF2334D041C25A9F1E0 /* [CP] Check Pods Manifest.lock */ = {
