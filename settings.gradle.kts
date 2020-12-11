@@ -1,3 +1,4 @@
+include(":frontend:jetpack-app")
 pluginManagement {
     repositories {
         gradlePluginPortal()

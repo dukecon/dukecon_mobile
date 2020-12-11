@@ -1,4 +1,5 @@
 buildscript {
+    val kotlin_version by extra("1.4.21")
     repositories {
         gradlePluginPortal()
         jcenter()
@@ -8,7 +9,7 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:4.1.0")
 
-        val kotlinVersion = "1.4.10"
+        val kotlinVersion = "1.4.21"
         classpath(kotlin("gradle-plugin", version = kotlinVersion))
         classpath(kotlin("serialization", version = kotlinVersion))
         classpath("co.touchlab:kotlinxcodesync:0.2")
