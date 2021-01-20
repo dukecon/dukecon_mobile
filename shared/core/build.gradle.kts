@@ -1,6 +1,10 @@
 plugins {
     kotlin("multiplatform")
+    id("maven-publish")
 }
+
+group = "org.dukecon.mobile"
+version = "0.0.1-SNAPSHOT"
 
 kotlin {
     jvm()
