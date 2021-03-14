@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="maroon_200">#FFb73d2a</color>
-    <color name="maroon_500">#FF800000</color>
-    <color name="maroon_700">#FF4f0000</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primaryColor">#16968d</color>
+    <color name="colorPrimary">#16968d</color>
+    <color name="primaryLightColor">#58c7bd</color>
+    <color name="primaryDarkColor">#006760</color>
+    <color name="secondaryColor">#06517c</color>
+
+    <color name="colorAccent">#06517c</color>
+
+
+    <color name="secondaryLightColor">#487dab</color>
+    <color name="secondaryDarkColor">#00294f</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#ffffff</color>
+    <color name="twitter_blue">#55ACEE</color>
+    <color name="bg_info_header">#1f000000</color>
+    <color name="session_bg">#ffffffff</color>
+    <color name="session_finished_bg">#e1e1e1</color>
 </resources>

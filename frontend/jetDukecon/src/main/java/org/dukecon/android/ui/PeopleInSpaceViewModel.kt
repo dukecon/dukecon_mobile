@@ -1,4 +1,4 @@
-package com.surrus.peopleinspace.ui
+package org.dukecon.android.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

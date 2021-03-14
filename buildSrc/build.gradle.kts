@@ -47,11 +47,11 @@ kotlinDslPluginOptions {
 
 dependencies {
     compileOnly(gradleApi())
-    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31")
+    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.30")
 
     implementation(kotlin("stdlib"))
     implementation("com.android.tools.build:gradle:4.1.1")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.30")
     implementation("guru.nidi:graphviz-java:0.12.1")
     implementation("com.squareup:kotlinpoet:1.7.2")
     implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2")

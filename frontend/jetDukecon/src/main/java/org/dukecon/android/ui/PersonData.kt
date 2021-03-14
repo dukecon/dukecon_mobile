@@ -1,4 +1,4 @@
-package com.surrus.peopleinspace.ui
+package org.dukecon.android.ui
 
 import androidx.ui.tooling.preview.datasource.CollectionPreviewParameterProvider
 import com.surrus.common.remote.Assignment

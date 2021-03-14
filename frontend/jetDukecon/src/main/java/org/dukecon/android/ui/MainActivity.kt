@@ -1,4 +1,4 @@
-package com.surrus.peopleinspace.ui
+package org.dukecon.android.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

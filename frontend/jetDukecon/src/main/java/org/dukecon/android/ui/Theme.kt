@@ -1,4 +1,4 @@
-package com.surrus.peopleinspace.ui
+package org.dukecon.android.ui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
