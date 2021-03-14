@@ -16,6 +16,12 @@ import io.ktor.client.request.put
 import io.ktor.http.HttpHeaders
 import io.ktor.http.takeFrom
 import kotlinx.serialization.json.Json
+import org.dukecon.remote.models.*
+import org.dukecon.remote.models.Conference
+import org.dukecon.remote.models.Event
+import org.dukecon.remote.models.Feedback
+import org.dukecon.remote.models.MetaData
+import org.dukecon.remote.models.Speaker
 
 /**
  * use default http engine by default

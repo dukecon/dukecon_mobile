@@ -2,6 +2,12 @@ package org.dukecon.remote.mapper
 
 import org.dukecon.data.model.*
 import org.dukecon.remote.api.*
+import org.dukecon.remote.models.*
+import org.dukecon.remote.models.EventType
+import org.dukecon.remote.models.Language
+import org.dukecon.remote.models.Location
+import org.dukecon.remote.models.MetaData
+import org.dukecon.remote.models.Track
 
 internal class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
     override fun mapFromRemote(type: MetaData): MetaDataEntity {
@@ -26,7 +32,7 @@ internal class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
         return LocationsEntity(
                 id = it.id ?: "",
                 order = it.order ?: 0,
-                names = it.names?.let { it.toMap() } ?: emptyMap(),
+                names = it.names?.toMap() ?: emptyMap(),
                 icon = it.icon ?: "",
                 capacity = it.capacity ?: 0
         )
@@ -36,7 +42,7 @@ internal class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
         return TrackEntity(
                 id = it.id ?: "",
                 order = it.order ?: 0,
-                names = it.names?.let { it.toMap() } ?: emptyMap(),
+                names = it.names?.toMap() ?: emptyMap(),
                 icon = it.icon ?: ""
         )
     }
@@ -46,7 +52,7 @@ internal class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
                 it.id ?: "",
                 it.code ?: "",
                 it.order ?: 0,
-                it.names?.let { it.toMap() } ?: emptyMap(),
+                it.names?.toMap() ?: emptyMap(),
                 it.icon ?: ""
         )
     }
@@ -55,7 +61,7 @@ internal class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
         return EventTypeEntity(
                 id = it.id ?: "",
                 order = it.order ?: 0,
-                names = it.names?.let { it.toMap() } ?: emptyMap(),
+                names = it.names?.toMap() ?: emptyMap(),
                 icon = it.icon ?: ""
         )
     }
@@ -64,7 +70,7 @@ internal class MetaDataEntityMapper() : EntityMapper<MetaData, MetaDataEntity> {
         return AudienceEntity(
                 audience.id ?: "",
                 audience.order ?: 0,
-                audience.names?.let { it.toMap() } ?: emptyMap(),
+                audience.names?.toMap() ?: emptyMap(),
                 audience.icon ?: ""
         )
     }

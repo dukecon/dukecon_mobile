@@ -1,17 +1,23 @@
 plugins {
     kotlin("multiplatform")
-    id("ktor-open-api-plugin")
-    id("kotlinx-serialization")
+    kotlin("plugin.serialization")
     id("com.android.library")
-    id("kotlin-android-extensions")
+    id("dev.icerock.mobile.multiplatform-network-generator")
     id("maven-publish")
 }
 
-openApiGenerate {
-    inputSpec.set("$rootDir/specs/conference_api.json")
-    generatorName.set("kotlin-ktor-client")
-    apiPackage.set("org.dukecon.remote.api")
-    modelPackage.set("org.dukecon.remote.api")
+mokoNetwork {
+    spec("conference") {
+        inputSpec = file("$rootDir/specs/conference_api.json")
+        packageName = "news"
+        isInternal = false
+        isOpen = true
+        packageName = "org.dukecon.remote"
+        //modelPackage.set("org.dukecon.remote.api")
+        configureTask {
+            // here can be configuration of https://github.com/OpenAPITools/openapi-generator GenerateTask
+        }
+    }
 }
 
 android {
@@ -40,32 +46,30 @@ kotlin {
     android()
     sourceSets {
         val commonMain by getting {
-            kotlin.srcDir("$buildDir/generate-resources/main/src/main/kotlin")
+            kotlin.srcDir("$buildDir/generate-resources/main/src/commonMain/kotlin")
             dependencies {
                 implementation(project(":shared:core"))
                 implementation(project(":shared:domain"))
                 implementation(project(":shared:data"))
-                implementation("io.ktor:ktor-utils:1.4.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC2")
+                implementation("io.ktor:ktor-utils:1.5.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
 
-                implementation("io.ktor:ktor-client-core:1.4.1")
-                implementation("io.ktor:ktor-client-json:1.4.1")
-                implementation("io.ktor:ktor-client-logging:1.4.1")
-                implementation("io.ktor:ktor-client-serialization:1.4.1")
+                implementation("io.ktor:ktor-client-core:1.5.0")
+                implementation("io.ktor:ktor-client-json:1.5.0")
+                implementation("io.ktor:ktor-client-logging:1.5.0")
+                implementation("io.ktor:ktor-client-serialization:1.5.0")
 
             }
         }
         val jvmMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-apache:1.4.1")
-                implementation("io.ktor:ktor-client-logging-jvm:1.4.1")
+                implementation("io.ktor:ktor-client-apache:1.5.0")
             }
         }
 
         val androidMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-okhttp:1.4.1")
-                implementation("io.ktor:ktor-client-logging-jvm:1.4.1")
             }
         }
 
@@ -78,21 +82,17 @@ kotlin {
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.7")
-                implementation("junit:junit:4.13")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.1")
+                implementation("junit:junit:4.13.2")
                 implementation("io.mockk:mockk:1.9.3")
             }
         }
         val iosMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-ios:1.4.1")
+                implementation("io.ktor:ktor-client-ios:1.5.0")
             }
         }
         val iosTest by getting
     }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    dependsOn("openApiGenerate")
 }
 

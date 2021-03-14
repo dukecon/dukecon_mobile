@@ -47,15 +47,14 @@ kotlinDslPluginOptions {
 
 dependencies {
     compileOnly(gradleApi())
-    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21")
+    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31")
 
     implementation(kotlin("stdlib"))
     implementation("com.android.tools.build:gradle:4.1.1")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31")
     implementation("guru.nidi:graphviz-java:0.12.1")
-    implementation("org.openapitools:openapi-generator-gradle-plugin:4.2.3")
-    implementation("com.squareup:kotlinpoet:1.5.0")
-    implementation("org.jetbrains.dokka:dokka-gradle-plugin:0.10.0")
+    implementation("com.squareup:kotlinpoet:1.7.2")
+    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2")
 }
 
 configurations.all {
@@ -67,7 +66,7 @@ configurations.all {
             @Suppress("UnstableApiUsage")
             if (requested.group == "org.jetbrains.kotlin" &&
                     requested.module.name == "kotlin-compiler-embeddable"
-            ) useVersion("1.4.21")
+            ) useVersion("1.4.30")
         }
     }
 }

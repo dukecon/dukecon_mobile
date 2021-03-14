@@ -2,7 +2,7 @@ package org.dukecon.remote.mapper
 
 import org.dukecon.data.model.SpeakerEntity
 import org.dukecon.data.source.ConferenceConfiguration
-import org.dukecon.remote.api.Speaker
+import org.dukecon.remote.models.Speaker
 
 /**
  * Map a [Speaker] to and from a [SpeakerEntity] instance when data is moving between

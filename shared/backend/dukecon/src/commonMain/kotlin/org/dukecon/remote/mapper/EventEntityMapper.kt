@@ -1,7 +1,7 @@
 package org.dukecon.remote.mapper
 
 import org.dukecon.data.model.EventEntity
-import org.dukecon.remote.api.Event
+import org.dukecon.remote.models.Event
 
 
 /**
