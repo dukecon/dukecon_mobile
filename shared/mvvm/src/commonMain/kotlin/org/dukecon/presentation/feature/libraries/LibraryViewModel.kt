@@ -6,7 +6,7 @@ import org.dukecon.domain.model.Library
 import org.dukecon.domain.repository.LibrariesRepository
 import org.dukecon.platform.HostPlatform
 import org.dukecon.platform.getTargetHost
-import org.dukecon.presentation.CommonViewModel
+import org.dukecon.common.presentation.CommonViewModel
 import org.dukecon.presentation.feature.libraries.model.Libraries
 import org.dukecon.presentation.feature.libraries.model.LibraryData
 import kotlin.native.concurrent.ThreadLocal

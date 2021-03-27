@@ -24,7 +24,7 @@ android {
     compileSdkVersion(30)
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
+        minSdkVersion(21)
         targetSdkVersion(30)
         versionCode = 1
         versionName = "1.0"
@@ -51,25 +51,25 @@ kotlin {
                 implementation(project(":shared:core"))
                 implementation(project(":shared:domain"))
                 implementation(project(":shared:data"))
-                implementation("io.ktor:ktor-utils:1.5.0")
+                implementation("io.ktor:ktor-utils:1.4.3")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
 
-                implementation("io.ktor:ktor-client-core:1.5.0")
-                implementation("io.ktor:ktor-client-json:1.5.0")
-                implementation("io.ktor:ktor-client-logging:1.5.0")
-                implementation("io.ktor:ktor-client-serialization:1.5.0")
+                implementation("io.ktor:ktor-client-core:1.4.3")
+                implementation("io.ktor:ktor-client-json:1.4.3")
+                implementation("io.ktor:ktor-client-logging:1.4.3")
+                implementation("io.ktor:ktor-client-serialization:1.4.3")
 
             }
         }
         val jvmMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-apache:1.5.0")
+                implementation("io.ktor:ktor-client-apache:1.4.3")
             }
         }
 
         val androidMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-okhttp:1.4.1")
+                implementation("io.ktor:ktor-client-okhttp:1.4.3")
             }
         }
 
@@ -89,7 +89,7 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-ios:1.5.0")
+                implementation("io.ktor:ktor-client-ios:1.4.3")
             }
         }
         val iosTest by getting

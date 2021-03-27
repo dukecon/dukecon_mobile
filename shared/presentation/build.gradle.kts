@@ -6,6 +6,10 @@ plugins {
 group = "org.dukecon.mobile"
 version = "0.0.1-SNAPSHOT"
 
+repositories {
+    google()
+}
+
 kotlin {
     jvm()
     ios()

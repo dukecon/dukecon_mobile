@@ -2,8 +2,10 @@ package org.dukecon.data.repository
 
 import io.ktor.util.date.GMTDate
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import org.dukecon.aspects.logging.LogLevel
 import org.dukecon.aspects.logging.log
+import org.dukecon.core.ValueModel
 import org.dukecon.data.mapper.*
 import org.dukecon.data.model.EventEntity
 import org.dukecon.data.model.FavoriteEntity
@@ -32,6 +34,13 @@ class LocalAndRemoteDataRepository constructor(
 ) : ConferenceRepository {
 
     override var onRefreshListeners: List<() -> Unit> = emptyList()
+
+    inner class EventsStateModel : ValueModel<List<Event>>(emptyList())
+
+    private val _eventsStateModel = EventsStateModel()
+
+    override val eventsStateModel: Flow<List<Event>>
+        get() = _eventsStateModel.model
 
     override suspend fun getKeyCloak(): Keycloak = Keycloak(
             realm = "",
@@ -179,6 +188,9 @@ class LocalAndRemoteDataRepository constructor(
             localDataStore.saveSpeakers(remoteDataStore.getSpeakers())
             callRefreshListeners()
             log(LogLevel.DEBUG, "LocalAndRemoteDataRepository", "update<==")
+
+            _eventsStateModel.setValue(getEvents(0))
+
         } catch (e: Exception) {
             log(LogLevel.ERROR, "LocalAndRemoteDataRepository", "update ERROR", e)
             localDataStore.saveEvents(emptyList())

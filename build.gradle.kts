@@ -1,24 +1,22 @@
 buildscript {
     repositories {
-        gradlePluginPortal()
-        jcenter()
         google()
         mavenCentral()
-        maven("https://dl.bintray.com/icerockdev/plugins")
+        jcenter()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        maven ("https://dl.bintray.com/icerockdev/plugins")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.1.2")
+        val kotlinVersion = "1.4.31"
 
-        val kotlinVersion = "1.4.30"
+        // __LATEST_COMPOSE_RELEASE_VERSION__
+        classpath("org.jetbrains.compose:compose-gradle-plugin:0.3.2")
+        classpath("com.android.tools.build:gradle:4.0.1")
+
+        // __KOTLIN_COMPOSE_VERSION__
         classpath(kotlin("gradle-plugin", version = kotlinVersion))
         classpath(kotlin("serialization", version = kotlinVersion))
 
-        classpath("com.android.tools.build:gradle:4.1.1")
-        classpath("org.jetbrains.compose:compose-gradle-plugin:0.3.0")
-        classpath("co.touchlab:kotlinxcodesync:0.2")
-        classpath("com.github.jengelman.gradle.plugins:shadow:6.0.0")
-        classpath("co.touchlab:kotlinnativecocoapods:0.11")
         classpath("dev.icerock.moko:network-generator:0.11.0")
     }
 }
@@ -29,15 +27,10 @@ version = "0.0.1-SNAPSHOT"
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
-        maven(url = "https://dl.bintray.com/ekito/koin")
-        maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
-        maven { url = uri("https://kotlin.bintray.com/kotlinx/") }
-        maven { url = uri("https://jitpack.io") }
-        maven("https://dl.bintray.com/icerockdev/plugins")
-    }
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "1.8"
+        jcenter()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        maven ("https://dl.bintray.com/icerockdev/plugins")
+        maven ("https://dl.bintray.com/ekito/koin")
     }
 }

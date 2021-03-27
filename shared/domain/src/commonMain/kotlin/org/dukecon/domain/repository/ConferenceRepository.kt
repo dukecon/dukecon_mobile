@@ -1,6 +1,7 @@
 package org.dukecon.domain.repository
 
 import io.ktor.util.date.GMTDate
+import kotlinx.coroutines.flow.Flow
 import org.dukecon.domain.model.*
 
 /**
@@ -11,10 +12,12 @@ import org.dukecon.domain.model.*
 interface ConferenceRepository {
     var onRefreshListeners: List<() -> Unit>
 
+    val eventsStateModel: Flow<List<Event>>
+
     suspend fun update()
     suspend fun saveEvents(events: List<Event>)
 
-    suspend fun getEvents(day: Int): List<Event>
+    suspend fun getEvents(day: Int = 0): List<Event>
     suspend fun getEventDates(): List<GMTDate>
 
     suspend fun getSpeakers(): List<Speaker>
@@ -33,7 +36,6 @@ interface ConferenceRepository {
 
     suspend fun getKeyCloak(): Keycloak
     suspend fun getMetaData(): MetaData
-
 }
 
 interface SyncConferenceRepository {
