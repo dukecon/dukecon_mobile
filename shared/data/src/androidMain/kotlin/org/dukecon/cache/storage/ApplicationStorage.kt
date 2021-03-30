@@ -5,7 +5,7 @@ import android.preference.PreferenceManager
 
 actual class ApplicationContext(val appAndroidContext: Context)
 
-actual fun ApplicationStorage(context: ApplicationContext?): ApplicationStorage = AndroidApplicationStorage(context)
+actual fun applicationStorageFactory(context: ApplicationContext?): ApplicationStorage = AndroidApplicationStorage(context)
 
 class AndroidApplicationStorage(context: ApplicationContext?) : ApplicationStorage {
 

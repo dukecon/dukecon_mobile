@@ -35,8 +35,7 @@ object RepositoryFactory {
 
         val conferenceRemote = DukeconConferenceRemote(
             dukeconApi = api,
-            conferenceConfiguration = conferenceConfiguration,
-            twitterLinkMapper = TwitterUrlMapper()
+            conferenceConfiguration = conferenceConfiguration
         )
 
         val cache = JsonSerializedConferenceDataCache(currentTimeProvider, storage)

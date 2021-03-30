@@ -4,7 +4,7 @@ import platform.Foundation.*
 
 actual class ApplicationContext
 
-actual fun ApplicationStorage(context: ApplicationContext?): ApplicationStorage = IosStorage()
+actual fun applicationStorageFactory(context: ApplicationContext?): ApplicationStorage = IosStorage()
 
 internal class IosStorage : ApplicationStorage {
     private val delegate: NSUserDefaults = NSUserDefaults.standardUserDefaults()

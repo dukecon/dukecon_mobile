@@ -20,12 +20,12 @@ internal open class SpeakerEntityMapper constructor(
     override fun mapFromRemote(type: Speaker): SpeakerEntity {
         return SpeakerEntity(
             id = type.id ?: "",
-            name = type.name ?: "",
-            title = type.company ?: "",
+            name = type.firstname ?: "" + " " + type.lastname,
             twitter = twitterLinkMapper.getNormalizedTwitterUrl(type.twitter ?: ""),
-            bio = type.bio ?: "",
-            website = type.website ?: "",
-            avatar = getAvatarUrlFromId(type.photoId ?: "")
+            avatar = getAvatarUrlFromId(type.image ?: ""),
+            bio = type.description ?: "",
+            title = "",
+            website = ""
         )
     }
 

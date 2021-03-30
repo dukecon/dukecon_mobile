@@ -32,8 +32,8 @@ kotlin {
             dependencies {
                 implementation(project(":shared:core"))
                 implementation(project(":shared:domain"))
-                implementation("io.ktor:ktor-utils:1.4.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC2")
+                implementation("io.ktor:ktor-utils:1.5.2")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
 
             }
         }
@@ -47,8 +47,8 @@ kotlin {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2")
-                implementation("junit:junit:4.13")
-                implementation("io.mockk:mockk:1.9.3")
+                implementation("junit:junit:4.13.2")
+                implementation("io.mockk:mockk:1.11.0")
             }
         }
         val iosMain by getting

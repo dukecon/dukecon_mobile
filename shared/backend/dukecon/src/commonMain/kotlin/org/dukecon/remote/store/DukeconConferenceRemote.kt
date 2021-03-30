@@ -2,6 +2,7 @@ package org.dukecon.remote.store
 
 import org.dukecon.aspects.logging.LogLevel
 import org.dukecon.aspects.logging.log
+import org.dukecon.aspects.twitter.TwitterLinks
 import org.dukecon.data.model.*
 import org.dukecon.data.repository.ConferenceRemote
 import org.dukecon.data.source.ConferenceConfiguration
@@ -11,12 +12,11 @@ import org.dukecon.remote.models.MetaData
 
 class DukeconConferenceRemote(
     private val dukeconApi: DukeconApi,
-    conferenceConfiguration: ConferenceConfiguration,
-    twitterLinkMapper: TwitterUrlMapper
+    conferenceConfiguration: ConferenceConfiguration
 ) : ConferenceRemote {
     private val eventEntityMapper = EventEntityMapper()
     private val speakerEntityMapper =
-        SpeakerEntityMapper(conferenceConfiguration, twitterLinkMapper)
+        SpeakerEntityMapper(conferenceConfiguration, TwitterLinks())
     private val metaDataEntityMapper = MetaDataEntityMapper()
     private val roomEntityMapper = RoomEntityMapper()
 

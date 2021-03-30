@@ -3,7 +3,7 @@ package org.dukecon.cache.storage
 expect class ApplicationContext
 
 @Suppress("FunctionName")
-expect fun ApplicationStorage(context: ApplicationContext?): ApplicationStorage
+expect fun applicationStorageFactory(context: ApplicationContext?): ApplicationStorage
 
 interface ApplicationStorage {
     fun putBoolean(key: String, value: Boolean)

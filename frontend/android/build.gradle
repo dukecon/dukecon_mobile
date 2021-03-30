@@ -58,6 +58,7 @@ android {
             applicationId "org.dukecon.mobile.javaland"
             dependencies {
                 implementation(project(":shared:backend:dukecon"))
+                implementation(project(":shared:conference:javaland"))
             }
         }
     }

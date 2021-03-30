@@ -8,6 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.dukecon.android.ui.configuration.RepositoryFactory
 import org.dukecon.cache.storage.ApplicationContext
 import org.dukecon.cache.storage.ApplicationStorage
+import org.dukecon.cache.storage.applicationStorageFactory
 import org.dukecon.core.IoCProvider
 import org.dukecon.data.source.ConferenceConfiguration
 import org.dukecon.domain.repository.ConferenceRepository
@@ -82,7 +83,7 @@ object IoCRegisterRemoteClient {
                 object : CurrentDataTimeProvider {
                     override fun currentTimeMillis(): Long = currentTimeProvider.currentTimeMillis()
                 },
-                ApplicationStorage(context = ApplicationContext(context))
+                applicationStorageFactory(context = ApplicationContext(context))
             )
         )
     }

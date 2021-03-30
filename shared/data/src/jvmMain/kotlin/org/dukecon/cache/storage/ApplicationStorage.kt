@@ -3,7 +3,7 @@ package org.dukecon.cache.storage
 actual class ApplicationContext()
 
 @Suppress("FunctionName")
-actual fun ApplicationStorage(context: ApplicationContext?): ApplicationStorage = InMemoryStorage()
+actual fun applicationStorageFactory(context: ApplicationContext?): ApplicationStorage = InMemoryStorage()
 
 class InMemoryStorage : ApplicationStorage {
 
@@ -20,6 +20,6 @@ class InMemoryStorage : ApplicationStorage {
         strings[key] = value
     }
 
-    override fun getString(key: String): String? = strings[key]
+    override fun getString(key: String): String? = strings[key] ?: ""
 
 }
