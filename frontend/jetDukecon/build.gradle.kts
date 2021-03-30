@@ -28,6 +28,7 @@ android {
             setDimension("conferences")
             dependencies {
                 implementation(project(":shared:backend:dukecon"))
+                implementation(project(":shared:conference:javaland"))
             }
         }
     }

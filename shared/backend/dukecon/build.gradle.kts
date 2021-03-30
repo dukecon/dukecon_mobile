@@ -10,7 +10,6 @@ mokoNetwork {
     spec("conference") {
         inputSpec = file("$projectDir/specs/conference_api.json")
         packageName = "news"
-        isInternal = false
         isOpen = true
         packageName = "org.dukecon.remote"
         //modelPackage.set("org.dukecon.remote.api")
