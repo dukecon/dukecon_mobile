@@ -19,6 +19,6 @@ package co.touchlab.stately
 actual fun <T> T.freeze(): T = this
 
 actual val <T> T.isFrozen: Boolean
-    get() = false
+  get() = false
 
 actual fun Any.ensureNeverFrozen() {}

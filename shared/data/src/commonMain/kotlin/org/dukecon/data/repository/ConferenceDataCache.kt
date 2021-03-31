@@ -2,32 +2,31 @@ package org.dukecon.data.repository
 
 import org.dukecon.data.model.*
 
-
 interface ConferenceDataCache {
 
-    fun clearEvents()
+  fun clearEvents()
 
-    fun saveEvents(events: List<EventEntity>)
+  fun saveEvents(events: List<EventEntity>)
 
-    fun getEvents(): List<EventEntity>
+  fun getEvents(): List<EventEntity>
 
-    fun getSpeakers(): List<SpeakerEntity>
-    fun getSpeaker(id: String): SpeakerEntity
+  fun getSpeakers(): List<SpeakerEntity>
+  fun getSpeaker(id: String): SpeakerEntity
 
-    fun saveSpeakers(speakers: List<SpeakerEntity>)
+  fun saveSpeakers(speakers: List<SpeakerEntity>)
 
-    fun getRooms(): List<RoomEntity>
-    fun saveRooms(rooms: List<RoomEntity>)
+  fun getRooms(): List<RoomEntity>
+  fun saveRooms(rooms: List<RoomEntity>)
 
-    fun getEvent(id: String): EventEntity
+  fun getEvent(id: String): EventEntity
 
-    fun getFavorites(): List<FavoriteEntity>
-    fun saveFavorites(favorite: List<FavoriteEntity>): List<FavoriteEntity>
+  fun getFavorites(): List<FavoriteEntity>
+  fun saveFavorites(favorite: List<FavoriteEntity>): List<FavoriteEntity>
 
-    fun getKeycloak(): KeycloakEntity
+  fun getKeycloak(): KeycloakEntity
 
-    fun getMetaData(): MetaDataEntity
-    fun saveMetaData(metaDataEntity: MetaDataEntity)
+  fun getMetaData(): MetaDataEntity
+  fun saveMetaData(metaDataEntity: MetaDataEntity)
 
-    fun isCacheValid():Boolean
+  fun isCacheValid(): Boolean
 }

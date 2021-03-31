@@ -19,49 +19,47 @@ import org.dukecon.macoun.mapper.SpeakerEntityMapper
 import org.dukecon.macoun.store.MacounConferenceRemote
 
 object RepositoryFactory {
-    fun createConferenceRepository(
-            conferenceConfiguration: ConferenceConfiguration,
-            okHttpClient: OkHttpClient
-    ): ConferenceRepository {
+  fun createConferenceRepository(
+      conferenceConfiguration: ConferenceConfiguration,
+      okHttpClient: OkHttpClient
+  ): ConferenceRepository {
 
-        val api = MacounApi(
-                endpoint = conferenceConfiguration.baseUrl,
-                conference = conferenceConfiguration.conferenceId,
-                engine = okhttpEngine(okHttpClient)
+    val api =
+        MacounApi(
+            endpoint = conferenceConfiguration.baseUrl,
+            conference = conferenceConfiguration.conferenceId,
+            engine = okhttpEngine(okHttpClient))
 
-        )
+    val conferenceRemote =
+        MacounConferenceRemote(
+            macounApi = api,
+            eventEntityMapper = EventEntityMapper(),
+            speakerEntityMapper =
+                SpeakerEntityMapper(
+                    conferenceConfiguration, org.dukecon.macoun.mapper.TwitterLinks()),
+            metaDataEntityMapper = org.dukecon.macoun.mapper.MetaDataEntityMapper(),
+            roomEntityMapper = org.dukecon.macoun.mapper.RoomEntityMapper())
 
-        val conferenceRemote = MacounConferenceRemote(
-                macounApi = api,
-                eventEntityMapper = EventEntityMapper(),
-                speakerEntityMapper = SpeakerEntityMapper(conferenceConfiguration, org.dukecon.macoun.mapper.TwitterLinks()),
-                metaDataEntityMapper = org.dukecon.macoun.mapper.MetaDataEntityMapper(),
-                roomEntityMapper = org.dukecon.macoun.mapper.RoomEntityMapper()
-        )
+    return LocalAndRemoteDataRepository(
+        remoteDataStore = EventRemoteDataStore(conferenceRemote),
+        localDataStore = EventCacheDataStore(JsonSerializedConferenceDataCache()),
+        eventMapper = EventMapper(),
+        speakerMapper = SpeakerMapper(TwitterLinks()),
+        roomMapper = RoomMapper(),
+        feedbackMapper = FeedbackMapper(),
+        favoriteMapper = FavoriteMapper(),
+        metadataMapper = MetaDateMapper())
+  }
 
-        return LocalAndRemoteDataRepository(
-                remoteDataStore = EventRemoteDataStore(conferenceRemote),
-                localDataStore = EventCacheDataStore(JsonSerializedConferenceDataCache()),
-                eventMapper = EventMapper(),
-                speakerMapper = SpeakerMapper(TwitterLinks()),
-                roomMapper = RoomMapper(),
-                feedbackMapper = FeedbackMapper(),
-                favoriteMapper = FavoriteMapper(),
-                metadataMapper = MetaDateMapper())
+  @UseExperimental(InternalAPI::class)
+  private fun okhttpEngine(okHttpClientInstance: OkHttpClient): HttpClientEngine {
+    return OkHttpEngine(getConfig(okHttpClientInstance))
+  }
+
+  private fun getConfig(okHttpClientInstance: OkHttpClient): OkHttpConfig {
+    return OkHttpConfig().apply {
+      config { followRedirects(true) }
+      preconfigured = okHttpClientInstance
     }
-
-    @UseExperimental(InternalAPI::class)
-    private fun okhttpEngine(okHttpClientInstance: OkHttpClient): HttpClientEngine {
-        return OkHttpEngine(getConfig(okHttpClientInstance))
-
-    }
-
-    private fun getConfig(okHttpClientInstance: OkHttpClient): OkHttpConfig {
-        return OkHttpConfig().apply {
-            config {
-                followRedirects(true)
-            }
-            preconfigured = okHttpClientInstance
-        }
-    }
+  }
 }

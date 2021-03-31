@@ -17,13 +17,12 @@
 package co.touchlab.stately
 
 /**
- * Method to freeze state. Calls the platform implementation of 'freeze' on native, and is a noop on other platforms.
+ * Method to freeze state. Calls the platform implementation of 'freeze' on native, and is a noop on
+ * other platforms.
  */
 expect fun <T> T.freeze(): T
 
-/**
- * Determine if object is frozen. Will return false on non-native platforms.
- */
+/** Determine if object is frozen. Will return false on non-native platforms. */
 expect val <T> T.isFrozen: Boolean
 
 /**

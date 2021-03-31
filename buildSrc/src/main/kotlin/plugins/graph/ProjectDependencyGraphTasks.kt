@@ -9,13 +9,12 @@ import java.io.File
 @CacheableTask
 open class ProjectDependencyGraphTask : DefaultTask() {
 
-    @OutputDirectory
-    lateinit var outputDirectory: String
+  @OutputDirectory lateinit var outputDirectory: String
 
-    @TaskAction
-    fun generateGraph() {
-        val projectDependencyGraphGenerator = ProjectDependencyGraphGenerator(project)
-        val graph = projectDependencyGraphGenerator.generateGraph()
-        File(outputDirectory, "${project.name}.dot").writeText(graph.toString())
-    }
+  @TaskAction
+  fun generateGraph() {
+    val projectDependencyGraphGenerator = ProjectDependencyGraphGenerator(project)
+    val graph = projectDependencyGraphGenerator.generateGraph()
+    File(outputDirectory, "${project.name}.dot").writeText(graph.toString())
+  }
 }

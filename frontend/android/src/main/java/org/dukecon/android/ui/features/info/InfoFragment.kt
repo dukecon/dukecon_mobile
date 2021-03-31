@@ -11,43 +11,38 @@ import kotlinx.android.synthetic.main.fragment_info.*
 import org.dukecon.android.ui.R
 
 class InfoFragment : Fragment() {
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info, container, false)
+  override fun onCreateView(
+      inflater: LayoutInflater,
+      container: ViewGroup?,
+      savedInstanceState: Bundle?
+  ): View? {
+    // Inflate the layout for this fragment
+    return inflater.inflate(R.layout.fragment_info, container, false)
+  }
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    viewpager.offscreenPageLimit = INFO_PAGES.size
+    viewpager.adapter = InfoAdapter(childFragmentManager)
+    tabs.setupWithViewPager(viewpager)
+  }
+
+  /** Adapter that builds a page for each info screen. */
+  inner class InfoAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+
+    override fun getCount() = INFO_PAGES.size
+
+    override fun getItem(position: Int) = INFO_PAGES[position]()
+
+    override fun getPageTitle(position: Int): CharSequence {
+      return resources.getString(INFO_TITLES[position])
     }
+  }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewpager.offscreenPageLimit = INFO_PAGES.size
-        viewpager.adapter = InfoAdapter(childFragmentManager)
-        tabs.setupWithViewPager(viewpager)
-    }
+  companion object {
+    fun newInstance() = InfoFragment()
 
-    /**
-     * Adapter that builds a page for each info screen.
-     */
-    inner class InfoAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
-
-        override fun getCount() = INFO_PAGES.size
-
-        override fun getItem(position: Int) = INFO_PAGES[position]()
-
-        override fun getPageTitle(position: Int): CharSequence {
-            return resources.getString(INFO_TITLES[position])
-        }
-    }
-
-    companion object {
-        fun newInstance() = InfoFragment()
-
-        private val INFO_TITLES = arrayOf(
-                R.string.licences_title
-        )
-        private val INFO_PAGES = arrayOf(
-                { LicenceFragment() }
-        )
-    }
+    private val INFO_TITLES = arrayOf(R.string.licences_title)
+    private val INFO_PAGES = arrayOf({ LicenceFragment() })
+  }
 }

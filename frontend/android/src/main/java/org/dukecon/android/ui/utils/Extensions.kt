@@ -5,8 +5,8 @@ import androidx.fragment.app.FragmentTransaction
 
 /** Convenience for callbacks/listeners whose return value indicates an event was consumed. */
 inline fun consume(f: () -> Unit): Boolean {
-    f()
-    return true
+  f()
+  return true
 }
 
 /**
@@ -15,5 +15,5 @@ inline fun consume(f: () -> Unit): Boolean {
  * `supportFragmentManager.inTransaction { add(...) }`
  */
 inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
-    beginTransaction().func().commit()
+  beginTransaction().func().commit()
 }

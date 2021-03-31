@@ -16,9 +16,7 @@
 
 package co.touchlab.stately.concurrency
 
-/**
- * Multiplatform AtomicLong implementation
- */
+/** Multiplatform AtomicLong implementation */
 expect class AtomicLong(initialValue: Long) {
 
   fun get(): Long

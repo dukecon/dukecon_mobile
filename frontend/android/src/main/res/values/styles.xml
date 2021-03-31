@@ -6,7 +6,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme" parent="Base.AppTheme" />
+    <style name="AppTheme" parent="Base.AppTheme"/>
 
     <style name="TwitterTextAppearance" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textSize">18sp</item>
@@ -18,7 +18,7 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="AppTheme.PopupTheme" parent="ThemeOverlay.MaterialComponents.Light" />
+    <style name="AppTheme.PopupTheme" parent="ThemeOverlay.MaterialComponents.Light"/>
 
 
     <style name="Widget.AppBar" parent="@style/Widget.Design.AppBarLayout">

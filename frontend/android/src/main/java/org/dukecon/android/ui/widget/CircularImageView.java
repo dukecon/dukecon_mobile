@@ -2,7 +2,7 @@ package org.dukecon.android.ui.widget;
 
 /**
  * Based on https://github.com/lopspower/CircularImageView/blob/master/circularimageview/src/main/res/values/attrs.xml
- *
+ * <p>
  * Ported to androidx
  */
 
@@ -355,22 +355,6 @@ public class CircularImageView extends AppCompatImageView {
         START,
         END;
 
-        public int getValue() {
-            switch (this) {
-                case CENTER:
-                    return 1;
-                case TOP:
-                    return 2;
-                case BOTTOM:
-                    return 3;
-                case START:
-                    return 4;
-                case END:
-                    return 5;
-            }
-            throw new IllegalArgumentException("Not value available for this ShadowGravity: " + this);
-        }
-
         public static ShadowGravity fromValue(int value) {
             switch (value) {
                 case 1:
@@ -385,6 +369,22 @@ public class CircularImageView extends AppCompatImageView {
                     return END;
             }
             throw new IllegalArgumentException("This value is not supported for ShadowGravity: " + value);
+        }
+
+        public int getValue() {
+            switch (this) {
+                case CENTER:
+                    return 1;
+                case TOP:
+                    return 2;
+                case BOTTOM:
+                    return 3;
+                case START:
+                    return 4;
+                case END:
+                    return 5;
+            }
+            throw new IllegalArgumentException("Not value available for this ShadowGravity: " + this);
         }
 
     }

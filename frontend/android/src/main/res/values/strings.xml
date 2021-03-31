@@ -18,7 +18,9 @@
     <string name="cancel">cancel</string>
     <string name="submit">Submit</string>
     <string name="cd_logo">Event Logo</string>
-    <string name="info_topper">Developed in Kotlin by Michal Harakaľ und Falk Sippach as project of Java user Group Darmstadt with following open source projects and apps. App is heavily based on Chicago Roboto App.</string>
+    <string name="info_topper">Developed in Kotlin by Michal Harakaľ und Falk Sippach as project of Java user Group
+        Darmstadt with following open source projects and apps. App is heavily based on Chicago Roboto App.
+    </string>
     <string name="feedback_title">Talk Feedback</string>
     <string name="feedback_comment">comment</string>
     <string name="rating_good">good</string>

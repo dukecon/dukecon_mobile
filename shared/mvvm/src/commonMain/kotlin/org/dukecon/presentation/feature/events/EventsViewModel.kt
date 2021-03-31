@@ -6,5 +6,5 @@ import org.dukecon.domain.model.Event
 import org.dukecon.domain.repository.ConferenceRepository
 
 class EventsViewModel(repository: ConferenceRepository) : CommonViewModel() {
-    val events: Flow<List<Event>> = repository.eventsStateModel
+  val events: Flow<List<Event>> = repository.eventsStateModel
 }

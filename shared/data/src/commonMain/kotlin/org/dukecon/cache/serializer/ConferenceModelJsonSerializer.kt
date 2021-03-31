@@ -8,45 +8,55 @@ import org.dukecon.time.CurrentDataTimeProvider
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-class ConferenceModelJsonSerializer(val currentTimeProvider: CurrentDataTimeProvider,
-                                    private val storage: ApplicationStorage) {
+class ConferenceModelJsonSerializer(
+    val currentTimeProvider: CurrentDataTimeProvider,
+    private val storage: ApplicationStorage
+) {
 
-    var conference: ConferenceModel by storage(ConferenceModel.serializer()) { ConferenceModel() }
+  var conference: ConferenceModel by storage(ConferenceModel.serializer()) { ConferenceModel() }
 
-    fun lastUpadte(): Long {
-        val last = storage.getString("lastCacheTimeStamp")?.toLongOrNull()
-        last?.let {
-            return it
-        }
-        return 0
+  fun lastUpadte(): Long {
+    val last = storage.getString("lastCacheTimeStamp")?.toLongOrNull()
+    last?.let {
+      return it
     }
+    return 0
+  }
 
-      inline operator fun <reified T> ApplicationStorage.invoke(
-            serializer: KSerializer<T>,
-            crossinline block: () -> T
-    ): ReadWriteProperty<ConferenceModelJsonSerializer, T> = object : ReadWriteProperty<ConferenceModelJsonSerializer, T> {
+  inline operator fun <reified T> ApplicationStorage.invoke(
+      serializer: KSerializer<T>,
+      crossinline block: () -> T
+  ): ReadWriteProperty<ConferenceModelJsonSerializer, T> =
+      object : ReadWriteProperty<ConferenceModelJsonSerializer, T> {
         private var currentValue: T? = null
 
-        override fun setValue(thisRef: ConferenceModelJsonSerializer, property: KProperty<*>, value: T) {
-            val key = property.name
-            currentValue = value
-            putString(key, Json.encodeToString(serializer, value))
-            putString("lastCacheTimeStamp", currentTimeProvider.currentTimeMillis().toString())
+        override fun setValue(
+            thisRef: ConferenceModelJsonSerializer,
+            property: KProperty<*>,
+            value: T
+        ) {
+          val key = property.name
+          currentValue = value
+          putString(key, Json.encodeToString(serializer, value))
+          putString("lastCacheTimeStamp", currentTimeProvider.currentTimeMillis().toString())
         }
 
         override fun getValue(thisRef: ConferenceModelJsonSerializer, property: KProperty<*>): T {
-            currentValue?.let { return it }
+          currentValue?.let {
+            return it
+          }
 
-            val key = property.name
+          val key = property.name
 
-            val result = try {
+          val result =
+              try {
                 getString(key)?.let { Json.decodeFromString(serializer, it) }
-            } catch (cause: Throwable) {
+              } catch (cause: Throwable) {
                 null
-            } ?: block()
+              } ?: block()
 
-            currentValue = result
-            return result
+          currentValue = result
+          return result
         }
-    }
+      }
 }

@@ -12,21 +12,17 @@ import org.dukecon.presentation.EventsViewModel
 @Composable
 fun EventsList(eventsViewModel: EventsViewModel) {
 
-    val eventsState = eventsViewModel.events.collectAsState(
-        emptyList(),
-        eventsViewModel.clientScope.coroutineContext
-    )
+  val eventsState =
+      eventsViewModel.events.collectAsState(
+          emptyList(), eventsViewModel.clientScope.coroutineContext)
 
-    MaterialTheme {
-        Scaffold(
-            topBar = {
-                TopAppBar(title = { Text("DukeCon") })
-            }) {
-            LazyColumn {
-                items(eventsState.value.size) { eventIndex ->
-                    Text(eventsState.value[eventIndex].title ?: "Event")
-                }
-            }
+  MaterialTheme {
+    Scaffold(topBar = { TopAppBar(title = { Text("DukeCon") }) }) {
+      LazyColumn {
+        items(eventsState.value.size) { eventIndex ->
+          Text(eventsState.value[eventIndex].title ?: "Event")
         }
+      }
     }
+  }
 }

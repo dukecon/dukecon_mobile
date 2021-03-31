@@ -8,11 +8,12 @@ import androidx.fragment.app.Fragment
 import org.dukecon.android.ui.R
 
 class LicenceFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_licences, container, false)
-    }
+  override fun onCreateView(
+      inflater: LayoutInflater,
+      container: ViewGroup?,
+      savedInstanceState: Bundle?
+  ): View? {
+    // Inflate the layout for this fragment
+    return inflater.inflate(R.layout.fragment_licences, container, false)
+  }
 }

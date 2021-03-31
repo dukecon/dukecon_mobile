@@ -6,12 +6,12 @@ import kotlinx.coroutines.cancelChildren
 import org.dukecon.platform.dispatcher
 
 actual open class CommonViewModel actual constructor() {
-    private val viewModelJob = SupervisorJob()
-    val viewModelScope: CoroutineScope = CoroutineScope(dispatcher() + viewModelJob)
+  private val viewModelJob = SupervisorJob()
+  val viewModelScope: CoroutineScope = CoroutineScope(dispatcher() + viewModelJob)
 
-    actual val clientScope: CoroutineScope = viewModelScope
+  actual val clientScope: CoroutineScope = viewModelScope
 
-    protected actual open fun onCleared() {
-        viewModelJob.cancelChildren()
-    }
+  protected actual open fun onCleared() {
+    viewModelJob.cancelChildren()
+  }
 }

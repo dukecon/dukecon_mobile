@@ -5,17 +5,16 @@ import org.dukecon.android.IoCRegister
 
 class DukeconApplication : Application() {
 
-    override fun onCreate() {
-        super.onCreate()
-        IoCRegister.registerTimeProvider()
-        IoCRegister.registerEventDetail(this)
-        initLogger()
-    }
+  override fun onCreate() {
+    super.onCreate()
+    IoCRegister.registerTimeProvider()
+    IoCRegister.registerEventDetail(this)
+    initLogger()
+  }
 
-    private fun initLogger() {
-        if (BuildConfig.DEBUG) {
-            //FileAppenderLogger().setup(this)
-        }
+  private fun initLogger() {
+    if (BuildConfig.DEBUG) {
+      // FileAppenderLogger().setup(this)
     }
-
+  }
 }

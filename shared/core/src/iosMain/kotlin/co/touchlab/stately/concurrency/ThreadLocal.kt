@@ -25,16 +25,12 @@ actual open class ThreadLocalRef<T> actual constructor() {
 
   actual fun get(): T? {
     return if (ThreadLocalState.threadLocalMap.containsKey(threadLocalId))
-      ThreadLocalState.threadLocalMap.get(threadLocalId) as T
-    else
-      null
+        ThreadLocalState.threadLocalMap.get(threadLocalId) as T
+    else null
   }
 
   actual fun set(value: T?) {
-    if (value == null)
-      remove()
-    else
-      ThreadLocalState.threadLocalMap.put(threadLocalId, value)
+    if (value == null) remove() else ThreadLocalState.threadLocalMap.put(threadLocalId, value)
   }
 }
 

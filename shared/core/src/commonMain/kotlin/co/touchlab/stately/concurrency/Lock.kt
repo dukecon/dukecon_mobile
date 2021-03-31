@@ -16,10 +16,7 @@
 
 package co.touchlab.stately.concurrency
 
-/**
- * A simple lock.
- * Implementations of this class should be re-entrant.
- */
+/** A simple lock. Implementations of this class should be re-entrant. */
 expect class Lock() {
   fun lock()
   fun unlock()

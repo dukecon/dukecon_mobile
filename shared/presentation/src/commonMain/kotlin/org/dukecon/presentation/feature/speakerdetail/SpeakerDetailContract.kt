@@ -6,11 +6,11 @@ import org.dukecon.presentation.model.SpeakerDetailView
 
 interface SpeakerDetailContract {
 
-    interface View : BaseView {
-        fun showSpeaker(speaker: SpeakerDetailView)
-    }
+  interface View : BaseView {
+    fun showSpeaker(speaker: SpeakerDetailView)
+  }
 
-    interface Presenter : BasePresenter<View> {
-        fun setSpeakerId(speakerId: String)
-    }
+  interface Presenter : BasePresenter<View> {
+    fun setSpeakerId(speakerId: String)
+  }
 }

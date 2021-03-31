@@ -11,28 +11,26 @@ import org.dukecon.android.ui.R
 
 class SpeakerDetailActivity : AppCompatActivity() {
 
-    companion object {
-        @JvmStatic
-        fun navigate(activity: Activity, speakerId: String) {
-            val intent = Intent(activity, SpeakerDetailActivity::class.java)
-            intent.putExtra("speaker_id", speakerId)
+  companion object {
+    @JvmStatic
+    fun navigate(activity: Activity, speakerId: String) {
+      val intent = Intent(activity, SpeakerDetailActivity::class.java)
+      intent.putExtra("speaker_id", speakerId)
 
-            activity.startActivity(intent)
-        }
+      activity.startActivity(intent)
+    }
+  }
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+
+    if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+      postponeEnterTransition()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_speaker_detail)
 
-        if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-            postponeEnterTransition()
-        }
-
-        setContentView(R.layout.activity_speaker_detail)
-
-        val speakerId = intent.getStringExtra("speaker_id")
-        speakerId?.let {
-            speaker_detail_view.setSpeakerId(speakerId)
-        }
-    }
+    val speakerId = intent.getStringExtra("speaker_id")
+    speakerId?.let { speaker_detail_view.setSpeakerId(speakerId) }
+  }
 }

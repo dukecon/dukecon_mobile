@@ -15,28 +15,28 @@ import org.dukecon.sessionize.store.SessionizeConferenceRemotes
 import org.dukecon.time.CurrentDataTimeProvider
 
 object RepositoryFactory {
-    fun createConferenceRepository(conferenceConfiguration: ConferenceConfiguration,
+  fun createConferenceRepository(
+      conferenceConfiguration: ConferenceConfiguration,
+      okHttpClient: OkHttpClient,
+      currentTimeProvider: CurrentDataTimeProvider,
+      storage: ApplicationStorage
+  ): ConferenceRepository {
 
+    val api = SessionizeApiImpl(conferenceConfiguration.conferenceId)
 
-                                   okHttpClient: OkHttpClient,
-                                   currentTimeProvider: CurrentDataTimeProvider,
-                                   storage: ApplicationStorage): ConferenceRepository {
+    val conferenceRemote = SessionizeConferenceRemotes(api)
 
-        val api = SessionizeApiImpl(conferenceConfiguration.conferenceId)
+    val cache = JsonSerializedConferenceDataCache(currentTimeProvider, storage)
 
-        val conferenceRemote = SessionizeConferenceRemotes(api)
-
-        val cache = JsonSerializedConferenceDataCache(currentTimeProvider, storage)
-
-        return LocalAndRemoteDataRepository(
-            remoteDataStore = EventRemoteDataStore(conferenceRemote),
-            localDataStore = EventCacheDataStore(cache),
-            conferenceDataCache = cache,
-            eventMapper = EventMapper(),
-            speakerMapper = SpeakerMapper(TwitterLinks()),
-            roomMapper = RoomMapper(),
-            feedbackMapper = FeedbackMapper(),
-            favoriteMapper = FavoriteMapper(),
-            metadataMapper = MetaDateMapper())
-    }
+    return LocalAndRemoteDataRepository(
+        remoteDataStore = EventRemoteDataStore(conferenceRemote),
+        localDataStore = EventCacheDataStore(cache),
+        conferenceDataCache = cache,
+        eventMapper = EventMapper(),
+        speakerMapper = SpeakerMapper(TwitterLinks()),
+        roomMapper = RoomMapper(),
+        feedbackMapper = FeedbackMapper(),
+        favoriteMapper = FavoriteMapper(),
+        metadataMapper = MetaDateMapper())
+  }
 }

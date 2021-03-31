@@ -9,5 +9,4 @@ data class LibraryData(
     val url: String = ""
 )
 
-@Suppress("unused")
-fun createDefaultLibraryData(): LibraryData = LibraryData()
+@Suppress("unused") fun createDefaultLibraryData(): LibraryData = LibraryData()

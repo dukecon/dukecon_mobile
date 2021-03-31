@@ -5,12 +5,12 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.register
 
 open class DependencyGraphGeneratorPlugin : Plugin<Project> {
-    override fun apply(project: Project) {
-        project.tasks.register<ProjectDependencyGraphTask>("projectDependencyGraph") {
-            group = "Documentation"
-            description = "Generate project dependency graph as png"
+  override fun apply(project: Project) {
+    project.tasks.register<ProjectDependencyGraphTask>("projectDependencyGraph") {
+      group = "Documentation"
+      description = "Generate project dependency graph as png"
 
-            outputDirectory = "${project.buildDir}/report/"
-        }
+      outputDirectory = "${project.buildDir}/report/"
     }
+  }
 }

@@ -10,43 +10,48 @@ import org.dukecon.android.ui.R
 
 internal class EventItemDecoration(private val context: Context) : RecyclerView.ItemDecoration() {
 
-    private val divider: Drawable
-    private val spacing: Int
+  private val divider: Drawable
+  private val spacing: Int
 
-    init {
-        spacing = context.resources.getDimensionPixelSize(R.dimen.recycler_spacing_vertical)
+  init {
+    spacing = context.resources.getDimensionPixelSize(R.dimen.recycler_spacing_vertical)
 
-        val a = context.obtainStyledAttributes(intArrayOf(android.R.attr.listDivider))
-        divider = a.getDrawable(0)!!
-        a.recycle()
-    }
+    val a = context.obtainStyledAttributes(intArrayOf(android.R.attr.listDivider))
+    divider = a.getDrawable(0)!!
+    a.recycle()
+  }
 
-    override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
-        val childCount = parent.childCount
-        for (i in 0..childCount) {
-            val view = parent.getChildAt(i)
-            if (view != null) {
-                val holder = parent.getChildViewHolder(view)
-                if (holder is EventsAdapter.ViewHolder && holder.adapterPosition != 0) {
-                    if (holder.timeslot.visibility == View.VISIBLE) {
-                        val left = 0
-                        val top = holder.itemView.top
-                        val right = parent.width
-                        val bottom = top + divider.intrinsicHeight
-                        divider.setBounds(left, top, right, bottom)
-                        divider.draw(c)
-                    }
-                }
-            }
-        }
-    }
-
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+  override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+    val childCount = parent.childCount
+    for (i in 0..childCount) {
+      val view = parent.getChildAt(i)
+      if (view != null) {
         val holder = parent.getChildViewHolder(view)
-        if (holder is EventsAdapter.ViewHolder) {
-            if (holder.timeslot.visibility == View.VISIBLE && holder.adapterPosition != 0) {
-                outRect.set(0, divider.intrinsicHeight, 0, 0)
-            }
+        if (holder is EventsAdapter.ViewHolder && holder.adapterPosition != 0) {
+          if (holder.timeslot.visibility == View.VISIBLE) {
+            val left = 0
+            val top = holder.itemView.top
+            val right = parent.width
+            val bottom = top + divider.intrinsicHeight
+            divider.setBounds(left, top, right, bottom)
+            divider.draw(c)
+          }
         }
+      }
     }
+  }
+
+  override fun getItemOffsets(
+      outRect: Rect,
+      view: View,
+      parent: RecyclerView,
+      state: RecyclerView.State
+  ) {
+    val holder = parent.getChildViewHolder(view)
+    if (holder is EventsAdapter.ViewHolder) {
+      if (holder.timeslot.visibility == View.VISIBLE && holder.adapterPosition != 0) {
+        outRect.set(0, divider.intrinsicHeight, 0, 0)
+      }
+    }
+  }
 }

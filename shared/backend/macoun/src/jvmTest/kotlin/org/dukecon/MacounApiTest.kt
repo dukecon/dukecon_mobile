@@ -7,14 +7,12 @@ import kotlin.test.assertTrue
 
 class MacounApiTest {
 
-    @Test
-    fun testJavaland() {
-        val api = MacounApi("https://backend.macoun.de/fahrplan", "2020.json")
-        runBlocking<Unit> {
-            val fahrplan = api.getFahrplan()
-            fahrplan.speakers?.let {
-                assertTrue { it.isNotEmpty() }
-            }
-        }
+  @Test
+  fun testJavaland() {
+    val api = MacounApi("https://backend.macoun.de/fahrplan", "2020.json")
+    runBlocking<Unit> {
+      val fahrplan = api.getFahrplan()
+      fahrplan.speakers?.let { assertTrue { it.isNotEmpty() } }
     }
+  }
 }

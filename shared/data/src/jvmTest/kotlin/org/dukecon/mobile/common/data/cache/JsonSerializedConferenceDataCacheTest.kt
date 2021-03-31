@@ -11,78 +11,77 @@ import kotlin.test.assertTrue
 
 class JsonSerializedConferenceDataCacheTest {
 
-    private val cache: JsonSerializedConferenceDataCache = JsonSerializedConferenceDataCache(
-        object : CurrentDataTimeProvider {
+  private val cache: JsonSerializedConferenceDataCache =
+      JsonSerializedConferenceDataCache(
+          object : CurrentDataTimeProvider {
             override fun currentTimeMillis(): Long {
-                return 0
+              return 0
             }
+          },
+          ApplicationStorage(null))
 
-        },
-        ApplicationStorage(null)
-    )
+  val mapper = EventMapper()
 
-    val mapper = EventMapper()
+  @Test
+  fun `initial cache is empty`() {
+    assertTrue(cache.getEvents().isEmpty())
+    assertTrue(cache.getRooms().isEmpty())
+    assertTrue(cache.getFavorites().isEmpty())
+    assertTrue(cache.getSpeakers().isEmpty())
+  }
 
-    @Test
-    fun `initial cache is empty`() {
-        assertTrue(cache.getEvents().isEmpty())
-        assertTrue(cache.getRooms().isEmpty())
-        assertTrue(cache.getFavorites().isEmpty())
-        assertTrue(cache.getSpeakers().isEmpty())
-    }
+  @Test
+  fun `saved events are returned back`() {
+    // given
+    cache.saveEvents(generateEvents().map { mapper.mapToEntity(it) })
 
-    @Test
-    fun `saved events are returned back`() {
-        // given
-        cache.saveEvents(generateEvents().map { mapper.mapToEntity(it) })
+    // when
+    val result = cache.getEvents()
 
-        // when
-        val result = cache.getEvents()
+    // then
+    assertTrue(result.size == 2)
+  }
 
-        // then
-        assertTrue(result.size == 2)
-    }
-
-    private fun generateEvents(): List<Event> = listOf(
-        Event(
-            eventId = "1", title = "Talk 1", eventDescription = "kotlin talk 1",
-            startTime = GMTDate(
-                seconds = 0,
-                minutes = 0,
-                hours = 16,
-                dayOfMonth = 13,
-                month = Month.OCTOBER,
-                year = 2020
-            ),
-            endTime = GMTDate(
-                seconds = 0,
-                minutes = 45,
-                hours = 16,
-                dayOfMonth = 13,
-                month = Month.OCTOBER,
-                year = 2020
-            )
-        ),
-        Event(
-            eventId = "2",
-            title = "Talk 2",
-            eventDescription = "kotlin talk 2",
-            startTime = GMTDate(
-                seconds = 0,
-                minutes = 0,
-                hours = 17,
-                dayOfMonth = 13,
-                month = Month.OCTOBER,
-                year = 2020
-            ),
-            endTime = GMTDate(
-                seconds = 0,
-                minutes = 30,
-                hours = 17,
-                dayOfMonth = 13,
-                month = Month.OCTOBER,
-                year = 2020
-            )
-        )
-    )
+  private fun generateEvents(): List<Event> =
+      listOf(
+          Event(
+              eventId = "1",
+              title = "Talk 1",
+              eventDescription = "kotlin talk 1",
+              startTime =
+                  GMTDate(
+                      seconds = 0,
+                      minutes = 0,
+                      hours = 16,
+                      dayOfMonth = 13,
+                      month = Month.OCTOBER,
+                      year = 2020),
+              endTime =
+                  GMTDate(
+                      seconds = 0,
+                      minutes = 45,
+                      hours = 16,
+                      dayOfMonth = 13,
+                      month = Month.OCTOBER,
+                      year = 2020)),
+          Event(
+              eventId = "2",
+              title = "Talk 2",
+              eventDescription = "kotlin talk 2",
+              startTime =
+                  GMTDate(
+                      seconds = 0,
+                      minutes = 0,
+                      hours = 17,
+                      dayOfMonth = 13,
+                      month = Month.OCTOBER,
+                      year = 2020),
+              endTime =
+                  GMTDate(
+                      seconds = 0,
+                      minutes = 30,
+                      hours = 17,
+                      dayOfMonth = 13,
+                      month = Month.OCTOBER,
+                      year = 2020)))
 }

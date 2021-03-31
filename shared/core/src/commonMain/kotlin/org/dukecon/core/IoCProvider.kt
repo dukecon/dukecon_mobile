@@ -4,23 +4,21 @@ import kotlin.reflect.KClass
 
 object IoCProvider {
 
-    val register = HashMap<String, Any>()
+  val register = HashMap<String, Any>()
 
-    fun <T : Any, R : T> registerType(type: KClass<T>, impl: R) {
-        val simpleName = type.qualifiedName
-        simpleName?.let {
-            register[simpleName] = impl
-        }
+  fun <T : Any, R : T> registerType(type: KClass<T>, impl: R) {
+    val simpleName = type.qualifiedName
+    simpleName?.let { register[simpleName] = impl }
+  }
+
+  inline fun <reified T : Any> get(): T {
+    val simpleName = T::class.qualifiedName
+
+    simpleName?.let {
+      if (register.containsKey(simpleName)) {
+        return register[simpleName] as T
+      }
     }
-
-    inline fun <reified T : Any> get(): T {
-        val simpleName = T::class.qualifiedName
-
-        simpleName?.let {
-            if (register.containsKey(simpleName)) {
-                return register[simpleName] as T
-            }
-        }
-        throw Exception("not registerd type ${simpleName}")
-    }
+    throw Exception("not registerd type ${simpleName}")
+  }
 }

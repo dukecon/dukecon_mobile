@@ -5,35 +5,30 @@ import org.dukecon.domain.model.Speaker
 import org.dukecon.domain.repository.ConferenceRepository
 import org.dukecon.presentation.CoroutinePresenter
 import org.dukecon.presentation.mapper.SpeakerMapper
-import kotlin.coroutines.CoroutineContext
 
-open class SpeakerListPresenter constructor(val conferenceRepository: ConferenceRepository,
-                                            val speakersMapper: SpeakerMapper) : CoroutinePresenter<SpeakerListContract.View>(), SpeakerListContract.Presenter {
-    override fun showError(error: Throwable) {
+open class SpeakerListPresenter
+constructor(val conferenceRepository: ConferenceRepository, val speakersMapper: SpeakerMapper) :
+    CoroutinePresenter<SpeakerListContract.View>(), SpeakerListContract.Presenter {
+  override fun showError(error: Throwable) {}
+
+  private var view: SpeakerListContract.View? = null
+
+  override fun onAttach(view: SpeakerListContract.View) {
+    this.view = view
+    launch {
+      val speakers = conferenceRepository.getSpeakers()
+      handleGetSpeakersSuccess(speakers)
     }
+  }
 
-    private var view: SpeakerListContract.View? = null
+  override fun onDetach() {
+    this.view = null
+  }
 
-    override fun onAttach(view: SpeakerListContract.View) {
-        this.view = view
-        launch {
-            val speakers = conferenceRepository.getSpeakers()
-            handleGetSpeakersSuccess(speakers)
-        }
+  internal fun handleGetSpeakersSuccess(speakers: List<Speaker>) {
+
+    if (speakers.isNotEmpty()) {
+      view?.showSpeakers(speakers.map { speakersMapper.mapToView(it) })
     }
-
-    override fun onDetach() {
-        this.view = null
-    }
-
-    internal fun handleGetSpeakersSuccess(speakers: List<Speaker>) {
-
-        if (speakers.isNotEmpty()) {
-            view?.showSpeakers(
-                    speakers
-                            .map { speakersMapper.mapToView(it) }
-
-            )
-        }
-    }
+  }
 }

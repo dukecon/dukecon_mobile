@@ -6,12 +6,11 @@ import org.dukecon.presentation.BaseView
 
 interface EventDateListContract {
 
-    interface View : BaseView {
-        fun showNoSessionDates()
-        fun showSessionDates(sessionDates: List<GMTDate>)
-        fun scrollToCurrentDay()
-    }
+  interface View : BaseView {
+    fun showNoSessionDates()
+    fun showSessionDates(sessionDates: List<GMTDate>)
+    fun scrollToCurrentDay()
+  }
 
-    interface Presenter : BasePresenter<View>
-
+  interface Presenter : BasePresenter<View>
 }

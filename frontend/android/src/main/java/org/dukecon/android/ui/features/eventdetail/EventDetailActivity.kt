@@ -10,21 +10,18 @@ import org.dukecon.core.IoCProvider
 
 class EventDetailActivity : AppCompatActivity(), SpeakerNavigator {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
 
-        IoCProvider.registerType(SpeakerNavigator::class, this)
+    IoCProvider.registerType(SpeakerNavigator::class, this)
 
-        setContentView(R.layout.activity_session_detail)
+    setContentView(R.layout.activity_session_detail)
 
+    val sessionId = intent.getStringExtra("session_id")
+    sessionId?.let { session_detail.setSession(it) }
+  }
 
-        val sessionId = intent.getStringExtra("session_id")
-        sessionId?.let {
-            session_detail.setSession(it)
-        }
-    }
-
-    override fun navigateToSpeaker(id: String) {
-        SpeakerDetailActivity.navigate(this, id)
-    }
+  override fun navigateToSpeaker(id: String) {
+    SpeakerDetailActivity.navigate(this, id)
+  }
 }

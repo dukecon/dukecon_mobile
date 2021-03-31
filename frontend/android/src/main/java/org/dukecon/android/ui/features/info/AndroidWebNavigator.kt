@@ -7,8 +7,8 @@ import org.dukecon.presentation.feature.info.WebNavigator
 
 class AndroidWebNavigator(private val context: Context) : WebNavigator {
 
-    override fun navigateToUrl(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        context.startActivity(intent)
-    }
+  override fun navigateToUrl(url: String) {
+    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+    context.startActivity(intent)
+  }
 }

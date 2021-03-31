@@ -1,7 +1,7 @@
 <configuration>
     <appender
-        name="config-logcat"
-        class="ch.qos.logback.classic.android.LogcatAppender" >
+            name="config-logcat"
+            class="ch.qos.logback.classic.android.LogcatAppender">
 
         <encoder>
             <pattern>|%.-1level|[%thread][%method]\t%msg%n</pattern>
@@ -9,6 +9,6 @@
     </appender>
 
     <root level="debug">
-        <appender-ref ref="config-logcat" />
+        <appender-ref ref="config-logcat"/>
     </root>
 </configuration>

@@ -1,10 +1,9 @@
 package org.dukecon.platform
 
-
 enum class HostPlatform {
-    COMMON,
-    ANDROID,
-    IOS
+  COMMON,
+  ANDROID,
+  IOS
 }
 
-expect fun getTargetHost():HostPlatform
+expect fun getTargetHost(): HostPlatform

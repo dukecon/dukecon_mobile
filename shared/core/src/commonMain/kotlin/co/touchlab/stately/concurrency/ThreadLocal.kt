@@ -27,4 +27,3 @@ var <T> ThreadLocalRef<T>.value: T?
   set(value) {
     set(value)
   }
-

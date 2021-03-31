@@ -18,7 +18,7 @@ package co.touchlab.stately.concurrency
 
 import kotlin.native.concurrent.AtomicInt
 
-actual class AtomicInt actual constructor(initialValue:Int){
+actual class AtomicInt actual constructor(initialValue: Int) {
   private val atom = AtomicInt(initialValue)
 
   actual fun get(): Int = atom.value
@@ -34,5 +34,4 @@ actual class AtomicInt actual constructor(initialValue:Int){
   actual fun addAndGet(delta: Int): Int = atom.addAndGet(delta)
 
   actual fun compareAndSet(expected: Int, new: Int): Boolean = atom.compareAndSet(expected, new)
-
 }

@@ -19,7 +19,7 @@ package co.touchlab.stately.concurrency
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
 
-//actual typealias AtomicReference<T> = AtomicReference<T>
+// actual typealias AtomicReference<T> = AtomicReference<T>
 actual class AtomicReference<V> actual constructor(initialValue: V) {
   private val atom = AtomicReference(initialValue.freeze())
   actual fun get(): V = atom.value
@@ -29,9 +29,9 @@ actual class AtomicReference<V> actual constructor(initialValue: V) {
   }
 
   /**
-   * Compare current value with expected and set to new if they're the same. Note, 'compare' is checking
-   * the actual object id, not 'equals'.
+   * Compare current value with expected and set to new if they're the same. Note, 'compare' is
+   * checking the actual object id, not 'equals'.
    */
-  actual fun compareAndSet(expected: V, new: V): Boolean = atom.compareAndSet(expected, new.freeze())
+  actual fun compareAndSet(expected: V, new: V): Boolean =
+      atom.compareAndSet(expected, new.freeze())
 }
-

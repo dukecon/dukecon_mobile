@@ -6,8 +6,10 @@ import kotlin.test.assertTrue
 
 class TwitterLinksTest {
 
-    @Test
-    fun simpleTwitterLinkTest() {
-        assertTrue(TwitterLinks().getHandle("https://twitter.com/kotlin") .contains("kotlin"), "Check kotlin mentioned")
-    }
+  @Test
+  fun simpleTwitterLinkTest() {
+    assertTrue(
+        TwitterLinks().getHandle("https://twitter.com/kotlin").contains("kotlin"),
+        "Check kotlin mentioned")
+  }
 }

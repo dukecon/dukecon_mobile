@@ -16,9 +16,7 @@
 
 package co.touchlab.stately.concurrency
 
-/**
- * Multiplatform AtomicInt implementation
- */
+/** Multiplatform AtomicInt implementation */
 expect class AtomicInt(initialValue: Int) {
   fun get(): Int
   fun set(newValue: Int)
