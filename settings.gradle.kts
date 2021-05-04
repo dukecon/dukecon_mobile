@@ -10,5 +10,6 @@ include(":shared:backend:macoun")
 
 include (":frontend:jetDukecon")
 include (":frontend:desktop")
+include (":frontend:web")
 include (":shared:conference:javaland")
 //include (":shared:DukeconSdk")

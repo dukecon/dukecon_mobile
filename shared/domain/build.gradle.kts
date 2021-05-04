@@ -3,11 +3,17 @@ plugins { kotlin("multiplatform") }
 kotlin {
   jvm()
   ios()
+  js(IR) {
+      // To build distributions for and run tests on browser or Node.js use one or both of:
+      browser()
+      nodejs()
+
+  }
   sourceSets {
     val commonMain by getting {
       dependencies {
         implementation(project(":shared:core"))
-        implementation("io.ktor:ktor-utils:1.5.2")
+        implementation("io.ktor:ktor-utils:1.5.3")
       }
     }
     val commonTest by getting {

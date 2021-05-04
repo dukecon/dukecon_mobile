@@ -7,12 +7,12 @@ object IoCProvider {
   val register = HashMap<String, Any>()
 
   fun <T : Any, R : T> registerType(type: KClass<T>, impl: R) {
-    val simpleName = type.qualifiedName
+    val simpleName = "Misko"// type.qualifiedName
     simpleName?.let { register[simpleName] = impl }
   }
 
   inline fun <reified T : Any> get(): T {
-    val simpleName = T::class.qualifiedName
+    val simpleName = "Misko" //T::class.qualifiedName
 
     simpleName?.let {
       if (register.containsKey(simpleName)) {

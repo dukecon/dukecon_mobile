@@ -7,10 +7,11 @@ buildscript {
     maven("https://dl.bintray.com/icerockdev/plugins")
   }
   dependencies {
-    val kotlinVersion = "1.4.31"
+    val kotlinVersion = "1.4.32"
 
     // __LATEST_COMPOSE_RELEASE_VERSION__
-    classpath("org.jetbrains.compose:compose-gradle-plugin:0.3.2")
+    //classpath("org.jetbrains.compose:compose-gradle-plugin:0.3.2")
+    classpath("org.jetbrains.compose:compose-gradle-plugin:0.0.0-web-dev-11")
     classpath("com.android.tools.build:gradle:4.0.1")
 
     // __KOTLIN_COMPOSE_VERSION__
