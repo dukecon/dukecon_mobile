@@ -18,7 +18,7 @@ buildscript {
     classpath(kotlin("gradle-plugin", version = kotlinVersion))
     classpath(kotlin("serialization", version = kotlinVersion))
 
-    classpath("dev.icerock.moko:network-generator:0.11.0")
+    classpath("dev.icerock.moko:network-generator:0.15.0")
   }
 }
 

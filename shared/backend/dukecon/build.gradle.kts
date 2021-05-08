@@ -1,7 +1,6 @@
 plugins {
   kotlin("multiplatform")
   kotlin("plugin.serialization")
-  id("com.android.library")
   id("dev.icerock.mobile.multiplatform-network-generator")
   id("maven-publish")
 }
@@ -19,18 +18,6 @@ mokoNetwork {
   }
 }
 
-android {
-  compileSdkVersion(30)
-  sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-  defaultConfig {
-    minSdkVersion(21)
-    targetSdkVersion(30)
-    versionCode = 1
-    versionName = "1.0"
-  }
-  buildTypes { getByName("release") { isMinifyEnabled = false } }
-}
-
 group = "org.dukecon.mobile"
 
 version = "0.0.1-SNAPSHOT"
@@ -39,7 +26,11 @@ version = "0.0.1-SNAPSHOT"
 kotlin {
   jvm()
   ios()
-  android()
+  js(IR) {
+    // To build distributions for and run tests on browser or Node.js use one or both of:
+    browser()
+    nodejs()
+  }
   sourceSets {
     val commonMain by getting {
       kotlin.srcDir("$buildDir/generate-resources/main/src/commonMain/kotlin")
@@ -56,11 +47,7 @@ kotlin {
         implementation("io.ktor:ktor-client-serialization:1.5.2")
       }
     }
-    val jvmMain by getting { dependencies { implementation("io.ktor:ktor-client-apache:1.4.3") } }
-
-    val androidMain by getting {
-      dependencies { implementation("io.ktor:ktor-client-okhttp:1.4.3") }
-    }
+    val jvmMain by getting { dependencies { implementation("io.ktor:ktor-client-apache:1.5.2") } }
 
     val commonTest by getting {
       dependencies {
@@ -73,10 +60,11 @@ kotlin {
         implementation(kotlin("test-junit"))
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.1")
         implementation("junit:junit:4.13.2")
-        implementation("io.mockk:mockk:1.9.3")
+        // implementation("io.mockk:mockk:1.11.0")
       }
     }
-    val iosMain by getting { dependencies { implementation("io.ktor:ktor-client-ios:1.4.3") } }
+
+    val iosMain by getting { dependencies { implementation("io.ktor:ktor-client-ios:1.5.2") } }
     val iosTest by getting
   }
 }

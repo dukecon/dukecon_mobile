@@ -10,6 +10,11 @@ version = "0.0.1-SNAPSHOT"
 kotlin {
   jvm()
   ios()
+  js(IR) {
+    // To build distributions for and run tests on browser or Node.js use one or both of:
+    browser()
+    nodejs()
+  }
   sourceSets {
     val commonMain by getting {
       dependencies {
@@ -19,10 +24,10 @@ kotlin {
         implementation(project(":shared:domain"))
         implementation(project(":shared:backend:dukecon"))
 
-        implementation("io.ktor:ktor-utils:1.5.2")
+        implementation("io.ktor:ktor-utils:1.5.3")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
 
-        implementation("io.ktor:ktor-client-core:1.5.2")
+        implementation("io.ktor:ktor-client-core:1.5.3")
         implementation("io.ktor:ktor-client-json:1.5.2")
         implementation("io.ktor:ktor-client-logging:1.5.2")
         implementation("io.ktor:ktor-client-serialization:1.5.2")

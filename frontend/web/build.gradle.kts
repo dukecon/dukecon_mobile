@@ -19,12 +19,16 @@ kotlin {
     val commonMain by getting {
       dependencies {
         implementation(project(":shared:domain"))
+        implementation(project(":shared:backend:dukecon"))
+        implementation(project(":shared:conference:javaland"))
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
       }
     }
     val jsMain by getting {
       dependencies {
         implementation(compose.web.web)
         implementation(compose.runtime)
+        implementation("io.ktor:ktor-client-js:1.5.4")
       }
     }
   }
