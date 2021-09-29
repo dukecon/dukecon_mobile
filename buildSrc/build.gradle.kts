@@ -9,7 +9,6 @@ repositories {
     jcenter()
     google()
     mavenCentral()
-    maven { url = uri("https://dl.bintray.com/icerockdev/plugins") }
 }
 
 gradlePlugin {
@@ -47,26 +46,12 @@ kotlinDslPluginOptions {
 
 dependencies {
     compileOnly(gradleApi())
-    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31")
+    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30")
 
     implementation(kotlin("stdlib"))
     implementation("com.android.tools.build:gradle:4.1.1")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30")
     implementation("guru.nidi:graphviz-java:0.12.1")
     implementation("com.squareup:kotlinpoet:1.7.2")
     implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2")
-}
-
-configurations.all {
-    val isKotlinCompiler = name == "embeddedKotlin" ||
-            name.startsWith("kotlin") ||
-            name.startsWith("kapt")
-    if (!isKotlinCompiler) {
-        resolutionStrategy.eachDependency {
-            @Suppress("UnstableApiUsage")
-            if (requested.group == "org.jetbrains.kotlin" &&
-                    requested.module.name == "kotlin-compiler-embeddable"
-            ) useVersion("1.4.30")
-        }
-    }
 }

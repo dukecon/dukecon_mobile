@@ -1,9 +1,8 @@
 plugins {
     kotlin("multiplatform")
-    kotlin("plugin.serialization")
+    id("kotlinx-serialization")
 
     id("com.android.library")
-    id("kotlin-android-extensions")
     id("maven-publish")
 }
 
@@ -11,15 +10,16 @@ group = "org.dukecon.mobile"
 version = "0.0.1-SNAPSHOT"
 
 android {
-    compileSdkVersion(29)
+    compileSdk = 29
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 24
+        targetSdk = 29
     }
-
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
 
 kotlin {
@@ -31,8 +31,8 @@ kotlin {
             dependencies {
                 implementation(project(":shared:core"))
                 implementation(project(":shared:domain"))
-                implementation("io.ktor:ktor-utils:1.4.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC2")
+                implementation("io.ktor:ktor-utils:1.6.3")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
 
             }
         }
@@ -45,8 +45,8 @@ kotlin {
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2")
-                implementation("junit:junit:4.13")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0")
+                implementation("junit:junit:4.13.2")
                 implementation("io.mockk:mockk:1.9.3")
             }
         }

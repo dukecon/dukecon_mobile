@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    kotlin("plugin.serialization")
+    id("kotlinx-serialization")
     id("com.android.library")
     id("dev.icerock.mobile.multiplatform-network-generator")
     id("maven-publish")
@@ -21,18 +21,16 @@ mokoNetwork {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 29
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(30)
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 24
+        targetSdk = 29
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 
@@ -51,8 +49,8 @@ kotlin {
                 implementation(project(":shared:core"))
                 implementation(project(":shared:domain"))
                 implementation(project(":shared:data"))
-                implementation("io.ktor:ktor-utils:1.5.0")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
+                implementation("io.ktor:ktor-utils:1.6.3")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
 
                 implementation("io.ktor:ktor-client-core:1.5.0")
                 implementation("io.ktor:ktor-client-json:1.5.0")
